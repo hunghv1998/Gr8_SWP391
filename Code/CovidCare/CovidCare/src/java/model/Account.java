@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Admin
  */
 public class Account {
-    
+
     private String userName;
     private String passWord;
     private ArrayList<Group> listGroup = new ArrayList<>();
@@ -44,16 +44,9 @@ public class Account {
         this.listGroup = listGroup;
     }
 
-    
     public Account(String userName, String passWord) {
         this.userName = userName;
         this.passWord = passWord;
     }
-    
-    
-   
-    
-    
-    
-    
+
 }

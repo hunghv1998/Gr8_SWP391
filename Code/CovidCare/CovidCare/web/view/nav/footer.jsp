@@ -1,13 +1,11 @@
 <%-- 
     Document   : footer
-    Created on : Feb 13, 2022, 8:40:46 PM
+    Created on : Feb 14, 2022, 1:02:34 AM
     Author     : chinh
 --%>
 
-<!--============================
-=            Footer            =
-=============================-->
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--Footer-->
 <footer class="footer section section-sm">
     <!-- Container Start -->
     <div class="container">
@@ -18,20 +16,20 @@
                     <!-- footer logo -->
                     <img src="../images/footer.png" alt="" width="250">
                     <!-- description -->
-                    <p class="alt-color">Cu?c s?ng b?n r?n c� th? khi?n b?n qu�n ?i s?c kh?e b?n th�n, 
-                        ??c bi?t l� m�a covid. Nh?ng ??n khi b? b?nh, nhi?u ng??i l?i kh�ng mu?n ??n b?nh vi?n
-                        v� qu� ?�ng v� nguy c? l�y nhi?m cao.
-                        Hi?u ???c ?i?u ?�, COVID CARE c� th? gi�p b?n d? d�ng k?t n?i v?i
-                        b�c s? v� t? v?n c?ng nh? h??ng d?n tr?c tuy?n t?i nh�.</p>
+                    <p class="alt-color">Cuộc sống bận rộn có thể khiến bạn quên đi sức khỏe bản thân,
+                        đặc biệt là mùa covid. Nhưng đến khi bị bệnh, nhiều người lại không muốn đến bệnh viện
+                        vì quá đông và nguy cơ lây nhiễm cao.
+                        Hiểu được điều đó, COVID CARE có thể giúp bạn dễ dàng kết nối với
+                        bác sĩ và tư vấn cũng như hướng dẫn trực tuyến tại nhà.</p>
                 </div>
             </div>
             <!-- Link list -->
             <div class="col-lg-6 offset-lg-1 col-md-3" style="text-align: right;">
                 <div class="block">
-                    <h4>M?i ?�ng g�p � ki?n xin li�n h?</h4>
+                    <h4>Mọi đóng góp ý kiến xin liên hệ</h4>
                     <ul>
-                        <li><a href="#">???ng d�y n�ng: 0123456789</a></li>
-                        <li><a href="#">Email: Qu�n ngu@gmail.com</a></li>
+                        <li><a href="#">Đường dây nóng: 0123456789</a></li>
+                        <li><a href="#">Email: group8@gmail.com</a></li>
                         <li><a href="#">Website: Covid Care</a></li>
                         <li><a href="#">Facebook: group8/facebook.com</a></li>
                     </ul>
@@ -50,7 +48,7 @@
             <div>
                 <!-- Copyright -->
                 <div class="copyright">
-                    <p style="text-align: center;">Copyright � 2022</p>
+                    <p style="text-align: center;">Copyright © 2022</p>
                 </div>
             </div>
         </div>

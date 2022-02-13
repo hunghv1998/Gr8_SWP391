@@ -1,9 +1,9 @@
 <%-- 
     Document   : nav
-    Created on : Feb 13, 2022, 8:40:40 PM
+    Created on : Feb 14, 2022, 1:00:44 AM
     Author     : chinh
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <section>
     <div class="container">
         <div class="row">
@@ -19,22 +19,22 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
-                                <a class="nav-link" href="home.jsp">Trang ch?</a>
+                                <a class="nav-link" href="home.jsp">Trang chủ</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">H? Tr? Tr?c Tuy?n</a>
+                                <a class="nav-link" href="">Hỗ Trợ Trực Tuyến</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="news.jsp">Tin t?c</a>
+                                <a class="nav-link" href="news.jsp">Tin tức</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Th?i gian bi?u</a>
+                                <a class="nav-link" href="">Thời gian biểu</a>
                             </li>
 
                         </ul>
                         <ul class="navbar-nav ml-auto mt-10">
                             <li class="nav-item">
-                                <a class="nav-link login-button" href="login.jsp">Login</a>
+                                <a class="nav-link login-button" href="login.jsp">Đăng Nhập</a>
                             </li>
                         </ul>
                     </div>
@@ -43,3 +43,4 @@
         </div>
     </div>
 </section>
+

@@ -15,9 +15,10 @@ import java.util.logging.Logger;
  * @author sonnt
  */
 public class DBContext {
+
     protected Connection connection;
-    public DBContext()
-    {
+
+    public DBContext() {
         try {
             String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=CovidCare";
             String user = "sa";

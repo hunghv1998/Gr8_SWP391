@@ -23,57 +23,50 @@ import model.Group;
 @WebServlet(name = "Authentication", urlPatterns = {"/Authentication"})
 public abstract class Authentication extends HttpServlet {
 
-      boolean checkAuthentication(HttpServletRequest request){
+    boolean checkAuthentication(HttpServletRequest request) {
         Account acc = (Account) request.getSession().getAttribute("Account");
-       
-        if(acc == null){
+
+        if (acc == null) {
             return false;
         }
-        
+
         String url = request.getServletPath();
-     
-            for(Group g : acc.getListGroup()){
-                for(Feature f : g.getListFeature()){
-                    if(f.getUrl().equals(url)){
-                       return true;
+
+        for (Group g : acc.getListGroup()) {
+            for (Feature f : g.getListFeature()) {
+                if (f.getUrl().equals(url)) {
+                    return true;
                 }
             }
         }
-            return false;
-        
+        return false;
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        if(checkAuthentication(request)){
+
+        if (checkAuthentication(request)) {
             processGet(request, response);
-        }
-        else{
+        } else {
             response.getWriter().print("Access Denie !");
         }
     }
 
- 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         if(checkAuthentication(request)){
+
+        if (checkAuthentication(request)) {
             processPost(request, response);
-        }
-        else{
+        } else {
             response.getWriter().print("Access Denie !");
         }
-      
     }
-    
-   
+
     protected abstract void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException;
-
-  
 
     protected abstract void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException;

@@ -20,7 +20,6 @@ import model.Account;
  */
 public class LoginController extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
@@ -28,22 +27,19 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       
-        
+
         BaseDAO bD = new BaseDAO();
         Account acc = bD.getAccountByUserNameAndPassWord(request.getParameter("Username").toString(), request.getParameter("Password").toString());
-     
-     
-        
-        if(acc!=null){
-            request.getSession().setAttribute("Account",acc);
+
+        if (acc != null) {
+            request.getSession().setAttribute("Account", acc);
             response.sendRedirect("Home");
-        }
-        else{
+        } else {
             response.getWriter().print("Login Faild !");
         }
-        
+
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";

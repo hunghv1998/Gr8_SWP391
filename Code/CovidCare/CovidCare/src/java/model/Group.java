@@ -16,8 +16,6 @@ public class Group {
     public Group() {
     }
 
-   
-
     public int getId() {
         return id;
     }
@@ -45,13 +43,10 @@ public class Group {
     private int id;
     private String name;
     private ArrayList<Feature> listFeature = new ArrayList<>();
-    
+
     public Group(int id, String name) {
         this.id = id;
         this.name = name;
     }
-    
-    
-    
-    
+
 }
