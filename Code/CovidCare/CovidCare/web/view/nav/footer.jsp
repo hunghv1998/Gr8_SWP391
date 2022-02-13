@@ -14,7 +14,7 @@
                 <!-- About -->
                 <div class="block about">
                     <!-- footer logo -->
-                    <img src="../images/footer.png" alt="" width="250">
+                    <img src="images/footer.png" alt="" width="250">
                     <!-- description -->
                     <p class="alt-color">Cuộc sống bận rộn có thể khiến bạn quên đi sức khỏe bản thân,
                         đặc biệt là mùa covid. Nhưng đến khi bị bệnh, nhiều người lại không muốn đến bệnh viện

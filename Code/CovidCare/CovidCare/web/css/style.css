@@ -641,13 +641,13 @@ ul.pagination .active a {
 }
 
 .bg-2 {
-  background: url(../images/home/banner-news.jpg);
+  background: url("/../images/banner-news.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .bg-3 {
-  background: url(../images/home/banner1.jpg);
+  background: url("../images/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

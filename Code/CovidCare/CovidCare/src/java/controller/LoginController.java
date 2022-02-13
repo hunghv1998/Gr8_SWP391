@@ -22,6 +22,7 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("title", "Login");
         request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
     }
 
