@@ -641,7 +641,7 @@ ul.pagination .active a {
 }
 
 .bg-2 {
-  background: url("/../images/banner-news.jpg");
+  background: url("../images/banner1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -42,7 +42,7 @@
             <!-- Container End -->
         </section>
 
-        <section class="hero-area bg-2 text-center overly" style="background: url('../images/home/banner-news.jpg');">
+        <section class="hero-area bg-2 text-center overly">
             <!-- Container Start -->
             <div class="container">
                 <div class="row">
