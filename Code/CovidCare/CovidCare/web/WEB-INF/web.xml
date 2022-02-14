@@ -49,4 +49,7 @@
         <welcome-file>view/home/home.jsp</welcome-file>
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <location>/view/error.jsp</location>
+    </error-page>
 </web-app>
