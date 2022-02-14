@@ -82,17 +82,14 @@
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
             <!-- Container End -->
         </section>
-
     </body>
-<%@include file = "../nav/footer.jsp" %>
+    <%@include file = "../nav/footer.jsp" %>
 </html>
 
 
