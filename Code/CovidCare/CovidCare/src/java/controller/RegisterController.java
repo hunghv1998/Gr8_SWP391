@@ -6,6 +6,7 @@
 package controller;
 
 import dal.AccountDAO;
+import dal.GroupDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -22,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RegisterController extends HttpServlet {
 
+    AccountDAO aD = new AccountDAO();
+    GroupDAO gD = new GroupDAO();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +51,7 @@ public class RegisterController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
-        AccountDAO aD = new AccountDAO();
+        
         
         String message = "";
         
@@ -74,6 +77,7 @@ public class RegisterController extends HttpServlet {
         
         if (message.isEmpty()) {
             aD.signup(username, password);
+            gD.setGroupAccount(3, username);
             response.sendRedirect("login");
         } else {
             request.setAttribute("username", username);
