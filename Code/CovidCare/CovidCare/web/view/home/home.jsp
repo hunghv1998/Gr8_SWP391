@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%@include file = "../nav/head.jsp" %>
-
+    
     <body class="body-wrapper">
         <%@include file = "../nav/nav.jsp" %>
         

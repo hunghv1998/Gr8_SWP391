@@ -20,7 +20,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[cities](
-	[cityId] [int] NOT NULL,
+	[cityId] [int] NOT NULL IDENTITY(1,1),
 	[cityName] [nvarchar](50) NULL,
  CONSTRAINT [PK_cities] PRIMARY KEY CLUSTERED 
 (
@@ -34,7 +34,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[districts](
-	[districtId] [int] NOT NULL,
+	[districtId] [int] NOT NULL IDENTITY(1,1),
 	[districtName] [nvarchar](50) NULL,
 	[cityId] [int] NULL,
  CONSTRAINT [PK_districts] PRIMARY KEY CLUSTERED 
@@ -49,7 +49,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Feature](
-	[fid] [nvarchar](50) NOT NULL,
+	[fid] int NOT NULL IDENTITY(1,1),
 	[url] [nvarchar](100) NULL,
  CONSTRAINT [PK_Feature] PRIMARY KEY CLUSTERED 
 (
@@ -63,7 +63,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Group](
-	[gid] [nvarchar](50) NOT NULL,
+	[gid] int NOT NULL IDENTITY(1,1),
 	[name] [nvarchar](50) NULL,
  CONSTRAINT [PK_Group] PRIMARY KEY CLUSTERED 
 (
@@ -77,8 +77,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[GroupAccount](
-	[gid] [nvarchar](50) NULL,
-	[username] [nvarchar](50) NULL
+	[username] [nvarchar](50) NULL,
+	[gid] int NULL
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[GroupFeature]    Script Date: 2/14/2022 10:39:46 AM ******/
@@ -87,8 +87,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[GroupFeature](
-	[gid] [nvarchar](50) NULL,
-	[fid] [nvarchar](50) NULL
+	[gid] int NULL,
+	[fid] int NULL
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[health_declaration]    Script Date: 2/14/2022 10:39:46 AM ******/
@@ -182,7 +182,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[news](
-	[newid] [int] NOT NULL,
+	[newid] [int] NOT NULL IDENTITY(1,1),
 	[content] [nvarchar](50) NULL,
 	[uname] [nvarchar](50) NULL,
 	[title] [nvarchar](50) NULL,
@@ -202,7 +202,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[news_categories](
-	[categoryId] [int] NOT NULL,
+	[categoryId] [int] NOT NULL IDENTITY(1,1),
 	[categoryName] [nvarchar](50) NULL,
  CONSTRAINT [PK_news_categories] PRIMARY KEY CLUSTERED 
 (
@@ -233,13 +233,14 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[user](
-	[userId] [int] NOT NULL,
+	[userId] [int] NOT NULL IDENTITY(1,1),
 	[bday] [date] NULL,
 	[sex] [bit] NOT NULL,
 	[email] [nvarchar](50) NULL,
 	[image] [nvarchar](50) NULL,
 	[address] [nvarchar](50) NOT NULL,
 	[name] [nvarchar](50) NULL,
+	[firstTimeLogin] bit default 0,
 	[uname] [nvarchar](50) NULL,
  CONSTRAINT [PK_user] PRIMARY KEY CLUSTERED 
 (
@@ -253,7 +254,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[wards](
-	[wardId] [int] NOT NULL,
+	[wardId] [int] NOT NULL IDENTITY(1,1),
 	[wardName] [nvarchar](50) NULL,
 	[districtId] [int] NULL,
  CONSTRAINT [PK_wards] PRIMARY KEY CLUSTERED 
@@ -265,22 +266,22 @@ GO
 INSERT [dbo].[Account] ([username], [password]) VALUES (N'Cong123', N'123')
 INSERT [dbo].[Account] ([username], [password]) VALUES (N'Manh123', N'123')
 GO
-INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'1', N'/Home')
-INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'2', N'/News')
-INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'3', N'/Timetable')
-INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'4', N'/Profile')
+INSERT [dbo].[Feature] ([url]) VALUES (N'/Home')
+INSERT [dbo].[Feature] ([url]) VALUES (N'/News')
+INSERT [dbo].[Feature] ([url]) VALUES (N'/Timetable')
+INSERT [dbo].[Feature] ([url]) VALUES (N'/Profile')
 GO
-INSERT [dbo].[Group] ([gid], [name]) VALUES (N'1', N'Admin')
-INSERT [dbo].[Group] ([gid], [name]) VALUES (N'2', N'Doctor')
-INSERT [dbo].[Group] ([gid], [name]) VALUES (N'3', N'Patient')
+INSERT [dbo].[Group] ([name]) VALUES (N'Admin')
+INSERT [dbo].[Group] ([name]) VALUES (N'Doctor')
+INSERT [dbo].[Group] ([name]) VALUES (N'Patient')
 GO
-INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (N'1', N'Manh123')
-INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (N'2', N'Cong123')
+INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (1, N'Manh123')
+INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (2, N'Cong123')
 GO
-INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'1')
-INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'2')
-INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'3')
-INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'2', N'2')
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (1, 1)
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (1, 2)
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (1, 3)
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (2, 2)
 GO
 ALTER TABLE [dbo].[districts]  WITH CHECK ADD  CONSTRAINT [FK_districts_cities] FOREIGN KEY([cityId])
 REFERENCES [dbo].[cities] ([cityId])
