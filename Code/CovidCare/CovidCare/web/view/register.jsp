@@ -50,15 +50,15 @@
                     <div class="col-lg-5 col-md-8 align-item-center">
                         <div class="border">
                             <h3 class="bg-gray p-4">Đăng Ký Tài Khoản</h3>
-                            <form action="#">
+                            <form action="Register" method="post">
                                 <fieldset class="p-4">
-                                    <input type="text" placeholder="Tài khoản" class="border p-3 w-100 my-2">
-                                    <input type="text" placeholder="Họ và tên" class="border p-3 w-100 my-2">
-                                    <input type="number" placeholder="Số điện thoại" class="border p-3 w-100 my-2">
-                                    <input type="email" placeholder="Địa chỉ email" class="border p-3 w-100 my-2">
-                                    <input type="password" placeholder="Mật khẩu" class="border p-3 w-100 my-2">
-                                    <input type="password" placeholder="Nhật lại mật khẩu" class="border p-3 w-100 my-2">                           
-                                    <button style="margin-left: 115px;" type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Đăng Ký</button>                           
+                                    <input type="text" name="username" placeholder="Tài khoản" class="border p-3 w-100 my-2">
+                                    <input type="text" name="fullname" placeholder="Họ và tên" class="border p-3 w-100 my-2">
+                                    <input type="number" name="phone" placeholder="Số điện thoại" class="border p-3 w-100 my-2">
+                                    <input type="email" name="email" placeholder="Địa chỉ email" class="border p-3 w-100 my-2">
+                                    <input type="password" name="password" placeholder="Mật khẩu" class="border p-3 w-100 my-2">
+                                    <input type="password" name="password2" placeholder="Nhật lại mật khẩu" class="border p-3 w-100 my-2">                           
+                                    <input style="margin-left: 115px;" type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" value="Đăng Ký">                         
                                 </fieldset>
                             </form>
                         </div>

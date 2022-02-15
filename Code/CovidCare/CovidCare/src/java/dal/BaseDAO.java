@@ -22,13 +22,13 @@ public class BaseDAO extends DBContext {
 
     public Account getAccountByUserNameAndPassWord(String username, String password) {
         try {
-            String sql = "Select a.username,a.password,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n"
-                    + "from Account a left join [GroupAccount] gA \n"
-                    + "on a.username = gA.username  left join [Group] g\n"
-                    + "on gA.gid = g.gid left join [FeatureGroup] fG\n"
-                    + "on g.gid = fG.gid left join [Feature] f \n"
-                    + "on fG.fid = f.fid\n"
-                    + "where a.username = ? and a.password = ?";
+            String sql = "Select a.username,a.password,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n" +
+"                    from Account a left join [GroupAccount] gA \n" +
+"                    on a.username = gA.username  left join [Group] g\n" +
+"                    on gA.gid = g.gid left join [GroupFeature] fG\n" +
+"                    on g.gid = fG.gid left join [Feature] f \n" +
+"                    on fG.fid = f.fid\n" +
+"                    where a.username = ? and a.password = ?";
 
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);

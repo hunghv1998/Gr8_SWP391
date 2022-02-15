@@ -53,19 +53,19 @@
                     <div class="col-lg-5 col-md-8 align-item-center">
                         <div class="border">
                             <h3 class="bg-gray p-4">Đăng Nhập</h3>
-                            <form action="#">
+                            <form action="Login" method="post">
                                 <fieldset class="p-4">
-                                    <input type="text" placeholder="Tài khoản" class="border p-3 w-100 my-2">
-                                    <input type="password" placeholder="Mật khẩu" class="border p-3 w-100 my-2">
+                                    <input type="text" placeholder="Tài khoản" name="Username" class="border p-3 w-100 my-2">
+                                    <input type="password" placeholder="Mật khẩu" name ="Password" class="border p-3 w-100 my-2">
                                     <div class="loggedin-forgot">
                                         <input type="checkbox" id="keep-me-logged-in">
                                         <label for="keep-me-logged-in" class="pt-3 pb-2">Ghi nhớ</label>
                                     </div>
-                                    <button type="submit"
-                                            class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Đăng
-                                        Nhập</button>
+                                    <input type="submit"
+                                            class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" value="Đăng
+                                    Nhập">
                                     <a class="mt-3 d-block  text-primary" href="#">Quên mật khẩu ?</a>
-                                    <a class="mt-3 d-inline-block text-primary" href="register.jsp">Đăng ký ngay</a>
+                                    <a class="mt-3 d-inline-block text-primary" href="view/register.jsp">Đăng ký ngay</a>
                                 </fieldset>
                             </form>
                         </div>
