@@ -26,7 +26,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        request.getRequestDispatcher("view/register.jsp").forward(request, response);
     }
 
     /**
@@ -51,13 +51,13 @@ public class RegisterController extends HttpServlet {
         try {
             //kiem tra ten dang nhap da ton tai
             if(aD.checkAccountExit(username)){
-                response.getWriter().print("Username Exited !");
+                response.getWriter().print("Username Exited!");
             }
             else{
                 //neu chua ton tai username nao
                 //update thong tin vao db
                 int updateSuccess = aD.insertAccount(username,password,fullname,phone,email);
-                response.sendRedirect("Login");
+                response.sendRedirect("login");
             }
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);

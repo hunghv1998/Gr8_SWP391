@@ -50,7 +50,7 @@
                     <div class="col-lg-5 col-md-8 align-item-center">
                         <div class="border">
                             <h3 class="bg-gray p-4">Đăng Ký Tài Khoản</h3>
-                            <form action="Register" method="post">
+                            <form action="register" method="post">
                                 <fieldset class="p-4">
                                     <input type="text" name="username" placeholder="Tài khoản" class="border p-3 w-100 my-2">
                                     <input type="text" name="fullname" placeholder="Họ và tên" class="border p-3 w-100 my-2">

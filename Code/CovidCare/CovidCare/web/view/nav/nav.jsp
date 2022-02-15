@@ -24,7 +24,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
-                                <a class="nav-link" href="home.jsp">Trang chủ</a>
+                                <a class="nav-link" href=".">Trang chủ</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="">Hỗ Trợ Trực Tuyến</a>
@@ -41,16 +41,15 @@
                             <c:choose>
                                 <c:when test="${account == null}">
                                     <li class="nav-item">
-                                        <a class="nav-link login-button" href="Login">Đăng Nhập</a>
+                                        <a class="nav-link login-button" href="login">Đăng Nhập</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
                                     <li class="nav-item">
-                                        <a class="nav-link login-button" href="">Đăng Xuất</a>
+                                        <a class="nav-link login-button" href="<c:url value='/logout' />">Đăng Xuất</a>
                                     </li>
                                 </c:otherwise>
                             </c:choose>
-
                         </ul>
                     </div>
                 </nav>

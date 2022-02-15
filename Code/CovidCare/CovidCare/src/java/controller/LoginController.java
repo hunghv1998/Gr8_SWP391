@@ -7,7 +7,6 @@ package controller;
 
 import dal.BaseDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +18,7 @@ import model.Account;
  *
  * @author Admin
  */
-@WebServlet(name = "LoginController", urlPatterns = {"/Login"})
+@WebServlet(name = "LoginController", urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
 
     @Override
@@ -36,7 +35,6 @@ public class LoginController extends HttpServlet {
         
         BaseDAO bD = new BaseDAO();
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
-//        Account acc =bD.Login(username, password);
         if (acc != null) {
             request.getSession().setAttribute("account", acc);
             response.sendRedirect(".");
