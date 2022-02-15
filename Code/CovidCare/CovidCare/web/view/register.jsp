@@ -11,39 +11,6 @@
 
     <body class="body-wrapper">
         <%@include file = "nav/nav.jsp" %>
-
-        <section class="hero-area bg-1 text-center overly">
-            <!-- Container Start -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Header Contetnt -->
-                        <div class="content-block">
-                            <h1>Covid Care</h1>
-                            <p>Tư vấn và hướng dẫn sức khỏe cộng đồng mùa covid <br> Cập nhật diễn biến covid hàng ngày</p>
-                            <div class="short-popular-category-list text-center">
-                                <h2>Danh mục phổ biến</h2>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <a href="news.html"> Bản Tin Covid</a></li>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="">Chat</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="">Thời Gian Biểu</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- Container End -->
-        </section>
-
         <section class="login py-5 border-top-1">
             <div class="container">
                 <div class="row justify-content-center">
