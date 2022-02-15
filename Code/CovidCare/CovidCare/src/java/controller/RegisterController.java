@@ -26,6 +26,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setAttribute("title", "Register");
         request.getRequestDispatcher("view/register.jsp").forward(request, response);
     }
 
@@ -41,28 +42,44 @@ public class RegisterController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String fullname = request.getParameter("fullname");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
-        String username = request.getParameter("username".toString());
+//        String fullname = request.getParameter("fullname");
+//        String phone = request.getParameter("phone");
+//        String email = request.getParameter("email");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        String confirm = request.getParameter("confirm");
         AccountDAO aD = new AccountDAO();
+        
+        String message = "";
+        
         try {
             //kiem tra ten dang nhap da ton tai
-            if(aD.checkAccountExit(username)){
-                response.getWriter().print("Username Exited!");
+            if(aD.checkAccountExist(username)){
+                message += "Tài khoản đã tồn tại<br>";
+//                response.getWriter().print("Username Existed!");
             }
-            else{
-                //neu chua ton tai username nao
-                //update thong tin vao db
-                int updateSuccess = aD.insertAccount(username,password,fullname,phone,email);
-                response.sendRedirect("login");
-            }
+//            else{
+//                //neu chua ton tai username nao
+//                //update thong tin vao db
+////                int updateSuccess = aD.insertAccount(username,password,fullname,phone,email);
+//                
+//                response.sendRedirect("login");
+//            }
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (!password.equals(confirm)) {
+            message += "Mật khẩu không trùng khớp<br>";
+        }
         
+        if (message.isEmpty()) {
+            aD.signup(username, password);
+            response.sendRedirect("login");
+        } else {
+            request.setAttribute("username", username);
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("/view/register.jsp").forward(request, response);
+        }
      
     }
 

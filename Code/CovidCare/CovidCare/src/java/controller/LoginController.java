@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dal.BaseDAO;
+import dal.AccountDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,8 +32,8 @@ public class LoginController extends HttpServlet {
 
         String username = request.getParameter("Username");
         String password = request.getParameter("Password");
-        
-        BaseDAO bD = new BaseDAO();
+
+        AccountDAO bD = new AccountDAO();
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
         if (acc != null) {
             request.getSession().setAttribute("account", acc);
@@ -43,7 +43,6 @@ public class LoginController extends HttpServlet {
             request.setAttribute("message", "Wrong username or password");
             request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
         }
-
     }
 
     @Override

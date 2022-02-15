@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light navigation">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href=".">
                         <img src="images/icon.png" alt="" width="100" height="100">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="news.jsp">Tin tức</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Thời gian biểu</a>
+                                <a class="nav-link" href="timetable">Thời gian biểu</a>
                             </li>
 
                         </ul>

@@ -21,10 +21,10 @@
                         <div class="border">
                             <h3 class="bg-gray p-4">Đăng Nhập</h3>
                             <form action="" method="POST">
-                                <c:if test="${not empty message}">
-                                    <b>${message}</b>
-                                </c:if>
                                 <fieldset class="p-4">
+                                    <c:if test="${not empty message}">
+                                        <b>${message}</b>
+                                    </c:if>
                                     <input type="text" placeholder="Tài khoản" name="Username" class="border p-3 w-100 my-2" value="${Username}">
                                     <input type="password" placeholder="Mật khẩu" name="Password" class="border p-3 w-100 my-2" value="${Password}">
                                     <div class="loggedin-forgot">
