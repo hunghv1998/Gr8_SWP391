@@ -7,6 +7,9 @@ package dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,15 +21,36 @@ public class DBContext {
 
     protected Connection connection;
 
-    public DBContext() {
+    public DBContext(String URL, String username, String password) {
         try {
-            String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=CovidCare";
-            String user = "sa";
-            String pass = "sa";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            connection = DriverManager.getConnection(url, user, pass);
+
+            connection = DriverManager.getConnection(URL, username, password);
+            System.out.println("Connected!");
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
         } catch (Exception ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public ResultSet getData(String sql) {
+        ResultSet rs = null;
+        try {
+            Statement state = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            rs = state.executeQuery(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+    public DBContext() {
+        this("jdbc:sqlserver://localhost:1433;databaseName=CovidCare", "sa", "sa");
+    }
+
+    public static void main(String[] args) {
+        new DBContext();
     }
 }

@@ -3,7 +3,12 @@
     Created on : Feb 14, 2022, 1:00:44 AM
     Author     : chinh
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="model.Account"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Account account = (Account) session.getAttribute("Account");
+%>
 <section>
     <div class="container">
         <div class="row">
@@ -33,9 +38,19 @@
 
                         </ul>
                         <ul class="navbar-nav ml-auto mt-10">
-                            <li class="nav-item">
-                                <a class="nav-link login-button" href="Login">Đăng Nhập</a>
-                            </li>
+                            <c:choose>
+                                <c:when test="${account == null}">
+                                    <li class="nav-item">
+                                        <a class="nav-link login-button" href="Login">Đăng Nhập</a>
+                                    </li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li class="nav-item">
+                                        <a class="nav-link login-button" href="">Đăng Xuất</a>
+                                    </li>
+                                </c:otherwise>
+                            </c:choose>
+
                         </ul>
                     </div>
                 </nav>

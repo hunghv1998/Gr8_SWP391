@@ -31,14 +31,19 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String username = request.getParameter("Username");
+        String password = request.getParameter("Password");
+        
         BaseDAO bD = new BaseDAO();
-        Account acc = bD.getAccountByUserNameAndPassWord("Manh123","123");
-        response.sendRedirect("Home");
+        Account acc = bD.getAccountByUserNameAndPassWord(username, password);
+        response.sendRedirect(".");
         if (acc != null) {
             request.getSession().setAttribute("Account", acc);
             response.sendRedirect("Home");
         } else {
-            response.getWriter().print("Login Faild !");
+            request.setAttribute("Username", username);
+            request.setAttribute("message", "Wrong username or password");
+            request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
         }
 
     }
