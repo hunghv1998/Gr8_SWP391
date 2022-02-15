@@ -235,10 +235,10 @@ GO
 CREATE TABLE [dbo].[user](
 	[userId] [int] NOT NULL IDENTITY(1,1),
 	[bday] [date] NULL,
-	[sex] [bit] NULL,
+	[sex] [bit] NOT NULL,
 	[email] [nvarchar](50) NULL,
 	[image] [nvarchar](50) NULL,
-	[address] [nvarchar](50) NULL,
+	[address] [nvarchar](50) NOT NULL,
 	[name] [nvarchar](50) NULL,
 	[firstTimeLogin] bit default 0,
 	[uname] [nvarchar](50) NULL,
@@ -357,6 +357,11 @@ ALTER TABLE [dbo].[patient_timetable]  WITH CHECK ADD  CONSTRAINT [FK_patient_ti
 REFERENCES [dbo].[user] ([userId])
 GO
 ALTER TABLE [dbo].[patient_timetable] CHECK CONSTRAINT [FK_patient_timetable_user]
+GO
+ALTER TABLE [dbo].[user]  WITH CHECK ADD  CONSTRAINT [FK_user_message_recipient] FOREIGN KEY([userId])
+REFERENCES [dbo].[message_recipient] ([id])
+GO
+ALTER TABLE [dbo].[user] CHECK CONSTRAINT [FK_user_message_recipient]
 GO
 ALTER TABLE [dbo].[wards]  WITH CHECK ADD  CONSTRAINT [FK_wards_districts] FOREIGN KEY([districtId])
 REFERENCES [dbo].[districts] ([districtId])

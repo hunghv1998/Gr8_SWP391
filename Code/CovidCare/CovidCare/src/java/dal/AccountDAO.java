@@ -39,24 +39,6 @@ public class AccountDAO extends DBContext {
         return false;
     }
 
-    public int insertAccount(String username, String password, String fullname, String phone, String email) {
-        try {
-            String sql = "INSERT INTO Account (username, password, fullname, phone,email)\n"
-                    + "VALUES (?, ?, ?, ?,?)";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
-            stm.setString(2, sql);
-            stm.setString(3, fullname);
-            stm.setString(4, phone);
-            stm.setString(5, email);
-            int updateSuccess = stm.executeUpdate();
-            return updateSuccess;
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return -1;
-    }
-
     public int signup(String username, String password) {
         int n = 0;
         String sql = "INSERT INTO Account(username, password) VALUES (?,?)";

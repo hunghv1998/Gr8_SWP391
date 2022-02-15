@@ -9,6 +9,6 @@ package dal;
  *
  * @author chinh
  */
-public class NewsDAO extends DBContext {
+public class UserInfoDAO {
     
 }
