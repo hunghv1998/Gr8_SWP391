@@ -29,7 +29,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("title", "Register");
+        request.setAttribute("title", "Đăng ký");
         request.getRequestDispatcher("view/register.jsp").forward(request, response);
     }
 

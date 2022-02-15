@@ -6,6 +6,7 @@
 package controller;
 
 import dal.AccountDAO;
+import dal.UserInfoDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,9 +22,12 @@ import model.Account;
 @WebServlet(name = "LoginController", urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
 
+    private AccountDAO bD = new AccountDAO();
+    private UserInfoDAO uiD = new UserInfoDAO();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("title", "Login");
+        request.setAttribute("title", "Đăng nhập");
         request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
     }
 
@@ -32,12 +36,18 @@ public class LoginController extends HttpServlet {
 
         String username = request.getParameter("Username");
         String password = request.getParameter("Password");
-
-        AccountDAO bD = new AccountDAO();
+        
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
         if (acc != null) {
             request.getSession().setAttribute("account", acc);
+            if (!uiD.checkFirstLogin(username)) {
+                request.getSession().setAttribute("message", 
+                        "Đây là lần đầu bạn đăng nhập.<br>"
+                                + "Vui lòng cập nhật thông tin cá nhân");
+                response.sendRedirect("userinfo");
+            } else {
             response.sendRedirect(".");
+            }
         } else {
             request.setAttribute("Username", username);
             request.setAttribute("message", "Wrong username or password");
