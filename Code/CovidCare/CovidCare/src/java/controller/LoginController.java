@@ -36,10 +36,10 @@ public class LoginController extends HttpServlet {
         
         BaseDAO bD = new BaseDAO();
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
-        response.sendRedirect(".");
+//        Account acc =bD.Login(username, password);
         if (acc != null) {
-            request.getSession().setAttribute("Account", acc);
-            response.sendRedirect("Home");
+            request.getSession().setAttribute("account", acc);
+            response.sendRedirect(".");
         } else {
             request.setAttribute("Username", username);
             request.setAttribute("message", "Wrong username or password");

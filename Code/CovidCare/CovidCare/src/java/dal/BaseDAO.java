@@ -22,13 +22,13 @@ public class BaseDAO extends DBContext {
 
     public Account getAccountByUserNameAndPassWord(String username, String password) {
         try {
-            String sql = "Select a.username,a.password,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n" +
-"                    from Account a left join [GroupAccount] gA \n" +
-"                    on a.username = gA.username  left join [Group] g\n" +
-"                    on gA.gid = g.gid left join [GroupFeature] fG\n" +
-"                    on g.gid = fG.gid left join [Feature] f \n" +
-"                    on fG.fid = f.fid\n" +
-"                    where a.username = ? and a.password = ?";
+            String sql = "Select a.username,a.password,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n"
+                    + "                    from Account a left join [GroupAccount] gA \n"
+                    + "                    on a.username = gA.username  left join [Group] g\n"
+                    + "                    on gA.gid = g.gid left join [GroupFeature] fG\n"
+                    + "                    on g.gid = fG.gid left join [Feature] f \n"
+                    + "                    on fG.fid = f.fid\n"
+                    + "                    where a.username = ? and a.password = ?";
 
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
@@ -61,6 +61,23 @@ public class BaseDAO extends DBContext {
             return acc;
         } catch (SQLException ex) {
             Logger.getLogger(BaseDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public Account Login(String username, String password) {
+        Account account = new Account();
+        String sql = "SELECT * FROM Account WHERE username = '" + username
+                + "' and password = '" + password + "'";
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                account = new Account(rs.getString(1), rs.getString(2));
+                return account;
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         return null;
     }
