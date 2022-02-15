@@ -7,8 +7,8 @@ package controller;
 
 import dal.AccountDAO;
 import dal.GroupDAO;
+import dal.UserInfoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,8 +23,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RegisterController extends HttpServlet {
 
-    AccountDAO aD = new AccountDAO();
-    GroupDAO gD = new GroupDAO();
+    private final AccountDAO aD = new AccountDAO();
+    private final GroupDAO gD = new GroupDAO();
+    private final UserInfoDAO uiD = new UserInfoDAO();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -78,6 +79,7 @@ public class RegisterController extends HttpServlet {
         if (message.isEmpty()) {
             aD.signup(username, password);
             gD.setGroupAccount(3, username);
+            uiD.SignUpToUserList(username);
             response.sendRedirect("login");
         } else {
             request.setAttribute("username", username);

@@ -22,8 +22,8 @@ import model.Account;
 @WebServlet(name = "LoginController", urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
 
-    private AccountDAO bD = new AccountDAO();
-    private UserInfoDAO uiD = new UserInfoDAO();
+    private final AccountDAO bD = new AccountDAO();
+    private final UserInfoDAO uiD = new UserInfoDAO();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +40,9 @@ public class LoginController extends HttpServlet {
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
         if (acc != null) {
             request.getSession().setAttribute("account", acc);
-            if (!uiD.checkFirstLogin(username)) {
+            
+            // Check if Patient account is first time login
+            if (!uiD.checkFirstLogin(username) && acc.getGroupId() == 3) {
                 request.getSession().setAttribute("message", 
                         "Đây là lần đầu bạn đăng nhập.<br>"
                                 + "Vui lòng cập nhật thông tin cá nhân");
@@ -50,7 +52,7 @@ public class LoginController extends HttpServlet {
             }
         } else {
             request.setAttribute("Username", username);
-            request.setAttribute("message", "Wrong username or password");
+            request.setAttribute("message", "Sai thông tin đăng nhập");
             request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
         }
     }

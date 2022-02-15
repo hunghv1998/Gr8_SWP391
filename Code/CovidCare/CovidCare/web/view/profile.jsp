@@ -38,45 +38,40 @@
                                         <!-- Ho va ten -->
                                         <div class="form-group">
                                             <label for="name">Họ và tên <a style="color: red;">(*)</a></label>
-                                            <input type="text" class="form-control" id="name">
+                                            <input type="text" class="form-control" name="name">
                                         </div>
                                         <!-- CMND-->
                                         <div class="form-group">
-                                            <label for="cmnd">Sổ hộ chiếu/CMND/CCCD</label>
-                                            <input type="text" class="form-control" id="cmnd">
+                                            <label for="nationalId">Sổ hộ chiếu/CMND/CCCD</label>
+                                            <input type="text" class="form-control" name="nationalId">
                                         </div>
                                         <!-- BHYT-->
                                         <div class="form-group">
-                                            <label for="bhyt">Sổ thẻ BHYT</label>
-                                            <input type="text" class="form-control" id="bhyt">
+                                            <label for="healthId">Sổ thẻ BHYT</label>
+                                            <input type="text" class="form-control" id="healthId">
                                         </div>
                                         <!-- Ngay Sinh -->
-                                        <div class="form-group ">
-                                            <label for="ngaysinh">Ngày sinh <a style="color: red;">(*)</a>
-                                                <input type="date" class="form-control-file mt-2 pt-1" id="ngaysinh"></label>
+                                        <div class="form-group">
+                                            <label for="dob">Ngày sinh <a style="color: red;">(*)</a>
+                                                <input type="date" class="form-control-file mt-2 pt-1" name="dob"></label>
                                         </div>
                                         <!-- Gioi tinh -->
                                         <div class="form-group">
-                                            <label for="gioitinh">Giới tính <a style="color: red;">(*)</a></label>
-                                            <select><option>Chọn</option>
-                                                <option> Nam </option>
-                                                <option> Nữ </option>	
-                                                <option> Khác </option>	</select>															
+                                            <label for="sex">Giới tính <a style="color: red;">(*)</a></label>
+                                            <select name="sex"><option>Chọn</option>
+                                                <option value="0"> Nam </option>
+                                                <option value="1"> Nữ </option>	
+                                            </select>														
                                         </div>
-                                        <!-- Checkbox
-                                        <div class="form-check">
-                                          <label class="form-check-label" for="hide-profile">
-                                                <input class="form-check-input mt-1" type="checkbox" value="" id="hide-profile">
-                                                Hide Profile from Public/Comunity
-                                          </label>
-                                        </div> -->
                                         <!-- Quoc tich -->
                                         <div class="form-group">
-                                            <label for="quoctich">Quốc tịch <a style="color: red;">(*)</a></label>
-                                            <select><option>Chọn</option>
+                                            <label for="country">Quốc tịch <a style="color: red;">(*)</a></label>
+                                            <select name="country">
+                                                <option>Chọn</option>
                                                 <option> Việt Nam </option>
                                                 <option> Thái Lan </option>	
-                                                <option> Hàn Quốc </option>	</select>															
+                                                <option> Hàn Quốc </option>	
+                                            </select>															
                                         </div>						
                                     </form>
                                 </div>
@@ -88,28 +83,29 @@
                                     <form action="#">
                                         <!-- địa chỉ -->
                                         <div class="form-group">
-                                            <label for="tinhthanh">Tỉnh thành  <a style="color: red;">(*)</a></label>
-                                            <select><option>Chọn</option>
-                                                <option> Việt Nam </option>
-                                                <option> Thái Lan </option>	
-                                                <option> Hàn Quốc </option>	</select>															
+                                            <label for="cities">Tỉnh thành  <a style="color: red;">(*)</a></label>
+                                            <select name="cities"><option>Chọn</option>
+                                                <option> Hà Nội </option>
+                                                <option> TP Hồ Chí Minh </option>	
+                                                <option> Hải Phòng </option>	
+                                            </select>															
                                         </div>		
                                         <div class="form-group">
-                                            <label for="quanhuyen">Quận huyện <a style="color: red;">(*)</a></label>
-                                            <select><option>Chọn</option>
+                                            <label for="districts">Quận huyện <a style="color: red;">(*)</a></label>
+                                            <select name="districts"><option>Chọn</option>
                                                 <option> Việt Nam </option>
                                                 <option> Thái Lan </option>	
                                                 <option> Hàn Quốc </option>	</select>															
                                         </div>	
                                         <div class="form-group">
-                                            <label for="phuongxa">Phường/Xã  <a style="color: red;">(*)</a></label>
-                                            <select><option>Chọn</option>
+                                            <label for="wards">Phường/Xã  <a style="color: red;">(*)</a></label>
+                                            <select name="wards"><option>Chọn</option>
                                                 <option> Việt Nam </option>
                                                 <option> Thái Lan </option>	
                                                 <option> Hàn Quốc </option>	</select>															
                                         </div>
                                         <div class="form-group">
-                                            <label for="diachinha">Địa chỉ nơi ở tại Việt Nam (Số nhà, tổ dân phố,...) <a style="color: red;">(*)</a></label>
+                                            <label for="address">Địa chỉ nơi ở tại Việt Nam (Số nhà, tổ dân phố,...) <a style="color: red;">(*)</a></label>
                                             <input type="text" class="form-control" id="diachinha">
                                         </div>
                                         <div class="form-group">
