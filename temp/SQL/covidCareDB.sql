@@ -1,31 +1,20 @@
-CREATE DATABASE [CovidCare]
-
-USE CovidCare
-
-CREATE TABLE [dbo].[account](
-	[uname] [nvarchar](50) NOT NULL,
-	[pswd] [nvarchar](50) NULL,
- CONSTRAINT [PK_account] PRIMARY KEY CLUSTERED 
-(
-	[uname] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+USE [CovidCare]
 GO
-/****** Object:  Table [dbo].[account_role]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[Account]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[account_role](
-	[uname] [nvarchar](50) NOT NULL,
-	[role] [int] NULL,
- CONSTRAINT [PK_account_role] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Account](
+	[username] [nvarchar](50) NOT NULL,
+	[password] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED 
 (
-	[uname] ASC
+	[username] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[cities]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[cities]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -39,7 +28,7 @@ CREATE TABLE [dbo].[cities](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[districts]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[districts]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -54,7 +43,55 @@ CREATE TABLE [dbo].[districts](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[health_declaration]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[Feature]    Script Date: 2/14/2022 10:39:46 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Feature](
+	[fid] [nvarchar](50) NOT NULL,
+	[url] [nvarchar](100) NULL,
+ CONSTRAINT [PK_Feature] PRIMARY KEY CLUSTERED 
+(
+	[fid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Group]    Script Date: 2/14/2022 10:39:46 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Group](
+	[gid] [nvarchar](50) NOT NULL,
+	[name] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Group] PRIMARY KEY CLUSTERED 
+(
+	[gid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[GroupAccount]    Script Date: 2/14/2022 10:39:46 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[GroupAccount](
+	[gid] [nvarchar](50) NULL,
+	[username] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[GroupFeature]    Script Date: 2/14/2022 10:39:46 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[GroupFeature](
+	[gid] [nvarchar](50) NULL,
+	[fid] [nvarchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[health_declaration]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -69,7 +106,7 @@ CREATE TABLE [dbo].[health_declaration](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[hospital_service]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[hospital_service]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -86,7 +123,7 @@ CREATE TABLE [dbo].[hospital_service](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[hospitals]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[hospitals]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -101,7 +138,7 @@ CREATE TABLE [dbo].[hospitals](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[message]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[message]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -123,7 +160,7 @@ CREATE TABLE [dbo].[message](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[message_recipient]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[message_recipient]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -139,7 +176,7 @@ CREATE TABLE [dbo].[message_recipient](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[news]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[news]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +196,7 @@ CREATE TABLE [dbo].[news](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[news_categories]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[news_categories]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +210,7 @@ CREATE TABLE [dbo].[news_categories](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[patient_timetable]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[patient_timetable]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,21 +227,7 @@ CREATE TABLE [dbo].[patient_timetable](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[role]    Script Date: 1/17/2022 11:54:26 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[role](
-	[role] [int] NOT NULL,
-	[role_name] [nvarchar](50) NULL,
- CONSTRAINT [PK_role] PRIMARY KEY CLUSTERED 
-(
-	[role] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[user]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[user]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,7 +247,7 @@ CREATE TABLE [dbo].[user](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[wards]    Script Date: 1/17/2022 11:54:26 PM ******/
+/****** Object:  Table [dbo].[wards]    Script Date: 2/14/2022 10:39:46 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,20 +262,50 @@ CREATE TABLE [dbo].[wards](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [dbo].[account]  WITH CHECK ADD  CONSTRAINT [FK_account_account_role] FOREIGN KEY([uname])
-REFERENCES [dbo].[account_role] ([uname])
+INSERT [dbo].[Account] ([username], [password]) VALUES (N'Cong123', N'123')
+INSERT [dbo].[Account] ([username], [password]) VALUES (N'Manh123', N'123')
 GO
-ALTER TABLE [dbo].[account] CHECK CONSTRAINT [FK_account_account_role]
+INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'1', N'/Home')
+INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'2', N'/News')
+INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'3', N'/Timetable')
+INSERT [dbo].[Feature] ([fid], [url]) VALUES (N'4', N'/Profile')
 GO
-ALTER TABLE [dbo].[account_role]  WITH CHECK ADD  CONSTRAINT [FK_account_role_role] FOREIGN KEY([role])
-REFERENCES [dbo].[role] ([role])
+INSERT [dbo].[Group] ([gid], [name]) VALUES (N'1', N'Admin')
+INSERT [dbo].[Group] ([gid], [name]) VALUES (N'2', N'Doctor')
+INSERT [dbo].[Group] ([gid], [name]) VALUES (N'3', N'Patient')
 GO
-ALTER TABLE [dbo].[account_role] CHECK CONSTRAINT [FK_account_role_role]
+INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (N'1', N'Manh123')
+INSERT [dbo].[GroupAccount] ([gid], [username]) VALUES (N'2', N'Cong123')
+GO
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'1')
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'2')
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'1', N'3')
+INSERT [dbo].[GroupFeature] ([gid], [fid]) VALUES (N'2', N'2')
 GO
 ALTER TABLE [dbo].[districts]  WITH CHECK ADD  CONSTRAINT [FK_districts_cities] FOREIGN KEY([cityId])
 REFERENCES [dbo].[cities] ([cityId])
 GO
 ALTER TABLE [dbo].[districts] CHECK CONSTRAINT [FK_districts_cities]
+GO
+ALTER TABLE [dbo].[GroupAccount]  WITH CHECK ADD  CONSTRAINT [FK_GroupAccount_Account] FOREIGN KEY([username])
+REFERENCES [dbo].[Account] ([username])
+GO
+ALTER TABLE [dbo].[GroupAccount] CHECK CONSTRAINT [FK_GroupAccount_Account]
+GO
+ALTER TABLE [dbo].[GroupAccount]  WITH CHECK ADD  CONSTRAINT [FK_GroupAccount_Group] FOREIGN KEY([gid])
+REFERENCES [dbo].[Group] ([gid])
+GO
+ALTER TABLE [dbo].[GroupAccount] CHECK CONSTRAINT [FK_GroupAccount_Group]
+GO
+ALTER TABLE [dbo].[GroupFeature]  WITH CHECK ADD  CONSTRAINT [FK_GroupFeature_Feature] FOREIGN KEY([fid])
+REFERENCES [dbo].[Feature] ([fid])
+GO
+ALTER TABLE [dbo].[GroupFeature] CHECK CONSTRAINT [FK_GroupFeature_Feature]
+GO
+ALTER TABLE [dbo].[GroupFeature]  WITH CHECK ADD  CONSTRAINT [FK_GroupFeature_Group] FOREIGN KEY([gid])
+REFERENCES [dbo].[Group] ([gid])
+GO
+ALTER TABLE [dbo].[GroupFeature] CHECK CONSTRAINT [FK_GroupFeature_Group]
 GO
 ALTER TABLE [dbo].[health_declaration]  WITH CHECK ADD  CONSTRAINT [FK_health_declaration_hospitals] FOREIGN KEY([controlled_by])
 REFERENCES [dbo].[hospitals] ([hospitalId])
@@ -294,11 +347,6 @@ REFERENCES [dbo].[message] ([id])
 GO
 ALTER TABLE [dbo].[message_recipient] CHECK CONSTRAINT [FK_message_recipient_message]
 GO
-ALTER TABLE [dbo].[news]  WITH CHECK ADD  CONSTRAINT [FK_news_account] FOREIGN KEY([uname])
-REFERENCES [dbo].[account] ([uname])
-GO
-ALTER TABLE [dbo].[news] CHECK CONSTRAINT [FK_news_account]
-GO
 ALTER TABLE [dbo].[news]  WITH CHECK ADD  CONSTRAINT [FK_news_news_categories] FOREIGN KEY([categoryId])
 REFERENCES [dbo].[news_categories] ([categoryId])
 GO
@@ -308,11 +356,6 @@ ALTER TABLE [dbo].[patient_timetable]  WITH CHECK ADD  CONSTRAINT [FK_patient_ti
 REFERENCES [dbo].[user] ([userId])
 GO
 ALTER TABLE [dbo].[patient_timetable] CHECK CONSTRAINT [FK_patient_timetable_user]
-GO
-ALTER TABLE [dbo].[user]  WITH CHECK ADD  CONSTRAINT [FK_user_account] FOREIGN KEY([uname])
-REFERENCES [dbo].[account] ([uname])
-GO
-ALTER TABLE [dbo].[user] CHECK CONSTRAINT [FK_user_account]
 GO
 ALTER TABLE [dbo].[user]  WITH CHECK ADD  CONSTRAINT [FK_user_message_recipient] FOREIGN KEY([userId])
 REFERENCES [dbo].[message_recipient] ([id])
