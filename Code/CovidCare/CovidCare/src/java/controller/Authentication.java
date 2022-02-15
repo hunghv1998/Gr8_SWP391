@@ -50,7 +50,7 @@ public abstract class Authentication extends HttpServlet {
         if (checkAuthentication(request)) {
             processGet(request, response);
         } else {
-            response.getWriter().print("Access Denie !");
+            response.getWriter().print("Access Denied!");
         }
     }
 
@@ -61,7 +61,7 @@ public abstract class Authentication extends HttpServlet {
         if (checkAuthentication(request)) {
             processPost(request, response);
         } else {
-            response.getWriter().print("Access Denie !");
+            response.getWriter().print("Access Denied!");
         }
     }
 

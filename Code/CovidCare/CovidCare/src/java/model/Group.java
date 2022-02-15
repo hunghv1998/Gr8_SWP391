@@ -13,7 +13,16 @@ import java.util.ArrayList;
  */
 public class Group {
 
+    private int id;
+    private String name;
+    private ArrayList<Feature> listFeature = new ArrayList<>();
+
     public Group() {
+    }
+
+    public Group(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
@@ -38,15 +47,6 @@ public class Group {
 
     public void setListFeature(ArrayList<Feature> listFeature) {
         this.listFeature = listFeature;
-    }
-
-    private int id;
-    private String name;
-    private ArrayList<Feature> listFeature = new ArrayList<>();
-
-    public Group(int id, String name) {
-        this.id = id;
-        this.name = name;
     }
 
 }

@@ -5,16 +5,20 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Admin
  */
-public class Account {
+public class Account implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     private String userName;
     private String passWord;
+    private int groupId;
     private ArrayList<Group> listGroup = new ArrayList<>();
 
     public Account() {
@@ -36,6 +40,14 @@ public class Account {
         this.passWord = passWord;
     }
 
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+    
     public ArrayList<Group> getListGroup() {
         return listGroup;
     }
