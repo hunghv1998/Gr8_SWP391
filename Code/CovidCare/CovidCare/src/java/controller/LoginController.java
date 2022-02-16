@@ -40,9 +40,8 @@ public class LoginController extends HttpServlet {
         Account acc = bD.getAccountByUserNameAndPassWord(username, password);
         if (acc != null) {
             request.getSession().setAttribute("account", acc);
-            
             // Check if Patient account is first time login
-            if (!uiD.checkFirstLogin(username) && acc.getGroupId() == 3) {
+            if (!uiD.checkFirstLogin(username) && bD.getGroupId(username) == 3) {
                 request.getSession().setAttribute("message", 
                         "Đây là lần đầu bạn đăng nhập.<br>"
                                 + "Vui lòng cập nhật thông tin cá nhân");

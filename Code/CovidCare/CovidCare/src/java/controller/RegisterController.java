@@ -46,9 +46,6 @@ public class RegisterController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-//        String fullname = request.getParameter("fullname");
-//        String phone = request.getParameter("phone");
-//        String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
@@ -60,15 +57,7 @@ public class RegisterController extends HttpServlet {
             //kiem tra ten dang nhap da ton tai
             if(aD.checkAccountExist(username)){
                 message += "Tài khoản đã tồn tại<br>";
-//                response.getWriter().print("Username Existed!");
             }
-//            else{
-//                //neu chua ton tai username nao
-//                //update thong tin vao db
-////                int updateSuccess = aD.insertAccount(username,password,fullname,phone,email);
-//                
-//                response.sendRedirect("login");
-//            }
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
         }

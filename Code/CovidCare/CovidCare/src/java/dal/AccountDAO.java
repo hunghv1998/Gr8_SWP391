@@ -114,4 +114,19 @@ public class AccountDAO extends DBContext {
         }
         return null;
     }
+    
+    public int getGroupId(String username) {
+        int n = 0;
+        String sql = "SELECT gid FROM GroupAccount where username='" + username + "'";
+        ResultSet rs = getData(sql);
+        
+        try {
+            if (rs.next()) {
+                n = rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return n;
+    }
 }

@@ -28,14 +28,14 @@ public class UserInfoDAO extends DBContext {
     }
     
     public boolean checkFirstLogin(String username) {
-        boolean status = true;
+        boolean status = false;
         String sql = "SELECT firstTimeLogin from UserInfo where uname='"
                 + username + "'";
         ResultSet rs = getData(sql);
         
         try {
             while (rs.next()) {
-                status = rs.getBoolean(1);
+                return(rs.getBoolean(1));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
