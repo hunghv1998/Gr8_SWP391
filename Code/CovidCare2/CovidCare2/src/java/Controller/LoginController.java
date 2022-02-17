@@ -52,7 +52,10 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("account", acc);
             if (acc.getGroupId() == 3 && !uiD.checkFirstLogin(username)) {
-                response.sendRedirect("UserInfo");
+                request.getSession().setAttribute("message",
+                        "Đây là lần đầu bạn đăng nhập.<br>"
+                        + "Vui lòng cập nhật thông tin cá nhân");
+                response.sendRedirect("UserInfo?update");
             } else {
                 response.sendRedirect(".");
             }

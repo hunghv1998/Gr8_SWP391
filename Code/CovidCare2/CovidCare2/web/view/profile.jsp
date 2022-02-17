@@ -4,6 +4,7 @@
     Author     : chinh
 --%>
 
+<%@page import="Model.UserInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2">
+                        <% if (request.getAttribute("update") != null || request.getParameter("update") != null) {%>
                         <!-- Edit Profile Welcome Text -->
                         <div class="widget welcome-message"  >
                             <h2 style="text-align: center;">Cập nhật thông tin tài khoản</h2>
@@ -34,26 +36,21 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="widget personal-info">	
                                     <h3 class="widget-header user">Thông tin cơ bản</h3>						
-                                    <form action="Register" method="Post">
+                                    <form action="" method="Post">
                                         <!-- Ho va ten -->
                                         <div class="form-group">
                                             <label for="name">Họ và tên <a style="color: red;">(*)</a></label>
                                             <input style="width: 400px; margin: auto;" type="text" class="form-control" name="name">
                                         </div>
-                                        <!-- CMND-->
+                                        <!-- Ho va ten -->
                                         <div class="form-group">
-                                            <label for="nationalId">Sổ hộ chiếu/CMND/CCCD</label>
-                                            <input style="width: 400px;margin: auto;" type="text" class="form-control" name="nationalId">
-                                        </div>
-                                        <!-- BHYT-->
-                                        <div class="form-group">
-                                            <label for="healthId">Sổ thẻ BHYT</label>
-                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="BHYT" id="healthId">
+                                            <label for="email">Email <a style="color: red;">(*)</a></label>
+                                            <input style="width: 400px; margin: auto;" type="email" class="form-control" name="email">
                                         </div>
                                         <!-- Ngay Sinh -->
                                         <div class="form-group">
-                                            <label for="dob">Ngày sinh <a style="color: red;">(*)</a>
-                                                <input type="date" class="form-control-file mt-2 pt-1" name="dob"></label>
+                                            <label for="bday">Ngày sinh <a style="color: red;">(*)</a>
+                                                <input type="date" class="form-control-file mt-2 pt-1" name="bday"></label>
                                         </div>
                                         <!-- Gioi tinh -->
                                         <div class="form-group">
@@ -63,66 +60,60 @@
                                                 <option value="1"> Nữ </option>	
                                             </select>														
                                         </div>
-                                        <!-- Quoc tich -->
                                         <div class="form-group">
-                                            <label for="country">Quốc tịch <a style="color: red;">(*)</a></label>
-                                            <select name="country">
-                                                <option>Chọn</option>
-                                                <option> Việt Nam </option>
-                                                <option> Thái Lan </option>	
-                                                <option> Hàn Quốc </option>	
-                                            </select>															
-                                        </div>						                  
-                                        <h3 class="widget-header user">Địa chỉ liên lạc tại Việt Nam</h3>
-
-                                        <!-- địa chỉ -->
-                                        <div class="form-group">
-                                            <label for="cities">Tỉnh thành  <a style="color: red;">(*)</a></label>
-                                            <select name="cities"><option>Chọn</option>
-                                                <option> Hà Nội </option>
-                                                <option> TP Hồ Chí Minh </option>	
-                                                <option> Hải Phòng </option>	
-                                            </select>															
-                                        </div>		
-                                        <div class="form-group">
-                                            <label for="districts">Quận huyện <a style="color: red;">(*)</a></label>
-                                            <select name="districts"><option>Chọn</option>
-                                                <option> Việt Nam </option>
-                                                <option> Thái Lan </option>	
-                                                <option> Hàn Quốc </option>	</select>															
-                                        </div>	
-                                        <div class="form-group">
-                                            <label for="wards">Phường/Xã  <a style="color: red;">(*)</a></label>
-                                            <select name="wards"><option>Chọn</option>
-                                                <option> Việt Nam </option>
-                                                <option> Thái Lan </option>	
-                                                <option> Hàn Quốc </option>	</select>															
+                                            <label for="image">Ảnh đại diện <a style="color: red;">(*)</a></label>
+                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="image">
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Địa chỉ nơi ở tại Việt Nam (Số nhà, tổ dân phố,...) <a style="color: red;">(*)</a></label>
-                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" id="diachinha">
+                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="address">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="sdt">Số điện thoại <a style="color: red;">(*)</a></label>
-                                            <input style="width: 400px;margin: auto;" type="text" class="form-control" id="sdt">
-                                        </div>
-
                                         <div class="row">
                                             <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2" style="align-items: center; justify-content: center; margin-left: 310px;">
                                                 <button  type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Cập nhật</button>
                                             </div>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        <%} else {
+                            UserInfo userinfo = (UserInfo) session.getAttribute("userinfo");
+                        %>
+                        <table>
+                            <tr>
+                                <td>Họ và Tên</td>
+                                <td><%=userinfo.getName()%></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><%=userinfo.getEmail()%></td>
+                            </tr>
+                            <tr>
+                                <td>Ngày sinh</td>
+                                <td><%=userinfo.getBday()%></td>
+                            </tr>
+                            <tr>
+                                <td>Giới tính</td>
+                                <td><%=(userinfo.isSex() == true ? "Nam" : "Nữ")%></td>
+                            </tr>
+                            <tr>
+                                <td>Ảnh đại diện</td>
+                                <td><%=userinfo.getImage()%></td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ</td>
+                                <td><%=userinfo.getAddress()%></td>
+                            </tr>
+                        </table>
+                        <%}%>
                     </div>
                 </div>
 
             </div>
 
         </section>
+
     </body>
 
     <%@include file = "../common/footer.jsp" %>

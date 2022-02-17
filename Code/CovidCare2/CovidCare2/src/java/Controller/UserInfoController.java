@@ -5,13 +5,15 @@
  */
 package Controller;
 
+import Dal.UserInfoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.Account;
+import Model.UserInfo;
+import java.sql.Date;
 
 /**
  *
@@ -23,37 +25,54 @@ public class UserInfoController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("title", "Cập nhật thông tin");
-        request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
-//        }
+        Account account = (Account) request.getSession().getAttribute("account");
+
+        if (account == null) {
+            response.sendRedirect("Login");
+        } else {
+            UserInfo user = new UserInfo();
+            UserInfoDAO uiD = new UserInfoDAO();
+            if (!uiD.checkFirstLogin(account.getUserName())) {
+                request.setAttribute("update", "update");
+            } else {
+                user = uiD.getUserInfo(account.getUserName());
+            }
+            request.getSession().setAttribute("userinfo", user);
+            request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //get info from jsp
-        String name = request.getParameter("name");
-        String nationalId = request.getParameter("nationalId");
-        String BHYT = request.getParameter("BHYT");
-        String dob = request.getParameter("dob");
-        String sex = request.getParameter("sex");
-        String country = request.getParameter("country");
-        String cities = request.getParameter("cities");
-        String districts = request.getParameter("districts");
-        String wards = request.getParameter("wards");
-        String address = request.getParameter("address");
-        String sdt = request.getParameter("sdt");
+        if (request.getParameter("update") != null) {
+            //get info from jsp
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String image = request.getParameter("image");
+            String address = request.getParameter("address");
+            Date bday = Date.valueOf(request.getParameter("bday"));
+            System.out.println(request.getParameter("address"));
+            boolean sex = true;
+            if (request.getParameter("sex").equals('1')) {
+                sex = false;
+            }
 
-        response.getWriter().print(name);
-        response.getWriter().print(nationalId);
-        response.getWriter().print(BHYT);
-        response.getWriter().print(dob);
-        response.getWriter().print(sex);
-        response.getWriter().print(country);
-        response.getWriter().print(cities);
-        response.getWriter().print(districts);
-        response.getWriter().print(wards);
-        response.getWriter().print(address);
-        response.getWriter().print(sdt);
+            // Validating input
+            // Update input
+            UserInfo userinfo = new UserInfo(bday, sex, email, image, address, name, true);
+            Account account = (Account) request.getSession().getAttribute("account");
+            UserInfoDAO uiD = new UserInfoDAO();
+            int status = uiD.UpdateUserInfo(userinfo, account.getUserName());
+            if (status > 0) {
+                request.getSession().setAttribute("userinfo", userinfo);
+                response.sendRedirect("UserInfo");
+            } else {
+                request.getSession().setAttribute("message", "Có lỗi đã xảy ra.<br>"
+                        + "Vui lòng cập nhật lại.<br>");
+                response.sendRedirect("UserInfo?update");
+            }
+        }
 
     }
 

@@ -5,6 +5,7 @@
  */
 package Dal;
 
+import Model.UserInfo;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,6 +45,58 @@ public class UserInfoDAO extends DBContext {
             ex.printStackTrace();
         }
         return status;
+    }
+
+    public UserInfo getUserInfo(String username) {
+        UserInfo userinfo = new UserInfo();
+
+        String sql = "SELECT * FROM UserInfo where uname = '" + username + "'";
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                userinfo.setBday(rs.getDate(2));
+                userinfo.setSex(rs.getBoolean(3));
+                userinfo.setEmail(rs.getString(4));
+                userinfo.setImage(rs.getString(5));
+                userinfo.setAddress(rs.getString(6));
+                userinfo.setName(rs.getString(7));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return userinfo;
+    }
+
+    public int UpdateUserInfo(UserInfo userinfo, String username) {
+        int n = 0;
+
+        String sql = "UPDATE UserInfo SET "
+                + "bday=?,"
+                + "sex=?,"
+                + "email=?,"
+                + "image=?,"
+                + "address=?,"
+                + "name=?,"
+                + "firstTimeLogin=?"
+                + " where uname=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setDate(1, userinfo.getBday());
+            pre.setBoolean(2, userinfo.isSex());
+            pre.setString(3, userinfo.getEmail());
+            pre.setString(4, userinfo.getImage());
+            pre.setString(5, userinfo.getAddress());
+            pre.setString(6, userinfo.getName());
+            pre.setBoolean(7, true);
+            pre.setString(8, username);
+            n = pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserInfoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return n;
     }
 
 //    public int UpdateUserInfo(String username, String bod,String sex,String email,String image,String address,String name,String uname) {
