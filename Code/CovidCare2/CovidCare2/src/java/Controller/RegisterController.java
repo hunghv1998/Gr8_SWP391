@@ -75,7 +75,5 @@ public class RegisterController extends HttpServlet {
             request.setAttribute("message", message);
             request.getRequestDispatcher("/view/register.jsp").forward(request, response);
         }
-
     }
-
 }
