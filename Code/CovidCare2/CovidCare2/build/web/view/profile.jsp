@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2">
                         <!-- Edit Profile Welcome Text -->
-                        <div class="widget welcome-message">
+                        <div class="widget welcome-message"  >
                             <h2 style="text-align: center;">Cập nhật thông tin tài khoản</h2>
                             <c:if test="${not empty message}">
                                 <p style="text-align: center;">
@@ -38,17 +38,17 @@
                                         <!-- Ho va ten -->
                                         <div class="form-group">
                                             <label for="name">Họ và tên <a style="color: red;">(*)</a></label>
-                                            <input type="text" class="form-control" name="name">
+                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="name">
                                         </div>
                                         <!-- CMND-->
                                         <div class="form-group">
                                             <label for="nationalId">Sổ hộ chiếu/CMND/CCCD</label>
-                                            <input type="text" class="form-control" name="nationalId">
+                                            <input style="width: 400px;margin: auto;" type="text" class="form-control" name="nationalId">
                                         </div>
                                         <!-- BHYT-->
                                         <div class="form-group">
                                             <label for="healthId">Sổ thẻ BHYT</label>
-                                            <input type="text" class="form-control" name="BHYT" id="healthId">
+                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="BHYT" id="healthId">
                                         </div>
                                         <!-- Ngay Sinh -->
                                         <div class="form-group">
@@ -72,15 +72,9 @@
                                                 <option> Thái Lan </option>	
                                                 <option> Hàn Quốc </option>	
                                             </select>															
-                                        </div>						
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <!-- Change Password -->
-                                <div class="widget change-password">
-                                    <h3 class="widget-header user">Địa chỉ liên lạc tại Việt Nam</h3>
-                                    <form action="#">
+                                        </div>						                  
+                                        <h3 class="widget-header user">Địa chỉ liên lạc tại Việt Nam</h3>
+
                                         <!-- địa chỉ -->
                                         <div class="form-group">
                                             <label for="cities">Tỉnh thành  <a style="color: red;">(*)</a></label>
@@ -106,23 +100,26 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Địa chỉ nơi ở tại Việt Nam (Số nhà, tổ dân phố,...) <a style="color: red;">(*)</a></label>
-                                            <input type="text" class="form-control" id="diachinha">
+                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" id="diachinha">
                                         </div>
                                         <div class="form-group">
                                             <label for="sdt">Số điện thoại <a style="color: red;">(*)</a></label>
-                                            <input type="text" class="form-control" id="sdt">
+                                            <input style="width: 400px;margin: auto;" type="text" class="form-control" id="sdt">
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2" style="align-items: center; justify-content: center; margin-left: 310px;">
+                                                <button  type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Cập nhật</button>
+                                            </div>
+                                        </div>
+
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2" style="align-items: center; justify-content: center;">
-                        <button  type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Cập nhật</button>
-                    </div>
-                </div>
+
             </div>
 
         </section>
