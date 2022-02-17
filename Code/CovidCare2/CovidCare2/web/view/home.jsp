@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <%@include file = "../common/head.jsp" %>
-    
+
     <body class="body-wrapper">
         <%@include file = "../common/nav.jsp" %>
-        
+
         <section class="hero-area bg-1 text-center overly">
             <!-- Container Start -->
             <div class="container">
@@ -21,7 +21,7 @@
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
                                         <a href="news.jsp"><i class="fa fa-newspaper-o"></i> Tin Tức</a></li>
-                     
+
                                     <li class="list-inline-item">
                                         <a href=""><i class="fa fa-wechat"></i> Chat</a>
                                     </li>

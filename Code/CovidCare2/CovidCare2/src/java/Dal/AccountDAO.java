@@ -82,6 +82,7 @@ public class AccountDAO extends DBContext {
                 if (g.getId() != Integer.parseInt(rs.getString("gid"))) {
                     g.setId(Integer.parseInt(rs.getString("gid")));
                     g.setName(rs.getString("name"));
+                    acc.setGroupId(g.getId());
                     acc.getListGroup().add(g);
                 }
                 Feature f = new Feature();
@@ -99,7 +100,7 @@ public class AccountDAO extends DBContext {
     public static void main(String[] args) {
         AccountDAO aD = new AccountDAO();
         Account acc = aD.getAccountByUsernameAndPassword("Chinh123", "123");
-        
+        System.out.println(acc.getGroupId());
         for(Group g : acc.getListGroup()){
             System.out.println(g.toString());
             for(Feature f : g.getListFeature()){

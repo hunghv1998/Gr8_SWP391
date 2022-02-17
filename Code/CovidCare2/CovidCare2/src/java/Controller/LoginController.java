@@ -6,9 +6,9 @@
 package Controller;
 
 import Dal.AccountDAO;
+import Dal.UserInfoDAO;
 import Model.Account;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,16 +21,17 @@ import javax.servlet.http.HttpSession;
  */
 public class LoginController extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Account acc = (Account) request.getSession().getAttribute("account");
-        if(acc != null){
-            request.setAttribute("username", acc.getUserName());
-            request.setAttribute("password", acc.getPassWord());
+        if (acc != null) {
+//            request.setAttribute("username", acc.getUserName());
+//            request.setAttribute("password", acc.getPassWord());
+            response.sendRedirect(".");
+        } else {
+            request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
     }
 
     @Override
@@ -38,18 +39,23 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         AccountDAO aD = new AccountDAO();
-        
+        UserInfoDAO uiD = new UserInfoDAO();
+
         Account acc = aD.getAccountByUsernameAndPassword(username, password);
-        
-        if(acc != null){
-           HttpSession session=request.getSession();  
-           session.setAttribute("account",acc); 
-            response.sendRedirect("Home");
-            
-        }else{
-            request.setAttribute("messWrongPassword", "Username or password wrong !");
-            request.getRequestDispatcher("/view/Login.jsp").forward(request,response);
+
+        if (acc == null) {
+            request.setAttribute("message", "Sai thông tin đăng nhập");
+            request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("account", acc);
+            if (acc.getGroupId() == 3 && !uiD.checkFirstLogin(username)) {
+                response.sendRedirect("UserInfo");
+            } else {
+                response.sendRedirect(".");
+            }
         }
     }
 }

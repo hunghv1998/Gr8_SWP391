@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.Account; 
+import Model.Account;
 
 /**
  *
@@ -19,21 +19,13 @@ import Model.Account;
  */
 public class UserInfoController extends HttpServlet {
 
-  
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        Account account = (Account) request.getSession().getAttribute("account");
-//
-//        if (account == null) {
-//            response.sendRedirect("login");
-//        } else {
-            request.setAttribute("title", "Cập nhật thông tin");
-            request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
+        request.setAttribute("title", "Cập nhật thông tin");
+        request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
 //        }
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -50,7 +42,7 @@ public class UserInfoController extends HttpServlet {
         String wards = request.getParameter("wards");
         String address = request.getParameter("address");
         String sdt = request.getParameter("sdt");
-        
+
         response.getWriter().print(name);
         response.getWriter().print(nationalId);
         response.getWriter().print(BHYT);
@@ -62,8 +54,7 @@ public class UserInfoController extends HttpServlet {
         response.getWriter().print(wards);
         response.getWriter().print(address);
         response.getWriter().print(sdt);
-   
-     
+
     }
 
 }

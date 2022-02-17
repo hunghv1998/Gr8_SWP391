@@ -69,7 +69,6 @@ public class RegisterController extends HttpServlet {
             aD.signup(username, password);
             gD.setGroupAccount(3, username);
             uiD.SignUpToUserList(username);
-            request.getSession().setAttribute("message", "Đăng ký thành công");
             response.sendRedirect("Login");
         } else {
             request.setAttribute("username", username);

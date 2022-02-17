@@ -46,25 +46,25 @@ public class UserInfoDAO extends DBContext {
         return status;
     }
 
-    public int UpdateUserInfo(String username, String bod,String sex,String email,String image,String address,String name,String uname) {
-        String sql = "INSERT INTO [dbo].[UserInfo]\n"
-                + "           ([userId]\n"
-                + "           ,[bday]\n"
-                + "           ,[sex]\n"
-                + "           ,[email]\n"
-                + "           ,[image]\n"
-                + "           ,[address]\n"
-                + "           ,[name]\n"
-                + "           ,[uname])\n"
-                + "     VALUES\n"
-                + "           (?,?,?,?,?,?,?,?)";
-        try {
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, sql);
-        } catch (SQLException ex) {
-            Logger.getLogger(UserInfoDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-    }
+//    public int UpdateUserInfo(String username, String bod,String sex,String email,String image,String address,String name,String uname) {
+//        String sql = "INSERT INTO [dbo].[UserInfo]\n"
+//                + "           ([userId]\n"
+//                + "           ,[bday]\n"
+//                + "           ,[sex]\n"
+//                + "           ,[email]\n"
+//                + "           ,[image]\n"
+//                + "           ,[address]\n"
+//                + "           ,[name]\n"
+//                + "           ,[uname])\n"
+//                + "     VALUES\n"
+//                + "           (?,?,?,?,?,?,?,?)";
+//        try {
+//            PreparedStatement stm = connection.prepareStatement(sql);
+//            stm.setString(1, sql);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(UserInfoDAO.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//        
+//    }
 }
