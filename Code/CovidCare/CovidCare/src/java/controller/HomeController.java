@@ -20,7 +20,8 @@ public class HomeController extends Authentication {
 
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/view/home/home.jsp").forward(request, response);
+        request.setAttribute("title", "Trang chủ");
+        request.getRequestDispatcher(".").forward(request, response);
     }
 
     @Override
