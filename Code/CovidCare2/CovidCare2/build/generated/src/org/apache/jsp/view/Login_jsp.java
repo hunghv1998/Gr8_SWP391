@@ -169,7 +169,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            class=\"d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3\">Đăng\r\n");
       out.write("                                        Nhập</button>\r\n");
       out.write("                                    <a class=\"mt-3 d-block  text-primary\" href=\"#\">Quên mật khẩu ?</a>\r\n");
-      out.write("                                    <a class=\"mt-3 d-inline-block text-primary\" href=\"register.jsp\">Đăng ký ngay</a>\r\n");
+      out.write("                                    <a class=\"mt-3 d-inline-block text-primary\" href=\"Register\">Đăng ký ngay</a>\r\n");
       out.write("                                      </form>\r\n");
       out.write("                                </fieldset>\r\n");
       out.write("                          \r\n");

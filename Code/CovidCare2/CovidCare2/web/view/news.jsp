@@ -1,10 +1,17 @@
+<%-- 
+    Document   : news.jsp
+    Created on : Feb 17, 2022, 11:50:04 AM
+    Author     : asus
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    <%@include file = "nav/head.jsp" %>
-
+    <%@include file = "../common/head.jsp" %>
+    
     <body class="body-wrapper">
-        <%@include file = "nav/nav.jsp" %>
+        <%@include file = "../common/nav.jsp" %>
+        
 
         <section class="hero-area bg-3 text-center overly">
             <!-- Container Start -->
@@ -183,7 +190,6 @@
         </div>
         <!-- Container End -->
     </section>
-</body>
-
-<%@include file = "nav/footer.jsp" %>
+    </body>
+    <%@include file = "../common/footer.jsp" %>
 </html>
