@@ -98,7 +98,7 @@ public class AccountDAO extends DBContext {
 
     public static void main(String[] args) {
         AccountDAO aD = new AccountDAO();
-        Account acc = aD.getAccountByUsernameAndPassword("Manh123", "123");
+        Account acc = aD.getAccountByUsernameAndPassword("Chinh123", "123");
         
         for(Group g : acc.getListGroup()){
             System.out.println(g.toString());

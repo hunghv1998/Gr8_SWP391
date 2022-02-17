@@ -22,13 +22,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Administrator
  */
-
 public class RegisterController extends HttpServlet {
 
     private final AccountDAO aD = new AccountDAO();
     private final GroupDAO gD = new GroupDAO();
     private final UserInfoDAO uiD = new UserInfoDAO();
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,17 +46,16 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
-        
-        
+
         String message = "";
-        
+
         try {
             //kiem tra ten dang nhap da ton tai
-            if(aD.checkAccountExist(username)){
+            if (aD.checkAccountExist(username)) {
                 message += "Tài khoản đã tồn tại<br>";
             }
         } catch (SQLException ex) {
@@ -66,20 +64,19 @@ public class RegisterController extends HttpServlet {
         if (!password.equals(confirm)) {
             message += "Mật khẩu không trùng khớp<br>";
         }
-        
+
         if (message.isEmpty()) {
             aD.signup(username, password);
             gD.setGroupAccount(3, username);
             uiD.SignUpToUserList(username);
+            request.getSession().setAttribute("message", "Đăng ký thành công");
             response.sendRedirect("Login");
         } else {
             request.setAttribute("username", username);
             request.setAttribute("message", message);
             request.getRequestDispatcher("/view/register.jsp").forward(request, response);
         }
-     
+
     }
 
-
- 
 }

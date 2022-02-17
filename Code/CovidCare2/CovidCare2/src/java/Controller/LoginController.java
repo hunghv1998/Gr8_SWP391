@@ -51,9 +51,5 @@ public class LoginController extends HttpServlet {
             request.setAttribute("messWrongPassword", "Username or password wrong !");
             request.getRequestDispatcher("/view/Login.jsp").forward(request,response);
         }
-        
-        
     }
-
- 
 }
