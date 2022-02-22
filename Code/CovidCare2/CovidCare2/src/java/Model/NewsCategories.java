@@ -10,6 +10,8 @@ package Model;
  * @author chinh
  */
 public class NewsCategories {
+    private static final long serialVersionUID = 1L;
+    
     private int categoryId;
     private String categoryName;
 

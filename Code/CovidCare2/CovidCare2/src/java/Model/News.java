@@ -12,6 +12,8 @@ import java.sql.Date;
  * @author chinh
  */
 public class News {
+    private static final long serialVersionUID = 1L;
+    
     private int newsId;
     private String content;
     private String uname;

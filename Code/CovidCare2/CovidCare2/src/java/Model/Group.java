@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * @author Admin
  */
 public class Group {
-
+    private static final long serialVersionUID = 1L;
+    
     @Override
     public String toString() {
         return "Group{" + "id=" + id + ", name=" + name + ", listFeature=" + listFeature.toString() + '}';

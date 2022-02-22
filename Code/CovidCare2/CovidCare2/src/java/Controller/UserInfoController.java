@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Date;
+import java.sql.Timestamp;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
 
@@ -69,14 +70,13 @@ public class UserInfoController extends HttpServlet {
             String name = request.getParameter("name");
             String email = request.getParameter("email");
 //            String image = request.getParameter("image");
-            String image = uploadFile(request);
+            String image = uploadFile(request, "profilepic");
             
-
             String address = request.getParameter("address");
-            Date bday = Date.valueOf(request.getParameter("bday"));
-            System.out.println(request.getParameter("address"));
+            System.out.println(request.getParameter("bod"));
+            Date bday = Date.valueOf(request.getParameter("bod"));
             boolean sex = true;
-            if (request.getParameter("sex").equals('1')) {
+            if (request.getParameter("gender").equals('1')) {
                 sex = false;
             }
 
@@ -97,11 +97,13 @@ public class UserInfoController extends HttpServlet {
         }
     }
 
-    private String uploadFile(HttpServletRequest request) throws IOException, ServletException {
+    private String uploadFile(HttpServletRequest request, String part) throws IOException, ServletException {
         String fileName = "";
         try {
-            Part filePart = request.getPart("image");
-            fileName = (String) getFileName(filePart);
+            Part filePart = request.getPart(part);
+//            fileName = (String) getFileName(filePart);
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            fileName = timestamp.getTime() + getFileExtension(getFileName(filePart));
             String applicationPath = request.getServletContext().getRealPath("");
             String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
             
@@ -142,5 +144,16 @@ public class UserInfoController extends HttpServlet {
             }
         }
         return null;
+    }
+    
+    private String getFileExtension(String fileName) {
+        String extension = ".";
+        
+        int i = fileName.lastIndexOf(".");
+        
+        if (i > 0) {
+            extension += fileName.substring(i + 1);
+        }
+        return extension;
     }
 }

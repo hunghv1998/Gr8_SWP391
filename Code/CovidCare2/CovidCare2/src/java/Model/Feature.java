@@ -10,7 +10,8 @@ package Model;
  * @author Admin
  */
 public class Feature {
-
+    private static final long serialVersionUID = 1L;
+    
     @Override
     public String toString() {
         return "Feature{" + "id=" + id + ", url=" + url + '}';
