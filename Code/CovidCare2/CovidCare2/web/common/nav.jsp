@@ -33,7 +33,11 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="timetable">Thời gian biểu</a>
                             </li>
-
+                            <c:if test="${account.getGroupId() == 3}">
+                                <li class="nav-item active">
+                                <a class="nav-link" href="UserInfo">Thông tin cá nhân</a>
+                            </li>
+                            </c:if>
                         </ul>
                         <ul class="navbar-nav ml-auto mt-10">
                             <c:choose>

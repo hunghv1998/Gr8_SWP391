@@ -6,6 +6,7 @@
 
 <%@page import="Model.UserInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html"%>
 <!DOCTYPE html>
 <html lang="en">
     <%@include file = "../common/head.jsp" %>
@@ -36,23 +37,23 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="widget personal-info">	
                                     <h3 class="widget-header user">Thông tin cơ bản</h3>						
-                                    <form action="" method="Post">
-                                        <!-- Ho va ten -->
+                                    <form action="" method="Post" enctype="multipart/form-data">
+                                        <!-- Name -->
                                         <div class="form-group">
                                             <label for="name">Họ và tên <a style="color: red;">(*)</a></label>
                                             <input style="width: 400px; margin: auto;" type="text" class="form-control" name="name">
                                         </div>
-                                        <!-- Ho va ten -->
+                                        <!-- Email -->
                                         <div class="form-group">
                                             <label for="email">Email <a style="color: red;">(*)</a></label>
                                             <input style="width: 400px; margin: auto;" type="email" class="form-control" name="email">
                                         </div>
-                                        <!-- Ngay Sinh -->
+                                        <!-- Birthday -->
                                         <div class="form-group">
                                             <label for="bday">Ngày sinh <a style="color: red;">(*)</a>
                                                 <input type="date" class="form-control-file mt-2 pt-1" name="bday"></label>
                                         </div>
-                                        <!-- Gioi tinh -->
+                                        <!-- Gender -->
                                         <div class="form-group">
                                             <label for="sex">Giới tính <a style="color: red;">(*)</a></label>
                                             <select name="sex"><option>Chọn</option>
@@ -60,10 +61,13 @@
                                                 <option value="1"> Nữ </option>	
                                             </select>														
                                         </div>
+                                        <!-- Profile photo -->
                                         <div class="form-group">
                                             <label for="image">Ảnh đại diện <a style="color: red;">(*)</a></label>
-                                            <input style="width: 400px; margin: auto;" type="text" class="form-control" name="image">
+                                            <input type="file" class="form-control-file mt-2 pt-1" name="image">
+                                            <!--<input style="width: 400px; margin: auto;" type="text" class="form-control" name="image">-->
                                         </div>
+                                        <!-- Address -->
                                         <div class="form-group">
                                             <label for="address">Địa chỉ nơi ở tại Việt Nam (Số nhà, tổ dân phố,...) <a style="color: red;">(*)</a></label>
                                             <input style="width: 400px; margin: auto;" type="text" class="form-control" name="address">

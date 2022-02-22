@@ -13,18 +13,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.Account;
 import Model.UserInfo;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Date;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author chinh
  */
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 10,
+        maxFileSize = 1024 * 1024 * 50,
+        maxRequestSize = 1024 * 1024 * 100
+)
+
 public class UserInfoController extends HttpServlet {
+    private static final long SerialVersionUID = 1L;
+    private static final String  UPLOAD_DIR = "images/uploads";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("title", "Cập nhật thông tin");
+        if (request.getParameter("update") != null) {
+            request.setAttribute("title", "Cập nhật thông tin cá nhân");
+        } else {
+            request.setAttribute("title", "Thông tin các nhân");
+        }
+        
         Account account = (Account) request.getSession().getAttribute("account");
 
         if (account == null) {
@@ -49,7 +68,10 @@ public class UserInfoController extends HttpServlet {
             //get info from jsp
             String name = request.getParameter("name");
             String email = request.getParameter("email");
-            String image = request.getParameter("image");
+//            String image = request.getParameter("image");
+            String image = uploadFile(request);
+            
+
             String address = request.getParameter("address");
             Date bday = Date.valueOf(request.getParameter("bday"));
             System.out.println(request.getParameter("address"));
@@ -73,7 +95,52 @@ public class UserInfoController extends HttpServlet {
                 response.sendRedirect("UserInfo?update");
             }
         }
-
     }
 
+    private String uploadFile(HttpServletRequest request) throws IOException, ServletException {
+        String fileName = "";
+        try {
+            Part filePart = request.getPart("image");
+            fileName = (String) getFileName(filePart);
+            String applicationPath = request.getServletContext().getRealPath("");
+            String basePath = applicationPath + File.separator + UPLOAD_DIR + File.separator;
+            
+            InputStream inputStream = null;
+            OutputStream outputStream = null;
+            
+            try {
+                File outputFilePath = new File(basePath + fileName);
+                inputStream = filePart.getInputStream();
+                outputStream = new FileOutputStream(outputFilePath);
+                int read = 0;
+                final byte[] bytes = new byte[1024];
+                while ((read = inputStream.read(bytes)) != -1) {
+                    outputStream.write(bytes, 0, read);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+            }
+        } catch (Exception e) {
+            fileName = "";
+        }
+        return fileName;
+    }
+    
+    private String getFileName(Part part) {
+        final String partHeader = part.getHeader("content-disposition");
+        System.out.println("*****partHeader: " + partHeader);
+        for(String content : part.getHeader("content-disposition").split(";")) {
+            if (content.trim().startsWith("filename")) {
+                return content.substring(content.indexOf("=") + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
+    }
 }
