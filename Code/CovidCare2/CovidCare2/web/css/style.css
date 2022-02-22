@@ -2703,4 +2703,119 @@ form textarea {
   text-decoration: none;
 }
 
+.text-danger{
+  color: #f1556c!important;
+}
+
+.dnx_content_inner h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.dnx_content_inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 70px 15px;
+}
+
+.dnx_content_box {
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  padding: 30px;
+}
+
+.dnx_content_form_2col .dnx_content_form_item {
+  float: left;
+  width: 48%;
+}
+.dnx_content_form_item {
+  margin-top: 20px;
+}
+.dnx_content_form_item_lab {
+  float: left;
+  width: 140px;
+  line-height: 40px;
+}
+.dnx_content_form_item_field {
+  float: right;
+  width: calc(100% - 150px);
+  position: relative;
+}
+
+
+.dnx_content_form_2col .dnx_content_form_item:last-child {
+  float: right;
+}
+
+.dnx_content_form_item {
+  margin-top: 20px;
+}
+
+.dnx_content_bnt {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.dnx_content_bnt button {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: #f68121;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  width: 250px;
+  text-align: center;
+  line-height: 60px;
+  border: none;
+  border-radius: 10px;
+}
+
+.dnx_content_form_item_field select {
+  outline: none;
+  padding: 0 10px;
+  margin: 0;
+  background: #fff;
+  width: 100%;
+  line-height: 40px;
+  height: 40px;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.dnx_content_box {
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 25%);
+  padding: 30px;
+}
+
+.dnx_content_form_item ul li input {
+  float: left;
+  margin-top: 3px;
+}
+
+.dnx_content_form_item ul li label {
+  line-height: 10px;
+  line-height: 19px !important;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+
 /*# sourceMappingURL=maps/style.css.map */
