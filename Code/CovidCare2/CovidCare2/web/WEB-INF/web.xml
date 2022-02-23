@@ -32,6 +32,10 @@
         <servlet-name>NewsController</servlet-name>
         <servlet-class>Controller.NewsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TutorialController</servlet-name>
+        <servlet-class>Controller.TutorialController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>NewsController</servlet-name>
         <url-pattern>/news</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TutorialController</servlet-name>
+        <url-pattern>/Tutorial</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
