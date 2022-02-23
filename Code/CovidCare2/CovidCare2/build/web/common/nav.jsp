@@ -31,6 +31,9 @@
                                 <a class="nav-link" href="news.jsp">Tin tức</a>
                             </li>
                             <li class="nav-item active">
+                                <a class="nav-link" href="Tutorial">Hướng dẫn</a>
+                            </li>
+                            <li class="nav-item active">
                                 <a class="nav-link" href="timetable">Thời gian biểu</a>
                             </li>
                             <c:if test="${account.getGroupId() == 3}">

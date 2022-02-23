@@ -59,7 +59,7 @@
                   </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0 0 0 15px; text-align: center;">
-                  <img src="../images/hd1.jpg" alt="" style="max-width: 100%;">
+                  <img src="images/hd1.jpg" alt="" style="max-width: 100%;">
                 </div>
               </div>
               <p><br>
@@ -96,7 +96,7 @@
                   </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0 0 0 15px; text-align: center">
-                  <img src="../images/hd2.jpg" alt="" style="max-width: 100%;">
+                  <img src="images/hd2.jpg" alt="" style="max-width: 100%;">
                 </div>
               </div>
               <p><br>
@@ -215,7 +215,7 @@
                 Các bài tập thở
               </p>
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho1.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho1.jpg" alt="" style="max-width: 100%;">
               </div>
               <p>
                 <strong>✤ Bài tập thở giúp giảm khó thở</strong><br>
@@ -239,25 +239,25 @@
                 liên hệ ngay với trung tâm y tế gần nhất để được hỗ trợ
               </p>
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho2.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho2.jpg" alt="" style="max-width: 100%;">
               </div>
               <p style="text-align: center; padding: 10px 0 20px;">1. Nằm nghiêng 1 bên, kê cao đầu</p>
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho3.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho3.jpg" alt="" style="max-width: 100%;">
               </div>
               <p style="text-align: center; padding: 10px 0 20px;">2. Ngồi vào bàn, với cánh tay và gối đặt trên bàn</p>
 
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho4.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho4.jpg" alt="" style="max-width: 100%;">
               </div>
               <p style="text-align: center; padding: 10px 0 20px;">3. Ngồi trên ghế, nghiêng người phía trước, đặt tay
                 trên đùi. </p>
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho5.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho5.jpg" alt="" style="max-width: 100%;">
               </div>
               <p style="text-align: center; padding: 10px 0 20px;">4. Đứng nghiêng người về phía trước</p>
               <div style="padding: 0 0 0 15px; text-align: center">
-                <img src="../images/tap_tho6.jpg" alt="" style="max-width: 100%;">
+                <img src="images/tap_tho6.jpg" alt="" style="max-width: 100%;">
               </div>
               <p style="text-align: center; padding: 10px 0 20px;">5. Đứng dựa lưng vào tường</p>
             </div>
