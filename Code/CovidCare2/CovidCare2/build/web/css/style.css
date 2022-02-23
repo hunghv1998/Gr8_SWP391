@@ -2817,5 +2817,32 @@ form textarea {
   padding: 0 0 0 10px;
 }
 
+.dnx_content_inner h2 {
+  text-align: center;
+  color: #09229b;
+  font-size: 23px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.qa {
+  padding: 30px;
+}
+
+.qa h5 {
+  border-top: 1px solid #eee8ea;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 15px 0 15px 30px;
+  background: url(../images/ico_remove.png) no-repeat 0 10px;
+  cursor: pointer;
+}
+
+.qa h5.collapsed {
+  background: url(../images/ico_plus.png) no-repeat 0 10px;
+}
+
 
 /*# sourceMappingURL=maps/style.css.map */
