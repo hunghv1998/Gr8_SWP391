@@ -55,7 +55,7 @@ public class LoginController extends HttpServlet {
                 request.getSession().setAttribute("message",
                         "Đây là lần đầu bạn đăng nhập.<br>"
                         + "Vui lòng cập nhật thông tin cá nhân");
-                response.sendRedirect("UserInfo?update");
+                response.sendRedirect("userinfo?update");
             } else {
                 response.sendRedirect(".");
             }

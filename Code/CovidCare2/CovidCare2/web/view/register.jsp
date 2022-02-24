@@ -13,7 +13,7 @@
                     <div class="col-lg-5 col-md-8 align-item-center">
                         <div class="border">
                             <h3 class="bg-gray p-4">Đăng Ký Tài Khoản</h3>
-                            <form action="Register" method="post">
+                            <form action="" method="post">
                                 <fieldset class="p-4">
                                     <c:if test="${not empty message}">
                                         <b>${message}</b>

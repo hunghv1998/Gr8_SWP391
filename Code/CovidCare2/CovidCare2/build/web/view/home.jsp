@@ -2,6 +2,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+    <%
+        request.setAttribute("title", "Trang chủ");
+    %>
     <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">
@@ -20,7 +23,7 @@
                                 <h2>Danh mục phổ biến</h2>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <a href="news.jsp"><i class="fa fa-newspaper-o"></i> Tin Tức</a></li>
+                                        <a href="news"><i class="fa fa-newspaper-o"></i> Tin Tức</a></li>
 
                                     <li class="list-inline-item">
                                         <a href=""><i class="fa fa-wechat"></i> Chat</a>
@@ -44,7 +47,7 @@
                     <div class="col-md-12">
                         <!-- Header Contetnt -->
                         <div class="content-block" style="text-align: left;">
-                            <h1><a href="news.jsp" style="color: whitesmoke;">Bản Tin Covid</a></h1>
+                            <h1><a href="news" style="color: whitesmoke;">Bản Tin Covid</a></h1>
                             <p>Cung cấp tin tức chính xác và liên tục về tình hình covid hiện nay <br> Cập nhật diễn biến covid hàng ngày</p>
                         </div>
 

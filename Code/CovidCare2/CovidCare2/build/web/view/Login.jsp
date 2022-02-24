@@ -22,7 +22,7 @@
                                            <c:if test="${not empty message}">
                                         <b>${message}</b>
                                     </c:if> 
-                                         <form action="Login" method="POST">
+                                         <form action="" method="POST">
                                     <input type="text" placeholder="Tài khoản" name="username" class="border p-3 w-100 my-2" value="${username}">
                                     <input type="password" placeholder="Mật khẩu" name="password" class="border p-3 w-100 my-2" >
                                     <div class="loggedin-forgot">

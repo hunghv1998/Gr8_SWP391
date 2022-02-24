@@ -35,7 +35,7 @@ public class NewsController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewsController</title>");            
+            out.println("<title>Servlet NewsController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet NewsController at " + request.getContextPath() + "</h1>");
@@ -56,7 +56,7 @@ public class NewsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          request.setAttribute("title", "Tin tức");
+        request.setAttribute("title", "Tin tức");
         request.getRequestDispatcher("view/news.jsp").forward(request, response);
     }
 
@@ -71,7 +71,7 @@ public class NewsController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+
     }
 
     /**
