@@ -28,7 +28,7 @@
                                 <a class="nav-link" href="">Hỗ Trợ Trực Tuyến</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="news.jsp">Tin tức</a>
+                                <a class="nav-link" href="news">Tin tức</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="Tutorial">Hướng dẫn</a>
