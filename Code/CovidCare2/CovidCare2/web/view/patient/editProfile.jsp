@@ -75,7 +75,7 @@
             <div class="dnx_content_form_2col clearfix">
                 <div class="dnx_content_form_item clearfix">
                     <div class="dnx_content_form_item_lab">
-                        <label for="city">Tỉnh/Thành</label>
+                        Tỉnh/Thành
                     </div>
                     <div class="dnx_content_form_item_field">
                         <select id="city">
@@ -85,7 +85,7 @@
                 </div>
                 <div class="dnx_content_form_item clearfix">
                     <div class="dnx_content_form_item_lab">
-                        <label for="district">Quận/Huyện</label>
+                        Quận/Huyện
                     </div>
                     <div class="dnx_content_form_item_field">
                         <select id="district">
@@ -97,7 +97,7 @@
             <div class="dnx_content_form_2col clearfix">
                 <div class="dnx_content_form_item clearfix">
                     <div class="dnx_content_form_item_lab">
-                        <label for="ward">Phường/Xã</label>
+                        Phường/Xã
                     </div>
                     <div class="dnx_content_form_item_field">
                         <select name="wardId" placeholder="Nhập nội dung" id="ward">

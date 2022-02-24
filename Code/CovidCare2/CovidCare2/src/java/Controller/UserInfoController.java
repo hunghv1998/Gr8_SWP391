@@ -125,6 +125,7 @@ public class UserInfoController extends HttpServlet {
             // Validating input
             String message = "";
             ValidatingInput check = new ValidatingInput();
+            System.out.println(check.CalculateBirthday(bod));
             if (!check.isName(name)) {
                 message += "Tên đã nhập không đúng<br>";
             }

@@ -5,6 +5,9 @@
  */
 package utils;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -88,4 +91,19 @@ public class ValidatingInput {
         return m.matches();
     }
     
+    public int CalculateBirthday(Date date) {
+        // Compare birthday to current date
+        if (ChronoUnit.MONTHS.between(date.toLocalDate(), LocalDate.now()) <=3) {
+            return 1;
+        } else {
+            if (ChronoUnit.YEARS.between(date.toLocalDate(), LocalDate.now()) < 18) {
+                return 2;
+            } else {
+                if (ChronoUnit.YEARS.between(date.toLocalDate(), LocalDate.now()) < 64) {
+                    return 3;
+                }
+            }
+        }
+        return 4;
+    }
 }
