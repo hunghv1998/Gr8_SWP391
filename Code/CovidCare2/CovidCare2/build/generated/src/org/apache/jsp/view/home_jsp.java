@@ -19,6 +19,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_when_test;
 
@@ -30,12 +31,14 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_when_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_choose.release();
+    _jspx_tagPool_c_if_test.release();
     _jspx_tagPool_c_otherwise.release();
     _jspx_tagPool_c_when_test.release();
   }
@@ -69,22 +72,28 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("    ");
+
+        request.setAttribute("title", "Trang chủ");
+    
+      out.write("\r\n");
+      out.write("    ");
       out.write("\r\n");
       out.write("\r\n");
       out.write("<head>\r\n");
       out.write("    <title>");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${title}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</title>\r\n");
-      out.write("    <meta charset=\"utf-8\" />\r\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n");
       out.write("    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\" />\r\n");
+      out.write("    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/timetable.css\" />\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css\" />\r\n");
       out.write("    <script src=\"https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js\"></script>\r\n");
       out.write("    <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js\"></script>\r\n");
       out.write("    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js\"></script>\r\n");
       out.write("</head>");
       out.write("\r\n");
-      out.write("    \r\n");
+      out.write("\r\n");
       out.write("    <body class=\"body-wrapper\">\r\n");
       out.write("        ");
       out.write("\r\n");
@@ -109,20 +118,14 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <li class=\"nav-item active\">\r\n");
       out.write("                                <a class=\"nav-link\" href=\".\">Trang chủ</a>\r\n");
       out.write("                            </li>\r\n");
-      out.write("                            <li class=\"nav-item active\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"\">Hỗ Trợ Trực Tuyến</a>\r\n");
-      out.write("                            </li>\r\n");
-      out.write("                            <li class=\"nav-item active\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"news.jsp\">Tin tức</a>\r\n");
-      out.write("                            </li>\r\n");
-      out.write("                            <li class=\"nav-item active\">\r\n");
-      out.write("                                <a class=\"nav-link\" href=\"timetable\">Thời gian biểu</a>\r\n");
-      out.write("                            </li>\r\n");
+      out.write("                            ");
+      if (_jspx_meth_c_choose_0(_jspx_page_context))
+        return;
       out.write("\r\n");
       out.write("                        </ul>\r\n");
       out.write("                        <ul class=\"navbar-nav ml-auto mt-10\">\r\n");
       out.write("                            ");
-      if (_jspx_meth_c_choose_0(_jspx_page_context))
+      if (_jspx_meth_c_choose_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("                        </ul>\r\n");
@@ -134,7 +137,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</section>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <section class=\"hero-area bg-1 text-center overly\">\r\n");
       out.write("            <!-- Container Start -->\r\n");
       out.write("            <div class=\"container\">\r\n");
@@ -148,8 +151,8 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <h2>Danh mục phổ biến</h2>\r\n");
       out.write("                                <ul class=\"list-inline\">\r\n");
       out.write("                                    <li class=\"list-inline-item\">\r\n");
-      out.write("                                        <a href=\"news.jsp\"><i class=\"fa fa-newspaper-o\"></i> Tin Tức</a></li>\r\n");
-      out.write("                     \r\n");
+      out.write("                                        <a href=\"news\"><i class=\"fa fa-newspaper-o\"></i> Tin Tức</a></li>\r\n");
+      out.write("\r\n");
       out.write("                                    <li class=\"list-inline-item\">\r\n");
       out.write("                                        <a href=\"\"><i class=\"fa fa-wechat\"></i> Chat</a>\r\n");
       out.write("                                    </li>\r\n");
@@ -172,7 +175,7 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"col-md-12\">\r\n");
       out.write("                        <!-- Header Contetnt -->\r\n");
       out.write("                        <div class=\"content-block\" style=\"text-align: left;\">\r\n");
-      out.write("                            <h1><a href=\"news.jsp\" style=\"color: whitesmoke;\">Bản Tin Covid</a></h1>\r\n");
+      out.write("                            <h1><a href=\"news\" style=\"color: whitesmoke;\">Bản Tin Covid</a></h1>\r\n");
       out.write("                            <p>Cung cấp tin tức chính xác và liên tục về tình hình covid hiện nay <br> Cập nhật diễn biến covid hàng ngày</p>\r\n");
       out.write("                        </div>\r\n");
       out.write("\r\n");
@@ -326,13 +329,16 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_0 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
     _jspx_th_c_when_0.setPageContext(_jspx_page_context);
     _jspx_th_c_when_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_0);
-    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${account == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_when_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${account.getGroupId() == 1}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                    <li class=\"nav-item\">                                   \r\n");
-        out.write("                                        <a class=\"nav-link login-button\" href=\"Login\">Đăng Nhập</a> \r\n");
+        out.write("                                    <li class=\"nav-item active\">\r\n");
+        out.write("                                        <a class=\"nav-link\" href=\"\">Quản lý</a>\r\n");
+        out.write("                                    </li>\r\n");
+        out.write("                                    <li class=\"nav-item active\">\r\n");
+        out.write("                                        <a class=\"nav-link\" href=\"\">Thống kê</a>\r\n");
         out.write("                                    </li>\r\n");
         out.write("                                ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
@@ -360,9 +366,10 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                                    <li class=\"nav-item\">\r\n");
-        out.write("                                     <a class=\"nav-link login-button\" href=\"Logout\">Đăng Xuất</a> \r\n");
-        out.write("                                    </li>\r\n");
+        out.write("                                    ");
+        if (_jspx_meth_c_choose_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_0, _jspx_page_context))
+          return true;
+        out.write("\r\n");
         out.write("                                ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -374,6 +381,238 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_choose_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:choose
+    org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_1 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+    _jspx_th_c_choose_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_choose_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_0);
+    int _jspx_eval_c_choose_1 = _jspx_th_c_choose_1.doStartTag();
+    if (_jspx_eval_c_choose_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                        ");
+        if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                                        ");
+        if (_jspx_meth_c_otherwise_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                                    ");
+        int evalDoAfterBody = _jspx_th_c_choose_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_choose_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
+      return true;
+    }
+    _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${account.getGroupId() == 2}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
+    if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"\">Lịch trình</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"\">Quản lý bệnh nhân</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                        ");
+        int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_1 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+    int _jspx_eval_c_otherwise_1 = _jspx_th_c_otherwise_1.doStartTag();
+    if (_jspx_eval_c_otherwise_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"\">Hỗ Trợ Trực Tuyến</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"news\">Tin tức</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"tutorial\">Hướng dẫn</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                            <li class=\"nav-item active\">\r\n");
+        out.write("                                                <a class=\"nav-link\" href=\"timetable\">Thời gian biểu</a>\r\n");
+        out.write("                                            </li>\r\n");
+        out.write("                                            ");
+        if (_jspx_meth_c_if_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                                        ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_1);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${account.getGroupId() == 3}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                                <li class=\"nav-item active\">\r\n");
+        out.write("                                                    <a class=\"nav-link\" href=\"userinfo\">Thông tin cá nhân</a>\r\n");
+        out.write("                                                </li>\r\n");
+        out.write("                                            ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_choose_2(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:choose
+    org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_2 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+    _jspx_th_c_choose_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_choose_2.setParent(null);
+    int _jspx_eval_c_choose_2 = _jspx_th_c_choose_2.doStartTag();
+    if (_jspx_eval_c_choose_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                ");
+        if (_jspx_meth_c_when_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_2, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                                ");
+        if (_jspx_meth_c_otherwise_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_2, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                            ");
+        int evalDoAfterBody = _jspx_th_c_choose_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_choose_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_2);
+      return true;
+    }
+    _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_2, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_2 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_2);
+    _jspx_th_c_when_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${account == null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_2 = _jspx_th_c_when_2.doStartTag();
+    if (_jspx_eval_c_when_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                    <li class=\"nav-item\">                                   \r\n");
+        out.write("                                        <a class=\"nav-link login-button\" href=\"login\">Đăng Nhập</a> \r\n");
+        out.write("                                    </li>\r\n");
+        out.write("                                ");
+        int evalDoAfterBody = _jspx_th_c_when_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_2, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_2 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_2.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_2);
+    int _jspx_eval_c_otherwise_2 = _jspx_th_c_otherwise_2.doStartTag();
+    if (_jspx_eval_c_otherwise_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                    <li class=\"nav-item\">\r\n");
+        out.write("                                        <a class=\"nav-link login-button\" href=\"logout\">Đăng Xuất</a> \r\n");
+        out.write("                                    </li>\r\n");
+        out.write("                                ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_2.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_2);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_2);
     return false;
   }
 }
