@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Dal.CommonDataDAO;
 import Dal.UserInfoDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,13 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.Account;
+import Model.Disease;
 import Model.UserInfo;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import Model.Vaccine;
+import java.io.PrintWriter;
 import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.ArrayList;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
@@ -42,45 +42,62 @@ public class UserInfoController extends HttpServlet {
     private static final String UPLOAD_DIR = "images/uploads";
 
     private final UserInfoDAO uiD = new UserInfoDAO();
+    private final CommonDataDAO cdD = new CommonDataDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get session
-        HttpSession session = request.getSession();
-        
-        // Set UserInfo title
-        if (request.getParameter("update") != null) {
-            request.setAttribute("title", "Cập nhật thông tin cá nhân");
-        } else {
-            request.setAttribute("title", "Thông tin các nhân");
-        }
-        // Authentication
-        Account account = (Account) request.getSession().getAttribute("account");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            // Get session
+            HttpSession session = request.getSession();
 
-        if (account == null) {
-            response.sendRedirect("Login");
-        } else {
-            UserInfo userinfo = new UserInfo(null, false, "","", "", "", false);
-            if (!uiD.checkFirstLogin(account.getUserName())) {
-                request.setAttribute("update", "update");
+            // Set UserInfo title
+            if (request.getParameter("update") != null) {
+                request.setAttribute("title", "Cập nhật thông tin cá nhân");
             } else {
-                userinfo = uiD.getUserInfo(account.getUserName());
+                request.setAttribute("title", "Thông tin các nhân");
             }
-            session.setAttribute("name", userinfo.getName());
-            session.setAttribute("gender", userinfo.isSex());
-            session.setAttribute("bod", userinfo.getBday());
-            session.setAttribute("email", userinfo.getEmail());
-            session.setAttribute("image", userinfo.getImage());
-            session.setAttribute("address", userinfo.getAddress());
-            request.getSession().setAttribute("userinfo", userinfo);
-            request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
+            // Authentication
+            Account account = (Account) request.getSession().getAttribute("account");
+
+            if (account == null) {
+                response.sendRedirect("login");
+            } else {
+                UserInfo userinfo = new UserInfo(null, false, "", "", "", "", false);
+                if (!uiD.checkFirstLogin(account.getUserName())) {
+                    request.setAttribute("update", "update");
+                } else {
+                    userinfo = uiD.getUserInfo(account.getUserName());
+                }
+
+                ArrayList<Vaccine> vaccines = cdD.getVaccineList();
+                ArrayList<Disease> diseases = cdD.getDiseaseList();
+
+                session.setAttribute("name", userinfo.getName());
+                session.setAttribute("gender", userinfo.isSex());
+                session.setAttribute("bod", userinfo.getBday());
+                session.setAttribute("email", userinfo.getEmail());
+                session.setAttribute("image", userinfo.getImage());
+                session.setAttribute("address", userinfo.getAddress());
+                session.setAttribute("vaccines", vaccines);
+                session.setAttribute("diseases", diseases);
+
+                request.getSession().setAttribute("userinfo", userinfo);
+                request.getRequestDispatcher("/view/profile.jsp").forward(request, response);
+            }
         }
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         if (request.getParameter("update") != null) {
             //Get UserInfo from session
             UserInfo userinfo = (UserInfo) request.getSession().getAttribute("userinfo");
@@ -90,20 +107,18 @@ public class UserInfoController extends HttpServlet {
 
             //get info from jsp
             String name = request.getParameter("name");
+            System.out.println(name);
             String email = request.getParameter("email");
-            String phone = request.getParameter("phone");
             String address = request.getParameter("address");
             Date bod = Date.valueOf(request.getParameter("bod"));
             //Image processing
             Part filePart = request.getPart("profilepic");
-
-//            String image = request.getParameter("image");
-            String image = "";
+            String image = userinfo.getImage();
 
             System.out.println(request.getParameter("bod"));
 
             boolean gender = true;
-            if (request.getParameter("gender").equals('1')) {
+            if (request.getParameter("gender").equals("0")) {
                 gender = false;
             }
 
@@ -113,15 +128,11 @@ public class UserInfoController extends HttpServlet {
             if (!check.isName(name)) {
                 message += "Tên đã nhập không đúng<br>";
             }
-            if (!check.isPhoneNumber(phone)) {
-                message += "Số điện thoại đã nhập không đúng<br>";
-            }
-            System.out.println(phone + " " + check.isPhoneNumber(phone));
             if (!check.isEmail(email)) {
                 message += "Email đã nhập không đúng<br>";
             }
-            if (filePart != null) {
-                UploadFile ulF = new UploadFile();
+            UploadFile ulF = new UploadFile();
+            if (!ulF.getFileName(filePart).equals("")) {
                 image = ulF.uploadFile(request, "profilepic", UPLOAD_DIR);
             }
             if (!message.equals("")) {
@@ -150,7 +161,6 @@ public class UserInfoController extends HttpServlet {
                     response.sendRedirect("userinfo?update");
                 }
             }
-
         }
     }
 }

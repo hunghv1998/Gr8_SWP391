@@ -25,7 +25,6 @@ public class ValidatingInput {
         if (name == null) {
             return false;
         }
-        
         // Using matcher() method to tfind matching between
         // given name and regular expression
         Matcher m = p.matcher(name);
