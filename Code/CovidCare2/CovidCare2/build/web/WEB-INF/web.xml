@@ -36,6 +36,10 @@
         <servlet-name>TutorialController</servlet-name>
         <servlet-class>Controller.TutorialController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewsDetailsController</servlet-name>
+        <servlet-class>Controller.NewsDetailsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsDetailsController</servlet-name>
+        <url-pattern>/NewsDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

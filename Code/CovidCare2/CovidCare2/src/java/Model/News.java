@@ -18,42 +18,23 @@ public class News {
     private String content;
     private String uname;
     private String title;
+    private String short_des;
     private Date create_date;
     private Date publish_date;
-    private boolean status;
-    private int categoryId;
+    private String photo;
 
     public News() {
     }
 
-    public News(String content, String uname, String title, Date create_date, Date publish_date, boolean status, int categoryId) {
-        this.content = content;
-        this.uname = uname;
-        this.title = title;
-        this.create_date = create_date;
-        this.publish_date = publish_date;
-        this.status = status;
-        this.categoryId = categoryId;
-    }
-
-    public News(String content, String uname, String title, Date create_date, boolean status, int categoryId) {
-        this.content = content;
-        this.uname = uname;
-        this.title = title;
-        this.create_date = create_date;
-        this.status = status;
-        this.categoryId = categoryId;
-    }
-    
-    public News(int newsId, String content, String uname, String title, Date create_date, Date publish_date, boolean status, int categoryId) {
+    public News(int newsId, String content, String uname, String title, String short_des, Date create_date, Date publish_date, String photo) {
         this.newsId = newsId;
         this.content = content;
         this.uname = uname;
         this.title = title;
+        this.short_des = short_des;
         this.create_date = create_date;
         this.publish_date = publish_date;
-        this.status = status;
-        this.categoryId = categoryId;
+        this.photo = photo;
     }
 
     public int getNewsId() {
@@ -88,6 +69,14 @@ public class News {
         this.title = title;
     }
 
+    public String getShort_des() {
+        return short_des;
+    }
+
+    public void setShort_des(String short_des) {
+        this.short_des = short_des;
+    }
+
     public Date getCreate_date() {
         return create_date;
     }
@@ -104,20 +93,15 @@ public class News {
         this.publish_date = publish_date;
     }
 
-    public boolean isStatus() {
-        return status;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
+    
+    
 
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
     
 }
