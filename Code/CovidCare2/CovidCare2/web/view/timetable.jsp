@@ -485,7 +485,7 @@ for (i = 0; i < 500; i++) {
 data.sort(function (a, b) {
     return (+a.start) - (+b.start);
 });
-
+console.log(data);
 //data must be sorted by start date
 
 //Actually do everything
