@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chinh
  */
-@WebServlet(name = "TimetableController", urlPatterns = {"/timetable"})
-public class TimetableController extends HttpServlet {
+@WebServlet(name = "TimetableEventServlet", urlPatterns = {"/events"})
+public class TimetableEventServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +35,19 @@ public class TimetableController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet TimetableEventServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet TimetableEventServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,9 +63,17 @@ public class TimetableController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("view/timetable.jsp").forward(request, response);
-        
-
+        try (PrintWriter out = response.getWriter()) {
+            request.setAttribute("title", "Thời gian biểu");
+            
+            TimetableDAO timetableDAO = new TimetableDAO();
+            ArrayList<TimetableEvent> timetable = timetableDAO.getTimetable();
+            Gson json = new Gson();
+            String timetableJSON = json.toJson(timetable);
+            response.setContentType("text/html");
+            out.write(timetableJSON);
+            
+        }
     }
 
     /**
