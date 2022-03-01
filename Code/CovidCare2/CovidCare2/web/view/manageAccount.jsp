@@ -40,7 +40,7 @@
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                         <!-- Recently Favorited -->
                         <div class="widget dashboard-container my-adslist">
-                            <h3 class="widget-header">Create News</h3>
+                            <h3 class="widget-header">Manage Account</h3>
                             <table class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
@@ -50,12 +50,17 @@
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
+                                  
                                 <tbody>
+                                      <c:forEach items="${listA}" var="o">
                                     <tr>
+                                  
                                         <td class="">
-                                            <a>Manh123</a>
-                                        <td class="text-center">123</td>
-                                        <td  class="text-center">Admin</td>
+                                            <a>${o.userName}</a>
+                                        <td  class="text-center">${o.passWord}</td>
+                                        <td class="text-center">${o.group.name}</td>
+                                       
+                                    
                                         <td class="action" data-title="Action">
                                             <div class="">
                                                 <ul class="list-inline justify-content-center">
@@ -72,7 +77,9 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    </c:forEach>
                                 </tbody>
+                                  
                             </table>
                         </div>
 

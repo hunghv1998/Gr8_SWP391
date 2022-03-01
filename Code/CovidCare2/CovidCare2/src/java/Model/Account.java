@@ -20,11 +20,20 @@ public class Account implements Serializable {
     private String userName;
     private String passWord;
     private int groupId;
+    private Group group;
     private ArrayList<Group> listGroup = new ArrayList<>();
 
     public Account() {
     }
+    
+    public Group getGroup() {
+        return group;
+    }
 
+    public void setGroup(Group group) {
+        this.group = group;
+    }
+    
     public String getUserName() {
         return userName;
     }
