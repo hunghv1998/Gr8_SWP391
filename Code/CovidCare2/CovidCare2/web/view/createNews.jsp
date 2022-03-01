@@ -42,30 +42,35 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                         <!-- Recently Favorited -->
+                        <form action="CreateNews" method="POST" enctype="multipart/form-data">
                         <div class="widget dashboard-container my-adslist">
+                               
                             <h3 class="widget-header">Create News</h3>
-                            <table class="table table-responsive product-dashboard-table">		
+                            <table class="table table-responsive product-dashboard-table">
+                             
+                                                                   <
                                 <tbody>
                                 <div class="col-lg-12">
                                     <h6 class="font-weight-bold pt-4 pb-1">Title :</h6>
-                                    <input type="text" class="border w-100 p-2 bg-white text-capitalize" placeholder="Ad title go There">                             
+                                    <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Ad title go There">                             
                                     <div class="choose-file text-center my-4 py-4 rounded">
                                         <label for="file-upload">
                                             <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
                                             <span class="d-block">or</span>
                                             <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                             <span class="d-block">Maximum upload file size: 500 KB</span>
-                                            <input type="file" class="form-control-file d-none" id="file-upload" name="file">
+                                            <input type="file" class="form-control-file d-none" id="file-upload" name="photo">
                                         </label>
                                     </div>
                                     <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                                    <textarea name="" id="" class="border p-3 w-100" rows="7" placeholder="Write details about news"></textarea>
+                                    <textarea name="description" id="" class="border p-3 w-100" rows="7" placeholder="Write details about news"></textarea>
                                 </div>
                                 </tbody>
                             </table>
                             <!-- submit button -->                 
                             <button type="submit" class="btn btn-primary d-block mt-2">Post News</button>
                         </div>
+                        </form>>
 
 
                     </div>
