@@ -185,6 +185,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
         <script>
+            
             var $currentPopover = null;
             $(document).on('shown.bs.popover', function (ev) {
                 var $target = $(ev.target);
@@ -480,20 +481,23 @@
 //    }
 //    end = !j ? null : new Date(y, m, d + j, h + 2, m);
 //    data.push({title: names[c1 % names.length], start: new Date(y, m, d, h, m), end: end, allDay: !(i % 6), text: slipsum[c % slipsum.length ]});
-//
-            
+//    };
+var data;
+            $(document).ready(function () {
             var return_events = function () {
                 var tmp = null;
             $.ajax({
                 url: "events",
                 method: "GET",
+                dataType: 'json',
                 data: {},
                 success: function (data, textStatus, jqXHR) {
-                    console.log(data);
+                    console.log("1" + data);
                     let obj = $.parseJSON(data);
-                    $.each(obj, function (key, value) {
-                        tmp = data;
-                    });
+                    tmp = obj;
+//                    $.each(obj, function (key, value) {
+//                        tmp = data;
+//                    });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
 
@@ -502,8 +506,10 @@
             });
             return tmp;
         }();
-        var data = [];
-        data.push(return_events);
+        console.log("tmp " + return_events);
+            });
+        
+//        data.push(return_events);
 //            data.sort(function (a, b) {
 //                return (+a.start) - (+b.start);
 //            });

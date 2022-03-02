@@ -7,9 +7,7 @@ package Controller;
 
 import Dal.AccountDAO;
 import Model.Account;
-import Model.Group;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

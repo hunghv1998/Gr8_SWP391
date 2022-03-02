@@ -27,10 +27,10 @@
                             <c:choose>
                                 <c:when test="${account.getGroupId() == 1}">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="">Quản lý</a>
+                                        <a class="nav-link" href="management">Quản lý</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="">Thống kê</a>
+                                        <a class="nav-link" href="statistic">Thống kê</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>

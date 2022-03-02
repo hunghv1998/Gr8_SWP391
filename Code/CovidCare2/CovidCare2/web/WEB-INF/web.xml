@@ -44,6 +44,10 @@
         <servlet-name>ManageAccountController</servlet-name>
         <servlet-class>Controller.ManageAccountController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManagementController</servlet-name>
+        <servlet-class>Controller.ManagementController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -80,6 +84,10 @@
         <servlet-name>ManageAccountController</servlet-name>
         <url-pattern>/ManageAccount</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagementController</servlet-name>
+        <url-pattern>/management</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -88,4 +96,7 @@
     <welcome-file-list>
         <welcome-file>view/home.jsp</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <location>/view/error.jsp</location>
+    </error-page>
 </web-app>
