@@ -49,23 +49,28 @@
         <div class="content-wrapper">
             <div class="container">
                 <div class="content-left">
+                    <h1 style="color: #666; margin-top: 40px; font-weight: bold;" >Tin Tức</h1>
+                  <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-2">
                     <c:forEach items="${newses}" var="n">
-                        <div class="section intro">
-                            <div class="content">
-                                <h1 class="content-title"><a href="NewsDetails?newsId=${n.newsId}">${n.title}</a></h1>
+                        <hr>
+                        <div  class="section intro">
+                            <div class="content">                              
+                                <h2 class="content-title" style="color: #666666; margin-top: 40px;"><a href="NewsDetails?newsId=${n.newsId}">${n.title}</a></h2>
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                       <a href="NewsDetails?newsId=${n.newsId}"><img src="${n.photo}" style="width: 500px; height: 400px"/></a>
+                                    <div class="form-group col-md-6">                                 
+                                        <a href="NewsDetails?newsId=${n.newsId}"><img src="${n.photo}" style="width: 400px; height: 300px"/></a>
                                     </div>
-                                    <div class="form-group col-md-6 align-self-center">
-                                        <h2>${n.short_des}</h2>
+                                    <div class="form-group col-md-6 align-self-center" style="margin-top: 130px; ">
+                                        <div style="margin-bottom: 30px; text-decoration :underline;"> <a style="font-family: cursive; font-weight: bolder; font-style: italic;"> Ngày tạo : </a><span style="color: #666; font-style: italic" href="NewsDetails?newsId=${n.newsId}"> ${n.create_date}</span></div>
+                                        <div> <Span style ="font-style: italic;"> ${n.short_des} </span></div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>  
+                        
                     </c:forEach>
-
+                    </div>
                 </div>
             </div>
         </div>

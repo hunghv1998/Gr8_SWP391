@@ -26,12 +26,9 @@
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
                                 <ul>
-                                    <li><a href=""><i class=""></i> Create News </a></li>
-                                    <li>
-                                        <a href=""><i class=""></i> List News <span>5</span></a>
-                                    </li>
+                                    <li><a href="CreateNews"><i class=""></i> Create News </a></li>                                   
                                     <li class="active" >
-                                        <a href=""><i class=""></i> Manager profiles <span>12</span></a>
+                                        <a href="ManageAccount"><i class=""></i> Manager profiles <span>12</span></a>
                                     </li>																			
                                 </ul>
                             </div>
