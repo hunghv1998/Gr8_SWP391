@@ -8,11 +8,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%@include file = "..common/head.jsp" %>
+    <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">
 
-        <%@include file = "..common/nav.jsp" %>
+        <%@include file = "../common/nav.jsp" %>
 
         <section class="section bg-gray">
             <div class="container">
@@ -33,6 +33,6 @@
 
         <!--Footer-->
 
-        <%@include file = "..common/footer.jsp" %>
+        <%@include file = "../common/footer.jsp" %>
 
 </html>

@@ -26,8 +26,8 @@ public class TimetableDAO extends DBContext {
             while (rs.next()) {
                 TimetableEvent e = new TimetableEvent();
                 e.setTitle(rs.getString("action"));
-                e.setStart(rs.getDate("time"));
-                e.setEnd(rs.getDate("time"));
+                e.setStart(rs.getTimestamp("time"));
+                e.setEnd(rs.getTimestamp("time"));
                 e.setText(rs.getString("userId") + " " + rs.getString("action"));
                 e.setAllDay(false);
                 e.setUsername("");

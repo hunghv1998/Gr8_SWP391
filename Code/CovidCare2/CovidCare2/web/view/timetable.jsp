@@ -185,17 +185,16 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
         <script>
-            
             var $currentPopover = null;
             $(document).on('shown.bs.popover', function (ev) {
                 var $target = $(ev.target);
-                if ($currentPopover && ($currentPopover.get(0) != $target.get(0))) {
+                if ($currentPopover && ($currentPopover.get(0) !== $target.get(0))) {
                     $currentPopover.popover('toggle');
                 }
                 $currentPopover = $target;
             }).on('hidden.bs.popover', function (ev) {
                 var $target = $(ev.target);
-                if ($currentPopover && ($currentPopover.get(0) == $target.get(0))) {
+                if ($currentPopover && ($currentPopover.get(0) === $target.get(0))) {
                     $currentPopover = null;
                 }
             });
@@ -205,7 +204,7 @@
 //the design is a function I read in a blog post by John Resig (http://ejohn.org/blog/javascript-micro-templating/) and it is intended to be loosely translateable to a more comprehensive template language like mustache easily
             $.extend({
                 quicktmpl: function (template) {
-                    return new Function("obj", "var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('" + template.replace(/[\r\t\n]/g, " ").split("{{").join("\t").replace(/((^|\}\})[^\t]*)'/g, "$1\r").replace(/\t:(.*?)\}\}/g, "',$1,'").split("\t").join("');").split("}}").join("p.push('").split("\r").join("\\'") + "');}return p.join('');")
+                    return new Function("obj", "var p=[],print=function(){p.push.apply(p,arguments);};with(obj){p.push('" + template.replace(/[\r\t\n]/g, " ").split("{{").join("\t").replace(/((^|\}\})[^\t]*)'/g, "$1\r").replace(/\t:(.*?)\}\}/g, "',$1,'").split("\t").join("');").split("}}").join("p.push('").split("\r").join("\\'") + "');}return p.join('');");
                 }
             });
 
@@ -304,9 +303,9 @@
                             return true;
                         }
                         data = options.data[index];
-                        time = data.start.toTimeString();
+                        time = convertDate(data.start).toTimeString();
                         if (time && data.end) {
-                            time = time + ' - ' + data.end.toTimeString();
+                            time = time + ' - ' + convertDate(data.end).toTimeString();
                         }
                         $t.data('popover', true);
                         $t.popover({content: '<p><strong>' + time + '</strong></p>' + data.text, html: true, placement: 'auto left'}).popover('toggle');
@@ -318,14 +317,15 @@
                             return;
                         }
                         var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index}),
-                                start = event.start,
-                                end = event.end || start,
-                                time = event.start.toTimeString(),
+                                start = convertDate(event.start),
+                                end = convertDate(event.end) || convertDate(start),
+                                time = convertDate(event.start).toTimeString(),
                                 hour = start.getHours(),
                                 timeclass = '.time-22-0',
                                 startint = start.toDateInt(),
                                 dateint = options.date.toDateInt(),
                                 endint = end.toDateInt();
+                                console.log(convertDate(event.start));
                         if (startint > dateint || endint < dateint) {
                             return;
                         }
@@ -351,8 +351,8 @@
                                 day = $('.' + e.toDateCssClass()),
                                 empty = $('<div/>', {'class': 'clear event', html: ' '}),
                                 numbevents = 0,
-                                time = event.start.toTimeString(),
-                                endday = event.end && $('.' + event.end.toDateCssClass()).length > 0,
+                                time = convertDate(event.start).toTimeString(),
+                                endday = convertDate(event.end) && $('.' + convertDate(event.end).toDateCssClass()).length > 0,
                                 checkanyway = new Date(e.getFullYear(), e.getMonth(), e.getDate() + 40),
                                 existing,
                                 i;
@@ -389,8 +389,8 @@
                     function yearAddEvents(events, year) {
                         var counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         $.each(events, function (i, v) {
-                            if (v.start.getFullYear() === year) {
-                                counts[v.start.getMonth()]++;
+                            if (convertDate(v.start).getFullYear() === year) {
+                                counts[convertDate(v.start).getMonth()]++;
                             }
                         });
                         $.each(counts, function (i, v) {
@@ -482,44 +482,39 @@
 //    end = !j ? null : new Date(y, m, d + j, h + 2, m);
 //    data.push({title: names[c1 % names.length], start: new Date(y, m, d, h, m), end: end, allDay: !(i % 6), text: slipsum[c % slipsum.length ]});
 //    };
-var data;
-            $(document).ready(function () {
-            var return_events = function () {
-                var tmp = null;
-            $.ajax({
+//console.log(data);
+
+            var data;
+            data = $.ajax({
                 url: "events",
                 method: "GET",
                 dataType: 'json',
-                data: {},
-                success: function (data, textStatus, jqXHR) {
-                    console.log("1" + data);
-                    let obj = $.parseJSON(data);
-                    tmp = obj;
-//                    $.each(obj, function (key, value) {
-//                        tmp = data;
-//                    });
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-
-                },
+                async: false,
                 cache: false
-            });
-            return tmp;
-        }();
-        console.log("tmp " + return_events);
-            });
-        
-//        data.push(return_events);
+            }).responseJSON;
+
+            console.log(data);
+
+
+
+//data must be sorted by start date
 //            data.sort(function (a, b) {
 //                return (+a.start) - (+b.start);
 //            });
-            console.log(data);
-//data must be sorted by start date
 
 //Actually do everything
             $('#holder').calendar({
                 data: data
             });
+            
+            function convertDate(date) {
+            console.log(date);
+                var t = date.split(/[- , :]/);
+                
+                var d = new Date(Date.UTC(t[0], t[1]-1, t[2], t[3], t[4], t[5]));
+                
+                return d;
+            }
         </script>
     </body>
 

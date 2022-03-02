@@ -64,12 +64,13 @@ public class TimetableEventServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            request.setAttribute("title", "Thời gian biểu");
+            
             
             TimetableDAO timetableDAO = new TimetableDAO();
             ArrayList<TimetableEvent> timetable = timetableDAO.getTimetable();
             Gson json = new Gson();
             String timetableJSON = json.toJson(timetable);
+            System.out.println(timetableJSON);
             response.setContentType("text/html");
             out.write(timetableJSON);
             

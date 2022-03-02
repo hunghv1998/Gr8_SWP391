@@ -6,6 +6,7 @@
 package Model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -13,8 +14,8 @@ import java.sql.Date;
  */
 public class TimetableEvent {
     private String title;
-    private Date start;
-    private Date end;
+    private Timestamp start;
+    private Timestamp end;
     private String text;
     private boolean allDay;
     private String username;
@@ -22,7 +23,7 @@ public class TimetableEvent {
     public TimetableEvent() {
     }
 
-    public TimetableEvent(String title, Date start, Date end, String text, boolean allDay, String username) {
+    public TimetableEvent(String title, Timestamp start, Timestamp end, String text, boolean allDay, String username) {
         this.title = title;
         this.start = start;
         this.end = end;
@@ -39,19 +40,19 @@ public class TimetableEvent {
         this.title = title;
     }
 
-    public Date getStart() {
+    public Timestamp getStart() {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(Timestamp start) {
         this.start = start;
     }
 
-    public Date getEnd() {
+    public Timestamp getEnd() {
         return end;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd(Timestamp end) {
         this.end = end;
     }
 
