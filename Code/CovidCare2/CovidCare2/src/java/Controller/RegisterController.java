@@ -68,7 +68,7 @@ public class RegisterController extends HttpServlet {
             aD.signup(username, password);
             gD.setGroupAccount(3, username);
             uiD.SignUpToUserList(username);
-            response.sendRedirect("Login");
+            response.sendRedirect("login");
         } else {
             request.setAttribute("username", username);
             request.setAttribute("message", message);

@@ -30,12 +30,9 @@
                                     <li>
                                         <a href=""><i class=""></i> List News <span>5</span></a>
                                     </li>
-                                    <li >
-                                        <a href=""><i class=""></i> Manager profiles <span>12</span></a>
-                                    </li>
                                     <li>
-                                        <a href=""><i class=""></i> List Profiles <span>23</span></a>
-                                    </li>													
+                                        <a href=""><i class=""></i> Manager profiles <span>12</span></a>
+                                    </li>														
                                 </ul>
                             </div>
                         </div>
@@ -48,7 +45,7 @@
                             <h3 class="widget-header">Create News</h3>
                             <table class="table table-responsive product-dashboard-table">
                              
-                                                                   <
+                                                                   
                                 <tbody>
                                 <div class="col-lg-12">
                                     <h6 class="font-weight-bold pt-4 pb-1">Title :</h6>
@@ -70,7 +67,7 @@
                             <!-- submit button -->                 
                             <button type="submit" class="btn btn-primary d-block mt-2">Post News</button>
                         </div>
-                        </form>>
+                        </form>
 
 
                     </div>
