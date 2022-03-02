@@ -47,7 +47,7 @@ public class DBContext {
     }
 
     public DBContext() {
-        this("jdbc:sqlserver://localhost:1433;databaseName=CovidCare;sslProtocol=TLSv1.2;", "sa", "sa");
+        this("jdbc:sqlserver://localhost:1433;databaseName=CovidCare;sslProtocol=TLSv1.2;", "sa", "123456");
     }
 
     public static void main(String[] args) {
