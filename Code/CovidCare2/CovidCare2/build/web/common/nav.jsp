@@ -33,7 +33,7 @@
                                         <a class="nav-link" href="statistic">Thống kê</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="view/createNews.jsp">Tạo bản tin mới</a>
+                                        <a class="nav-link" href="CreateNews">Tạo bản tin mới</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
