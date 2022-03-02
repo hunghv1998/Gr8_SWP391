@@ -11,26 +11,8 @@
 
     <body class="body-wrapper">
         <%@include file = "../common/nav.jsp" %>
-        <!--        <div class="content-wrapper">
-                    <div class="container">
-                        <div class="content-left">
-                            <div class="section cake">
-                                <h1 class="product-name">${n.title}</h1>
-                                <div class="content">
-                                    <div>
-                                        <img src="${n.photo}" style="width: 1100px; height: 600px">
-                                    </div>
-        ${n.content}  
-        <br>
-        <br>
-        <p><div>Date created:<br>${n.create_date}</div></p>
-        <p><div>Date published:<br>${n.publish_date}</div></p>
-    </div>
-</div>
-</div>
-</div>
-</div>-->
-        <section class="news single-blog section">
+  
+        <section class="news single-news section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
@@ -50,7 +32,55 @@
         </section>
 
 
-
+        <section class="popular-deals section bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2>Tin Tức Khác</h2>					
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                      
+                    <!-- offer 01 -->
+                    <div class="col-lg-12">                    
+                        <div class="trending-ads-slide">
+                           <c:forEach items="${newses}" var="n">
+                            <div class="col-sm-12 col-lg-4">
+                                
+                                <div class="product-item bg-light">
+                                    <div class="card">
+                                        <div class="thumb-content">                                          
+                                             <a href="NewsDetails?newsId=${n.newsId}">
+                                                <img class="card-img-top img-fluid" src="${n.photo}">
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title"><a  <a href="NewsDetails?newsId=${n.newsId}">${n.title}</a></h4>
+                                            <ul class="list-inline product-meta">
+                                                <li class="list-inline-item">
+                                                    <a><i class="fa fa-folder-open-o"></i>Admin</a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="NewsDetails?newsId=${n.newsId}"><i class="fa fa-calendar"></i>${n.create_date}</a>
+                                                </li>
+                                            </ul>
+                                            <p class="card-text">${n.short_des}</p>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </c:forEach>     
+                        </div>
+                        
+                    </div>
+                                        
+                </div>
+                                       
+            </div>
+        </section>
 
     </body>
     <%@include file = "../common/footer.jsp" %>
