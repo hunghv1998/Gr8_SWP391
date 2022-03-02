@@ -11,6 +11,7 @@ import Model.Group;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -109,5 +110,32 @@ public class AccountDAO extends DBContext {
         }
 
     }
+    
+    
+     public ArrayList<Account> getAcc() {
+        ArrayList<Account> list = new ArrayList<>();
+
+        String sql = "SELECT a.username, a.password , g.name FROM Account a \n"
+                + "INNER JOIN GroupAccount ga On a.username=ga.username\n"
+                + "INNER JOIN [Group] g On ga.gid = g.gid";
+        ResultSet rs = getData(sql);
+
+        try {
+            while (rs.next()) {
+                Group g = new Group();
+                g.setName(rs.getString("name"));
+                Account a = new Account();
+                a.setUserName(rs.getString("username"));
+                a.setPassWord(rs.getString("password"));
+                a.setGroup(g);
+                list.add(a);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Account.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return list;
+    }
+    
 
 }
