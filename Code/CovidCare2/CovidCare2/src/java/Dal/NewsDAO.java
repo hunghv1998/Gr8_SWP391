@@ -93,7 +93,7 @@ public class NewsDAO extends DBContext {
     public List<News> paging(int index) {
         ArrayList<News> arr = new ArrayList<>();
 
-        String sql = "SELECT * FROM news order by newsId OFFSET\n" +
+        String sql = "SELECT * FROM news order by created_date DESC OFFSET\n" +
 "				? ROWS  FETCH NEXT 2 ROWS ONLY";
         ResultSet rs = getData(sql);
         
