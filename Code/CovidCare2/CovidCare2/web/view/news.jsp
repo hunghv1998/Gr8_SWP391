@@ -11,6 +11,7 @@
 
     <body class="body-wrapper">
         <%@include file = "../common/nav.jsp" %>
+        <jsp:useBean id="a" class="Dal.NewsDAO" scope="request"></jsp:useBean>
         <section class="page-title">
             <!-- Container Start -->
             <div class="container">
@@ -50,7 +51,13 @@
                         </c:forEach>                  
                     </div>
                 </div>
-
+                <nav style="margin: 20px auto; width: 500px" aria-label="...">
+                    <ul class="pagination pagination-lg">
+                        <c:forEach begin="1" end="${a.totalPage()}" var="i">
+                            <li class="page-item"><a class="page-link" href="news?index=${i}">${i}</a></li>
+                            </c:forEach>
+                    </ul>
+                </nav>
             </div>
         </section>
 
