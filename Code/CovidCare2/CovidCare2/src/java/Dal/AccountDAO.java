@@ -87,7 +87,7 @@ public class AccountDAO extends DBContext {
                     acc.getListGroup().add(g);
                 }
                 Feature f = new Feature();
-                f.setId(Integer.parseInt(rs.getString("fid")));
+                f.setId(rs.getString("fid"));
                 f.setUrl(rs.getString("url"));
                 g.getListFeature().add(f);
             }
@@ -157,6 +157,46 @@ public class AccountDAO extends DBContext {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, username);
             pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public int insertAccount(String username, String password) {
+        try {
+            String sql = "INSERT INTO [dbo].[Account]\n"
+                    + "           ([username]\n"
+                    + "           ,[password])\n"
+                    + "     VALUES\n"
+                    + "           (?,?)";
+
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.setString(2, password);
+            return pre.executeUpdate();
+            
+
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+
+    public void insertRole(String username,String password, String role) {
+       int a =  insertAccount(username,password);
+        try {
+            String sql = "INSERT INTO [dbo].[GroupAccount]\n"
+                    + "           ([username]\n"
+                    + "           ,[gid])\n"
+                    + "     VALUES\n"
+                    + "           (\n"
+                    + "           ?,?)";
+
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.setString(2, role);
+            pre.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -16,14 +16,14 @@ public class Feature {
     public String toString() {
         return "Feature{" + "id=" + id + ", url=" + url + '}';
     }
-    int id;
+    String id;
     String url;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -36,7 +36,7 @@ public class Feature {
     }
     
 
-    public Feature(int id, String url) {
+    public Feature(String id, String url) {
         this.id = id;
         this.url = url;
     }

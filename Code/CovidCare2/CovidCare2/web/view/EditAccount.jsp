@@ -23,7 +23,7 @@
             <div class="row">                   
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-1">
                     <!-- Recently Favorited -->
-                    <form>
+                    <form action="EditAccount" method="POST">
                     <div class="widget dashboard-container my-adslist">
                            
                         <h2 class="widget-header">Edit Acount</h2>
@@ -32,20 +32,21 @@
                                                                
                             <tbody>
                             <div class="col-lg-12">
-                                <h6 class="font-weight-bold pt-4 pb-1">UserName : <a></a>  </h6>
+                                <input type="hidden" name="oldUsername" value ="${username}">
+                                <h6 class="font-weight-bold pt-4 pb-1">UserName : <a><input type="text" name="username" value="${username}"</a>  </h6>
                                                                                       
-                                <h6 class="font-weight-bold pt-4 pb-1">PassWord :  <a></a>  </h6>
+                                <h6 class="font-weight-bold pt-4 pb-1">PassWord :  <a><input type="text" name="password" value="${password}"</a>  </h6>
                                
                                 <div class="dnx_content_form_item clearfix">
                                     <div class="dnx_content_form_item_lab">
                                         <h6 class="font-weight-bold pt-2 pb-1">Role</h6>
                                     </div>
                                     <div class="dnx_content_form_item_field">
-                                        <select>
-                                            <option class="default-selected" value="0" selected="">Select Role</option>
-                                            <option class="default-selected" value="1" >Admin</option>
-                                            <option class="default-selected" value="2" >Doctor</option>
-                                            <option class="default-selected" value="3" >Patient</option>
+                                        <select name="role">
+                                            <option class="default-selected" value="0" >Select Role</option>
+                                            <option class="default-selected" value="1" <c:if test="${role == 1}">selected</c:if>>Admin</option>
+                                            <option class="default-selected" value="2" <c:if test="${role == 2}">selected</c:if>>Doctor</option>
+                                            <option class="default-selected" value="3" <c:if test="${role == 3}">selected</c:if>>Patient</option>
                                            
                                         </select>
                                     </div>
