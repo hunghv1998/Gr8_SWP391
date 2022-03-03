@@ -38,7 +38,7 @@
                         <!-- Recently Favorited -->
                         <div class="widget dashboard-container my-adslist">
                             <h3 class="widget-header">Manage Account</h3>
-                            <table class="table table-responsive product-dashboard-table">
+                            <table  class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
                                         <th>Account</th>
@@ -58,17 +58,14 @@
                                         <td class="text-center">${o.group.name}</td>
                                        
                                     
-                                        <td class="action" data-title="Action">
+                                        <td class="action" data-title="Action"> 
                                             <div class="">
                                                 <ul class="list-inline justify-content-center">
                                                     <li class="list-inline-item">
-                                                        <button class="btn btn-primary">Add</button>
-                                                    </li>
+                                                        <a href="" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
+                                                    </li>                                                 
                                                     <li class="list-inline-item">
-                                                        <button class="btn btn-success" >View</button>
-                                                    </li>
-                                                    <li class="list-inline-item">
-                                                        <button class="btn btn-danger">Delete</button>
+                                                        <a href="" onclick="return confirm('Are you want to delete?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>

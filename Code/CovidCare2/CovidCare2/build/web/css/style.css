@@ -1141,7 +1141,7 @@ ul.pagination .active a {
 }
 
 .dashboard-container .action {
-  width: 30%;
+  width: 100%;
   text-align: center;
 }
 
