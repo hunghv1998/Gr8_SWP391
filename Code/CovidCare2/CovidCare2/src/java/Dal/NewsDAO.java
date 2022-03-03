@@ -94,13 +94,12 @@ public class NewsDAO extends DBContext {
         ArrayList<News> arr = new ArrayList<>();
 
         String sql = "SELECT * FROM news order by created_date DESC OFFSET\n" +
-"				? ROWS  FETCH NEXT 2 ROWS ONLY";
-        ResultSet rs = getData(sql);
+"				? ROWS  FETCH NEXT 3 ROWS ONLY";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, (index * 2 - 2));
-            rs = ps.executeQuery();
+            ps.setInt(1, (index * 3 - 3));
+            ResultSet rs = ps.executeQuery();
             while ((rs.next())) {
                 int newsId = rs.getInt(1);
                 String content = rs.getString(2);
@@ -129,8 +128,8 @@ public class NewsDAO extends DBContext {
         try {
             while (rs.next()) {
                 int totalA = rs.getInt(1);
-                total = totalA / 2;
-                if (totalA % 2 != 0) {
+                total = totalA / 3;
+                if (totalA % 3 != 0) {
                     total++;
                 }
             }
