@@ -42,7 +42,10 @@
                                     </div>
                                     <div class="dnx_content_form_item_field">
                                         <select>
-                                            <option class="default-selected" value="1" selected="">Select Role</option>
+                                            <option class="default-selected" value="0" selected="">Select Role</option>
+                                            <option class="default-selected" value="1" >Admin</option>
+                                            <option class="default-selected" value="2" >Doctor</option>
+                                            <option class="default-selected" value="3" >Patient</option>
                                            
                                         </select>
                                     </div>

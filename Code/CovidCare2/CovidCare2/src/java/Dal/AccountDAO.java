@@ -102,17 +102,16 @@ public class AccountDAO extends DBContext {
         AccountDAO aD = new AccountDAO();
         Account acc = aD.getAccountByUsernameAndPassword("Chinh123", "123");
         System.out.println(acc.getGroupId());
-        for(Group g : acc.getListGroup()){
+        for (Group g : acc.getListGroup()) {
             System.out.println(g.toString());
-            for(Feature f : g.getListFeature()){
+            for (Feature f : g.getListFeature()) {
                 System.out.println(f.toString());
             }
         }
 
     }
-    
-    
-     public ArrayList<Account> getAcc() {
+
+    public ArrayList<Account> getAcc() {
         ArrayList<Account> list = new ArrayList<>();
 
         String sql = "SELECT a.username, a.password , g.name FROM Account a \n"
@@ -136,6 +135,31 @@ public class AccountDAO extends DBContext {
 
         return list;
     }
-    
+
+    public void deleteAccountByUsername(String username) {
+        deleteGroupAccountByUsername(username);
+        try {
+            String sql = "DELETE FROM Account"
+                    + "      WHERE username = ? ";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void deleteGroupAccountByUsername(String username) {
+        try {
+            String sql = "DELETE FROM [dbo].[GroupAccount]\n"
+                    + "      WHERE username = ? ";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }
