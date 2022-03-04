@@ -36,7 +36,6 @@ public class TimetableDAO extends DBContext {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
         return timetable;
     }
 }
