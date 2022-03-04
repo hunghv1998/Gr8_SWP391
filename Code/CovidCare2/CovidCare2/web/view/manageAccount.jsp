@@ -65,7 +65,7 @@
                                                         <a href="" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
                                                     </li>                                                 
                                                     <li class="list-inline-item">
-                                                        <a href="" onclick="return confirm('Are you want to delete?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
+                                                        <a href="DeleteAccount?userName=${o.userName}"  data-toggle="tooltip" onclick="return confirm('Bạn có muốn xóa?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>

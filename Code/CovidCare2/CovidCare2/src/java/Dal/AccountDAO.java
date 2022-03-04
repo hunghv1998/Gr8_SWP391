@@ -137,5 +137,22 @@ public class AccountDAO extends DBContext {
         return list;
     }
     
+     public int deleteAccount(String id) {
+        int n = 0;
+
+        String sql = "DELETE FROM GroupAccount WHERE username = ?\n"
+                + "DELETE FROM Account WHERE username = ?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, id);
+            pre.setString(2, id);
+            n = pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(Account.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return n;
+    }
+     
 
 }
