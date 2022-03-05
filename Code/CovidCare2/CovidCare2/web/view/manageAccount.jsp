@@ -14,7 +14,6 @@
     <body class="body-wrapper">
 
         <%@include file = "../common/nav.jsp" %>
-    <body>
 
         <section class="dashboard section">
             <!-- Container Start -->

@@ -53,10 +53,6 @@
         <servlet-class>Controller.CreateNewsController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditAccountController</servlet-name>
-        <servlet-class>Controller.EditAccountController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>DeleteAccountController</servlet-name>
         <servlet-class>Controller.DeleteAccountController</servlet-class>
     </servlet>
@@ -103,10 +99,6 @@
     <servlet-mapping>
         <servlet-name>CreateNewsController</servlet-name>
         <url-pattern>/CreateNews</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditAccountController</servlet-name>
-        <url-pattern>/EditAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteAccountController</servlet-name>
