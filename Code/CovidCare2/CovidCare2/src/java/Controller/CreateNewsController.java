@@ -1,118 +1,146 @@
 package Controller;
 
+import Dal.NewsDAO;
+import Model.Account;
+import Model.News;
+import javax.servlet.annotation.MultipartConfig;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import Dal.NewsDAO;
-import Model.Account;
-import Model.News;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-
-import java.nio.file.Paths;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Random;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import javax.servlet.http.Part;
-
 /**
  *
  * @author Administrator
  */
-@MultipartConfig
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+        maxFileSize = 1024 * 1024 * 10, // 10MB
+        maxRequestSize = 1024 * 1024 * 50)
 
 public class CreateNewsController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    public static final String UPLOAD_DIR = "images/news";
+    public String dbFileName = "";
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("view/createNews.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/createNews.jsp").forward(request, response);
 
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            NewsDAO nD = new NewsDAO();
-            Account acc = (Account) request.getSession().getAttribute("account");
-            Random r = new Random();
-            //get data from jsp 
-            String title = request.getParameter("title");
-            String description = request.getParameter("description");
+       response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        PrintWriter out = response.getWriter();
+        NewsDAO nD = new NewsDAO(); 
 
-            //get date 
-            java.sql.Date created_date = new java.sql.Date(System.currentTimeMillis());
+        //get title, des,and path file
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
 
-            //get Photo 
-            Part part = request.getPart("photo");
-            String realPath = request.getServletContext().getRealPath("/images/news");
-            String filename = Paths.get(part.getSubmittedFileName()).getFileName().toString();
-            part.write(realPath + "/" + filename);
-
-            //get Short Description 
-            String[] arrOfStr = description.split(" ");
-            String shortDes = "";
-            for (int i = 0; i < 15; i++) {
-                shortDes += arrOfStr[i];
-                shortDes += " ";
-            }
-
-            //Create new news 
-            News n = new News();
-            n.setNewsId(r.nextInt());
-            n.setTitle(title);
-            n.setContent(description);
-            n.setShort_des(shortDes);
-            n.setUname(acc.getUserName());
-            n.setCreate_date(created_date);
-
-            //insert into DB
-            nD.createNews(n);
-            response.sendRedirect("view/home.jsp");
-        } catch (Exception e) {
-
+        //get Short Des
+        
+        String shortDes = getShortDescriptiop(description);
+        if(shortDes.length() == 0){
+            request.setAttribute("errMess", "Description must be more than 100 character");
+            request.getRequestDispatcher("CreateNews").forward(request, response);
         }
+        //get created date 
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
+
+        //get Acc created 
+        Account acc = (Account) request.getSession().getAttribute("account");
+
+        //get image file 
+        Part part = request.getPart("file");
+        String fileName = "";
+        if (part != null) {
+             fileName = extractFileName(part);
+            String applicationPath = getServletContext().getRealPath("");
+
+            String uploadPath = applicationPath + File.separator + UPLOAD_DIR;
+            System.out.println("applicationPath:" + applicationPath);
+            File fileUploadDirectory = new File(uploadPath);
+            if (!fileUploadDirectory.exists()) {
+                fileUploadDirectory.mkdirs();
+            }
+            //create new path to save image
+            String savePath = uploadPath + File.separator + fileName;
+            String sRootPath = new File(savePath).getAbsolutePath();
+
+            //copy input file to new path
+            part.write(savePath + File.separator);
+            File fileSaveDir1 = new File(savePath);
+
+            dbFileName = UPLOAD_DIR + File.separator + fileName;
+            part.write(savePath + File.separator);
+        }
+   
+       
+        
+        //Create New
+        
+        News n = new News();
+        n.setContent(description);
+        n.setCreate_date(date);
+        n.setPublish_date(date);
+        n.setPhoto("images/news/" + fileName);
+        n.setUname(acc.getUserName());
+        n.setShort_des(shortDes);
+        n.setTitle(title);
+        
+        nD.createNews(n);
+        
+        response.sendRedirect("CreateNews");
+     
+        
+
+        
+        
+
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    private String extractFileName(Part part) {//This method will print the file name.
+        String contentDisp = part.getHeader("content-disposition");
+        String[] items = contentDisp.split(";");
+        for (String s : items) {
+            if (s.trim().startsWith("filename")) {
+                return s.substring(s.indexOf("=") + 2, s.length() - 1);
+            }
+        }
+        return "";
+    }
+
+    String getShortDescriptiop(String des) {
+        String[] arrDes = des.split(" ");
+        String shortDes = "";
+        if(arrDes.length < 50){
+            return "";
+        }
+        for (int i = 0; i < 50; i++) {
+            shortDes += arrDes[i];
+            shortDes += " ";
+        }
+        return shortDes;
+    }
 
 }

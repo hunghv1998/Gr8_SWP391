@@ -5,11 +5,8 @@
  */
 package Model;
 
-import Dal.TimetableDAO;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 /**
  *
@@ -82,7 +79,4 @@ public class TimetableEvent {
     public void setAllDay(boolean allDay) {
         this.allDay = allDay;
     }
-
 }
-
-

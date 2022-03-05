@@ -24,7 +24,7 @@ public class NewsDAO extends DBContext {
     public int createNews(News news) {
         int n = 0;
 
-        String sql = "INSERT INTO news(content, uname, title, short_des, created_date) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO news(content, uname, title, short_des, created_date,public_date,photo) VALUES (?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -33,12 +33,19 @@ public class NewsDAO extends DBContext {
             pre.setString(3, news.getTitle());
             pre.setString(4, news.getShort_des());
             pre.setDate(5, news.getCreate_date());
+            pre.setDate(6, news.getPublish_date());
+            pre.setString(7, news.getPhoto());
+            
+            
             n = pre.executeUpdate();
+            
         } catch (SQLException ex) {
             Logger.getLogger(News.class.getName()).log(Level.SEVERE, null, ex);
         }
         return n;
     }
+    
+   
     
     public News getNews(int id) {
         String sql = "SELECT * FROM news WHERE newsId=" + id;
