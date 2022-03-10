@@ -25,7 +25,8 @@
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
                                 <ul>
-                                    <li><a href="CreateNews"><i class=""></i> Create News </a></li>                                   
+                                    <li><a href="CreateNews"><i class=""></i> Create News </a></li>    
+                                    <li><a href="viewListNewsController"><i class=""></i> Manager News </a></li>
                                     <li class="active" >
                                         <a href="ManageAccount"><i class=""></i> Manager profiles <span>12</span></a>
                                     </li>																			
@@ -64,7 +65,7 @@
                                                         <a href="EditAccount?username=${o.userName}&&password=${o.passWord}" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
                                                     </li>                                                 
                                                     <li class="list-inline-item">
-                                                        <a href="DeleteAccount?username=${o.userName}" onclick="return confirm('Are you want to delete?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
+                                                        <a href="DeleteAccount?username=${o.userName}" onclick="return confirm('Bạn có muốn xóa không?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>

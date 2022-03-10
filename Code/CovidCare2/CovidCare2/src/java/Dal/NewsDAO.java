@@ -144,4 +144,21 @@ public class NewsDAO extends DBContext {
         }
         return total;
     }
+    
+    
+     public void deleteNews(int newsId) {
+        try {
+            String sql = "DELETE FROM [dbo].[news]\n"
+                    + "      WHERE newsId = ? ";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setInt(1, newsId);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    
  }

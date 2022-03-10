@@ -56,6 +56,10 @@
         <servlet-name>DeleteAccountController</servlet-name>
         <servlet-class>Controller.DeleteAccountController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListNews</servlet-name>
+        <servlet-class>Controller.viewListNewsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>DeleteAccountController</servlet-name>
         <url-pattern>/DeleteAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListNews</servlet-name>
+        <url-pattern>/viewListNewsController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

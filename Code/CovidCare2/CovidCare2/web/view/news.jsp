@@ -46,7 +46,7 @@
                                 <!-- Post Description -->
                                 <p class="">${n.short_des}</p>
                                 <!-- Read more button -->
-                                <a href="NewsDetails?newsId=${n.newsId}" class="btn btn-primary">Read More</a>
+                                <a href="NewsDetails?newsId=${n.newsId}" class="btn btn-primary">Xem Tin</a>
                             </article>
                         </c:forEach>                  
                     </div>

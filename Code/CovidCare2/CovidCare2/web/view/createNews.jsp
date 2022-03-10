@@ -33,7 +33,8 @@
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
                                 <ul>
-                                    <li class="active"><a href="CreateNews"><i class=""></i> Create News </a></li>                                   
+                                    <li class="active"><a href="CreateNews"><i class=""></i> Create News </a></li>   
+                                     <li><a href="viewListNewsController"><i class=""></i> Manager News </a></li>
                                     <li>
                                         <a href="ManageAccount"><i class=""></i> Manager profiles <span>12</span></a>
                                     </li>														
