@@ -1,3 +1,9 @@
+<%-- 
+    Document   : register
+    Created on : Mar 14, 2022, 3:58:59 PM
+    Author     : chinh
+--%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,11 +25,6 @@
                                         <b>${message}</b>
                                     </c:if>
                                     <input type="text" name="username" placeholder="Tài khoản" class="border p-3 w-100 my-2">
-                                    <!--
-                                    <input type="text" name="fullname" placeholder="Họ và tên" class="border p-3 w-100 my-2">
-                                    <input type="number" name="phone" placeholder="Số điện thoại" class="border p-3 w-100 my-2">
-                                    <input type="email" name="email" placeholder="Địa chỉ email" class="border p-3 w-100 my-2">
-                                    -->
                                     <input type="password" name="password" placeholder="Mật khẩu" class="border p-3 w-100 my-2" value="">
                                     <input type="password" name="confirm" placeholder="Nhật lại mật khẩu" class="border p-3 w-100 my-2">                           
                                     <input style="margin-left: 115px;" type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" value="Đăng Ký">                         
