@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class DBContext {
     protected Connection connection;
-    
+
     public DBContext(String URL, String username, String password) {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -46,7 +46,7 @@ public class DBContext {
     }
 
     public DBContext() {
-        this("jdbc:sqlserver://localhost:1433;databaseName=CovidCare;sslProtocol=TLSv1.2;", "sa", "123456");
+        this("jdbc:sqlserver://localhost:1433;databaseName=CovidCareDB;sslProtocol=TLSv1.2;", "sa", "123456");
     }
 
     public static void main(String[] args) {

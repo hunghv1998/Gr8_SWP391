@@ -103,7 +103,7 @@ public class DBPool {
                     ResultSet.CONCUR_UPDATABLE);
             rs = state.executeQuery(sql);
         } catch (SQLException ex) {
-            Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBPool.class.getName()).log(Level.SEVERE, null, ex);
         }
         return rs;
     }

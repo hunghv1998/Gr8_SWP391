@@ -25,7 +25,7 @@
                                 <a class="nav-link" href=".">Trang chủ</a>
                             </li>
                             <c:choose>
-                                <c:when test="${account.getGroupId() == 1}">
+                                <c:when test="${user.getUserType() == 1}">
                                     <li class="nav-item active">
                                         <a class="nav-link" href="management">Quản lý</a>
                                     </li>
@@ -38,7 +38,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <c:choose>
-                                        <c:when test="${account.getGroupId() == 2}">
+                                        <c:when test="${user.getUserType() == 2}">
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="">Lịch trình</a>
                                             </li>
@@ -59,7 +59,7 @@
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="timetable">Thời gian biểu</a>
                                             </li>
-                                            <c:if test="${account.getGroupId() == 3}">
+                                            <c:if test="${user.getUserType() == 3}">
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="userinfo">Thông tin cá nhân</a>
                                                 </li>
@@ -71,7 +71,7 @@
                         </ul>
                         <ul class="navbar-nav ml-auto mt-10">
                             <c:choose>
-                                <c:when test="${account == null}">
+                                <c:when test="${user == null}">
                                     <li class="nav-item">                                   
                                         <a class="nav-link login-button" href="login">Đăng Nhập</a> 
                                     </li>

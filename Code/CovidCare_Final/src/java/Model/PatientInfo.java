@@ -24,6 +24,8 @@ public class PatientInfo {
     private int wardId;
     private int ageType;
     private ArrayList<Disease> diseases;
+    private boolean covidStatus;
+    private String covidPhoto;
     private boolean firstTimeLogin;
 
     public PatientInfo() {
@@ -41,6 +43,12 @@ public class PatientInfo {
         this.ageType = ageType;
         this.diseases = diseases;
         this.firstTimeLogin = firstTimeLogin;
+    }
+
+    public PatientInfo(int userId, boolean covidStatus, String covidPhoto) {
+        this.userId = userId;
+        this.covidStatus = covidStatus;
+        this.covidPhoto = covidPhoto;
     }
 
     public int getUserId() {
@@ -129,6 +137,22 @@ public class PatientInfo {
 
     public void setFirstTimeLogin(boolean firstTimeLogin) {
         this.firstTimeLogin = firstTimeLogin;
+    }
+
+    public boolean isCovidStatus() {
+        return covidStatus;
+    }
+
+    public void setCovidStatus(boolean covidStatus) {
+        this.covidStatus = covidStatus;
+    }
+
+    public String getCovidPhoto() {
+        return covidPhoto;
+    }
+
+    public void setCovidPhoto(String covidPhoto) {
+        this.covidPhoto = covidPhoto;
     }
 
 }
