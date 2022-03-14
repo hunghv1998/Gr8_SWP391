@@ -34,7 +34,7 @@
                             <div class="widget user-dashboard-menu">
                                 <ul>
                                     <li class="active"><a href="CreateNews"><i class=""></i> Create News </a></li>   
-                                     <li><a href="viewListNewsController"><i class=""></i> Manager News </a></li>
+                                    <li><a href="viewListNewsController"><i class=""></i> Manager News </a></li>
                                     <li>
                                         <a href="ManageAccount"><i class=""></i> Manager profiles <span>12</span></a>
                                     </li>														
@@ -54,22 +54,31 @@
                                     <tbody>
                                     <div class="col-lg-12">
                                         <h6 class="font-weight-bold pt-4 pb-1">Title :</h6>
-                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Ad title go There">                             
+                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Ad title go There" value="${news.title}">                             
                                         <div class="choose-file text-center my-4 py-4 rounded">
                                             <label for="file-upload">
                                                 <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
                                                 <span class="d-block">or</span>
                                                 <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                                 <span class="d-block">Maximum upload file size: 500 KB</span>
+                                                <span class="d-block">${news.photo}</span>
                                                 <input type="file"  name="file" class="form-control-file d-none" id="file-upload">
                                             </label>
                                         </div>
                                         <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                                        <textarea name="description" id="" class="border p-3 w-100" rows="7" placeholder="Write details about news"></textarea>
+                                        <textarea name="description" id="" class="border p-3 w-100" rows="7" placeholder="Write details about news">${news.content}</textarea>
                                     </div>
                                     </tbody>
-                                </table>              
-                                <input type="submit" class="btn btn-primary d-block mt-2" value="Post News">
+                                </table>                                            
+                                       <c:choose>
+                                           <c:when test="${news.title != null}">
+                                               <a href="EditNews?newsId=${news.newsId}&&newsTitle=${news.title}&&
+                                                  newsPhoto=${news.photo}&&newsContent=${news.content}" class="edit"><i class="fa-solid fa-eye" title="Edit News"></i></a>
+                                       </c:when>    
+                                       <c:otherwise>
+                                            <input type="submit" class="btn btn-primary d-block mt-2" value="Post News">
+                                       </c:otherwise>
+                                </c:choose>
                             </div>
                         </form>
                     </div>

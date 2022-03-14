@@ -31,35 +31,55 @@ import javax.servlet.http.Part;
         maxFileSize = 1024 * 1024 * 10, // 10MB
         maxRequestSize = 1024 * 1024 * 50)
 
-public class CreateNewsController extends HttpServlet {
+public class CreateNewsController extends Authentication {
 
     private static final long serialVersionUID = 1L;
     public static final String UPLOAD_DIR = "images/news";
     public String dbFileName = "";
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("/view/createNews.jsp").forward(request, response);
+    private String extractFileName(Part part) {//This method will print the file name.
+        String contentDisp = part.getHeader("content-disposition");
+        String[] items = contentDisp.split(";");
+        for (String s : items) {
+            if (s.trim().startsWith("filename")) {
+                return s.substring(s.indexOf("=") + 2, s.length() - 1);
+            }
+        }
+        return "";
+    }
 
+    String getShortDescriptiop(String des) {
+        String[] arrDes = des.split(" ");
+        String shortDes = "";
+        if (arrDes.length < 50) {
+            return "";
+        }
+        for (int i = 0; i < 50; i++) {
+            shortDes += arrDes[i];
+            shortDes += " ";
+        }
+        return shortDes;
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       response.setContentType("text/html;charset=UTF-8");
+    protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/view/createNews.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         PrintWriter out = response.getWriter();
-        NewsDAO nD = new NewsDAO(); 
+        NewsDAO nD = new NewsDAO();
 
         //get title, des,and path file
         String title = request.getParameter("title");
         String description = request.getParameter("description");
 
         //get Short Des
-        
         String shortDes = getShortDescriptiop(description);
-        if(shortDes.length() == 0){
+        if (shortDes.length() == 0) {
             request.setAttribute("errMess", "Description must be more than 100 character");
             request.getRequestDispatcher("CreateNews").forward(request, response);
         }
@@ -74,7 +94,7 @@ public class CreateNewsController extends HttpServlet {
         Part part = request.getPart("file");
         String fileName = "";
         if (part != null) {
-             fileName = extractFileName(part);
+            fileName = extractFileName(part);
             String applicationPath = getServletContext().getRealPath("");
 
             String uploadPath = applicationPath + File.separator + UPLOAD_DIR;
@@ -94,11 +114,8 @@ public class CreateNewsController extends HttpServlet {
             dbFileName = UPLOAD_DIR + File.separator + fileName;
             part.write(savePath + File.separator);
         }
-   
-       
-        
+
         //Create New
-        
         News n = new News();
         n.setContent(description);
         n.setCreate_date(date);
@@ -107,40 +124,11 @@ public class CreateNewsController extends HttpServlet {
         n.setUname(acc.getUserName());
         n.setShort_des(shortDes);
         n.setTitle(title);
-        
+
         nD.createNews(n);
-        
+
         response.sendRedirect("CreateNews");
-     
-        
 
-        
-        
-
-    }
-
-    private String extractFileName(Part part) {//This method will print the file name.
-        String contentDisp = part.getHeader("content-disposition");
-        String[] items = contentDisp.split(";");
-        for (String s : items) {
-            if (s.trim().startsWith("filename")) {
-                return s.substring(s.indexOf("=") + 2, s.length() - 1);
-            }
-        }
-        return "";
-    }
-
-    String getShortDescriptiop(String des) {
-        String[] arrDes = des.split(" ");
-        String shortDes = "";
-        if(arrDes.length < 50){
-            return "";
-        }
-        for (int i = 0; i < 50; i++) {
-            shortDes += arrDes[i];
-            shortDes += " ";
-        }
-        return shortDes;
     }
 
 }

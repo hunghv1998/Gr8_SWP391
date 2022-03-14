@@ -18,17 +18,13 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Hoang Hung
  */
-public class ManageAccountController extends HttpServlet {
+public class ManageAccountController extends Authentication {
 
-   
-
-    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         try {
+    protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
             AccountDAO accDao = new AccountDAO();
-            ArrayList<Account> list = accDao.getAcc();           
+            ArrayList<Account> list = accDao.getAcc();
             request.setAttribute("listA", list);
             request.getRequestDispatcher("view/manageAccount.jsp").forward(request, response);
         } catch (Exception e) {
@@ -36,12 +32,9 @@ public class ManageAccountController extends HttpServlet {
         }
     }
 
-    
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       
+    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
 }
