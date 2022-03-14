@@ -1,14 +1,18 @@
+<%-- 
+    Document   : index
+    Created on : Mar 14, 2022, 11:46:56 AM
+    Author     : chinh
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <%
         request.setAttribute("title", "Trang chủ");
     %>
-    <%@include file = "../common/head.jsp" %>
-
-    <body class="body-wrapper">
-        <%@include file = "../common/nav.jsp" %>
+    <%@include file = "common/head.jsp" %>
+    <body>
+        <%@include file = "common/nav.jsp" %>
 
         <section class="hero-area bg-1 text-center overly">
             <!-- Container Start -->
@@ -87,9 +91,6 @@
             <!-- Container End -->
         </section>
     </body>
-    <%@include file = "../common/footer.jsp" %>
+    <%@include file = "common/footer.jsp" %>
+</body>
 </html>
-
-
-
-
