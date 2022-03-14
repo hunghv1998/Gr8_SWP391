@@ -5,12 +5,16 @@
  */
 package Controller;
 
-import DAO.PatientDAO;
-import DAO.UserDAO;
-import Model.User;
+import DAO.CommonDataDAO;
+import Model.City;
+import Model.District;
+import Model.Ward;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +23,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author chinh
  */
-public class RegisterController extends HttpServlet {
+@WebServlet(name = "GetLocationServlet", urlPatterns = {"/GetLocation"})
+public class GetLocationServlet extends HttpServlet {
+
+    private final CommonDataDAO cdD = new CommonDataDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,15 +42,33 @@ public class RegisterController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String op = request.getParameter("operation");
+
+            if (op.equals("city")) {
+                ArrayList<City> cities = cdD.getAllCity();
+                Gson json = new Gson();
+                String cityList = json.toJson(cities);
+                response.setContentType("text/html");
+                out.write(cityList);
+            }
+
+            if (op.equals("district")) {
+                String cityId = request.getParameter("cityId");
+                ArrayList<District> districts = cdD.getDistrictByCityId(cityId);
+                Gson json = new Gson();
+                String districtList = json.toJson(districts);
+                response.setContentType("text/html");
+                out.write(districtList);
+            }
+
+            if (op.equals("ward")) {
+                String wardId = request.getParameter("districtId");
+                ArrayList<Ward> wards = cdD.getWardByDistrictId(wardId);
+                Gson json = new Gson();
+                String wardList = json.toJson(wards);
+                response.setContentType("text/html");
+                out.write(wardList);
+            }
         }
     }
 
@@ -59,15 +84,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        User user = (User) request.getSession().getAttribute("user");
-
-        if (user == null) {
-            request.getSession().invalidate();
-            request.setAttribute("title", "Đăng ký");
-            request.getRequestDispatcher("/views/register.jsp").forward(request, response);
-        } else {
-            response.sendRedirect(".");
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -81,31 +98,7 @@ public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String confirm = request.getParameter("confirm");
-        
-        String message = "";
-        
-        UserDAO userDAO =  new UserDAO();
-        
-        if (userDAO.getIdFromUsername(username) > 0) {
-            message += "Tài khoản đã tồn tại<br>";
-        }
-        if (!password.equals(confirm)) {
-            message += "Mật khẩu không trùng khớp<br>";
-        }
-        if (message.isEmpty()) {
-            PatientDAO patientDAO = new PatientDAO();
-            
-            userDAO.addUser(new User(username, password, 3));
-            patientDAO.addPatient(userDAO.getIdFromUsername(username));
-            response.sendRedirect("login");
-        } else {
-            request.setAttribute("username", username);
-            request.setAttribute("message", message);
-            request.getRequestDispatcher("/views/register.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**

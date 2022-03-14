@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class UserDAO extends DBContext {
 
     public User login(User user) {
-        String sql = "SELECT * FROM users where username='" + user.getUsername()
+        String sql = "SELECT * FROM Users where username='" + user.getUsername()
                 + "' AND password='" + user.getPassword() + "'";
         ResultSet rs = getData(sql);
         try {
@@ -41,7 +41,7 @@ public class UserDAO extends DBContext {
     public Integer addUser(User user) {
         int result = 0;
 
-        String sql = "INSERT INTO users(username, password, userType) VALUES (?,?,?)";
+        String sql = "INSERT INTO Users(username, password, userType) VALUES (?,?,?)";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -58,7 +58,7 @@ public class UserDAO extends DBContext {
     public Integer changeUserStatus(Integer userId, boolean activeFlag) {
         int result = -1;
 
-        String sql = "UPDATE users SET activeStatus=? WHERE userId=?";
+        String sql = "UPDATE Users SET activeStatus=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class UserDAO extends DBContext {
     public Integer changePassword(User user) {
         int result = -1;
 
-        String sql = "UPDATE users SET password=? WHERE userId=?";
+        String sql = "UPDATE Users SET password=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -90,7 +90,7 @@ public class UserDAO extends DBContext {
     public Integer updateUser(User user) {
         int result = -1;
 
-        String sql = "UPDATE users SET username=?, password=?, activeStatus=? WHERE userId=?";
+        String sql = "UPDATE Users SET username=?, password=?, activeStatus=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -106,7 +106,7 @@ public class UserDAO extends DBContext {
     }
 
     public ArrayList<User> getUsersList() {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM Users";
 
         ResultSet rs = getData(sql);
 
@@ -129,7 +129,7 @@ public class UserDAO extends DBContext {
     }
 
     public Integer getIdFromUsername(String username) {
-        String sql = "SELECT userId FROM users WHERE username='" + username + "'";
+        String sql = "SELECT userId FROM Users WHERE username='" + username + "'";
         ResultSet rs = getData(sql);
 
         try {

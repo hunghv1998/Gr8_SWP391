@@ -23,7 +23,7 @@ public class PatientInfo {
     private String photo;
     private int wardId;
     private int ageType;
-    private ArrayList<Disease> diseases;
+    private ArrayList<Integer> diseases;
     private boolean covidStatus;
     private String covidPhoto;
     private boolean firstTimeLogin;
@@ -31,7 +31,7 @@ public class PatientInfo {
     public PatientInfo() {
     }
 
-    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, int wardId, int ageType, ArrayList<Disease> diseases, boolean firstTimeLogin) {
+    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, int wardId, int ageType, ArrayList<Integer> diseases, boolean firstTimeLogin) {
         this.userId = userId;
         this.name = name;
         this.birthday = birthday;
@@ -49,6 +49,22 @@ public class PatientInfo {
         this.userId = userId;
         this.covidStatus = covidStatus;
         this.covidPhoto = covidPhoto;
+    }
+
+    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, int wardId, int ageType, ArrayList<Integer> diseases, boolean covidStatus, String covidPhoto, boolean firstTimeLogin) {
+        this.userId = userId;
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.email = email;
+        this.address = address;
+        this.photo = photo;
+        this.wardId = wardId;
+        this.ageType = ageType;
+        this.diseases = diseases;
+        this.covidStatus = covidStatus;
+        this.covidPhoto = covidPhoto;
+        this.firstTimeLogin = firstTimeLogin;
     }
 
     public int getUserId() {
@@ -123,11 +139,11 @@ public class PatientInfo {
         this.ageType = ageType;
     }
 
-    public ArrayList<Disease> getDiseases() {
+    public ArrayList<Integer> getDiseases() {
         return diseases;
     }
 
-    public void setDiseases(ArrayList<Disease> diseases) {
+    public void setDiseases(ArrayList<Integer> diseases) {
         this.diseases = diseases;
     }
 
