@@ -48,7 +48,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             <li class="nav-item active">
-                                                <a class="nav-link" href="">Hỗ Trợ Trực Tuyến</a>
+                                                <a class="nav-link" href="chat">Hỗ Trợ Trực Tuyến</a>
                                             </li>
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="news">Tin tức</a>

@@ -30,10 +30,10 @@
                                         <a href="news"><i class="fa fa-newspaper-o"></i> Tin Tức</a></li>
 
                                     <li class="list-inline-item">
-                                        <a href=""><i class="fa fa-wechat"></i> Chat</a>
+                                        <a href="chat"><i class="fa fa-wechat"></i> Chat</a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href=""><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
+                                        <a href="timetable"><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
                                     </li>
                                 </ul>
                             </div>
@@ -77,10 +77,10 @@
                             <div class="short-popular-category-list text-center">
                                 <ul class="list-inline"  style="text-align: right;">
                                     <li class="list-inline-item">
-                                        <a href=""><i class="fa fa-wechat"></i> Chat</a>
+                                        <a href="chat"><i class="fa fa-wechat"></i> Chat</a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a href=""><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
+                                        <a href="timetable"><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
                                     </li>
                                 </ul>
                             </div>
