@@ -63,7 +63,7 @@
                                         <div class="">
                                             <ul class="list-inline justify-content-center">
                                                 <li class="list-inline-item">
-                                                    <a href="" onclick="return confirm('Bạn muốn chỉnh sửa không?')" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
+                                                    <a href="EditNews?newsId=${n.newsId}" onclick="return confirm('Bạn muốn chỉnh sửa không?')" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
                                                 </li>      
                                                <li class="list-inline-item">
                                                     <a href="NewsDetails?newsId=${n.newsId}" class="edit"><i class="fa-solid fa-eye" title="View"></i></a>

@@ -157,6 +157,8 @@ public class NewsDAO extends DBContext {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+  
     
     
     
