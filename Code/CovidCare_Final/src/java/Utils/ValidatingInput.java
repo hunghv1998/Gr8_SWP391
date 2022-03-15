@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Util;
+package Utils;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -106,5 +106,14 @@ public class ValidatingInput {
             }
         }
         return 4;
+    }
+
+    public boolean isNumber(String number) {
+        try {
+            Integer.parseInt(number);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
     }
 }

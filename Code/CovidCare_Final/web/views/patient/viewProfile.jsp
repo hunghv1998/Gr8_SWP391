@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="dnx_content_form_item_lab">
-                        ${name}
+                        
                     </div>
                 </div>
                 <div class="dnx_content_form_item clearfix">
@@ -27,14 +27,7 @@
                         Giới tính
                     </div>
                     <div class="dnx_content_form_item_lab">
-                        <c:choose>
-                            <c:when test="${not gender}">
-                                Nam
-                            </c:when>
-                            <c:otherwise>
-                                Nữ
-                            </c:otherwise>
-                        </c:choose>
+                        
                     </div>
                 </div>
             </div>
@@ -45,7 +38,7 @@
                     Ngày sinh
                 </div>
                 <div class="dnx_content_form_item_lab">
-                    ${bod}
+                    
                 </div>
             </div>
             <div class="dnx_content_form_item clearfix">
@@ -53,7 +46,7 @@
                     Email
                 </div>
                 <div class="dnx_content_form_item_lab">
-                    ${email}
+                    
                 </div>
             </div>
         </div>
@@ -63,7 +56,7 @@
                     Ảnh đại diện
                 </div>
                 <div class="dnx_content_form_item_lab">
-                    <img src="images/uploads/${image}" style="width: 150px; height: 100px;">
+                    <img src="images/uploads/${patient.getPhoto()}" style="width: 150px; height: 100px;">
                 </div>
             </div>
             <div class="dnx_content_form_item clearfix">
@@ -106,28 +99,17 @@
                 Số nhà, tên đường
             </div>
             <div class="dnx_content_form_item_lab">
-                ${address}
+                
             </div>
         </div>
         <h3>TÌNH TRẠNG SỨC KHỎE</h3>
         <div class="dnx_content_form">
             <div class="dnx_content_form_item clearfix">
                 <div class="dnx_content_form_item_lab" style="line-height: 17px !important;">
-                    Tình trạng tiêm vaccine?
+                    Tình trạng tiêm vaccine
                 </div>
                 <div class="dnx_content_form_item_field">
-                    <!-- <input  data-bind="value:so_mui_da_tiem"/> -->
-                    <select id="so_mui_da_tiem" data-bind="value:so_mui_da_tiem">
-                        <!-- <option value="1" selected="selected">Đã tiêm 2 mũi trở lên, thời gian tiêm mũi 2 đã trên 2 tuần</option>
-            <option value="0" selected="selected">Lựa chọn khác</option> -->
-                        <option value="0" selected="selected">Chưa tiêm</option>
-                        <option value="2" selected="selected">Đã tiêm 1 mũi</option>
-                        <option value="3" selected="selected">Đã tiêm 2 mũi, thời gian tiêm mũi 2 dưới 2 tuần
-                        </option>
-                        <option value="1" selected="selected">Đã tiêm 2 mũi, thời gian tiêm mũi 2 trên 2 tuần
-                        </option>
-                        <option value="4" selected="selected">Đã tiêm 3 mũi</option>
-                    </select>
+
                 </div>
             </div>
             <div class="dnx_content_form_item clearfix">
@@ -136,12 +118,7 @@
                 </div>
                 <div class="dnx_content_form_item_field">
                     <ul class="loaivx">
-                        <c:forEach items="${vaccines}" var="vaccine">
-                            <li>
-                                <input type="checkbox" value="${vaccine.getVaccId()}" id="vacc${vaccine.getVaccId()}" name="vaccines" disabled>
-                                <label for="vacc${vaccine.getVaccId()}">${vaccine.getVaccName()}</label>
-                            </li>
-                        </c:forEach>
+                        
                     </ul>
                 </div>
             </div>
@@ -188,12 +165,7 @@
             <div class="dnx_content_form_item">
                 <p>Người bệnh có đang điều trị một hay nhiều các bệnh nào trong số các bệnh sau đây?</p>
                 <ul class="check_lst danhsach-benhnen">
-                    <c:forEach items="${diseases}" var="disease">
-                        <li>
-                            <input type="checkbox" value="${disease.getDiseaseId()}" id="disease${disease.getDiseaseId()}" name="diseases" disabled>
-                            <label for="disease${disease.getDiseaseId()}" style="display: flex;">${disease.getDiseaseDetail()}</label>
-                        </li>
-                    </c:forEach>
+                    
 
                 </ul>
             </div>

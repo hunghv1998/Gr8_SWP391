@@ -76,11 +76,15 @@ public class PatientDAO extends DBContext {
                 patient.setEmail(rs.getString("email"));
                 patient.setAddress(rs.getString("address"));
                 patient.setPhoto(rs.getString("photo"));
-                patient.setWardId(rs.getInt("wardId"));
+                patient.setWardId(rs.getString("wardId"));
                 patient.setAgeType(rs.getInt("ageType"));
                 patient.setCovidStatus(rs.getBoolean("covidStatus"));
                 patient.setCovidPhoto(rs.getString("covidPhoto"));
                 patient.setFirstTimeLogin(rs.getBoolean("firstTimeLogin"));
+                patient.setVaccineStatus(rs.getInt("vaccineStatus"));
+                patient.setPregnancyStatus(rs.getBoolean("pregnancyStatus"));
+                patient.setEmergencyStatus(rs.getBoolean("emergencyStatus"));
+                patient.setVaccList(this.getPatientVaccinesList(userId));
                 patient.setDiseases(this.getPatientDiseasesList(userId));
                 return patient;
             }
@@ -100,7 +104,9 @@ public class PatientDAO extends DBContext {
                 + "photo=?, "
                 + "wardId=?, "
                 + "ageType=?, "
-                + "covidPhoto=? "
+                + "vaccineStatus=?, "
+                + "pregnancyStatus=?, "
+                + "emergencyStatus=? "
                 + "WHERE patientId=?";
 
         try {
@@ -111,12 +117,16 @@ public class PatientDAO extends DBContext {
             pre.setString(4, patient.getEmail());
             pre.setString(5, patient.getAddress());
             pre.setString(6, patient.getPhoto());
-            pre.setInt(7, patient.getWardId());
+            pre.setString(7, patient.getWardId());
             pre.setInt(8, patient.getAgeType());
-            pre.setString(9, patient.getCovidPhoto());
-            pre.setInt(10, patient.getUserId());
+            pre.setInt(9, patient.getVaccineStatus());
+            pre.setBoolean(10, patient.isPregnancyStatus());
+            pre.setBoolean(11, patient.isEmergencyStatus());
+            pre.setInt(12, patient.getUserId());
 
             pre.executeUpdate();
+            this.updatePatientVaccines(patient.getUserId(), patient.getVaccList());
+            this.updatePatientDiseases(patient.getUserId(), patient.getDiseases());
         } catch (SQLException ex) {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -139,8 +149,25 @@ public class PatientDAO extends DBContext {
         return result;
     }
 
+    public ArrayList<Integer> getPatientVaccinesList(int userId) {
+        String sql = "SELECT vaccId from Patient_Vaccines WHERE patientId=" + userId;
+
+        ResultSet rs = getData(sql);
+
+        ArrayList<Integer> result = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                result.add(rs.getInt("vaccId"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return result;
+    }
+
     public void updatePatientDiseases(int userId, ArrayList<Integer> diseasesList) {
-        String sql_update = "UPDATE Patient_diseases SET diseaseId =? WHERE userId=?";
+        String sql_update = "INSERT INTO Patient_diseases(userId, diseaseId) VALUES(?,?)";
         String sql_delete = "DELETE FROM Patient_diseases WHERE userId=?";
         try {
 //            Delete previous records in Patient_diseases table
@@ -151,9 +178,29 @@ public class PatientDAO extends DBContext {
 //            Update new records into Patient_diseases table
             for (int i = 0; i < diseasesList.size(); i++) {
                 PreparedStatement update = connection.prepareStatement(sql_update);
-                update.setInt(1, diseasesList.get(i));
-                update.setInt(2, userId);
+                update.setInt(1, userId);
+                update.setInt(2, diseasesList.get(i));
                 update.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updatePatientVaccines(int userId, ArrayList<Integer> vaccinesList) {
+        String sql_update = "INSERT INTO Patient_Vaccines(patientId,vaccId) VALUES (?,?)";
+        String sql_delete = "DELETE FROM Patient_Vaccines WHERE patientId=?";
+        try {
+//            Delete previous records in Patient_diseases table
+            PreparedStatement delete = connection.prepareStatement(sql_delete);
+            delete.setInt(1, userId);
+            delete.executeUpdate();
+
+//            Update new records into Patient_diseases table
+            for (int i = 0; i < vaccinesList.size(); i++) {
+                PreparedStatement update = connection.prepareStatement(sql_update);
+                update.setInt(1, userId);
+                update.setInt(2, vaccinesList.get(i));
             }
         } catch (SQLException ex) {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -165,6 +212,19 @@ public class PatientDAO extends DBContext {
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setBoolean(1, covidStatus);
+            pre.setInt(2, UserId);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void updateCovidPhoto(int UserId, String CovidPhoto) {
+        String sql = "UPDATE Patient SET covidPhoto=? WHERE userId=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, CovidPhoto);
             pre.setInt(2, UserId);
             pre.executeUpdate();
         } catch (SQLException ex) {

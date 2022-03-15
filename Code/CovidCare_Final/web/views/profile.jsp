@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <% if (request.getAttribute("update") != null || request.getParameter("update") != null) {%>
+                        <% if (request.getAttribute("action").equals("update") || request.getParameter("action").equals("update")) {%>
                         <%@include file = "patient/editProfile.jsp" %>
                         <%} else {%>
                         <%@include file = "patient/viewProfile.jsp" %>
