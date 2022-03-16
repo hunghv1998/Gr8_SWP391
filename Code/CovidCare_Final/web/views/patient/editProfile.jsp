@@ -36,18 +36,18 @@
                             <select name="gender" placeholder="Nhập nội dung">
                                 <option value="0" <c:if test="${not patient.isGender()}">selected</c:if>>Nam</option>
                                 <option value="1" <c:if test="${patient.isGender()}">selected</c:if>>Nữ</option>
-                            </select>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="dnx_content_form_2col clearfix">
-                <div class="dnx_content_form_item clearfix">
-                    <div class="dnx_content_form_item_lab">
-                        Ngày sinh <span class="text-danger">*</span>
-                    </div>
-                    <div class="dnx_content_form_item_field">
-                        <input class="datetimepicker-input form-control" type="date" name="birthday" value="${patient.getBirthday()}">
+                <div class="dnx_content_form_2col clearfix">
+                    <div class="dnx_content_form_item clearfix">
+                        <div class="dnx_content_form_item_lab">
+                            Ngày sinh <span class="text-danger">*</span>
+                        </div>
+                        <div class="dnx_content_form_item_field">
+                            <input class="datetimepicker-input form-control" type="date" name="birthday" value="${patient.getBirthday()}">
                     </div>
                 </div>
                 <div class="dnx_content_form_item clearfix">
@@ -114,7 +114,7 @@
                     Số nhà, tên đường
                 </div>
                 <div class="dnx_content_form_item_field">
-                    <input type="text" name="address" class="form-control" value="${address}">
+                    <input type="text" name="address" class="form-control" value="${patient.getAddress()}">
                 </div>
             </div>
             <h3>TÌNH TRẠNG SỨC KHỎE</h3>
@@ -130,99 +130,99 @@
                             <c:set var="vaccStatus" scope="session" value="${patient.getVaccineStatus()}"/>
                             <c:forEach items="${vaccStatusList}" var="c">
                                 <option value="${c.getId()}" 
-                                <c:if test="${c.getId() eq vaccStatus}">
-                                    selected
-                                </c:if>>${c.getDetail()}</option>
+                                        <c:if test="${c.getId() eq vaccStatus}">
+                                            selected
+                                        </c:if>>${c.getDetail()}</option>
                             </c:forEach>
-                    </select>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="dnx_content_form_item clearfix">
-                <div class="dnx_content_form_item_lab" style="line-height: normal;">
-                    Tên vắc xin
+                <div class="dnx_content_form_item clearfix">
+                    <div class="dnx_content_form_item_lab" style="line-height: normal;">
+                        Tên vắc xin
+                    </div>
+                    <div class="dnx_content_form_item_field">
+                        <ul class="loaivx">
+                            <c:forEach items="${vaccines}" var="vaccine">
+                                <li>
+                                    <input type="checkbox" value="${vaccine.getVaccId()}" id="vacc${vaccine.getVaccId()}" name="vaccines" 
+                                           <c:forEach items="${patient.getVaccList()}" var="vacc">
+                                               <c:if test="${vacc == vaccine.getVaccId()}">
+                                                   checked
+                                               </c:if>
+                                           </c:forEach>>
+                                    <label for="vacc${vaccine.getVaccId()}">${vaccine.getVaccName()}</label>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
                 </div>
-                <div class="dnx_content_form_item_field">
-                    <ul class="loaivx">
-                        <c:forEach items="${vaccines}" var="vaccine">
+                <div class="dnx_content_form_item">
+                    <p>Phụ nữ có thai hoặc sinh con &lt;= 42 ngày tuổi không?</p>
+                    <ul>
+                        <li>
+                            <input type="radio" name="isPregnant" value="0" id="notPregnant" 
+                                   <c:if test="${not isPregnant}">checked</c:if>>
+                                   <label for="notPregnant">Không</label>
+                            </li>
                             <li>
-                                <input type="checkbox" value="${vaccine.getVaccId()}" id="vacc${vaccine.getVaccId()}" name="vaccines" 
-                                       <c:forEach items="${patient.getVaccList()}" var="vacc">
-                                           <c:if test="${vacc == vaccine.getVaccId()}">
-                                               checked
-                                           </c:if>
+                                <input type="radio" name="isPregnant" value="1" id="pregnant" 
+                                <c:if test="${isPregnant}">checked</c:if>>
+                                <label for="pregnant">Có</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dnx_content_form_item clearfix">
+                        <p>Có tình trạng cấp cứu chuyên khoa?</p>
+                        <ul>
+                            <li>
+                                <input type="radio" id="notEmergency" name="isEmergency" value="0" 
+                                <c:if test="${not isEmergency}">checked</c:if>>
+                                <label for="notEmergency">Không</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="emergency" name="isEmergency" value="1" 
+                                <c:if test="${isEmergency}">checked</c:if>>
+                                <label for="emergency">Có</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dnx_content_form_item clearfix">
+                        <div class="dnx_content_form_item_lab" style="line-height: 17px !important;">
+                            Người bệnh thuộc nhóm tuổi
+                        </div>
+                        <div class="dnx_content_form_item_field">                         
+                            <select name="ages">
+                                <option value="0">Chọn nhóm tuổi phù hợp</option>
+                            <c:set var="ageStatus" scope="session" value="${patient.getAgeType()}"/>
+                            <c:forEach items="${ages}" var="age">
+                                <option value="${age.getAgeId()}" 
+                                        <c:if test="${age.getAgeId() == ageStatus}">selected</c:if>>${age.getAgeType()}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dnx_content_form_item">
+                    <p>Người bệnh có đang điều trị một hay nhiều các bệnh nào trong số các bệnh sau đây?</p>
+                    <ul class="check_lst danhsach-benhnen">
+                        <c:forEach items="${diseases}" var="disease">
+                            <li>
+                                <input type="checkbox" value="${disease.getDiseaseId()}" id="disease${disease.getDiseaseId()}" name="diseases" 
+                                       <c:forEach items="${patient.getDiseases()}" var="dis">
+                                           <c:if test="${dis == disease.getDiseaseId()}">checked</c:if>
                                        </c:forEach>>
-                                <label for="vacc${vaccine.getVaccId()}">${vaccine.getVaccName()}</label>
+                                <label for="disease${disease.getDiseaseId()}" style="display: flex;">${disease.getDetail()}</label>
                             </li>
                         </c:forEach>
                     </ul>
                 </div>
             </div>
-            <div class="dnx_content_form_item">
-                <p>Phụ nữ có thai hoặc sinh con &lt;= 42 ngày tuổi không?</p>
-                <ul>
-                    <li>
-                        <input type="radio" name="isPregnant" value="0" id="notPregnant" 
-                    <c:if test="${not isPregnant}">checked</c:if>>
-                    <label for="notPregnant">Không</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="isPregnant" value="1" id="pregnant" 
-                    <c:if test="${isPregnant}">checked</c:if>>
-                    <label for="pregnant">Có</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="dnx_content_form_item clearfix">
-                <p>Có tình trạng cấp cứu chuyên khoa?</p>
-                <ul>
-                    <li>
-                        <input type="radio" id="notEmergency" name="isEmergency" value="0" 
-                    <c:if test="${not isEmergency}">checked</c:if>>
-                    <label for="notEmergency">Không</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="emergency" name="isEmergency" value="1" 
-                    <c:if test="${isEmergency}">checked</c:if>>
-                    <label for="emergency">Có</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="dnx_content_form_item clearfix">
-                <div class="dnx_content_form_item_lab" style="line-height: 17px !important;">
-                    Người bệnh thuộc nhóm tuổi
-                </div>
-                <div class="dnx_content_form_item_field">                         
-                    <select name="ages">
-                        <option value="0">Chọn nhóm tuổi phù hợp</option>
-                        <c:set var="ageStatus" scope="session" value="${patient.getAgeType()}"/>
-                        <c:forEach items="${ages}" var="age">
-                            <option value="${age.getAgeId()}" 
-                        <c:if test="${age.getAgeId() == ageStatus}">checked</c:if>>${age.getAgeType()}</option>
-                        </c:forEach>
-                    </select>
-                </div>
-            </div>
-
-            <div class="dnx_content_form_item">
-                <p>Người bệnh có đang điều trị một hay nhiều các bệnh nào trong số các bệnh sau đây?</p>
-                <ul class="check_lst danhsach-benhnen">
-                    <c:forEach items="${diseases}" var="disease">
-                        <li>
-                            <input type="checkbox" value="${disease.getDiseaseId()}" id="disease${disease.getDiseaseId()}" name="diseases" 
-                                   <c:forEach items="${patient.getDiseases()}" var="dis">
-                                       <c:if test="${dis == disease.getDiseaseId()}">selected</c:if>
-                                   </c:forEach>>
-                            <label for="disease${disease.getDiseaseId()}" style="display: flex;">${disease.getDetail()}</label>
-                        </li>
-                    </c:forEach>
-                </ul>
+            <div class="col-md-12 col-lg-12" style="align-items: center; justify-content: center; margin-left: 400px;">
+                <button  type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Cập nhật</button>
             </div>
         </div>
-        <div class="col-md-12 col-lg-12" style="align-items: center; justify-content: center; margin-left: 400px;">
-            <button  type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Cập nhật</button>
-        </div>
-    </div>
-</form>
+    </form>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -235,9 +235,14 @@
             data: {operation: 'city'},
             success: function (data, textStatus, jqXHR) {
                 console.log(data);
+
                 let obj = $.parseJSON(data);
                 $.each(obj, function (key, value) {
-                    $('#city').append('<option value="' + value.cityId + '">' + value.cityName + '</option>')
+                    if (value.cityId === "${city.getCityId()}") {
+                        $('#city').append('<option value="' + value.cityId + '" selected>' + value.cityName + '</option>');
+                    } else {
+                        $('#city').append('<option value="' + value.cityId + '">' + value.cityName + '</option>');
+                    }
                 });
                 $('select').formSelect();
             },
@@ -246,6 +251,7 @@
             },
             cache: false
         });
+        
         $('#city').change(function () {
             $('#district').find('option').remove();
             $('#district').append('<option>Chọn Quận/Huyện</option>');
@@ -265,8 +271,13 @@
                     console.log(data);
                     let obj = $.parseJSON(data);
                     $.each(obj, function (key, value) {
-                        $('#district').append('<option value="' + value.districtId + '">' + value.districtName + '</option>')
+                        if (value.districtId === "${district.getDistrictId()}") {
+                            $('#district').append('<option value="' + value.districtId + '" selected>' + value.districtName + '</option>');
+                        } else {
+                            $('#district').append('<option value="' + value.districtId + '">' + value.districtName + '</option>');
+                        }
                     });
+
                     $('select').formSelect();
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
@@ -294,7 +305,11 @@
                     console.log(data);
                     let obj = $.parseJSON(data);
                     $.each(obj, function (key, value) {
-                        $('#ward').append('<option value="' + value.wardId + '">' + value.wardName + '</option>')
+                        if (value.wardId === "${ward.getWardId()}") {
+                            $('#ward').append('<option value="' + value.wardId + '" selected>' + value.wardName + '</option>');
+                        } else {
+                            $('#ward').append('<option value="' + value.wardId + '">' + value.wardName + '</option>');
+                        }
                     });
                     $('select').formSelect();
                 },

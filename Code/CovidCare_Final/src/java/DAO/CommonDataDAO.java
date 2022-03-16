@@ -12,9 +12,11 @@ import Model.District;
 import Model.Vaccine;
 import Model.VaccineStatus;
 import Model.Ward;
+import com.sun.faces.util.MultiKeyConcurrentHashMap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -150,5 +152,70 @@ public class CommonDataDAO extends DBContext {
             Logger.getLogger(CommonDataDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return wards;
+    }
+
+    public City geCityByWardId(String id) {
+        String sql = "SELECT cdw.cityId, cdw.cityName FROM ("
+                + "SELECT c.cityId, c.cityName, dw.districtId, dw.districtName, dw.wardId, dw.wardName \n"
+                + "FROM Cities c \n"
+                + "JOIN (\n"
+                + "SELECT d.districtId, d.districtName, d.cityId, w.wardId, w.wardName \n"
+                + "FROM Wards w \n"
+                + "JOIN Districts d \n"
+                + "ON d.districtId = w.districtId) dw \n"
+                + "ON c.cityId = dw.cityId) cdw \n"
+                + "WHERE cdw.wardId='" + id + "'";
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                City city = new City();
+                city.setCityId(rs.getString(1));
+                city.setCityName(rs.getString(2));
+                return city;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CommonDataDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public District getDistrictByWardId(String id) {
+        String sql = "SELECT d.districtId, d.districtName, d.cityId \n"
+                + "FROM Districts d\n"
+                + "JOIN Wards w\n"
+                + "ON d.districtId = w.districtId\n"
+                + "WHERE w.wardId='" + id + "'";
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                District district = new District();
+                district.setDistrictId(rs.getString(1));
+                district.setDistrictName(rs.getString(2));
+                district.setCityId(rs.getString(3));
+                return district;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CommonDataDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public Ward getWardByWardId(String id) {
+        String sql = "SELECT wardId, wardName FROM Wards WHERE wardId='" + id + "'";
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                Ward ward = new Ward();
+                ward.setWardId(rs.getString(1));
+                ward.setWardName(rs.getString(2));
+                return ward;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CommonDataDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 }

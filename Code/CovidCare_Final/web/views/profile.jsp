@@ -22,10 +22,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <% if (request.getAttribute("action").equals("update") || request.getParameter("action").equals("update")) {%>
-                        <%@include file = "patient/editProfile.jsp" %>
-                        <%} else {%>
+                        <% if (request.getParameter("action") == null
+                                    || request.getAttribute("action").equals("view")
+                                    || request.getParameter("action").equals("view")) {%>
                         <%@include file = "patient/viewProfile.jsp" %>
+                        <%} else if (request.getAttribute("action").equals("update")
+                                || request.getParameter("action").equals("update")) {%>
+                        <%@include file = "patient/editProfile.jsp" %>
                         <%}%>
                     </div>
                 </div>

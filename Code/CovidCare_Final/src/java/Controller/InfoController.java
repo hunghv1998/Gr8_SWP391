@@ -8,11 +8,14 @@ package Controller;
 import DAO.CommonDataDAO;
 import DAO.PatientDAO;
 import Model.AgeType;
+import Model.City;
 import Model.Disease;
+import Model.District;
 import Model.PatientInfo;
 import Model.User;
 import Model.Vaccine;
 import Model.VaccineStatus;
+import Model.Ward;
 import Utils.UploadFile;
 import Utils.ValidatingInput;
 import java.io.IOException;
@@ -115,15 +118,21 @@ public class InfoController extends HttpServlet {
                 ArrayList<Vaccine> vaccines = commonDAO.getVaccineList();
                 ArrayList<AgeType> ages = commonDAO.getAgeTypeList();
                 ArrayList<Disease> diseases = commonDAO.getDiseaseList();
-
+                
+                City patientCity = commonDAO.geCityByWardId(patient.getWardId());
+                District patientDistrict = commonDAO.getDistrictByWardId(patient.getWardId());
+                Ward patientWard = commonDAO.getWardByWardId(patient.getWardId());
+                
                 session.setAttribute("vaccStatusList", vaccStatusList);
                 session.setAttribute("vaccines", vaccines);
                 session.setAttribute("ages", ages);
                 session.setAttribute("diseases", diseases);
                 session.setAttribute("patient", patient);
+                session.setAttribute("city", patientCity);
+                session.setAttribute("district", patientDistrict);
+                session.setAttribute("ward", patientWard);
 
                 if (patient.isFirstTimeLogin()) {
-//                    request.setAttribute("action", "update");
                     action = "update";
                 }
             }
@@ -134,9 +143,8 @@ public class InfoController extends HttpServlet {
             if (action.equals("update")) {
                 request.setAttribute("title", "Cập nhật thông tin cá nhân");
             } else {
-                request.setAttribute("title", "Thông tin các nhân");
+                request.setAttribute("title", "Thông tin cá nhân");
             }
-
             request.getRequestDispatcher("views/profile.jsp").forward(request, response);
         }
     }
@@ -158,6 +166,14 @@ public class InfoController extends HttpServlet {
         
         User user = (User) request.getSession().getAttribute("user");
 
+        String action = request.getParameter("action");
+        
+        if (action == null) {
+            action = "view";
+        }
+        
+        request.setAttribute("action", action);
+        
         int id = 0;
 
         if (request.getParameter("id") != null && check.isNumber(request.getParameter("id"))) {
@@ -227,14 +243,12 @@ public class InfoController extends HttpServlet {
             selectedDiseases = new String[]{};
         }
         for (String selectedDisease : selectedDiseases) {
-            vaccines.add(Integer.parseInt(selectedDisease));
-            System.out.println(selectedDisease);
+            diseases.add(Integer.parseInt(selectedDisease));
         }
         
         // Validating input
         String message = "";
         if (!check.isName(name)) {
-            System.out.println(name);
             message += "Tên đã nhập không hợp lệ<br>";
         }
 
@@ -251,14 +265,16 @@ public class InfoController extends HttpServlet {
             message += "Vui lòng cập nhật chi tiết địa chỉ Phường/Xã đang sinh sống<br>";
         }
 
-        if (vaccineStatus == 0) {
+        if (vaccineStatus == 0 || vaccines.isEmpty()) {
             vaccineStatus = 1;
         } else if (vaccines.size() >= 3) {
             vaccineStatus = 4;
         } else if (vaccines.size() < 2) {
             vaccineStatus = 2;
+        } else if (vaccineStatus < 3 && vaccines.size() == 2) {
+            vaccineStatus = 3;
         }
-
+        System.out.println(vaccines.size() + " " + vaccines.toString());
         if ((!gender) && isPregnant) {
             message += "Đàn ông không thể có bầu<br>";
         }
@@ -283,12 +299,12 @@ public class InfoController extends HttpServlet {
         patient.setDiseases(diseases);
 
         if (!message.equals("")) {
-            System.out.println(message);
             request.getSession().setAttribute("message", message);
             request.getSession().setAttribute("patient", patient);
             request.getRequestDispatcher("views/profile.jsp").forward(request, response);
         } else {
-            patientDAO.updatePatientInfo(patient);
+            System.out.println(patient.getDiseases().toString());
+            patientDAO.changePatientInfo(patient);
             patientDAO.updateFirstTimeFlag(id, false);
 
             response.sendRedirect("info");
