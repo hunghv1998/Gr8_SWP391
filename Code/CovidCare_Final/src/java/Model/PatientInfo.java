@@ -21,28 +21,18 @@ public class PatientInfo {
     private String email;
     private String address;
     private String photo;
-    private int wardId;
+    private String wardId;
     private int ageType;
     private ArrayList<Integer> diseases;
     private boolean covidStatus;
     private String covidPhoto;
     private boolean firstTimeLogin;
+    private int vaccineStatus;
+    private boolean pregnancyStatus;
+    private boolean emergencyStatus;
+    private ArrayList<Integer> vaccList;
 
     public PatientInfo() {
-    }
-
-    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, int wardId, int ageType, ArrayList<Integer> diseases, boolean firstTimeLogin) {
-        this.userId = userId;
-        this.name = name;
-        this.birthday = birthday;
-        this.gender = gender;
-        this.email = email;
-        this.address = address;
-        this.photo = photo;
-        this.wardId = wardId;
-        this.ageType = ageType;
-        this.diseases = diseases;
-        this.firstTimeLogin = firstTimeLogin;
     }
 
     public PatientInfo(int userId, boolean covidStatus, String covidPhoto) {
@@ -51,7 +41,7 @@ public class PatientInfo {
         this.covidPhoto = covidPhoto;
     }
 
-    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, int wardId, int ageType, ArrayList<Integer> diseases, boolean covidStatus, String covidPhoto, boolean firstTimeLogin) {
+    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, String wardId, int ageType, ArrayList<Integer> diseases, boolean covidStatus, String covidPhoto, boolean firstTimeLogin, int vaccineStatus, boolean pregnancyStatus, boolean emergencyStatus, ArrayList<Integer> vaccList) {
         this.userId = userId;
         this.name = name;
         this.birthday = birthday;
@@ -65,6 +55,10 @@ public class PatientInfo {
         this.covidStatus = covidStatus;
         this.covidPhoto = covidPhoto;
         this.firstTimeLogin = firstTimeLogin;
+        this.vaccineStatus = vaccineStatus;
+        this.pregnancyStatus = pregnancyStatus;
+        this.emergencyStatus = emergencyStatus;
+        this.vaccList = vaccList;
     }
 
     public int getUserId() {
@@ -123,11 +117,11 @@ public class PatientInfo {
         this.photo = photo;
     }
 
-    public int getWardId() {
+    public String getWardId() {
         return wardId;
     }
 
-    public void setWardId(int wardId) {
+    public void setWardId(String wardId) {
         this.wardId = wardId;
     }
 
@@ -169,6 +163,38 @@ public class PatientInfo {
 
     public void setCovidPhoto(String covidPhoto) {
         this.covidPhoto = covidPhoto;
+    }
+
+    public int getVaccineStatus() {
+        return vaccineStatus;
+    }
+
+    public void setVaccineStatus(int vaccineStatus) {
+        this.vaccineStatus = vaccineStatus;
+    }
+
+    public boolean isPregnancyStatus() {
+        return pregnancyStatus;
+    }
+
+    public void setPregnancyStatus(boolean pregnancyStatus) {
+        this.pregnancyStatus = pregnancyStatus;
+    }
+
+    public boolean isEmergencyStatus() {
+        return emergencyStatus;
+    }
+
+    public void setEmergencyStatus(boolean emergencyStatus) {
+        this.emergencyStatus = emergencyStatus;
+    }
+
+    public ArrayList<Integer> getVaccList() {
+        return vaccList;
+    }
+
+    public void setVaccList(ArrayList<Integer> vaccList) {
+        this.vaccList = vaccList;
     }
 
 }

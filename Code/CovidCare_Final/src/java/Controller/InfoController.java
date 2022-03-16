@@ -5,21 +5,45 @@
  */
 package Controller;
 
+import DAO.CommonDataDAO;
 import DAO.PatientDAO;
+import Model.AgeType;
+import Model.Disease;
 import Model.PatientInfo;
 import Model.User;
+import Model.Vaccine;
+import Model.VaccineStatus;
+import Utils.UploadFile;
+import Utils.ValidatingInput;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author chinh
  */
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 10,
+        maxFileSize = 1024 * 1024 * 50,
+        maxRequestSize = 1024 * 1024 * 100
+)
+
 public class InfoController extends HttpServlet {
+
+    private static final String UPLOAD_DIR = "images/uploads";
+
+    private final ValidatingInput check = new ValidatingInput();
+    private final PatientDAO patientDAO = new PatientDAO();
+    private final CommonDataDAO commonDAO = new CommonDataDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -59,35 +83,61 @@ public class InfoController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        HttpSession session = request.getSession();
+
         User user = (User) request.getSession().getAttribute("user");
 
-        String action = request.getParameter("action");
-
-        int id = 0;
-
-        if (action == null) {
-            action = "view";
-        }
-
-        if (request.getParameter("id") != null) {
-            id = Integer.parseInt(request.getParameter("id"));
+        if (user == null) {
+            response.sendRedirect("login");
         } else {
-            id = user.getUserId();
-        }
+            String action = request.getParameter("action");
 
-        if (user.getUserType() == 3) {
-            PatientDAO patientDAO = new PatientDAO();
+            if (action == null) {
+                action = "view";
+            }
 
-            PatientInfo patient = (PatientInfo) patientDAO.getPatientInfo(user.getUserId());
-            request.getSession().setAttribute("patient", patient);
+            int id = 0;
 
-            if (id != user.getUserId()) {
-                response.sendRedirect(action);
+            if (user.getUserType() == 3) {
+                id = user.getUserId();
+            } else if (request.getParameter("id") != null
+                    && check.isNumber(request.getParameter("id"))) {
+                id = Integer.parseInt(request.getParameter("id"));
+            }
+
+            PatientInfo patient = (PatientInfo) patientDAO.getPatientInfo(id);
+
+            if (patient != null) {
+                ArrayList<VaccineStatus> vaccStatusList = commonDAO.getVaccineStatusList();
+                ArrayList<Vaccine> vaccines = commonDAO.getVaccineList();
+                ArrayList<AgeType> ages = commonDAO.getAgeTypeList();
+                ArrayList<Disease> diseases = commonDAO.getDiseaseList();
+
+                session.setAttribute("vaccStatusList", vaccStatusList);
+                session.setAttribute("vaccines", vaccines);
+                session.setAttribute("ages", ages);
+                session.setAttribute("diseases", diseases);
+                session.setAttribute("patient", patient);
+
+                if (patient.isFirstTimeLogin()) {
+//                    request.setAttribute("action", "update");
+                    action = "update";
+                }
+            }
+
+            request.setAttribute("action", action);
+
+            // Set UserInfo title
+            if (action.equals("update")) {
+                request.setAttribute("title", "Cập nhật thông tin cá nhân");
+            } else {
+                request.setAttribute("title", "Thông tin các nhân");
             }
 
             request.getRequestDispatcher("views/profile.jsp").forward(request, response);
-        } else {
-
         }
     }
 
@@ -102,7 +152,147 @@ public class InfoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        
+        User user = (User) request.getSession().getAttribute("user");
+
+        int id = 0;
+
+        if (request.getParameter("id") != null && check.isNumber(request.getParameter("id"))) {
+            id = Integer.parseInt(request.getParameter("id"));
+        } else {
+            id = user.getUserId();
+        }
+
+        PatientInfo patient = (PatientInfo) request.getSession().getAttribute("patient");
+
+        if (patient == null) {
+            patient = new PatientInfo();
+        }
+
+        // Patient name
+        String name = request.getParameter("name");
+
+        // Patient gender
+        boolean gender = true;
+        if (request.getParameter("gender").equals("0")) {
+            gender = false;
+        }
+
+        // Patient DOB
+        Date birthday = Date.valueOf(request.getParameter("birthday"));
+
+        // Patient email
+        String email = request.getParameter("email");
+
+        // Profile Image processing
+        Part filePart = request.getPart("profilepic");
+        String image = patient.getPhoto();
+
+        // Patient address
+        String wardId = request.getParameter("wards");
+        String address = request.getParameter("address");
+
+        // Patient vaccine status
+        int vaccineStatus = Integer.parseInt(request.getParameter("vaccineStatus"));
+        String[] selectedVaccines = request.getParameterValues("vaccines");
+        if (selectedVaccines == null) {
+            selectedVaccines = new String[]{};
+        }
+        ArrayList<Integer> vaccines = new ArrayList<>();
+        for (String selectedVaccine : selectedVaccines) {
+            vaccines.add(Integer.parseInt(selectedVaccine));
+        }
+        // Patient pregnancy status
+        boolean isPregnant = false;
+        if (request.getParameter("isPregnant").equals("1")) {
+            isPregnant = true;
+        }
+
+        // Patient health emergency
+        boolean isEmergency = false;
+        if (request.getParameter("isEmergency").equals("1")) {
+            isEmergency = true;
+        }
+
+        // Patient age type
+        int ageType = Integer.parseInt(request.getParameter("ages"));
+
+        // Patient background diseases info
+        String[] selectedDiseases = request.getParameterValues("diseases");
+        ArrayList<Integer> diseases = new ArrayList<>();
+        if (selectedDiseases == null) {
+            selectedDiseases = new String[]{};
+        }
+        for (String selectedDisease : selectedDiseases) {
+            vaccines.add(Integer.parseInt(selectedDisease));
+            System.out.println(selectedDisease);
+        }
+        
+        // Validating input
+        String message = "";
+        if (!check.isName(name)) {
+            System.out.println(name);
+            message += "Tên đã nhập không hợp lệ<br>";
+        }
+
+        if (!check.isEmail(email)) {
+            message += "Email đã nhập không đúng<br>";
+        }
+
+        UploadFile ulF = new UploadFile();
+        if (!ulF.getFileName(filePart).equals("")) {
+            image = ulF.uploadFile(request, "profilepic", UPLOAD_DIR);
+        }
+
+        if (wardId == null || wardId.equals("0")) {
+            message += "Vui lòng cập nhật chi tiết địa chỉ Phường/Xã đang sinh sống<br>";
+        }
+
+        if (vaccineStatus == 0) {
+            vaccineStatus = 1;
+        } else if (vaccines.size() >= 3) {
+            vaccineStatus = 4;
+        } else if (vaccines.size() < 2) {
+            vaccineStatus = 2;
+        }
+
+        if ((!gender) && isPregnant) {
+            message += "Đàn ông không thể có bầu<br>";
+        }
+
+        if (ageType != check.CalculateBirthday(birthday)) {
+            message += "Nhóm tuổi lựa chọn chưa chính xác<br>";
+        }
+
+        patient.setUserId(id);
+        patient.setName(name);
+        patient.setGender(gender);
+        patient.setBirthday(birthday);
+        patient.setEmail(email);
+        patient.setPhoto(image);
+        patient.setWardId(wardId);
+        patient.setAddress(address);
+        patient.setVaccineStatus(vaccineStatus);
+        patient.setVaccList(vaccines);
+        patient.setPregnancyStatus(isPregnant);
+        patient.setEmergencyStatus(isEmergency);
+        patient.setAgeType(ageType);
+        patient.setDiseases(diseases);
+
+        if (!message.equals("")) {
+            System.out.println(message);
+            request.getSession().setAttribute("message", message);
+            request.getSession().setAttribute("patient", patient);
+            request.getRequestDispatcher("views/profile.jsp").forward(request, response);
+        } else {
+            patientDAO.updatePatientInfo(patient);
+            patientDAO.updateFirstTimeFlag(id, false);
+
+            response.sendRedirect("info");
+        }
     }
 
     /**

@@ -10,6 +10,7 @@ import Model.City;
 import Model.Disease;
 import Model.District;
 import Model.Vaccine;
+import Model.VaccineStatus;
 import Model.Ward;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,6 +23,24 @@ import java.util.logging.Logger;
  * @author chinh
  */
 public class CommonDataDAO extends DBContext {
+
+    public ArrayList<VaccineStatus> getVaccineStatusList() {
+        ArrayList<VaccineStatus> statusList = new ArrayList<>();
+        String sql = "SELECT * FROM VaccineStatus";
+
+        ResultSet rs = getData(sql);
+
+        try {
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String detail = rs.getString(2);
+                statusList.add(new VaccineStatus(id, detail));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CommonDataDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return statusList;
+    }
 
     public ArrayList<Vaccine> getVaccineList() {
         ArrayList<Vaccine> vaccines = new ArrayList<>();
