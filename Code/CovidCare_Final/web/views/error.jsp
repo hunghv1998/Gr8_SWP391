@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-6 text-center mx-auto">
                         <div class="404-img">
-                            <img src="images/404.png" class="img-fluid" alt="">
+                            <img src="images/error.png" class="img-fluid" alt="">
                         </div>
                         <div class="404-content">
                             <h1 class="display-1 pt-1 pb-2">Oops</h1>
