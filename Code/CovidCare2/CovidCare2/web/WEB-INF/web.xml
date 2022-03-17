@@ -60,6 +60,10 @@
         <servlet-name>ListNews</servlet-name>
         <servlet-class>Controller.viewListNewsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateTimetable</servlet-name>
+        <servlet-class>Controller.CreateTimetable</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ListNews</servlet-name>
         <url-pattern>/viewListNewsController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateTimetable</servlet-name>
+        <url-pattern>/CreateTimetable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

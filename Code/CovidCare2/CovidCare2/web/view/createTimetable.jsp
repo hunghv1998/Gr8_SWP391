@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-                        <form action="CreateEvent" method="post">
+                        <form action="CreateTimetable" method="post">
                             <div class="widget dashboard-container my-adslist">
 
                                 <h3 class="widget-header">Tạo Mới Việc Cần Làm</h3>
