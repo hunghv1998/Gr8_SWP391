@@ -24,8 +24,14 @@ public class DeleteAccountController extends Authentication {
     protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          String username = request.getParameter("username");
         AccountDAO aD = new AccountDAO();
+        String status = request.getParameter("status");
+        
+        if(status.equalsIgnoreCase("true")){
+             aD.deleteAccountByUsername(username);
+        }else{
+             aD.deleteAccountByUsername1(username);
+        }
        
-        aD.deleteAccountByUsername(username);
         response.sendRedirect("ManageAccount");
     }
 

@@ -42,11 +42,12 @@ public class AccountDAO extends DBContext {
 
     public int signup(String username, String password) {
         int n = 0;
-        String sql = "INSERT INTO Account(username, password) VALUES (?,?)";
+        String sql = "INSERT INTO Account(username, password,status) VALUES (?,?,?)";
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, username);
             pre.setString(2, password);
+            pre.setString(3, "true");
             n = pre.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -56,7 +57,7 @@ public class AccountDAO extends DBContext {
 
     public Account getAccountByUsernameAndPassword(String username, String password) {
         try {
-            String sql = "Select a.username,a.password,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n"
+            String sql = "Select a.username,a.password,a.status,case when g.gid IS NULL then -1 else g.gid end as 'gid',g.name,f.fid,f.url\n"
                     + "from Account a left join [GroupAccount] gA \n"
                     + "on a.username = gA.username  left join [Group] g\n"
                     + "on gA.gid = g.gid left join [GroupFeature] fG\n"
@@ -78,6 +79,8 @@ public class AccountDAO extends DBContext {
                     acc = new Account();
                     acc.setUserName(username);
                     acc.setPassWord(password);
+                    acc.setStatus(rs.getBoolean("status"));
+                    
                 }
 
                 if (g.getId() != Integer.parseInt(rs.getString("gid"))) {
@@ -114,9 +117,7 @@ public class AccountDAO extends DBContext {
     public ArrayList<Account> getAcc() {
         ArrayList<Account> list = new ArrayList<>();
 
-        String sql = "SELECT a.username, a.password , g.name FROM Account a \n"
-                + "INNER JOIN GroupAccount ga On a.username=ga.username\n"
-                + "INNER JOIN [Group] g On ga.gid = g.gid";
+        String sql = "select a.username,a.password,a.status,g.name from Account a left join GroupAccount ga on a.username = ga.username left join [Group] g on ga.gid = g.gid";
         ResultSet rs = getData(sql);
 
         try {
@@ -126,6 +127,7 @@ public class AccountDAO extends DBContext {
                 Account a = new Account();
                 a.setUserName(rs.getString("username"));
                 a.setPassWord(rs.getString("password"));
+                a.setStatus(rs.getBoolean("status"));
                 a.setGroup(g);
                 list.add(a);
             }
@@ -139,8 +141,9 @@ public class AccountDAO extends DBContext {
     public void deleteAccountByUsername(String username) {
         deleteGroupAccountByUsername(username);
         try {
-            String sql = "DELETE FROM Account"
-                    + "      WHERE username = ? ";
+            String sql = "update Account\n" +
+                         "set status = 'false'\n" +
+                         "where username = ?";
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, username);
             pre.executeUpdate();
@@ -202,4 +205,19 @@ public class AccountDAO extends DBContext {
         }
     }
 
+    public void deleteAccountByUsername1(String username) {
+          deleteGroupAccountByUsername(username);
+        try {
+            String sql = "update Account\n" +
+                         "set status = 'true'\n" +
+                         "where username = ?";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, username);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+   
 }

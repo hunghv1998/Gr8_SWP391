@@ -31,7 +31,6 @@ public class EditAccountController extends Authentication {
         request.setAttribute("password", password);
         request.setAttribute("role", acc.getGroupId());
         request.getRequestDispatcher("/view/EditAccount.jsp").forward(request, response);
-
     }
 
     @Override
