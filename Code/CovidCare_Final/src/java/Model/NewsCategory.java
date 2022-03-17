@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class NewsCategory {
+public class NewsCategory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int cateId;
     private String cateName;

@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class AgeType {
+public class AgeType implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int ageId;
     private String ageType;

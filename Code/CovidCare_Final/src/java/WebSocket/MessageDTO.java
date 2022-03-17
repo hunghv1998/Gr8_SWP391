@@ -3,15 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package WebSocket;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  *
  * @author chinh
  */
-public class MessageDTO {
+public class MessageDTO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String sentBy;
     private Integer fromId;

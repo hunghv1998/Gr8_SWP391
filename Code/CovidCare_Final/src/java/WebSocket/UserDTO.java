@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package WebSocket;
+
+import java.io.Serializable;
 
 /**
  *
  * @author chinh
  */
-public class UserDTO {
+public class UserDTO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Integer userId;
     private String username;

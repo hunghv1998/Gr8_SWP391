@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class District {
+public class District implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String districtId;
     private String districtName;

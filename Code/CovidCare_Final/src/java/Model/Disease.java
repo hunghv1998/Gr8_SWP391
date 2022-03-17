@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class Disease {
+public class Disease implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int diseaseId;
     private String detail;

@@ -5,13 +5,16 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  *
  * @author chinh
  */
-public class News {
+public class News implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int newsId;
     private int creator;

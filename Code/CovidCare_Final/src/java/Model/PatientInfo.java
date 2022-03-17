@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -12,7 +13,9 @@ import java.util.ArrayList;
  *
  * @author chinh
  */
-public class PatientInfo {
+public class PatientInfo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int userId;
     private String name;

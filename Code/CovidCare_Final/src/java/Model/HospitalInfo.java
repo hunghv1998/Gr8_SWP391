@@ -5,12 +5,16 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class HospitalInfo {
+public class HospitalInfo implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+    
     private int userId;
     private String hospitalName;
     private String photo;
