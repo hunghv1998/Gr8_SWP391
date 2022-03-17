@@ -61,7 +61,7 @@
                                             </li>
                                             <c:if test="${user.getUserType() == 3}">
                                                 <li class="nav-item active">
-                                                    <a class="nav-link" href="userinfo">Thông tin cá nhân</a>
+                                                    <a class="nav-link" href="info">Thông tin cá nhân</a>
                                                 </li>
                                             </c:if>
                                         </c:otherwise>

@@ -12,6 +12,14 @@
         <servlet-name>RegisterController</servlet-name>
         <servlet-class>Controller.RegisterController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InfoController</servlet-name>
+        <servlet-class>Controller.InfoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Tutorial</servlet-name>
+        <jsp-file>/views/tutorialCovid.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -24,6 +32,14 @@
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InfoController</servlet-name>
+        <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Tutorial</servlet-name>
+        <url-pattern>/tutorial</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -32,4 +48,7 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <location>/views/error.jsp</location>
+    </error-page>
 </web-app>

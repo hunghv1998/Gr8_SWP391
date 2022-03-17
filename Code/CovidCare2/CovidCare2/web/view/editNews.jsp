@@ -1,10 +1,8 @@
 <%-- 
-    Document   : createNews
-    Created on : Feb 25, 2022, 4:39:29 PM
+    Document   : editNews
+    Created on : Mar 15, 2022, 11:38:38 AM
     Author     : Hoang Hung
 --%>
-
-
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
@@ -103,4 +101,3 @@
     </body>
     <%@include file = "../common/footer.jsp" %>
 </html>
-

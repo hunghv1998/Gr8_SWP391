@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import DAO.PatientDAO;
 import DAO.UserDAO;
 import Model.User;
 import java.io.IOException;
@@ -101,7 +102,19 @@ public class LoginController extends HttpServlet {
             request.getRequestDispatcher("/views/login.jsp").forward(request, response);
         } else {
             session.setAttribute("user", user);
-            response.sendRedirect(".");
+            if (user.getUserType() == 3) {
+                PatientDAO patientDAO = new PatientDAO();
+                if (patientDAO.isFirstTimeLogin(user.getUserId())) {
+                    session.setAttribute("message",
+                            "Đây là lần đầu bạn đăng nhập.<br>"
+                            + "Vui lòng cập nhật thông tin cá nhân");
+                    response.sendRedirect("info?action=update");
+                } else {
+                    response.sendRedirect(".");
+                }
+            } else {
+                response.sendRedirect(".");
+            }
         }
     }
 

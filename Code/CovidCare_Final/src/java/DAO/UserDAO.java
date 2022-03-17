@@ -6,6 +6,7 @@
 package DAO;
 
 import Model.User;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ import java.util.logging.Logger;
 public class UserDAO extends DBContext {
 
     public User login(User user) {
-        String sql = "SELECT * FROM users where username='" + user.getUsername()
+        String sql = "SELECT * FROM Users where username='" + user.getUsername()
                 + "' AND password='" + user.getPassword() + "'";
         ResultSet rs = getData(sql);
         try {
@@ -41,7 +42,7 @@ public class UserDAO extends DBContext {
     public Integer addUser(User user) {
         int result = 0;
 
-        String sql = "INSERT INTO users(username, password, userType) VALUES (?,?,?)";
+        String sql = "INSERT INTO Users(username, password, userType) VALUES (?,?,?)";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -58,7 +59,7 @@ public class UserDAO extends DBContext {
     public Integer changeUserStatus(Integer userId, boolean activeFlag) {
         int result = -1;
 
-        String sql = "UPDATE users SET activeStatus=? WHERE userId=?";
+        String sql = "UPDATE Users SET activeStatus=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -74,7 +75,7 @@ public class UserDAO extends DBContext {
     public Integer changePassword(User user) {
         int result = -1;
 
-        String sql = "UPDATE users SET password=? WHERE userId=?";
+        String sql = "UPDATE Users SET password=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -90,7 +91,7 @@ public class UserDAO extends DBContext {
     public Integer updateUser(User user) {
         int result = -1;
 
-        String sql = "UPDATE users SET username=?, password=?, activeStatus=? WHERE userId=?";
+        String sql = "UPDATE Users SET username=?, password=?, activeStatus=? WHERE userId=?";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
@@ -106,7 +107,7 @@ public class UserDAO extends DBContext {
     }
 
     public ArrayList<User> getUsersList() {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM Users";
 
         ResultSet rs = getData(sql);
 
@@ -129,7 +130,7 @@ public class UserDAO extends DBContext {
     }
 
     public Integer getIdFromUsername(String username) {
-        String sql = "SELECT userId FROM users WHERE username='" + username + "'";
+        String sql = "SELECT userId FROM Users WHERE username='" + username + "'";
         ResultSet rs = getData(sql);
 
         try {
@@ -142,4 +143,34 @@ public class UserDAO extends DBContext {
         return 0;
     }
 
+    public String getUserNameWithId(int id) {
+        String sql = "SELECT username FROM Users WHERE userId=" + id;
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                return (rs.getString("username"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public Integer insertUser(User userObj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public ArrayList<User> returnAllUsers(Connection currentConnection, String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Boolean checkIfAdmin(Integer initiatedById) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Integer deleteUser(Integer userId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
