@@ -19,9 +19,24 @@ public class Account implements Serializable {
     
     private String userName;
     private String passWord;
+    private boolean status;
     private int groupId;
     private Group group;
+
+    @Override
+    public String toString() {
+        return "Account{" + "userName=" + userName + ", passWord=" + passWord + ", status=" + status + ", groupId=" + groupId + ", group=" + group + ", listGroup=" + listGroup + '}';
+    }
     private ArrayList<Group> listGroup = new ArrayList<>();
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+   
 
     public Account() {
     }

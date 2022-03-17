@@ -48,7 +48,10 @@ public class LoginController extends HttpServlet {
         if (acc == null) {
             request.setAttribute("message", "Sai thông tin đăng nhập");
             request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
-        } else {
+        }else if(!acc.isStatus()){
+            request.setAttribute("message", "Tài khoản đã bị vô hiệu hóa !");
+            request.getRequestDispatcher("/view/Login.jsp").forward(request, response);                  
+        }else {
             HttpSession session = request.getSession();
             session.setAttribute("account", acc);
             if (acc.getGroupId() == 3 && !uiD.checkFirstLogin(username)) {
