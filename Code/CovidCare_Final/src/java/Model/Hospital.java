@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author chinh
  */
-public class HospitalInfo implements Serializable {
+public class Hospital implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -19,12 +19,12 @@ public class HospitalInfo implements Serializable {
     private String hospitalName;
     private String photo;
     private String address;
-    private int wardId;
+    private String wardId;
 
-    public HospitalInfo() {
+    public Hospital() {
     }
 
-    public HospitalInfo(int userId, String hospitalName, String photo, String address, int wardId) {
+    public Hospital(int userId, String hospitalName, String photo, String address, String wardId) {
         this.userId = userId;
         this.hospitalName = hospitalName;
         this.photo = photo;
@@ -64,11 +64,11 @@ public class HospitalInfo implements Serializable {
         this.address = address;
     }
 
-    public int getWardId() {
+    public String getWardId() {
         return wardId;
     }
 
-    public void setWardId(int wardId) {
+    public void setWardId(String wardId) {
         this.wardId = wardId;
     }
 

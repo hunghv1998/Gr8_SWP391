@@ -5,7 +5,8 @@
  */
 package DAO;
 
-import Model.PatientInfo;
+import Model.Patient;
+import Model.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,18 +19,18 @@ import java.util.logging.Logger;
  * @author chinh
  */
 public class PatientDAO extends DBContext {
-    
-    public void changePatientInfo(PatientInfo patient) {
+
+    public void changePatientInfo(Patient patient) {
         this.updatePatientInfo(patient);
         this.updatePatientVaccines(patient.getUserId(), patient.getVaccList());
         this.updatePatientDiseases(patient.getUserId(), patient.getDiseases());
     }
-    
+
     public boolean isFirstTimeLogin(int userId) {
         String sql = "SELECT firstTimeLogin FROM Patient WHERE patientId=" + userId;
-        
+
         ResultSet rs = getData(sql);
-        
+
         try {
             if (rs.next()) {
                 boolean firstTimeLogin = rs.getBoolean("firstTimeLogin");
@@ -40,10 +41,10 @@ public class PatientDAO extends DBContext {
         }
         return true;
     }
-    
+
     public void updateFirstTimeFlag(int userId, boolean flag) {
         String sql = "UPDATE Patient SET firstTimeLogin=? WHERE patientId=?";
-        
+
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setBoolean(1, flag);
@@ -53,10 +54,10 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void addPatient(int userId) {
         String sql = "INSERT INTO Patient(patientId) VALUES (?)";
-        
+
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setInt(1, userId);
@@ -65,15 +66,15 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public PatientInfo getPatientInfo(int userId) {
+
+    public Patient getPatientInfo(int userId) {
         String sql = "SELECT * FROM Patient WHERE patientId=" + userId;
-        
+
         ResultSet rs = getData(sql);
-        
+
         try {
-            PatientInfo patient = new PatientInfo();
-            
+            Patient patient = new Patient();
+
             if (rs.next()) {
                 patient.setUserId(rs.getInt("patientId"));
                 patient.setName(rs.getString("name"));
@@ -99,8 +100,8 @@ public class PatientDAO extends DBContext {
         }
         return null;
     }
-    
-    public void updatePatientInfo(PatientInfo patient) {
+
+    public void updatePatientInfo(Patient patient) {
         String sql = "UPDATE Patient SET "
                 + "name=?, "
                 + "birthday=?, "
@@ -114,7 +115,7 @@ public class PatientDAO extends DBContext {
                 + "pregnancyStatus=?, "
                 + "emergencyStatus=? "
                 + "WHERE patientId=?";
-        
+
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, patient.getName());
@@ -129,20 +130,20 @@ public class PatientDAO extends DBContext {
             pre.setBoolean(10, patient.isPregnancyStatus());
             pre.setBoolean(11, patient.isEmergencyStatus());
             pre.setInt(12, patient.getUserId());
-            
+
             pre.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public ArrayList<Integer> getPatientDiseasesList(int userId) {
         String sql = "SELECT diseaseId from Patient_diseases WHERE userId=" + userId;
-        
+
         ResultSet rs = getData(sql);
-        
+
         ArrayList<Integer> result = new ArrayList<>();
-        
+
         try {
             while (rs.next()) {
                 result.add(rs.getInt("diseaseId"));
@@ -152,14 +153,14 @@ public class PatientDAO extends DBContext {
         }
         return result;
     }
-    
+
     public ArrayList<Integer> getPatientVaccinesList(int userId) {
         String sql = "SELECT vaccId from Patient_Vaccines WHERE patientId=" + userId;
-        
+
         ResultSet rs = getData(sql);
-        
+
         ArrayList<Integer> result = new ArrayList<>();
-        
+
         try {
             while (rs.next()) {
                 result.add(rs.getInt("vaccId"));
@@ -169,15 +170,15 @@ public class PatientDAO extends DBContext {
         }
         return result;
     }
-    
+
     public void updatePatientDiseases(int userId, ArrayList<Integer> diseasesList) {
         this.deletePatientDiseases(userId);
         this.insertPatientDiseases(userId, diseasesList);
     }
-    
+
     public void insertPatientDiseases(int userId, ArrayList<Integer> diseasesList) {
         String sql = "INSERT INTO Patient_diseases(userId, diseaseId) VALUES(?,?)";
-        
+
         try {
             for (int i = 0; i < diseasesList.size(); i++) {
                 PreparedStatement update = connection.prepareStatement(sql);
@@ -189,10 +190,10 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void deletePatientDiseases(int userId) {
         String sql = "DELETE FROM Patient_diseases WHERE userId=?";
-        
+
         try {
             PreparedStatement delete = connection.prepareStatement(sql);
             delete.setInt(1, userId);
@@ -201,15 +202,15 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void updatePatientVaccines(int userId, ArrayList<Integer> vaccinesList) {
         this.deletePatientVaccines(userId);
         this.insertPatientVaccines(userId, vaccinesList);
     }
-    
+
     public void insertPatientVaccines(int userId, ArrayList<Integer> vaccinesList) {
         String sql_update = "INSERT INTO Patient_Vaccines(patientId,vaccId) VALUES (?,?)";
-        
+
         try {
 //            Update new records into Patient_diseases table
             for (int i = 0; i < vaccinesList.size(); i++) {
@@ -222,10 +223,10 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void deletePatientVaccines(int userId) {
         String sql = "DELETE FROM Patient_Vaccines WHERE patientId=?";
-        
+
         try {
             PreparedStatement delete = connection.prepareStatement(sql);
             delete.setInt(1, userId);
@@ -234,7 +235,7 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void updateCovidStatus(int UserId, boolean covidStatus) {
         String sql = "UPDATE Patient SET covidStatus =? WHERE userId=?";
         try {
@@ -246,10 +247,10 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void updateCovidPhoto(int UserId, String CovidPhoto) {
         String sql = "UPDATE Patient SET covidPhoto=? WHERE userId=?";
-        
+
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, CovidPhoto);
@@ -259,7 +260,27 @@ public class PatientDAO extends DBContext {
             Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
+    public ArrayList<Patient> getHospitalPatientsList(String wardId) {
+        ArrayList<Patient> patientsList = new ArrayList<>();
+        String sql = "SELECT patientId, name, address FROM Patient WHERE wardId='" + wardId + "'";
+
+        ResultSet rs = getData(sql);
+
+        try {
+            while (rs.next()) {
+                Patient patient = new Patient();
+                patient.setUserId(rs.getInt("patientId"));
+                patient.setName(rs.getString("name"));
+                patient.setAddress(rs.getString("address"));
+                patientsList.add(patient);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return patientsList;
+    }
+
     public static void main(String[] args) {
         PatientDAO patient = new PatientDAO();
         ArrayList<Integer> a = new ArrayList<Integer>();

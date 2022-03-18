@@ -175,13 +175,13 @@
 var $currentPopover = null;
 $(document).on('shown.bs.popover', function (ev) {
     var $target = $(ev.target);
-    if ($currentPopover && ($currentPopover.get(0) != $target.get(0))) {
+    if ($currentPopover && ($currentPopover.get(0) !== $target.get(0))) {
         $currentPopover.popover('toggle');
     }
     $currentPopover = $target;
 }).on('hidden.bs.popover', function (ev) {
     var $target = $(ev.target);
-    if ($currentPopover && ($currentPopover.get(0) == $target.get(0))) {
+    if ($currentPopover && ($currentPopover.get(0) === $target.get(0))) {
         $currentPopover = null;
     }
 });
@@ -302,7 +302,7 @@ $.extend(Date.prototype, {
                 monthAddEvent(index, event);
                 return;
             }
-            var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index}),
+            var $event = $('<div/>', {'class': 'event', text: event.title + ' - ' + event.text, title: event.title, 'data-index': index}),
                     start = convertDate(event.start),
                     end = convertDate(event.end) || convertDate(start),
                     time = convertDate(event.start).toTimeString(),

@@ -85,7 +85,7 @@ public class TimetableDAO extends DBContext {
             stm.setTimestamp(3, e.getEnd());
             stm.setString(4, e.getText());
             stm.setBoolean(5, e.isAllDay());
-            stm.setBoolean(0, e.isProgress());
+            stm.setBoolean(6, e.isProgress());
             stm.setInt(7, e.getCreator());
             stm.setInt(8, e.getAssignee());
 

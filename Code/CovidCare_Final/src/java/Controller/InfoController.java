@@ -11,7 +11,7 @@ import Model.AgeType;
 import Model.City;
 import Model.Disease;
 import Model.District;
-import Model.PatientInfo;
+import Model.Patient;
 import Model.User;
 import Model.Vaccine;
 import Model.VaccineStatus;
@@ -111,7 +111,7 @@ public class InfoController extends HttpServlet {
                 id = Integer.parseInt(request.getParameter("id"));
             }
 
-            PatientInfo patient = (PatientInfo) patientDAO.getPatientInfo(id);
+            Patient patient = (Patient) patientDAO.getPatientInfo(id);
 
             if (patient != null) {
                 ArrayList<VaccineStatus> vaccStatusList = commonDAO.getVaccineStatusList();
@@ -182,10 +182,10 @@ public class InfoController extends HttpServlet {
             id = user.getUserId();
         }
 
-        PatientInfo patient = (PatientInfo) request.getSession().getAttribute("patient");
+        Patient patient = (Patient) request.getSession().getAttribute("patient");
 
         if (patient == null) {
-            patient = new PatientInfo();
+            patient = new Patient();
         }
 
         // Patient name

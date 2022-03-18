@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author chinh
  */
-public class PatientInfo implements Serializable {
+public class Patient implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -35,16 +35,16 @@ public class PatientInfo implements Serializable {
     private boolean emergencyStatus;
     private ArrayList<Integer> vaccList;
 
-    public PatientInfo() {
+    public Patient() {
     }
 
-    public PatientInfo(int userId, boolean covidStatus, String covidPhoto) {
+    public Patient(int userId, boolean covidStatus, String covidPhoto) {
         this.userId = userId;
         this.covidStatus = covidStatus;
         this.covidPhoto = covidPhoto;
     }
 
-    public PatientInfo(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, String wardId, int ageType, ArrayList<Integer> diseases, boolean covidStatus, String covidPhoto, boolean firstTimeLogin, int vaccineStatus, boolean pregnancyStatus, boolean emergencyStatus, ArrayList<Integer> vaccList) {
+    public Patient(int userId, String name, Date birthday, boolean gender, String email, String address, String photo, String wardId, int ageType, ArrayList<Integer> diseases, boolean covidStatus, String covidPhoto, boolean firstTimeLogin, int vaccineStatus, boolean pregnancyStatus, boolean emergencyStatus, ArrayList<Integer> vaccList) {
         this.userId = userId;
         this.name = name;
         this.birthday = birthday;

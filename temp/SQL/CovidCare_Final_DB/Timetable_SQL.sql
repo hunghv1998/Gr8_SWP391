@@ -6,8 +6,8 @@ title nvarchar(100),
 startTime datetime2,
 endTime datetime2,
 detail nvarchar(250),
-alllDay bit default(0),
+allDay bit default(0),
 progress bit default(0),
 creator int FOREIGN KEY REFERENCES users(userId),
-asignee int FOREIGN KEY REFERENCES users(userId)
+assignee int FOREIGN KEY REFERENCES users(userId)
 )
