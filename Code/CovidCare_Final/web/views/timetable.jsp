@@ -290,7 +290,7 @@ $.extend(Date.prototype, {
             }
             data = options.data[index];
             time = convertDate(data.start).toTimeString();
-            if (time && data.end) {
+            if (time && data.end){
                 time = time + ' - ' + convertDate(data.end).toTimeString();
             }
             $t.data('popover', true);
