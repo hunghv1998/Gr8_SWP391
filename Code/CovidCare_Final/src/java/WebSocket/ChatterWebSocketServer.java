@@ -9,7 +9,6 @@ import Controller.ChatController;
 import DAO.MessageDAO;
 import DAO.UserDAO;
 import Model.Message;
-import Model.User;
 import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.Timestamp;
@@ -40,10 +39,10 @@ import javax.websocket.Session;
 @ServerEndpoint("/chat")
 public class ChatterWebSocketServer {
 
-    private MessageDAO messageDAO = new MessageDAO();
-    private UserDAO userDAO = new UserDAO();
+    private final MessageDAO messageDAO = new MessageDAO();
+    private final UserDAO userDAO = new UserDAO();
 
-    private ChatController serverController = new ChatController();
+    private final ChatController chatController = new ChatController();
 
     Integer connectedUserId = 0;
 
@@ -110,7 +109,7 @@ public class ChatterWebSocketServer {
     }
 
     private void processSendMessage(JsonObject jsonMessage, Session session) {
-        String sentBy = serverController.getUserNameFromDB(connectedUserId);
+        String sentBy = chatController.getUserNameFromDB(connectedUserId);
         Integer fromId = Integer.parseInt(jsonMessage.getString("fromId"));
         Integer toId = Integer.parseInt(jsonMessage.getString("toId"));
         String messageText = jsonMessage.getString("messageText");
@@ -128,7 +127,7 @@ public class ChatterWebSocketServer {
 
         System.out.println("now message from client params: " + messageForm.toString());
         System.out.println("through web socket session ID: " + session.getId());
-        serverController.insertMsgIntoDb(messageObj);
+        chatController.insertMsgIntoDb(messageObj);
 
         /*
         //for single tab only logic
@@ -175,7 +174,7 @@ public class ChatterWebSocketServer {
 
     private void processGetSenders(JsonObject jsonMessage) {
         Integer unreadMsgsToUserId = Integer.parseInt(jsonMessage.getString("unreadMsgsToUserId"));
-        Connection currentConnection = serverController.getCurrentConnection();
+        Connection currentConnection = chatController.getCurrentConnection();
         System.out.println("should get messages unread by userID: " + unreadMsgsToUserId);
         if (unreadMsgsToUserId != null) {
             if (currentConnection != null) {
@@ -195,7 +194,7 @@ public class ChatterWebSocketServer {
     private void processMarkMsgsAsRead(JsonObject jsonMessage) {
         Integer msgsFromUserId = jsonMessage.getInt("msgsFromUserId");
         Integer msgsToUserId = jsonMessage.getInt("msgsToUserId");
-        Connection currentConnection = serverController.getCurrentConnection();
+        Connection currentConnection = chatController.getCurrentConnection();
         if (currentConnection != null) {
             messageDAO.markMsgsAsRead(msgsFromUserId, msgsToUserId);
             System.out.println("just called markMsgsAsRead with params, msgsFromUserId:" + msgsFromUserId

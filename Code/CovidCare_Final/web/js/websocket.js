@@ -30,10 +30,6 @@ function onMessage(event) {
         processFailedToAddUser(messageFromServer);
     }
     
-    if(messageFromServer.action === "userDeleted") {
-        processRemovedUser(messageFromServer);
-    }
-    
     if(messageFromServer.action === "appendSentMessage") {
         //var messageText = messageFromServer.messageText;
         appendMessage(messageFromServer);
@@ -98,40 +94,6 @@ function processSomeOneIsTyping(messageFromServer)
             //timer wait three seconds then clear text
         }
     }
-}
-
-//adds a new user through the server, and all connected clients get the update
-function AddNewUserByAdminSocket()
-{
-    var form = document.getElementById("addNewUserForm");
-    var userName = form.elements["userName"].value;
-    var password = form.elements["password"].value;        
-    
-    var isAdminCode = 0;
-    if ($('#isAdmin').is(":checked"))
-    {
-        isAdminCode = 1;
-    }
-    //alert("userName: "+userName+", password: "+password+", isAdminChk: "+isAdminCode);
-    
-    var adminForm = document.getElementById("adminForm");
-    var fromId = adminForm.elements["fromId"].value;
-    var initiatedById = parseInt(fromId);            
-    
-    var message = {
-        action: "addNewUser",
-        initiatedById: initiatedById,
-        userName: userName,
-        password: password,
-        isAdminCode: isAdminCode
-    };    
-    /*
-    alert("will try to send JSON with action: addNewUser, fromId"+fromId
-            +", userName: "+userName+", password: "+password
-            +", isAdminCode: "+isAdminCode);  
-    */
-    socket.send(JSON.stringify(message));
-    
 }
 
 //process the notification to add a new user to the list of users view
