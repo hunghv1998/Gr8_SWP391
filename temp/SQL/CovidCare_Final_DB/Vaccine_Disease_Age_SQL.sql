@@ -59,20 +59,3 @@ INSERT INTO VaccineStatus(detail) VALUES (N'Đã tiêm 1 mũi')
 INSERT INTO VaccineStatus(detail) VALUES (N'Đã tiêm 2 mũi, thời gian tiêm mũi 2 dưới 2 tuần')
 INSERT INTO VaccineStatus(detail) VALUES (N'Đã tiêm 2 mũi, thời gian tiêm mũi 2 trên 2 tuần')
 INSERT INTO VaccineStatus(detail) VALUES (N'Đã tiêm 3 mũi')
-
-CREATE TABLE Patient_Vaccines(
-patientId int,
-vaccId int,
-FOREIGN KEY (patientId) REFERENCES Users(userId),
-FOREIGN KEY (vaccId) REFERENCES Vaccines(vaccId)
-)
-
-ALTER TABLE Patient
-ADD vaccineStatus int,
-FOREIGN KEY (vaccineStatus) REFERENCES VaccineStatus(id)
-
-ALTER TABLE Patient
-ADD pregnancyStatus bit default 0
-
-ALTER TABLE Patient
-ADD emergencyStatus bit default 0
