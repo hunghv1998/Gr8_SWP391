@@ -40,6 +40,10 @@
         <servlet-name>TimetableEventServlet</servlet-name>
         <servlet-class>Controller.TimetableEventServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewsController</servlet-name>
+        <servlet-class>Controller.NewsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>TimetableEventServlet</servlet-name>
         <url-pattern>/events</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsController</servlet-name>
+        <url-pattern>/news</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

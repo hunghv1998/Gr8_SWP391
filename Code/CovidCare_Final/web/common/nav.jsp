@@ -19,7 +19,7 @@
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: flex!important;">
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
                                 <a class="nav-link" href=".">Trang chủ</a>
