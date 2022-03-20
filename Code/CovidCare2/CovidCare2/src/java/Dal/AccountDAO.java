@@ -80,7 +80,7 @@ public class AccountDAO extends DBContext {
                     acc.setUserName(username);
                     acc.setPassWord(password);
                     acc.setStatus(rs.getBoolean("status"));
-                    
+
                 }
 
                 if (g.getId() != Integer.parseInt(rs.getString("gid"))) {
@@ -141,9 +141,9 @@ public class AccountDAO extends DBContext {
     public void deleteAccountByUsername(String username) {
         deleteGroupAccountByUsername(username);
         try {
-            String sql = "update Account\n" +
-                         "set status = 'false'\n" +
-                         "where username = ?";
+            String sql = "update Account\n"
+                    + "set status = 'false'\n"
+                    + "where username = ?";
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, username);
             pre.executeUpdate();
@@ -177,7 +177,6 @@ public class AccountDAO extends DBContext {
             pre.setString(1, username);
             pre.setString(2, password);
             return pre.executeUpdate();
-            
 
         } catch (SQLException ex) {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -185,8 +184,8 @@ public class AccountDAO extends DBContext {
         return 0;
     }
 
-    public void insertRole(String username,String password, String role) {
-       int a =  insertAccount(username,password);
+    public void insertRole(String username, String password, String role) {
+        int a = insertAccount(username, password);
         try {
             String sql = "INSERT INTO [dbo].[GroupAccount]\n"
                     + "           ([username]\n"
@@ -206,11 +205,11 @@ public class AccountDAO extends DBContext {
     }
 
     public void deleteAccountByUsername1(String username) {
-          deleteGroupAccountByUsername(username);
+        deleteGroupAccountByUsername(username);
         try {
-            String sql = "update Account\n" +
-                         "set status = 'true'\n" +
-                         "where username = ?";
+            String sql = "update Account\n"
+                    + "set status = 'true'\n"
+                    + "where username = ?";
             PreparedStatement pre = connection.prepareStatement(sql);
             pre.setString(1, username);
             pre.executeUpdate();
@@ -218,6 +217,21 @@ public class AccountDAO extends DBContext {
             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-   
+
+    public void updatePassword(String username, String newPassword) {
+        try {
+            String sql = "UPDATE [dbo].[Account]\n"
+                    + "   SET [password] = ? \n"
+                    + "\n" +
+                      " WHERE username=?";
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.setString(1, newPassword);
+            pre.setString(2, username);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }

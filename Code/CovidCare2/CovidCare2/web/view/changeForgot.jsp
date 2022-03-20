@@ -15,8 +15,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
-    <%@include file = "../common/head.jsp" %>
+        <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">
 
@@ -34,9 +33,10 @@
                                  <c:if test="${not empty message}">
                               <b>${message}</b>
                           </c:if> 
-                               <form action="" method="POST">
-                                   <input type="password" placeholder="Nhập mật khẩu mới" name="newpass" class="border p-3 w-100 my-2" value="">
-                                   <input type="password" placeholder="Nhập lại mật khẩu mới" name="newpass" class="border p-3 w-100 my-2" value="">
+                               <form action="verify" method="POST">
+                                   <input type="hidden" name="username" class="border p-3 w-100 my-2" value="${username}">
+                                   <input type="password" placeholder="Nhập mật khẩu mới" name="password" class="border p-3 w-100 my-2" value="">
+                                   <input type="password" placeholder="Nhập lại mật khẩu mới" name="confirm_password" class="border p-3 w-100 my-2" value="">
                           <button type="submit"
                                   class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Xác Nhận</button>                      
                             </form>
@@ -54,3 +54,6 @@
     <%@include file = "../common/footer.jsp" %>
 
 </html>
+
+
+

@@ -60,6 +60,14 @@
         <servlet-name>ListNews</servlet-name>
         <servlet-class>Controller.viewListNewsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ForgotPasswordController</servlet-name>
+        <servlet-class>Controller.ForgotPasswordController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuestionVerifyController</servlet-name>
+        <servlet-class>Controller.QuestionVerifyController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -111,6 +119,14 @@
     <servlet-mapping>
         <servlet-name>ListNews</servlet-name>
         <url-pattern>/viewListNewsController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotPasswordController</servlet-name>
+        <url-pattern>/forgot</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuestionVerifyController</servlet-name>
+        <url-pattern>/verify</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

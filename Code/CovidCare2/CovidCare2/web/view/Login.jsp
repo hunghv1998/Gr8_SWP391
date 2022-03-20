@@ -32,7 +32,7 @@
                                     <button type="submit"
                                             class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Đăng
                                         Nhập</button>
-                                    <a class="mt-3 d-block  text-primary" href="#">Quên mật khẩu ?</a>
+                                    <a class="mt-3 d-block  text-primary" href="forgot">Quên mật khẩu ?</a>
                                     <a class="mt-3 d-inline-block text-primary" href="register">Đăng ký ngay</a>
                                       </form>
                                 </fieldset>
