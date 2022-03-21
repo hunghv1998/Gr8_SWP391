@@ -68,6 +68,10 @@
         <servlet-name>QuestionVerifyController</servlet-name>
         <servlet-class>Controller.QuestionVerifyController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddPostVaccinateController</servlet-name>
+        <servlet-class>Controller.AddPostVaccinateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>QuestionVerifyController</servlet-name>
         <url-pattern>/verify</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPostVaccinateController</servlet-name>
+        <url-pattern>/addPostVaccinate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
