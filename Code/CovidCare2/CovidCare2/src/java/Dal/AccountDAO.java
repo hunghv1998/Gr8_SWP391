@@ -233,5 +233,22 @@ public class AccountDAO extends DBContext {
         }
 
     }
+    
+    public int getWardIdByUsername(String username){
+        int wardId = 0;
+        try{
+            String sql = "Select wardId from UserInfo where username = ? ";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, username);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                wardId = rs.getInt("wardId");
+            }
+            return wardId;
+        }catch(Exception e){
+            
+        }
+        return -1;
+    }
 
 }
