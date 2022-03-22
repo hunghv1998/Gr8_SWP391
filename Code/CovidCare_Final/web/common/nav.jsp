@@ -19,7 +19,7 @@
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display: flex!important;">
                         <ul class="navbar-nav ml-auto main-nav ">
                             <li class="nav-item active">
                                 <a class="nav-link" href=".">Trang chủ</a>
@@ -33,14 +33,14 @@
                                         <a class="nav-link" href="statistic">Thống kê</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="CreateNews">Tạo bản tin mới</a>
+                                        <a class="nav-link" href="news">Tạo bản tin mới</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
                                     <c:choose>
                                         <c:when test="${user.getUserType() == 2}">
                                             <li class="nav-item active">
-                                                <a class="nav-link" href="">Lịch trình</a>
+                                                <a class="nav-link" href="timetable">Lịch trình</a>
                                             </li>
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="">Quản lý bệnh nhân</a>

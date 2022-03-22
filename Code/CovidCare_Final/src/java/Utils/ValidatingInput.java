@@ -97,7 +97,7 @@ public class ValidatingInput {
         if (ChronoUnit.MONTHS.between(date.toLocalDate(), LocalDate.now()) <= 3) {
             return 1;
         } else {
-            if (ChronoUnit.YEARS.between(date.toLocalDate(), LocalDate.now()) < 18) {
+            if (ChronoUnit.YEARS.between(date.toLocalDate(), LocalDate.now()) < 50) {
                 return 2;
             } else {
                 if (ChronoUnit.YEARS.between(date.toLocalDate(), LocalDate.now()) < 64) {

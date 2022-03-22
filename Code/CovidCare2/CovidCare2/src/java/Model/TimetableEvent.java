@@ -10,9 +10,10 @@ import java.sql.Timestamp;
 
 /**
  *
- * @author chinh
+ * @author asus
  */
 public class TimetableEvent {
+    private int id;
     private String title;
     private Timestamp start;
     private Timestamp end;
@@ -23,14 +24,24 @@ public class TimetableEvent {
     public TimetableEvent() {
     }
 
-    public TimetableEvent(String title, Timestamp start, Timestamp end, String text, boolean allDay, String username) {
+    public TimetableEvent(int id, String title, Timestamp start, Timestamp end, String text, boolean allDay, String username) {
+        this.id = id;
         this.title = title;
         this.start = start;
         this.end = end;
-        this.allDay = allDay;
         this.text = text;
+        this.allDay = allDay;
         this.username = username;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getTitle() {
         return title;

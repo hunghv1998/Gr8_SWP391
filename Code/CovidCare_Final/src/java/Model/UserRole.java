@@ -5,11 +5,15 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author chinh
  */
-public class UserRole {
+public class UserRole implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private int userType;
     private String description;

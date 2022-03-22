@@ -6,7 +6,7 @@
 package DAO;
 
 import Model.Message;
-import Model.UserDTO;
+import WebSocket.UserDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class MessageDAO extends DBPool {
 
-    public static void markMsgsAsRead(Integer msgsFromUserId, Integer msgsToUserId) {
+    public void markMsgsAsRead(Integer msgsFromUserId, Integer msgsToUserId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
