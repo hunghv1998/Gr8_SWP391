@@ -17,13 +17,14 @@
                 <div class="row">
                     <div class="col-md-10 offset-md-1 col-lg-12 offset-lg-0">
                         <article class="single-post">
-                            <h3>${news.getTitle()}</h3>
+                            <h3>${news.title}</h3>
                             <ul class="list-inline">
-                                <li class="list-inline-item">by <a href="">Admin</a></li>
-                                <li class="list-inline-item">${news.create_date}</li>
+                                <li class="list-inline-item">by ${author}</li>
+                                <li class="list-inline-item">at ${news.publish_date}</li>
                             </ul>
-                            <img src="${news.getPhoto()}">
-                            <p> ${news.getContent()}</p>
+                            <img src="images/uploads/${news.photo}">
+                            <h6>${news.short_des}</h6>
+                            <p> ${news.content}</p>
                         </article>
                     </div>
                 </div>

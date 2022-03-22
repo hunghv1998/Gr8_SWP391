@@ -29,6 +29,18 @@ public class NewsDAO extends DBContext {
             if (rs.next()) {
                 News news = new News();
 
+                news.setNewsId(rs.getInt("id"));
+                news.setCreator(rs.getInt("creator"));
+                news.setCateId(rs.getInt("cateId"));
+                news.setTitle(rs.getString("title"));
+                news.setContent(rs.getString("content"));
+                news.setShort_des(rs.getString("description"));
+                news.setPhoto(rs.getString("photo"));
+                news.setStatus(rs.getBoolean("status"));
+                news.setCreate_date(rs.getTimestamp("create_date"));
+                news.setPublish_date(rs.getTimestamp("publish_date"));
+                news.setReadCount(rs.getInt("readCount"));
+
                 return news;
             }
         } catch (SQLException ex) {
@@ -46,6 +58,18 @@ public class NewsDAO extends DBContext {
             if (rs.next()) {
                 News news = new News();
 
+                news.setNewsId(rs.getInt("id"));
+                news.setCreator(rs.getInt("creator"));
+                news.setCateId(rs.getInt("cateId"));
+                news.setTitle(rs.getString("title"));
+                news.setContent(rs.getString("content"));
+                news.setShort_des(rs.getString("description"));
+                news.setPhoto(rs.getString("photo"));
+                news.setStatus(rs.getBoolean("status"));
+                news.setCreate_date(rs.getTimestamp("create_date"));
+                news.setPublish_date(rs.getTimestamp("publish_date"));
+                news.setReadCount(rs.getInt("readCount"));
+
                 return news;
             }
         } catch (SQLException ex) {
@@ -55,7 +79,7 @@ public class NewsDAO extends DBContext {
     }
 
     public ArrayList<News> getNewsListByCategoryId(int cateId) {
-        String sql = "SELECT * FROM News WHERE cateId=" + cateId + " AND status=True";
+        String sql = "SELECT * FROM News WHERE cateId=" + cateId + " AND status=1";
 
         ResultSet rs = getData(sql);
 
@@ -63,6 +87,18 @@ public class NewsDAO extends DBContext {
             ArrayList<News> newsList = new ArrayList<>();
             while (rs.next()) {
                 News news = new News();
+
+                news.setNewsId(rs.getInt("id"));
+                news.setCreator(rs.getInt("creator"));
+                news.setCateId(rs.getInt("cateId"));
+                news.setTitle(rs.getString("title"));
+                news.setContent(rs.getString("content"));
+                news.setShort_des(rs.getString("description"));
+                news.setPhoto(rs.getString("photo"));
+                news.setStatus(rs.getBoolean("status"));
+                news.setCreate_date(rs.getTimestamp("create_date"));
+                news.setPublish_date(rs.getTimestamp("publish_date"));
+                news.setReadCount(rs.getInt("readCount"));
 
                 newsList.add(news);
             }
@@ -132,6 +168,67 @@ public class NewsDAO extends DBContext {
         return 0;
     }
 
+    public NewsCategory getCategoryById(int cateId) {
+        String sql = "SELECT * FROM NewsCategory WHERE id=" + cateId;
+
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                NewsCategory cate = new NewsCategory();
+
+                cate.setCateId(rs.getInt("id"));
+                cate.setCateName(rs.getString("description"));
+
+                return cate;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NewsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+
+    }
+
+    public ArrayList<News> searchNews(String searchText, int searchCate) {
+        String sql1 = "SELECT * FROM News WHERE";
+        String sql2 = " title like '%" + searchText + "%'";
+        String sql3 = " cateId=" + searchCate;
+
+        if ((searchText != null || !searchText.equals("")) && searchCate > 0) {
+            sql1 = sql1 + sql2 + " AND" + sql3;
+        } else if ((searchText == null || searchText.equals("")) && searchCate > 0) {
+            sql1 = sql1 + sql3;
+        } else {
+            sql1 = sql1 + sql2;
+        }
+        ResultSet rs = getData(sql1);
+
+        ArrayList<News> newsList = new ArrayList<>();
+
+        try {
+            while (rs.next()) {
+                News news = new News();
+
+                news.setNewsId(rs.getInt("id"));
+                news.setCreator(rs.getInt("creator"));
+                news.setCateId(rs.getInt("cateId"));
+                news.setTitle(rs.getString("title"));
+                news.setContent(rs.getString("content"));
+                news.setShort_des(rs.getString("description"));
+                news.setPhoto(rs.getString("photo"));
+                news.setStatus(rs.getBoolean("status"));
+                news.setCreate_date(rs.getTimestamp("create_date"));
+                news.setPublish_date(rs.getTimestamp("publish_date"));
+                news.setReadCount(rs.getInt("readCount"));
+                newsList.add(news);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NewsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return newsList;
+    }
+
     public ArrayList<NewsCategory> getCateList() {
         String sql = "SELECT * FROM NewsCategory";
 
@@ -154,6 +251,20 @@ public class NewsDAO extends DBContext {
         }
 
         return null;
+    }
+
+    public void hideNews(int newsId) {
+        String sql = "UPDATE News SET status=0 WHERE id=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+
+            pre.setInt(1, newsId);
+
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(NewsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public ArrayList<News> getAllNews() {
@@ -208,7 +319,7 @@ public class NewsDAO extends DBContext {
         ArrayList<News> newsList = new ArrayList<>();
 
         for (int i = 0; i < cateList.size(); i++) {
-            String sql = "SELECT TOP 3 * FROM News WHERE cateId= " + cateList.get(i).getCateId() + "AND status=True ORDER BY publish_date ASC";
+            String sql = "SELECT TOP 4 * FROM News WHERE cateId= " + cateList.get(i).getCateId() + " AND status=1 ORDER BY publish_date DESC";
 
             ResultSet rs = getData(sql);
 

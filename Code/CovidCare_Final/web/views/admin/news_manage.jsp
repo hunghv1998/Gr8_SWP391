@@ -52,7 +52,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th class="text-center">Title</th>                                   
+                                        <th class="text-center" >Title</th>                                   
                                         <th class="text-center">Category</th>
                                         <th class="text-center">Status</th>
                                         <th class="text-center">Created date</th>
@@ -66,7 +66,7 @@
 
                                             <td class="">
                                                 <a>${n.getNewsId()}</a>
-                                            <td  class="text-center" >${n.getTitle()}</td>
+                                            <td  class="text-center" style="width:60%;">${n.getTitle()}</td>
                                             <td class="text-center">
                                                 <c:forEach items="${newsCate}" var="cate">
                                                     <c:if test="${cate.getCateId() == n.getCateId()}">
@@ -90,13 +90,13 @@
                                                 <div class="">
                                                     <ul class="list-inline justify-content-center">
                                                         <li class="list-inline-item">
-                                                            <a href="EditNews?newsId=${n.newsId}" onclick="return confirm('Bạn muốn chỉnh sửa không?')" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
+                                                            <a href="news?action=update&id=${n.newsId}" onclick="return confirm('Bạn muốn chỉnh sửa không?')" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
                                                         </li>      
                                                         <li class="list-inline-item">
-                                                            <a href="NewsDetails?newsId=${n.newsId}" class="edit"><i class="fa-solid fa-eye" title="View"></i></a>
+                                                            <a href="news?id=${n.newsId}" class="edit"><i class="fa-solid fa-eye" title="View"></i></a>
                                                         </li>                                            
                                                         <li class="list-inline-item">
-                                                            <a href="DeleteNews?newsId=${n.newsId}" onclick="return confirm('Bạn có muốn xóa tin tức này không?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
+                                                            <a href="news?action=delete&id=${n.newsId}" onclick="return confirm('Bạn có muốn xóa tin tức này không?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
                                                         </li>
                                                     </ul>
                                                 </div>
