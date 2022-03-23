@@ -139,7 +139,7 @@ public class TimetableController extends HttpServlet {
                 assignee = user.getUserId();
             }
 
-            TimetableEvent event = new TimetableEvent(title, start, end, title, allDay, progress, creator, assignee);
+            TimetableEvent event = new TimetableEvent(title, start, end, detail, allDay, progress, creator, assignee);
             timetableDAO.createEvent(event);
             response.sendRedirect("timetable");
         }
