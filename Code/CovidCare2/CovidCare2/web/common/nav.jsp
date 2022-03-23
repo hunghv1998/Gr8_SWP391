@@ -43,6 +43,9 @@
                                                 <a class="nav-link" href="addPostVaccinate">Tạo lịch tiêm</a>
                                             </li>
                                             <li class="nav-item active">
+                                                <a class="nav-link" href="viewListPostVaccinate">Xem lịch tiêm</a>
+                                            </li>
+                                            <li class="nav-item active">
                                                 <a class="nav-link" href="">Quản lý bệnh nhân</a>
                                             </li>
                                         </c:when>

@@ -14,16 +14,26 @@ import java.sql.Date;
 public class PostVaccinate {
     int id;
     String createdBy;
-    Date createdDate;
-    Date startDate;
-    Date expiredDate;
+    String createdDate;
+    String startDate;
+    String expiredDate;
     String place;
     int vaccId;
     int wardId;
     int amount;
     boolean status;
     String note;
+    String vaccName;
 
+    public String getVaccName() {
+        return vaccName;
+    }
+
+    public void setVaccName(String vaccName) {
+        this.vaccName = vaccName;
+    }
+
+    
     public boolean isStatus() {
         return status;
     }
@@ -45,15 +55,20 @@ public class PostVaccinate {
     public PostVaccinate() {
     }
 
-    public Date getStartDate() {
+    @Override
+    public String toString() {
+        return "PostVaccinate{" + "id=" + id + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", startDate=" + startDate + ", expiredDate=" + expiredDate + ", place=" + place + ", vaccId=" + vaccId + ", wardId=" + wardId + ", amount=" + amount + ", status=" + status + ", note=" + note + '}';
+    }
+
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public PostVaccinate(int id, String createdBy, Date createdDate, Date startDate, Date expiredDate, String place, int vaccId, int wardId, int amount, boolean status, String note) {
+    public PostVaccinate(int id, String createdBy, String createdDate, String startDate, String expiredDate, String place, int vaccId, int wardId, int amount, boolean status, String note) {
         this.id = id;
         this.createdBy = createdBy;
         this.createdDate = createdDate;
@@ -85,19 +100,19 @@ public class PostVaccinate {
         this.createdBy = createdBy;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Date getExpiredDate() {
+    public String getExpiredDate() {
         return expiredDate;
     }
 
-    public void setExpiredDate(Date expiredDate) {
+    public void setExpiredDate(String expiredDate) {
         this.expiredDate = expiredDate;
     }
 
