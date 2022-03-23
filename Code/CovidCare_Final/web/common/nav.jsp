@@ -43,7 +43,7 @@
                                                 <a class="nav-link" href="timetable">Lịch trình</a>
                                             </li>
                                             <li class="nav-item active">
-                                                <a class="nav-link" href="">Quản lý bệnh nhân</a>
+                                                <a class="nav-link" href="patient">Quản lý bệnh nhân</a>
                                             </li>
                                         </c:when>
                                         <c:otherwise>

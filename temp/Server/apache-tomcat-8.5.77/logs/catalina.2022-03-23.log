@@ -562,3 +562,269 @@
 23-Mar-2022 13:38:45.190 INFO [http-nio-8088-exec-194] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
 23-Mar-2022 13:38:45.258 INFO [http-nio-8088-exec-194] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 231 ms
 23-Mar-2022 13:38:45.267 INFO [http-nio-8088-exec-194] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 13:45:51.444 WARNING [http-nio-8088-exec-203] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:45:51.461 WARNING [http-nio-8088-exec-203] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:40.970 WARNING [http-nio-8088-exec-205] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:40.976 WARNING [http-nio-8088-exec-205] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:40.983 WARNING [http-nio-8088-exec-205] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:47.583 WARNING [http-nio-8088-exec-206] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:47.591 WARNING [http-nio-8088-exec-206] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:49.804 WARNING [http-nio-8088-exec-208] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:47:49.811 WARNING [http-nio-8088-exec-208] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:49:30.984 INFO [http-nio-8088-exec-209] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 13:49:30.987 INFO [http-nio-8088-exec-209] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 13:38:45 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 13:49:30.992 INFO [http-nio-8088-exec-209] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 13:38:44 ICT 2022]; root of context hierarchy
+23-Mar-2022 13:49:31.001 WARNING [http-nio-8088-exec-209] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 13:49:32.307 INFO [http-nio-8088-exec-209] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 13:49:32.343 INFO [http-nio-8088-exec-209] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 13:49:32.460 INFO [http-nio-8088-exec-209] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 13:49:32 ICT 2022]; root of context hierarchy
+23-Mar-2022 13:49:32.517 INFO [http-nio-8088-exec-209] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 13:49:32.587 INFO [http-nio-8088-exec-209] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 244 ms
+23-Mar-2022 13:49:32.619 INFO [http-nio-8088-exec-209] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 13:49:32.623 INFO [http-nio-8088-exec-209] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 13:49:32 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 13:49:32.623 INFO [http-nio-8088-exec-209] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 13:49:32.733 INFO [http-nio-8088-exec-209] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 13:49:32.795 INFO [http-nio-8088-exec-209] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 175 ms
+23-Mar-2022 13:49:32.802 INFO [http-nio-8088-exec-209] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 13:49:39.417 WARNING [http-nio-8088-exec-211] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:49:39.434 WARNING [http-nio-8088-exec-211] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:39.105 WARNING [http-nio-8088-exec-207] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:46.438 WARNING [http-nio-8088-exec-214] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:46.445 WARNING [http-nio-8088-exec-214] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:46.451 WARNING [http-nio-8088-exec-214] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:47.234 WARNING [http-nio-8088-exec-205] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:50:47.240 SEVERE [http-nio-8088-exec-205] DAO.DBContext.getData null
+	com.microsoft.sqlserver.jdbc.SQLServerException: Invalid object name 'Timetable'.
+		at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1632)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteCursored(SQLServerStatement.java:2030)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:846)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:767)
+		at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7375)
+		at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:3206)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:247)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:222)
+		at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:692)
+		at DAO.DBContext.getData(DBContext.java:41)
+		at DAO.TimetableDAO.getPatientTimetable(TimetableDAO.java:54)
+		at Controller.TimetableEventServlet.doGet(TimetableEventServlet.java:77)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+23-Mar-2022 13:51:59.733 WARNING [http-nio-8088-exec-213] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:53:03.177 INFO [http-nio-8088-exec-220] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 13:53:03.179 INFO [http-nio-8088-exec-220] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 13:49:32 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 13:53:03.182 INFO [http-nio-8088-exec-220] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 13:49:32 ICT 2022]; root of context hierarchy
+23-Mar-2022 13:53:03.191 WARNING [http-nio-8088-exec-220] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 13:53:04.546 INFO [http-nio-8088-exec-220] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 13:53:04.581 INFO [http-nio-8088-exec-220] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 13:53:04.704 INFO [http-nio-8088-exec-220] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 13:53:04 ICT 2022]; root of context hierarchy
+23-Mar-2022 13:53:04.765 INFO [http-nio-8088-exec-220] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 13:53:04.835 INFO [http-nio-8088-exec-220] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 254 ms
+23-Mar-2022 13:53:04.873 INFO [http-nio-8088-exec-220] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 13:53:04.876 INFO [http-nio-8088-exec-220] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 13:53:04 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 13:53:04.877 INFO [http-nio-8088-exec-220] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 13:53:04.987 INFO [http-nio-8088-exec-220] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 13:53:05.041 INFO [http-nio-8088-exec-220] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 168 ms
+23-Mar-2022 13:53:05.049 INFO [http-nio-8088-exec-220] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 13:53:34.976 WARNING [http-nio-8088-exec-215] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:53:34.993 WARNING [http-nio-8088-exec-215] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:53:35.002 WARNING [http-nio-8088-exec-215] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:53:35.240 WARNING [http-nio-8088-exec-213] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 13:53:50.338 WARNING [http-nio-8088-exec-217] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:18:32.354 WARNING [http-nio-8088-exec-225] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:18:32.364 WARNING [http-nio-8088-exec-225] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:18:48.002 WARNING [http-nio-8088-exec-228] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:19:06.105 WARNING [http-nio-8088-exec-230] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:20:29.461 INFO [http-nio-8088-exec-228] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 13:53:04 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:20:29.467 INFO [http-nio-8088-exec-228] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 13:53:04 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:20:29.787 WARNING [http-nio-8088-exec-228] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 14:20:31.290 INFO [http-nio-8088-exec-229] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:20:31.326 INFO [http-nio-8088-exec-229] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:20:31.445 INFO [http-nio-8088-exec-229] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:20:31 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:20:31.501 INFO [http-nio-8088-exec-229] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:20:31.571 INFO [http-nio-8088-exec-229] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 245 ms
+23-Mar-2022 14:20:31.605 INFO [http-nio-8088-exec-229] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:20:31.610 INFO [http-nio-8088-exec-229] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:20:31 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:20:31.611 INFO [http-nio-8088-exec-229] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:20:31.727 INFO [http-nio-8088-exec-229] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:20:31.797 INFO [http-nio-8088-exec-229] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 192 ms
+23-Mar-2022 14:20:31.847 INFO [http-nio-8088-exec-225] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:20:31.849 INFO [http-nio-8088-exec-225] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:20:31 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:20:31.852 INFO [http-nio-8088-exec-225] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:20:31 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:20:32.189 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload Reloading context []
+23-Mar-2022 14:20:33.151 INFO [http-nio-8088-exec-225] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:20:33.193 INFO [http-nio-8088-exec-225] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:20:33.322 INFO [http-nio-8088-exec-225] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:20:33 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:20:33.388 INFO [http-nio-8088-exec-225] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:20:33.459 INFO [http-nio-8088-exec-225] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 266 ms
+23-Mar-2022 14:20:33.494 INFO [http-nio-8088-exec-225] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:20:33.498 INFO [http-nio-8088-exec-225] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:20:33 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:20:33.499 INFO [http-nio-8088-exec-225] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:20:33.614 INFO [http-nio-8088-exec-225] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:20:33.677 INFO [http-nio-8088-exec-225] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 183 ms
+23-Mar-2022 14:20:33.684 INFO [http-nio-8088-exec-225] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:20:33.684 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]] after start() had already been called. The second call will be ignored.
+23-Mar-2022 14:26:48.753 INFO [http-nio-8088-exec-238] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:26:48.755 INFO [http-nio-8088-exec-238] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:20:33 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:26:48.758 INFO [http-nio-8088-exec-238] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:20:33 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:26:50.171 INFO [http-nio-8088-exec-238] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:26:50.206 INFO [http-nio-8088-exec-238] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:26:50.340 INFO [http-nio-8088-exec-238] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:26:50 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:26:50.405 INFO [http-nio-8088-exec-238] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:26:50.477 INFO [http-nio-8088-exec-238] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 271 ms
+23-Mar-2022 14:26:50.503 INFO [http-nio-8088-exec-238] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:26:50.507 INFO [http-nio-8088-exec-238] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:26:50 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:26:50.508 INFO [http-nio-8088-exec-238] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:26:50.612 INFO [http-nio-8088-exec-238] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:26:50.677 INFO [http-nio-8088-exec-238] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 174 ms
+23-Mar-2022 14:26:50.684 INFO [http-nio-8088-exec-238] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:28:31.609 WARNING [http-nio-8088-exec-246] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:31:02.595 INFO [http-nio-8088-exec-249] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:31:02.597 INFO [http-nio-8088-exec-249] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:26:50 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:31:02.598 INFO [http-nio-8088-exec-249] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:26:50 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:31:02.605 WARNING [http-nio-8088-exec-249] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 14:31:04.006 INFO [http-nio-8088-exec-249] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:31:04.045 INFO [http-nio-8088-exec-249] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:31:04.170 INFO [http-nio-8088-exec-249] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:31:04 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:31:04.234 INFO [http-nio-8088-exec-249] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:31:04.303 INFO [http-nio-8088-exec-249] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 258 ms
+23-Mar-2022 14:31:04.328 INFO [http-nio-8088-exec-249] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:31:04.332 INFO [http-nio-8088-exec-249] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:31:04 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:31:04.333 INFO [http-nio-8088-exec-249] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:31:04.441 INFO [http-nio-8088-exec-249] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:31:04.497 INFO [http-nio-8088-exec-249] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 169 ms
+23-Mar-2022 14:31:04.633 INFO [http-nio-8088-exec-249] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:32:33.988 INFO [http-nio-8088-exec-258] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:32:33.990 INFO [http-nio-8088-exec-258] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:31:04 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:32:33.993 INFO [http-nio-8088-exec-258] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:31:04 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:32:35.361 INFO [http-nio-8088-exec-258] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:32:35.413 INFO [http-nio-8088-exec-258] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:32:35.580 INFO [http-nio-8088-exec-258] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:32:35 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:32:35.652 INFO [http-nio-8088-exec-258] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:32:35.725 INFO [http-nio-8088-exec-258] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 312 ms
+23-Mar-2022 14:32:35.753 INFO [http-nio-8088-exec-258] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:32:35.757 INFO [http-nio-8088-exec-258] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:32:35 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:32:35.758 INFO [http-nio-8088-exec-258] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:32:35.951 INFO [http-nio-8088-exec-258] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:32:36.019 INFO [http-nio-8088-exec-258] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 266 ms
+23-Mar-2022 14:32:36.026 INFO [http-nio-8088-exec-258] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:32:36.338 WARNING [http-nio-8088-exec-252] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:32:36.355 WARNING [http-nio-8088-exec-252] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:33:19.187 INFO [http-nio-8088-exec-250] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:33:19.189 INFO [http-nio-8088-exec-250] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:32:35 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:33:19.191 INFO [http-nio-8088-exec-250] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:32:35 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:33:19.201 WARNING [http-nio-8088-exec-250] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 14:33:20.573 INFO [http-nio-8088-exec-250] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:33:20.621 INFO [http-nio-8088-exec-250] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:33:20.754 INFO [http-nio-8088-exec-250] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:33:20 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:33:20.823 INFO [http-nio-8088-exec-250] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:33:20.901 INFO [http-nio-8088-exec-250] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 280 ms
+23-Mar-2022 14:33:20.925 INFO [http-nio-8088-exec-250] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:33:20.930 INFO [http-nio-8088-exec-250] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:33:20 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:33:20.931 INFO [http-nio-8088-exec-250] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:33:21.056 INFO [http-nio-8088-exec-250] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:33:21.121 INFO [http-nio-8088-exec-250] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 196 ms
+23-Mar-2022 14:33:21.129 INFO [http-nio-8088-exec-250] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:33:21.309 WARNING [http-nio-8088-exec-262] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:33:21.326 WARNING [http-nio-8088-exec-262] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:34:07.445 INFO [http-nio-8088-exec-253] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:34:07.447 INFO [http-nio-8088-exec-253] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:33:20 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:34:07.449 INFO [http-nio-8088-exec-253] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:33:20 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:34:07.457 WARNING [http-nio-8088-exec-253] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 14:34:08.823 INFO [http-nio-8088-exec-253] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:34:08.863 INFO [http-nio-8088-exec-253] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:34:08.989 INFO [http-nio-8088-exec-253] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:34:08 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:34:09.047 INFO [http-nio-8088-exec-253] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:34:09.112 INFO [http-nio-8088-exec-253] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 249 ms
+23-Mar-2022 14:34:09.140 INFO [http-nio-8088-exec-253] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:34:09.144 INFO [http-nio-8088-exec-253] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:34:09 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:34:09.145 INFO [http-nio-8088-exec-253] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:34:09.248 INFO [http-nio-8088-exec-253] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:34:09.305 INFO [http-nio-8088-exec-253] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 165 ms
+23-Mar-2022 14:34:09.313 INFO [http-nio-8088-exec-253] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:34:12.745 WARNING [http-nio-8088-exec-265] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:34:12.761 WARNING [http-nio-8088-exec-265] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:37:07.506 INFO [http-nio-8088-exec-270] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 14:37:07.508 INFO [http-nio-8088-exec-270] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:34:09 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:37:07.510 INFO [http-nio-8088-exec-270] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:34:08 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:37:07.519 WARNING [http-nio-8088-exec-270] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 14:37:08.912 INFO [http-nio-8088-exec-270] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 14:37:08.947 INFO [http-nio-8088-exec-270] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 14:37:09.062 INFO [http-nio-8088-exec-270] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 14:37:09 ICT 2022]; root of context hierarchy
+23-Mar-2022 14:37:09.127 INFO [http-nio-8088-exec-270] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 14:37:09.197 INFO [http-nio-8088-exec-270] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 250 ms
+23-Mar-2022 14:37:09.254 INFO [http-nio-8088-exec-270] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 14:37:09.257 INFO [http-nio-8088-exec-270] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:37:09 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 14:37:09.258 INFO [http-nio-8088-exec-270] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 14:37:09.361 INFO [http-nio-8088-exec-270] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 14:37:09.551 INFO [http-nio-8088-exec-270] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 297 ms
+23-Mar-2022 14:37:09.558 INFO [http-nio-8088-exec-270] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 14:37:09.782 WARNING [http-nio-8088-exec-278] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 14:37:09.798 WARNING [http-nio-8088-exec-278] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:02:19.206 INFO [http-nio-8088-exec-283] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 15:02:19.210 INFO [http-nio-8088-exec-283] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 14:37:09 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 15:02:19.212 INFO [http-nio-8088-exec-283] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 14:37:09 ICT 2022]; root of context hierarchy
+23-Mar-2022 15:02:19.219 WARNING [http-nio-8088-exec-283] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 15:02:20.552 INFO [http-nio-8088-exec-283] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 15:02:20.593 INFO [http-nio-8088-exec-283] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 15:02:20.728 INFO [http-nio-8088-exec-283] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 15:02:20 ICT 2022]; root of context hierarchy
+23-Mar-2022 15:02:20.788 INFO [http-nio-8088-exec-283] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 15:02:20.855 INFO [http-nio-8088-exec-283] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 262 ms
+23-Mar-2022 15:02:20.881 INFO [http-nio-8088-exec-283] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 15:02:20.884 INFO [http-nio-8088-exec-283] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 15:02:20 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 15:02:20.885 INFO [http-nio-8088-exec-283] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 15:02:20.986 INFO [http-nio-8088-exec-283] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 15:02:21.046 INFO [http-nio-8088-exec-283] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 165 ms
+23-Mar-2022 15:02:21.053 INFO [http-nio-8088-exec-283] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 15:02:21.781 WARNING [http-nio-8088-exec-281] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:02:21.799 WARNING [http-nio-8088-exec-281] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:02:21.807 WARNING [http-nio-8088-exec-281] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:10:18.831 WARNING [http-nio-8088-exec-292] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:10:18.840 WARNING [http-nio-8088-exec-292] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:10:18.846 WARNING [http-nio-8088-exec-292] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:10:19.712 WARNING [http-nio-8088-exec-291] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:10:25.579 WARNING [http-nio-8088-exec-295] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+23-Mar-2022 15:16:52.898 INFO [http-nio-8088-exec-291] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+23-Mar-2022 15:16:52.900 INFO [http-nio-8088-exec-291] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 15:02:20 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 15:16:52.902 INFO [http-nio-8088-exec-291] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 15:02:20 ICT 2022]; root of context hierarchy
+23-Mar-2022 15:16:52.910 WARNING [http-nio-8088-exec-291] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+23-Mar-2022 15:16:54.256 INFO [http-nio-8088-exec-291] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-Mar-2022 15:16:54.291 INFO [http-nio-8088-exec-291] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+23-Mar-2022 15:16:54.404 INFO [http-nio-8088-exec-291] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing Root WebApplicationContext: startup date [Wed Mar 23 15:16:54 ICT 2022]; root of context hierarchy
+23-Mar-2022 15:16:54.468 INFO [http-nio-8088-exec-291] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+23-Mar-2022 15:16:54.532 INFO [http-nio-8088-exec-291] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization completed in 241 ms
+23-Mar-2022 15:16:54.562 INFO [http-nio-8088-exec-291] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization started
+23-Mar-2022 15:16:54.567 INFO [http-nio-8088-exec-291] org.springframework.context.support.AbstractApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 15:16:54 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 15:16:54.567 INFO [http-nio-8088-exec-291] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+23-Mar-2022 15:16:54.683 INFO [http-nio-8088-exec-291] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler Mapped URL path [/index.htm] onto handler 'indexController'
+23-Mar-2022 15:16:54.737 INFO [http-nio-8088-exec-291] org.springframework.web.servlet.FrameworkServlet.initServletBean FrameworkServlet 'dispatcher': initialization completed in 175 ms
+23-Mar-2022 15:16:54.746 INFO [http-nio-8088-exec-291] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+23-Mar-2022 16:15:11.101 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+23-Mar-2022 16:15:11.102 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8088"]
+23-Mar-2022 16:15:11.138 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+23-Mar-2022 16:15:11.141 INFO [localhost-startStop-2] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed Mar 23 15:16:54 ICT 2022]; parent: Root WebApplicationContext
+23-Mar-2022 16:15:11.143 INFO [localhost-startStop-2] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Wed Mar 23 15:16:54 ICT 2022]; root of context hierarchy
+23-Mar-2022 16:15:11.158 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8088"]
+23-Mar-2022 16:15:11.175 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8088"]

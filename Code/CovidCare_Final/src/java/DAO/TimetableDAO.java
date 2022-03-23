@@ -97,7 +97,28 @@ public class TimetableDAO extends DBContext {
     }
 
     public void update(TimetableEvent event) {
-        System.out.println("designing");
+        String sql = "UPDATE Timetable SET "
+                + "title=?, "
+                + "startTime=?, "
+                + "endTime=?, "
+                + "detail=?, "
+                + "allDay=?, "
+                + "progress=?, "
+                + "creator=?, "
+                + "assignee=? WHERE id=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+            
+            pre.setString(1, event.getTitle());
+            pre.setTimestamp(2, event.getStart());
+            pre.setTimestamp(3, event.getEnd());
+            pre.setString(4, event.getText());
+            pre.setBoolean(5, event.isAllDay());
+            pre.setBoolean(6, event.isProgress());
+        } catch (SQLException ex) {
+            Logger.getLogger(TimetableEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean delete(int id) {
