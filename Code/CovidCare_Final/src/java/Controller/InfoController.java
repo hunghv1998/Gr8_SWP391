@@ -145,7 +145,7 @@ public class InfoController extends HttpServlet {
             } else {
                 request.setAttribute("title", "Thông tin cá nhân");
             }
-            request.getRequestDispatcher("views/profile.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/profile.jsp").forward(request, response);
         }
     }
 

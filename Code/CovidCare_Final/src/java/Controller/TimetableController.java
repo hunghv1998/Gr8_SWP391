@@ -86,7 +86,16 @@ public class TimetableController extends HttpServlet {
                 request.setAttribute("title", "Thời gian biểu");
                 request.getRequestDispatcher("views/timetable.jsp").forward(request, response);
             } else {
+                String id = request.getParameter("id");
                 if (action.equals("add") || action.equals("update")) {
+                    TimetableEvent event = new TimetableEvent(0, "", 
+                            new Timestamp(System.currentTimeMillis()), 
+                            new Timestamp(System.currentTimeMillis()), 
+                            "", true, true, 0, 0);
+                    if (id != null) {
+                        event = timetableDAO.getEventDetail(Integer.parseInt(id));
+                    }
+                    request.setAttribute("event", event);
                     if (user.getUserType() == 2) {
                         Hospital hospital = hospitalDAO.getHospitalById(user.getUserId());
                         ArrayList<Patient> patientsList = patientDAO.getHospitalPatientsList(hospital.getWardId());
@@ -99,6 +108,9 @@ public class TimetableController extends HttpServlet {
                         request.setAttribute("title", "Thay đổi sự kiện");
                     }
                     request.getRequestDispatcher("views/timetable_add.jsp").forward(request, response);
+                } else if (action.equals("delete")) {
+                    timetableDAO.deleteEvent(Integer.parseInt(id));
+                    response.sendRedirect("timetable");
                 } else {
                     request.getRequestDispatcher("views/error.jsp").forward(request, response);
                 }
@@ -139,8 +151,13 @@ public class TimetableController extends HttpServlet {
                 assignee = user.getUserId();
             }
 
-            TimetableEvent event = new TimetableEvent(title, start, end, title, allDay, progress, creator, assignee);
-            timetableDAO.createEvent(event);
+            TimetableEvent event = new TimetableEvent(title, start, end, detail, allDay, progress, creator, assignee);
+            
+            if (request.getParameter("action").equals("add")) {
+                timetableDAO.createEvent(event);
+            } else if (request.getParameter("action").equals("update")) {
+                timetableDAO.updateEvent(event);
+            }
             response.sendRedirect("timetable");
         }
 

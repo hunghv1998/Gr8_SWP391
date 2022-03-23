@@ -194,8 +194,15 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-12 col-lg-12" style="align-items: center; justify-content: center; margin-left: 400px;">
-            <button class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" onclick="location.href = 'info?action=update'">Cập nhật</button>
-        </div>
+        <c:if test="${user.userType == 3}">
+            <div class="col-md-12 col-lg-12" style="align-items: center; justify-content: center; margin-left: 400px;">
+                <button class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" onclick="location.href = 'info?action=update'">Cập nhật</button>
+            </div>
+        </c:if>
+        <c:if test="${user.userType == 2}">
+            <div class="col-md-12 col-lg-12" style="align-items: center; justify-content: center; margin-left: 400px;">
+                <button class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3" onclick="location.href = 'patient?action=update'">Xác nhận tình trạng covid</button>
+            </div>
+        </c:if>
     </div>
 </div>

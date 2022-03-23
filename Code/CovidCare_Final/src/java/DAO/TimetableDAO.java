@@ -19,6 +19,32 @@ import java.util.logging.Logger;
  */
 public class TimetableDAO extends DBContext {
 
+    public TimetableEvent getEventDetail(int id) {
+        String sql = "SELECT * FROM Timetable WHERE id=" + id;
+
+        ResultSet rs = getData(sql);
+
+        try {
+            if (rs.next()) {
+                TimetableEvent e = new TimetableEvent();
+                e.setId(rs.getInt("id"));
+                e.setTitle(rs.getString("title"));
+                e.setStart(rs.getTimestamp("startTime"));
+                e.setEnd(rs.getTimestamp("endTime"));
+                e.setText(rs.getString("detail"));
+                e.setAllDay(rs.getBoolean("allDay"));
+                e.setProgress(rs.getBoolean("progress"));
+                e.setCreator(rs.getInt("creator"));
+                e.setAssignee(rs.getInt("assignee"));
+
+                return e;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TimetableEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public ArrayList<TimetableEvent> getHospitaTimetable(int creator) {
         ArrayList<TimetableEvent> timetable = new ArrayList<>();
 
@@ -96,11 +122,46 @@ public class TimetableDAO extends DBContext {
         }
     }
 
-    public void update(TimetableEvent event) {
-        System.out.println("designing");
+    public void updateEvent(TimetableEvent event) {
+        String sql = "UPDATE Timetable SET "
+                + "title=?, "
+                + "startTime=?, "
+                + "endTime=?, "
+                + "detail=?, "
+                + "allDay=?, "
+                + "progress=?, "
+                + "creator=?, "
+                + "assignee=? WHERE id=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+
+            pre.setString(1, event.getTitle());
+            pre.setTimestamp(2, event.getStart());
+            pre.setTimestamp(3, event.getEnd());
+            pre.setString(4, event.getText());
+            pre.setBoolean(5, event.isAllDay());
+            pre.setBoolean(6, event.isProgress());
+            pre.setInt(7, event.getCreator());
+            pre.setInt(8, event.getAssignee());
+            pre.setInt(9, event.getId());
+
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(TimetableEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
-    public boolean delete(int id) {
+    public boolean deleteEvent(int id) {
+        String sql = "DELETE FROM Timetable WHERE id=" + id;
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+
+            return (pre.executeUpdate() > 0);
+        } catch (SQLException ex) {
+            Logger.getLogger(TimetableEvent.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return false;
     }
 }
