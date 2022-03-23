@@ -110,8 +110,9 @@ public class NewsController extends HttpServlet {
                     request.getRequestDispatcher("/views/news_list.jsp").forward(request, response);
                 } else {
                     if (id != null) {
+                        newsDAO.updateReadCount(Integer.parseInt(id));
                         News news = newsDAO.getNewsForReader(Integer.parseInt(id));
-
+                        
                         request.setAttribute("author", userDAO.getUserNameWithId(news.getCreator()));
                         request.setAttribute("title", news.getTitle());
                         request.setAttribute("news", news);
@@ -158,11 +159,16 @@ public class NewsController extends HttpServlet {
                 }
 
             } else {
-                if (action.equals("add")) {
+                if (action.equals("delete")) {
+                    newsDAO.hideNews(Integer.parseInt(id));
+                    response.sendRedirect("news");
+                } else if (action.equals("show")) {
+                    newsDAO.showNews(Integer.parseInt(id));
+                    response.sendRedirect("news");
+                } else if (action.equals("add")) {
                     request.setAttribute("title", "Thêm tin mới");
                     request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
-                }
-                if (action.equals("update")) {
+                } else if (action.equals("update")) {
                     request.setAttribute("title", "Cập nhật");
                     News news = newsDAO.getNewsById(Integer.parseInt(id));
 
@@ -172,6 +178,8 @@ public class NewsController extends HttpServlet {
                         request.setAttribute("news", news);
                         request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
                     }
+                } else {
+                    sendRedirectError(request, response, "message", "Không tìm thấy trang yêu cầu");
                 }
             }
         }
@@ -203,112 +211,114 @@ public class NewsController extends HttpServlet {
             String searchText = request.getParameter("searchText");
             String searchCate = request.getParameter("searchCate");
 
+            if (searchText == null) {
+                searchText = "";
+            }
+            if (searchCate == null) {
+                searchCate = "0";
+            }
+
             ArrayList<News> result = newsDAO.searchNews(searchText, Integer.parseInt(searchCate));
 
             request.setAttribute("title", "Kết quả tìm kiếm");
             request.setAttribute("result", result);
             request.getRequestDispatcher("/views/news_list.jsp").forward(request, response);
         } else {
-            News news = null;
-
-            if (id == null) {
-                news = new News(0, 0, 0, "", "", "", "", true, null, null, 0);
-            } else if (check.isNumber(id)) {
+            News news = new News(0, 0, 0, "", "", "", "", true, null, null, 0);
+            
+            if (check.isNumber(id)) {
                 news = newsDAO.getNewsById(Integer.parseInt(id));
-            } else {
-                sendRedirectError(request, response, "error", "Không tìm thấy bài viết");
             }
+            if (action.equals("add") || action.equals("update")) {
+                String error = "";
 
-            if (user == null || user.getUserType() != 1) {
-                request.setAttribute("message", "Bạn không có quyền truy cập");
-                request.getRequestDispatcher("/views/error.jsp").forward(request, response);
-            } else {
-                if (action.equals("add") || action.equals("update")) {
-                    String submit = request.getParameter("submit");
-                    String error = "";
+                String title = request.getParameter("title");
+                if (title.length() > 250) {
+                    error += "Mô tả vượt quá 250 ký tự.<br>";
+                }
 
-                    String title = request.getParameter("title");
-                    if (title.length() > 250) {
-                        error += "Description vượt quá 250 ký tự.<br>";
-                    }
+                int cateId = -1;
+                if (check.isNumber(request.getParameter("category"))) {
+                    cateId = Integer.parseInt(request.getParameter("category"));
+                }
+                if (cateId == 0) {
+                    error += "Chưa lựa chọn thể loại.<br>";
+                }
 
-                    int cateId = 0;
-                    if (check.isNumber(request.getParameter("category"))) {
-                        cateId = Integer.parseInt(request.getParameter("category"));
-                    }
+                // Profile Image processing
+                Part filePart = request.getPart("newsPhoto");
+                String image = news.getPhoto();
 
-                    // Profile Image processing
-                    Part filePart = request.getPart("newsPhoto");
-                    String image = news.getPhoto();
+                String shortDes = request.getParameter("description");
+                if (shortDes.length() > 250) {
+                    error += "Description vượt quá 250 ký tự.<br>";
+                }
 
-                    String shortDes = request.getParameter("description");
-                    if (shortDes.length() > 250) {
-                        error += "Description vượt quá 250 ký tự.<br>";
-                    }
+                String content = request.getParameter("content");
 
-                    String content = request.getParameter("content");
-
-                    boolean isPublish = (request.getParameter("publishStatus").equals("1"));
+                boolean isPublish = (request.getParameter("publishStatus").equals("1"));
 //                News processing
-                    if (news.getCreator() == 0) {
-                        news.setCreator(user.getUserId());
-                    }
-                    news.setCateId(cateId);
-                    news.setTitle(title);
-                    news.setContent(content);
-                    news.setShort_des(shortDes);
-                    UploadFile ulF = new UploadFile();
-                    if (!ulF.getFileName(filePart).equals("")) {
-                        image = ulF.uploadFile(request, "newsPhoto", UPLOAD_DIR);
-                    }
-                    news.setPhoto(image);
-                    news.setStatus(isPublish);
-                    if (news.getCreate_date() == null) {
-                        news.setCreate_date(new Timestamp(System.currentTimeMillis()));
-                    }
-                    if (isPublish && news.getPublish_date() == null) {
-                        news.setPublish_date(new Timestamp(System.currentTimeMillis()));
-                    }
-
-                    System.out.println(news.getNewsId());
-                    System.out.println(news.getCreator());
-                    System.out.println(news.getCateId());
-                    System.out.println(news.getTitle());
-                    System.out.println(news.getContent());
-                    System.out.println(news.getShort_des());
-                    System.out.println(news.getPhoto());
-                    System.out.println(news.isStatus());
-                    System.out.println(news.getCreate_date());
-                    System.out.println(news.getPublish_date());
-                    System.out.println(news.getReadCount());
-
-                    if (submit != null) {
-                        int success = -1;
-                        if (news.getCateId() == 0) {
-                            success = newsDAO.addNews(news);
-                        } else {
-                            success = newsDAO.updateNews(news);
-                        }
-                        if (success > 0) {
-                            response.sendRedirect("news");
-                        } else {
-                            request.setAttribute("message", "Đã có lỗi xảy ra<br>Vui lòng thử lại.");
-                            request.setAttribute("error", error);
-                            request.setAttribute("news", news);
-                            request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
-                        }
-                    }
+                if (news.getCreator() == 0) {
+                    news.setCreator(user.getUserId());
                 }
-                if (action.equals("delete")) {
-                    newsDAO.hideNews(Integer.parseInt(id));
+                news.setCateId(cateId);
+                news.setTitle(title);
+                news.setContent(content);
+                news.setShort_des(shortDes);
+                UploadFile ulF = new UploadFile();
+                if (!ulF.getFileName(filePart).equals("")) {
+                    image = ulF.uploadFile(request, "newsPhoto", UPLOAD_DIR);
+                }
+                news.setPhoto(image);
+                news.setStatus(isPublish);
+                if (news.getCreate_date() == null) {
+                    news.setCreate_date(new Timestamp(System.currentTimeMillis()));
+                }
+                if (isPublish && news.getPublish_date() == null) {
+                    news.setPublish_date(new Timestamp(System.currentTimeMillis()));
+                }
+
+                System.out.println(news.getNewsId());
+                System.out.println(news.getCreator());
+                System.out.println(news.getCateId());
+                System.out.println(news.getTitle());
+                System.out.println(news.getContent());
+                System.out.println(news.getShort_des());
+                System.out.println(news.getPhoto());
+                System.out.println(news.isStatus());
+                System.out.println(news.getCreate_date());
+                System.out.println(news.getPublish_date());
+                System.out.println(news.getReadCount());
+
+                int success = 0;
+                if (news.getNewsId() == 0) {
+                    success = newsDAO.addNews(news);
+                } else {
+                    success = newsDAO.updateNews(news);
+                }
+                if (success > 0) {
                     response.sendRedirect("news");
+                } else {
+                    if (action.equals("add")) {
+                        request.setAttribute("title", "Thêm tin mới");
+                    }
+                    if (action.equals("update")) {
+                        request.setAttribute("title", "Cập nhật");
+                    }
+                    request.setAttribute("message", "Đã có lỗi xảy ra<br>Vui lòng thử lại.");
+                    request.setAttribute("error", error);
+                    request.setAttribute("news", news);
+                    request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
                 }
+            } else {
+                sendRedirectError(request, response, "message", "Không tìm thấy trang yêu cầu");
             }
         }
     }
 
     private void sendRedirectError(HttpServletRequest request, HttpServletResponse response, String attribute, String message) throws ServletException, IOException {
         request.setAttribute(attribute, message);
+        request.setAttribute("title", "Lỗi");
         request.getRequestDispatcher("/views/error.jsp").forward(request, response);
     }
 

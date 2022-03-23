@@ -1,0 +1,236 @@
+23-Mar-2022 10:34:18.677 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:34:18.711 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:34:19.206 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:34:19.914 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+23-Mar-2022 10:34:19.915 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+23-Mar-2022 10:34:19.916 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@34702ba5')
+23-Mar-2022 10:34:22.650 INFO [http-nio-8088-exec-1] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:34:22.653 INFO [http-nio-8088-exec-1] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:34:24.101 INFO [http-nio-8088-exec-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:34:24.129 INFO [http-nio-8088-exec-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:34:24.410 INFO [http-nio-8088-exec-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:34:40.231 SEVERE [http-nio-8088-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [NewsController] in context with path [] threw exception
+	java.lang.NumberFormatException: For input string: "Danh Mục Tin Tức"
+		at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+		at java.lang.Integer.parseInt(Integer.java:580)
+		at java.lang.Integer.parseInt(Integer.java:615)
+		at Controller.NewsController.doPost(NewsController.java:206)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+23-Mar-2022 10:36:12.466 INFO [http-nio-8088-exec-12] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:36:12.469 INFO [http-nio-8088-exec-12] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:36:14.395 INFO [http-nio-8088-exec-12] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:36:14.425 INFO [http-nio-8088-exec-12] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:36:14.736 INFO [http-nio-8088-exec-12] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:38:37.493 SEVERE [http-nio-8088-exec-15] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [NewsController] in context with path [] threw exception
+	java.lang.NumberFormatException: For input string: "Danh Mục Tin Tức"
+		at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+		at java.lang.Integer.parseInt(Integer.java:580)
+		at java.lang.Integer.parseInt(Integer.java:615)
+		at Controller.NewsController.doPost(NewsController.java:213)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+23-Mar-2022 10:49:47.536 INFO [http-nio-8088-exec-27] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:49:47.541 INFO [http-nio-8088-exec-27] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:49:49.174 INFO [http-nio-8088-exec-27] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:49:49.204 INFO [http-nio-8088-exec-27] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:49:49.535 INFO [http-nio-8088-exec-27] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:50:33.131 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:50:33.134 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:50:34.545 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:50:34.574 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:50:34.877 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:51:27.282 INFO [http-nio-8088-exec-25] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:51:27.285 INFO [http-nio-8088-exec-25] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:51:28.780 INFO [http-nio-8088-exec-25] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:51:28.806 INFO [http-nio-8088-exec-25] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:51:29.107 INFO [http-nio-8088-exec-25] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:51:32.735 INFO [http-nio-8088-exec-24] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:51:32.738 INFO [http-nio-8088-exec-24] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:51:34.192 INFO [http-nio-8088-exec-24] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:51:34.218 INFO [http-nio-8088-exec-24] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:51:34.552 INFO [http-nio-8088-exec-24] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:52:05.162 INFO [http-nio-8088-exec-34] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:52:05.164 INFO [http-nio-8088-exec-34] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:52:06.647 INFO [http-nio-8088-exec-34] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:52:06.683 INFO [http-nio-8088-exec-34] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:52:07.075 INFO [http-nio-8088-exec-34] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:54:01.790 INFO [http-nio-8088-exec-45] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 10:54:01.792 INFO [http-nio-8088-exec-45] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 10:54:03.368 INFO [http-nio-8088-exec-45] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 10:54:03.409 INFO [http-nio-8088-exec-45] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 10:54:03.719 INFO [http-nio-8088-exec-45] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:09:52.745 INFO [http-nio-8088-exec-53] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:09:52.747 INFO [http-nio-8088-exec-53] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:09:54.175 INFO [http-nio-8088-exec-53] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:09:54.200 INFO [http-nio-8088-exec-53] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:09:54.474 INFO [http-nio-8088-exec-53] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:10:18.754 INFO [http-nio-8088-exec-59] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:10:18.756 INFO [http-nio-8088-exec-59] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:10:20.121 INFO [http-nio-8088-exec-59] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:10:20.147 INFO [http-nio-8088-exec-59] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:10:20.440 INFO [http-nio-8088-exec-59] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:22:40.717 INFO [http-nio-8088-exec-65] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:22:40.719 INFO [http-nio-8088-exec-65] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:22:42.097 INFO [http-nio-8088-exec-65] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:22:42.124 INFO [http-nio-8088-exec-65] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:22:42.420 INFO [http-nio-8088-exec-65] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:23:08.385 INFO [http-nio-8088-exec-68] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:23:08.386 INFO [http-nio-8088-exec-68] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:23:09.709 INFO [http-nio-8088-exec-68] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:23:09.735 INFO [http-nio-8088-exec-68] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:23:10.010 INFO [http-nio-8088-exec-68] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:23:47.800 INFO [http-nio-8088-exec-69] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:23:47.802 INFO [http-nio-8088-exec-69] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:23:49.144 INFO [http-nio-8088-exec-69] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:23:49.173 INFO [http-nio-8088-exec-69] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:23:49.440 INFO [http-nio-8088-exec-69] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:39:28.620 INFO [http-nio-8088-exec-79] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:39:28.622 INFO [http-nio-8088-exec-79] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:39:30.159 INFO [http-nio-8088-exec-79] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:39:30.185 INFO [http-nio-8088-exec-79] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:39:30.490 INFO [http-nio-8088-exec-79] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:40:53.675 SEVERE [http-nio-8088-exec-81] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [NewsController] in context with path [] threw exception
+	java.lang.IllegalStateException: Cannot forward after response has been committed
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:327)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.NewsController.sendRedirectError(NewsController.java:321)
+		at Controller.NewsController.doGet(NewsController.java:184)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+23-Mar-2022 11:42:12.940 INFO [http-nio-8088-exec-93] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:42:12.942 INFO [http-nio-8088-exec-93] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:42:14.457 INFO [http-nio-8088-exec-93] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:42:14.482 INFO [http-nio-8088-exec-93] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:42:14.774 INFO [http-nio-8088-exec-93] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:54:17.247 INFO [http-nio-8088-exec-100] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 11:54:17.250 INFO [http-nio-8088-exec-100] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 11:54:18.702 INFO [http-nio-8088-exec-100] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 11:54:18.729 INFO [http-nio-8088-exec-100] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 11:54:19.018 INFO [http-nio-8088-exec-100] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:47:36.012 INFO [http-nio-8088-exec-112] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:47:36.014 INFO [http-nio-8088-exec-112] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 12:47:37.472 INFO [http-nio-8088-exec-112] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 12:47:37.505 INFO [http-nio-8088-exec-112] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 12:47:37.815 INFO [http-nio-8088-exec-112] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:57:05.498 INFO [http-nio-8088-exec-116] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:57:05.500 INFO [http-nio-8088-exec-116] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 12:57:06.926 INFO [http-nio-8088-exec-116] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 12:57:06.957 INFO [http-nio-8088-exec-116] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 12:57:07.244 INFO [http-nio-8088-exec-116] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:57:47.518 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 12:57:47.520 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 12:57:48.913 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 12:57:48.945 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 12:57:49.234 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:01:04.167 INFO [http-nio-8088-exec-131] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:01:04.169 INFO [http-nio-8088-exec-131] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:01:05.675 INFO [http-nio-8088-exec-131] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:01:05.705 INFO [http-nio-8088-exec-131] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:01:05.983 INFO [http-nio-8088-exec-131] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:04:00.258 INFO [http-nio-8088-exec-143] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:04:00.261 INFO [http-nio-8088-exec-143] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:04:01.711 INFO [http-nio-8088-exec-143] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:04:01.749 INFO [http-nio-8088-exec-143] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:04:02.027 INFO [http-nio-8088-exec-143] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:17:28.869 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:17:28.871 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:17:30.322 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:17:30.354 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:17:30.648 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:26:26.039 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:26:26.041 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:26:27.548 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:26:27.579 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:26:27.903 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:28:50.738 INFO [http-nio-8088-exec-167] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:28:50.739 INFO [http-nio-8088-exec-167] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:28:52.199 INFO [http-nio-8088-exec-167] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:28:52.230 INFO [http-nio-8088-exec-167] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:28:52.540 INFO [http-nio-8088-exec-167] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:29:23.521 INFO [http-nio-8088-exec-164] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:29:23.523 INFO [http-nio-8088-exec-164] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:29:24.966 INFO [http-nio-8088-exec-164] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:29:24.997 INFO [http-nio-8088-exec-164] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:29:25.286 INFO [http-nio-8088-exec-164] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:33:56.531 INFO [http-nio-8088-exec-178] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:33:56.533 INFO [http-nio-8088-exec-178] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:33:57.934 INFO [http-nio-8088-exec-178] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:33:57.963 INFO [http-nio-8088-exec-178] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:33:58.273 INFO [http-nio-8088-exec-178] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:36:35.852 INFO [http-nio-8088-exec-188] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:36:35.855 INFO [http-nio-8088-exec-188] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:36:37.428 INFO [http-nio-8088-exec-188] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:36:37.464 INFO [http-nio-8088-exec-188] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:36:37.770 INFO [http-nio-8088-exec-188] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:38:43.200 INFO [http-nio-8088-exec-194] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+23-Mar-2022 13:38:43.201 INFO [http-nio-8088-exec-194] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+23-Mar-2022 13:38:44.696 INFO [http-nio-8088-exec-194] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+23-Mar-2022 13:38:44.724 INFO [http-nio-8088-exec-194] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+23-Mar-2022 13:38:45.026 INFO [http-nio-8088-exec-194] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'

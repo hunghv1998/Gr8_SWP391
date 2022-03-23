@@ -21,6 +21,7 @@
                             <ul class="list-inline">
                                 <li class="list-inline-item">by ${author}</li>
                                 <li class="list-inline-item">at ${news.publish_date}</li>
+                                <li class="list-inline-item">- Lượt xem ${news.readCount}</li>
                             </ul>
                             <img src="images/uploads/${news.photo}">
                             <h6>${news.short_des}</h6>

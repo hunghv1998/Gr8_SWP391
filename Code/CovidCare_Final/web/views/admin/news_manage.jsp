@@ -93,11 +93,21 @@
                                                             <a href="news?action=update&id=${n.newsId}" onclick="return confirm('Bạn muốn chỉnh sửa không?')" class="edit"><i class="fas fa-edit"  title="Edit"></i></a>
                                                         </li>      
                                                         <li class="list-inline-item">
-                                                            <a href="news?id=${n.newsId}" class="edit"><i class="fa-solid fa-eye" title="View"></i></a>
+                                                            <a href="news?id=${n.newsId}" class="edit"><i class="fa-solid fa-book" title="View"></i></a>
                                                         </li>                                            
-                                                        <li class="list-inline-item">
-                                                            <a href="news?action=delete&id=${n.newsId}" onclick="return confirm('Bạn có muốn xóa tin tức này không?')" class="delete"><i class="fas fa-eraser" title="Delete"></i></a>
-                                                        </li>
+                                                        <c:choose>
+                                                            <c:when test="${n.status == true}">
+                                                                <li class="list-inline-item">
+                                                                    <a href="news?action=delete&id=${n.newsId}" onclick="return confirm('Bạn có muốn ẩn tin tức này không?')" class="delete"><i class="fas fa-eye-slash" title="Hide"></i></a>
+                                                                </li>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <li class="list-inline-item">
+                                                                    <a href="news?action=show&id=${n.newsId}" onclick="return confirm('Bạn có muốn hiện tin tức này không?')" class="delete"><i class="fas fa-eye" title="Show"></i></a>
+                                                                </li>
+                                                            </c:otherwise>
+                                                        </c:choose>
+
                                                     </ul>
                                                 </div>
                                             </td>

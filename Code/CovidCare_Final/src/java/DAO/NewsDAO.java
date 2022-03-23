@@ -111,14 +111,14 @@ public class NewsDAO extends DBContext {
     }
 
     public int addNews(News news) {
-        String sql = "INSERT INTO News("
-                + "creator, cateId, title, content, description, "
+        String sql = "INSERT INTO News"
+                + "(creator, cateId, title, content, description, "
                 + "photo, status, create_date, publish_date, readCount) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement pre = connection.prepareStatement(sql);
-            pre.setInt(1, news.getCateId());
+            pre.setInt(1, news.getCreator());
             pre.setInt(2, news.getCateId());
             pre.setString(3, news.getTitle());
             pre.setString(4, news.getContent());
@@ -267,6 +267,20 @@ public class NewsDAO extends DBContext {
         }
     }
 
+    public void showNews(int newsId) {
+        String sql = "UPDATE News SET status=1 WHERE id=?";
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+
+            pre.setInt(1, newsId);
+
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(NewsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public ArrayList<News> getAllNews() {
         String sql = "SELECT * FROM News";
 
@@ -345,5 +359,18 @@ public class NewsDAO extends DBContext {
             }
         }
         return newsList;
+    }
+
+    public void updateReadCount(int id) {
+        String sql = "UPDATE News "
+                + "SET readCount = readCount + 1 "
+                + "WHERE id=" + id;
+
+        try {
+            PreparedStatement pre = connection.prepareStatement(sql);
+            pre.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(NewsDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

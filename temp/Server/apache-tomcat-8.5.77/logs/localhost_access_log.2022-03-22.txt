@@ -86,3 +86,9 @@
 0:0:0:0:0:0:0:1 - - [22/Mar/2022:18:08:15 +0700] "GET /news?action=add HTTP/1.1" 200 13313
 0:0:0:0:0:0:0:1 - - [22/Mar/2022:18:08:26 +0700] "POST /news?action=add HTTP/1.1" 200 13940
 0:0:0:0:0:0:0:1 - - [22/Mar/2022:18:08:26 +0700] "GET /images/uploads/1647947306044.jpg HTTP/1.1" 200 83571
+127.0.0.1 - - [22/Mar/2022:18:14:36 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [22/Mar/2022:18:14:36 +0700] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [22/Mar/2022:18:14:36 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [22/Mar/2022:18:14:36 +0700] "GET /manager/text/ HTTP/1.1" 200 39
+127.0.0.1 - - [22/Mar/2022:18:14:36 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - admin [22/Mar/2022:18:14:36 +0700] "GET /manager/text/ HTTP/1.1" 200 39

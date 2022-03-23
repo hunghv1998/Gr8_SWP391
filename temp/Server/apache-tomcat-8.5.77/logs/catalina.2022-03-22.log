@@ -86,3 +86,11 @@
 22-Mar-2022 18:02:45.915 INFO [http-nio-8088-exec-12] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
 22-Mar-2022 18:02:46.347 WARNING [http-nio-8088-exec-17] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
 22-Mar-2022 18:02:46.364 WARNING [http-nio-8088-exec-17] com.microsoft.sqlserver.jdbc.TDSChannel.enableSSL TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+22-Mar-2022 18:14:36.635 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+22-Mar-2022 18:14:36.636 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8088"]
+22-Mar-2022 18:14:36.672 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+22-Mar-2022 18:14:36.676 INFO [localhost-startStop-2] org.springframework.context.support.AbstractApplicationContext.doClose Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Tue Mar 22 18:02:45 ICT 2022]; parent: Root WebApplicationContext
+22-Mar-2022 18:14:36.681 INFO [localhost-startStop-2] org.springframework.context.support.AbstractApplicationContext.doClose Closing Root WebApplicationContext: startup date [Tue Mar 22 18:02:45 ICT 2022]; root of context hierarchy
+22-Mar-2022 18:14:36.691 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.microsoft.sqlserver.jdbc.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+22-Mar-2022 18:14:36.699 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8088"]
+22-Mar-2022 18:14:36.715 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8088"]

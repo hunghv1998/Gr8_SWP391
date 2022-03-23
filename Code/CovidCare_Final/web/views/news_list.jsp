@@ -50,7 +50,7 @@
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <select name="searchCate" class="w-100 form-control mt-lg-1 mt-md-2">
-                                                        <option>Danh Mục Tin Tức</option>
+                                                        <option value="0">Danh Mục Tin Tức</option>
                                                         <c:forEach items="${newsCate}" var="cate">
                                                             <option value="${cate.cateId}">${cate.cateName}</option>
                                                         </c:forEach>
