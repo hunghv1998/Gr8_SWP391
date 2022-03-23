@@ -40,7 +40,7 @@
                                     <c:choose>
                                         <c:when test="${account.getGroupId() == 2}">
                                             <li class="nav-item active">
-                                                <a class="nav-link" href="">Lịch trình</a>
+                                                <a class="nav-link" href="addPostVaccinate">Tạo lịch tiêm</a>
                                             </li>
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="">Quản lý bệnh nhân</a>

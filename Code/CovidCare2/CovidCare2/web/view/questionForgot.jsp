@@ -1,15 +1,13 @@
 <%-- 
-    Document   : sendEmailForgot
-    Created on : Mar 16, 2022, 9:14:53 PM
-    Author     : Hoang Hung
+    Document   : questionForgot
+    Created on : Mar 20, 2022, 2:51:14 PM
+    Author     : Administrator
 --%>
 
-<<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+  
     <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">
@@ -28,10 +26,16 @@
                                  <c:if test="${not empty message}">
                               <b>${message}</b>
                           </c:if> 
-                               <form action="forgot" method="POST">
-                          <input type="text" placeholder="Vui lòng nhập tên tài khoản" name="username" class="border p-3 w-100 my-2" value="">                                                                                                                       
+                               <form action="verify" method="Get">
+                          <input type="hidden" name="username" class="border p-3 w-100 my-2" value="${username}">
+                          <select name="question_id">
+                              <c:forEach items="${listQuestion}" var='q'>
+                                  <option value="${q.id}">${q.content}</option>
+                              </c:forEach>
+                          </select>
+                          <input type="text" placeholder="Vui lòng nhập câu trả lời của bạn" name="answer" class="border p-3 w-100 my-2">
                           <button type="submit"
-                                  class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Kiểm tra</button>                      
+                                  class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Tạo mật khẩu mới</button>                      
                             </form>
                       </fieldset>
                 

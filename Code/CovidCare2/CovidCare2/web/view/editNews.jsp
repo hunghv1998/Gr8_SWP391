@@ -70,8 +70,8 @@
                                             <div class="dnx_content_form_item_field">
                                                 <select>
                                                     <option class="default-selected" value="1" selected="">Chọn Thể Loại</option>
-                                                    <option value="2">1</option>
-                                                    <option value="3">2</option>
+                                                    <option value="1">Chỉ đạo chống dịch</option>
+                                                    <option value="2">Ca mắc mới</option>
                                                 </select>
                                             </div>
                                         </div>       

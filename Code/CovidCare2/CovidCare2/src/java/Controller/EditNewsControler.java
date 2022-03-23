@@ -46,7 +46,7 @@ public class EditNewsControler extends HttpServlet {
         
         
         request.setAttribute("news", n);
-        request.getRequestDispatcher("/view/createNews.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/editNews.jsp").forward(request, response);
     }
 
     /**
