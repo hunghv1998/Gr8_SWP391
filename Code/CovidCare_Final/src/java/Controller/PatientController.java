@@ -87,32 +87,39 @@ public class PatientController extends HttpServlet {
             if (id == null) {
                 request.getRequestDispatcher("/views/doctor/patient_list.jsp").forward(request, response);
             } else {
-                if (!check.isNumber(id) || patientDAO.getPatientInfo(Integer.parseInt(id)) == null) {
-                    request.setAttribute("message", "Không tìm thấy bệnh nhân");
-                    request.getRequestDispatcher("/views/error.jsp").forward(request, response);
-                } else {
-                    Patient patient = patientDAO.getPatientInfo(Integer.parseInt(id));
+                String action = request.getParameter("action");
 
-                    ArrayList<VaccineStatus> vaccStatusList = commonDAO.getVaccineStatusList();
-                    ArrayList<Vaccine> vaccines = commonDAO.getVaccineList();
-                    ArrayList<AgeType> ages = commonDAO.getAgeTypeList();
-                    ArrayList<Disease> diseases = commonDAO.getDiseaseList();
+                if (action == null) {
+                    if (!check.isNumber(id) || patientDAO.getPatientInfo(Integer.parseInt(id)) == null) {
+                        request.setAttribute("message", "Không tìm thấy bệnh nhân");
+                        request.getRequestDispatcher("/views/error.jsp").forward(request, response);
+                    } else {
+                        Patient patient = patientDAO.getPatientInfo(Integer.parseInt(id));
 
-                    City patientCity = commonDAO.geCityByWardId(patient.getWardId());
-                    District patientDistrict = commonDAO.getDistrictByWardId(patient.getWardId());
-                    Ward patientWard = commonDAO.getWardByWardId(patient.getWardId());
+                        ArrayList<VaccineStatus> vaccStatusList = commonDAO.getVaccineStatusList();
+                        ArrayList<Vaccine> vaccines = commonDAO.getVaccineList();
+                        ArrayList<AgeType> ages = commonDAO.getAgeTypeList();
+                        ArrayList<Disease> diseases = commonDAO.getDiseaseList();
 
-                    request.setAttribute("vaccStatusList", vaccStatusList);
-                    request.setAttribute("vaccines", vaccines);
-                    request.setAttribute("ages", ages);
-                    request.setAttribute("diseases", diseases);
-                    request.setAttribute("city", patientCity);
-                    request.setAttribute("district", patientDistrict);
-                    request.setAttribute("ward", patientWard);
+                        City patientCity = commonDAO.geCityByWardId(patient.getWardId());
+                        District patientDistrict = commonDAO.getDistrictByWardId(patient.getWardId());
+                        Ward patientWard = commonDAO.getWardByWardId(patient.getWardId());
 
-                    request.setAttribute("patient", patient);
-                    request.getRequestDispatcher("/views/doctor/patient_detail.jsp").forward(request, response);
+                        request.setAttribute("vaccStatusList", vaccStatusList);
+                        request.setAttribute("vaccines", vaccines);
+                        request.setAttribute("ages", ages);
+                        request.setAttribute("diseases", diseases);
+                        request.setAttribute("city", patientCity);
+                        request.setAttribute("district", patientDistrict);
+                        request.setAttribute("ward", patientWard);
+
+                        request.setAttribute("patient", patient);
+                        request.getRequestDispatcher("/views/doctor/patient_detail.jsp").forward(request, response);
+                    }
+                } else if (action.equals("update")) {
+                    request.getRequestDispatcher("/views/doctor/patient_covid.jsp").forward(request, response);
                 }
+
             }
         }
     }

@@ -48,13 +48,13 @@
                                     <tbody>
                                     <div class="col-lg-12">
                                         <h6 class="font-weight-bold pt-4 pb-1">Việc Cần Làm :</h6>
-                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Việc Cần Làm">                             
+                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Việc Cần Làm" value="${event.title}">                             
                                         <h6 class="font-weight-bold pt-4 pb-1">Ngày Giờ Bắt Đầu :</h6>
-                                        <input type="datetime-local" class="border w-100 p-2 bg-white text-capitalize" name="start">                                                                      
+                                        <input type="datetime-local" class="border w-100 p-2 bg-white text-capitalize" name="start" value="${event.start}">                                                                      
                                         <h6 class="font-weight-bold pt-4 pb-1">Ngày Giờ Kết Thúc:</h6>
-                                        <input type="datetime-local" class="border w-100 p-2 bg-white text-capitalize" name="end">
+                                        <input type="datetime-local" class="border w-100 p-2 bg-white text-capitalize" name="end" value="${event.end}">
                                         <h6 class="font-weight-bold pt-4 pb-1">Chi tiết :</h6>
-                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="detail" placeholder="Chi Tiết">
+                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="detail" placeholder="Chi Tiết" value="${event.text}">
                                         <h6 class="font-weight-bold pt-4 pb-1">Thời gian :</h6>
                                         <input type="checkbox" name="allday" value="1"> Cả ngày
                                         <h6 class="font-weight-bold pt-4 pb-1">Tiến độ :</h6>
