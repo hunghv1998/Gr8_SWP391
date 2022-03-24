@@ -1,181 +1,99 @@
-/* Common */
+#drop-menu {
+    display: none;
+    position: absolute;
+    width: 30%; 
+    right: 23px;
+    z-index: 9000;
+    top: 7%;
+    -webkit-box-shadow: 6px 7px 16px -6px rgba(0,0,0,0.63);
+-moz-box-shadow: 6px 7px 16px -6px rgba(0,0,0,0.63);
+box-shadow: 6px 7px 16px -6px rgba(0,0,0,0.63);
+transition: all 0.5s;
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    font-size: 13px;
-    outline: 0;
 }
 
-.error {
-    color: #F04823;
-    font-size: 12px;
+
+#drop-menu ul li > .badge-ligth {
+    background-color: #e9ecef;
+    color: #e9ecef;
 }
 
-input[type="text"],
-input[type="password"] {
-    border-radius: 20px;
-    padding: 10px;
-    border: 2px solid gainsboro;
+#drop-menu ul li > .badge-dark {
+    background-color: #505c8c;
+    color: #505c8c;
 }
 
-button {
-    border-radius: 20px;
-    padding: 10px;
-    background-color: #0084FF;
-    color: #fff;
-    width: 6em;
-    border: 2px solid #0084FF;
+#drop-menu ul li > .badge-hot {
+    background-color: #bd2130;
+    color: #bd2130;
 }
 
-button:hover,
-button:focus {
-    background-color: #0966ff;
-    border-color: #0966ff;
+#drop-menu ul li {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    margin-top: 1px;
     cursor: pointer;
+    padding-right: 5px;
+    transition: all 0.5s;
 }
 
-/* Authentication */
+#drop-menu ul li:hover {
 
-#authentication {
-    margin-top: 100px;
+    background-color: #ccc;
 }
 
-#authentication * {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
+
+#drop-menu ul li:last-child {
+    border-bottom: none;
 }
 
-#authentication .error {
-    text-align: center;
-}
+img.online {
+    border: 2px solid #02db33;
+  }
 
-/* Title Bar */
+  img.offline {
+    border: 2px solid #ccc;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
 
-#title {
-    background-color: #0084FF;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    color: #fff;
-}
 
-/* Contact list */
 
-#contacts {
-    float: left;
-    width: 120px;
-    padding: 20px;
-    background-color: aliceblue;
-    min-height: calc(100vh - 85px);
-    max-height: calc(100vh - 85px);
-    display: none;
-}
 
-#contacts .contact .status {
-    background-color: #13CF13;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-}
 
-#contacts .contact .name {
-    line-height: 40px;
-    vertical-align: super;
-}
-
-/* Chat */
-
-#chat {
+  #hide-contact {
     float: right;
-    width: calc(100% - 160px);
-    display: none;
-}
+    margin-top: 7px;
+    color: #ffffff;
+    cursor: pointer;
+  }
 
-#messages {
-    min-height: calc(100vh - 130px);
-    max-height: calc(100vh - 130px);
-    padding: 20px 20px 0 20px;
-    overflow-y: auto;
-}
 
-#messages .message {
-    margin-bottom: 3px;
-}
-
-#messages .message .content {
-    min-width: 20px;
-    max-width: 250px;
-    border-radius: 20px;
-    padding: 10px;
-    display: table;
-}
-
-#messages .message.event .content {
-    background-color: #FF7E29;
-    color: #fff;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 10px;
+  #input-message .btn-primary {
+    margin-bottom: 5px;
+    position: absolute;
+    width: 50px;
+    height: 38px;
+    border-radius: 0 50px 50px 0;
+    right: 50px;
     padding: 7px;
-}
+} 
 
-#messages .message.received {
-    left: 0;
-    text-align: left;
-}
 
-#messages .message.received .content {
-    background-color: gainsboro;
-    border-radius: 0 20px 20px;
-}
 
-#messages .message.received .sender {
-    color: dimgrey;
-    font-size: 10px;
-}
+  @media (max-width: 500px){
 
-#messages .message.sent {
-    right: 0;
-    text-align: right;
-}
+    .append-btn-search {
+        right: 51px;
+    
+      }
 
-#messages .message.sent .content {
-    background-color: #0084FF;
-    margin-left: auto;
-    margin-right: 0;
-    color: #fff;
-    text-align: right;
-    border-radius: 20px 0 20px 20px;
-}
+      #drop-menu {
+        width: 50%;
+        top: 8%;
+    }
 
-#messages .message.sent .sender {
-    color: #0084FF;
-    font-size: 10px;
-}
-
-#chat-controls {
-    height: 40px;
-    padding: 20px 20px 0 20px;
-}
-
-#chat-controls button {
-    float: right;
-}
-
-#chat-controls input[type="text"] {
-    width: calc(100% - 9em);
-}
-
-#messages .message.sent.same-sender-previous-message .sender,
-#messages .message.received.same-sender-previous-message .sender {
-    display: none;
-}
-
-#messages .message:not(.same-sender-previous-message) {
-    margin-top: 10px;
-}
+  }
+  

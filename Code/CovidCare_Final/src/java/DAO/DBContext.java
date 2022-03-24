@@ -52,4 +52,8 @@ public class DBContext {
     public static void main(String[] args) {
         new DBContext();
     }
+
+    public Connection getConnection() {
+        return connection;
+    }
 }

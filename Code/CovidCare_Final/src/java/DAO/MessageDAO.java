@@ -6,8 +6,7 @@
 package DAO;
 
 import Model.Message;
-import WebSocket.UserDTO;
-import java.sql.Connection;
+import Model.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author chinh
  */
-public class MessageDAO extends DBPool {
+public class MessageDAO extends DBContext {
 
     public void markMsgsAsRead(Integer msgsFromUserId, Integer msgsToUserId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -65,22 +64,29 @@ public class MessageDAO extends DBPool {
         return null;
     }
 
-    public ArrayList<UserDTO> getListOfSenders(Integer toId) {
+    public ArrayList<User> getListOfSenders(Integer toId) {
+        ArrayList<User> listOfSenders = new ArrayList<>();
+
         String sql = "SELECT fromId FROM chatDialog WHERE readState = 0 AND toId = " + toId;
         ResultSet rs = getData(sql);
 
         try {
             while (rs.next()) {
+                UserDAO userDAO = new UserDAO();
                 int senderId = rs.getInt("fromId");
-                String senderName = "";
-                UserDTO userDTO;
+                String senderName = userDAO.getUserNameWithId(senderId);
 
-                while (rs.next()) {
-                    senderId = rs.getInt("fromId");
-                    UserDAO userDAO = new UserDAO();
-                    senderName = userDAO.getUserNameWithId(senderId);
+                User userDTO = new User(senderId, senderName);
 
-                    userDTO = new UserDTO(senderId, senderName);
+                Integer foundAt = -1;
+
+                for (int i = 0; i < listOfSenders.size(); i++) {
+                    if (senderId == listOfSenders.get(i).getUserId()) {
+                        foundAt = i;
+                    }
+                }
+                if (foundAt == -1) {
+                    listOfSenders.add(userDTO);
                 }
             }
         } catch (SQLException ex) {
@@ -93,7 +99,4 @@ public class MessageDAO extends DBPool {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public ArrayList<UserDTO> getListOfSenders(Connection currentConnection, Integer unreadMsgsToUserId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

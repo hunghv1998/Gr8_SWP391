@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html"%>
 <!DOCTYPE html>
 <html lang="en">
+    <% request.setAttribute("title", "HƯỚNG DẪN CHĂM SÓC SỨC KHỎE");%>
     <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">

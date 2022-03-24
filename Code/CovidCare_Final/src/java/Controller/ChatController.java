@@ -5,26 +5,20 @@
  */
 package Controller;
 
-import DAO.DBPool;
+import DAO.DBContext;
 import DAO.MessageDAO;
-import DAO.UserDAO;
 import Model.Message;
 import Model.User;
 import DAO.UserDAO;
-import WebSocket.CacheInMemory;
-import WebSocket.UserDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.spi.JsonProvider;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,13 +34,13 @@ public class ChatController extends HttpServlet {
     HttpSession session;
 
     //was static
-    DBPool connectionPool = new DBPool();
+    DBContext connectionPool = new DBContext();
 
     Connection connection = connectionPool.getConnection();
 
     public Boolean shouldUpdateUsersCache = true;
     public ArrayList<String> listOfFetchedClientsIds = new ArrayList<>();
-    public CacheInMemory<String, String> usersCache = new CacheInMemory<String, String>(30);//LRUmap of size 30
+//    public CacheInMemory<String, String> usersCache = new CacheInMemory<String, String>(30);//LRUmap of size 30
 
     private MessageDAO messageDAO = new MessageDAO();
     private UserDAO userDAO = new UserDAO();
@@ -64,7 +58,22 @@ public class ChatController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+
+        session = request.getSession();
+
+        User user = (User) session.getAttribute("user");
+
+        request.setAttribute("title", "Hỗ Trợ Trực Tuyến");
+        if (user == null) {
+            response.sendRedirect("login");
+        } else if (user.getUserType() == 1) {
+            request.setAttribute("message", "Bạn không có quyền truy cập.");
+        } else {
+            request.getRequestDispatcher("/views/chat.jsp").forward(request, response);
+        }
     }
 
     public void insertMsgIntoDb(Message messageObj) {
@@ -83,47 +92,6 @@ public class ChatController extends HttpServlet {
 
     public Connection getCurrentConnection() {
         return connection;
-    }
-
-    public void addToListOfUsers(UserDTO userForm) {
-        listOfFetchedClientsIds.add(userForm.getUserId() + "");
-        ArrayList<User> listOfUsers = (ArrayList<User>) session.getAttribute("listOfUsers");
-        if (listOfUsers != null) {
-            listOfUsers.add(new User(userForm.getUserId(), userForm.getUsername()));
-            session.removeAttribute("listOfUsers");
-            session.setAttribute("listOfUsers", listOfUsers);
-        }
-    }
-
-    public void deleteFromListOfUsers(UserDTO deletedUser) {
-        ArrayList<User> listOfUsers = (ArrayList<User>) session.getAttribute("listOfUsers");
-        if (listOfUsers != null) {
-            Integer delAtIndex = -1;
-            for (Integer index = 0; index < listOfUsers.size(); index++) {
-                if (deletedUser.getUserId() == listOfUsers.get(index).getUserId()) {
-                    delAtIndex = index;
-                }
-            }
-            if (delAtIndex != -1) {
-                User dummyUser = listOfUsers.get(delAtIndex);
-                listOfUsers.remove(dummyUser);
-                listOfFetchedClientsIds.remove(deletedUser.getUserId() + "");
-                /*
-                System.out.println("deleted user with ID: "+deletedUser.getUserId()+" has been removed from the list at index: "+delAtIndex+", now list conents: ");
-                for (User userObj : listOfUsers)
-                {
-                    System.out.println(userObj.getId()+" : "+userObj.getUserName());
-                }
-                System.out.println("listOfFetchedClientsIds contents: ");
-                for (String strId : listOfFetchedClientsIds)
-                {
-                    System.out.println(strId);
-                }
-                 */
-                session.removeAttribute("listOfUsers");
-                session.setAttribute("listOfUsers", listOfUsers);
-            }
-        }
     }
 
     protected Boolean processAjaxRequests(HttpServletRequest request, HttpServletResponse response, Enumeration<String> paramNames, PrintWriter out, Boolean ajaxProcessed) {
@@ -204,13 +172,13 @@ public class ChatController extends HttpServlet {
                 if (currentUser != null && currentConnection != null) {
                     Integer toId = Integer.parseInt(unreadMsgsToUserId);
                     //System.out.println("next will try to fetch msgs from: "+currentUser.getId()+", to:"+toId);
-                    ArrayList<UserDTO> listOfSenders = messageDAO.getListOfSenders(toId);
+                    ArrayList<User> listOfSenders = messageDAO.getListOfSenders(toId);
 
                     JsonProvider provider = JsonProvider.provider();
                     JsonArrayBuilder jArrayBulider = provider.createArrayBuilder();
                     JsonArray jsonSendersArray;
 
-                    for (UserDTO senderUserDTO : listOfSenders) {
+                    for (User senderUserDTO : listOfSenders) {
 
                         JsonObject senderJsonObject = provider.createObjectBuilder()
                                 .add("fromUserId", senderUserDTO.getUserId())
@@ -251,215 +219,7 @@ public class ChatController extends HttpServlet {
 
     protected void processHttpPostRequest(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
             throws ServletException, IOException {
-        if (request.getParameter("source").equals("Login")) {
-            /*
-             User userObj = new User();
-             userObj.setUserName(request.getParameter("userName"));
-             userObj.setPassword(request.getParameter("password"));
-             */
-
-            //last used
-            //session = request.getSession(true);
-
-            /*
-             if (session == null)
-             {
-             session = request.getSession();
-             }
-             */
-            User loggedInUser = null;
-            loggedInUser = (User) session.getAttribute("currentSessionUser");
-
-            if (loggedInUser != null) {
-                String userNameFromRequest = request.getParameter("userName");
-                if (loggedInUser.getUsername().equals(userNameFromRequest)) {
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('account with Username: " + userNameFromRequest
-                            + ", already logged in, please log in with a different account.');");
-                    out.println("location='LogIn.jsp';");
-                    out.println("</script>");
-
-                    //added to testing
-                    session.setAttribute("currentSessionUser", loggedInUser);
-                } else {
-                    //doNewUserLoginProcessing(request, response, userObj);
-                    doNewUserLoginProcessing(request, response);
-                }
-            } else {
-                //doNewUserLoginProcessing(request, response, userObj);
-                doNewUserLoginProcessing(request, response);
-            }
-        } else if (request.getParameter("source").equals("Register")) {
-            out.println("user should be registered with the following credentials,"
-                    + "User name: " + request.getParameter("userName")
-                    + ", and password: " + request.getParameter("password"));
-        } else if (request.getParameter("source").equals("AddNewUserByAdmin")) {
-            User userObj = new User();
-            userObj.setUsername(request.getParameter("userName"));
-            userObj.setPassword(request.getParameter("password"));
-
-            String[] isAdminChkBoxes = request.getParameterValues("isAdmin");
-            if (isAdminChkBoxes != null) {
-                for (String checkBoxValue : isAdminChkBoxes) {
-                    //out.println("is registered as admin? " + checkBoxValue);
-                    userObj.setUserType(1);
-                }
-            } else {
-                //out.println("is registered as admin? Nah");
-                userObj.setUserType(0);
-            }
-
-            Connection connection = (Connection) session.getAttribute("currentConnection");
-
-            Integer resultCode = userDAO.insertUser(userObj);
-            if (resultCode > 0) {
-                out.println("<script type=\"text/javascript\">");
-
-                out.println("alert('a new user was registered with the following credentials,"
-                        + "User name: " + userObj.getUsername() + ", and password: " + userObj.getPassword()
-                        + ", is registered as admin? " + userObj.getUserType()
-                        + ", using connection ID: " + connection.toString() + "');");
-
-                out.println("location='Admin Home Page.jsp';");
-
-                out.println("</script>");
-            } else if (resultCode < 0) {
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('Username: " + userObj.getUsername() + ", already exists in the database, please try another one.');");
-                out.println("location='Admin Home Page.jsp';");
-                out.println("</script>");
-            }
-        } else if (request.getParameter("source").equals("Delete user by admin")) {
-            /*
-             System.out.println("now getting a request via jquery.");
-             Enumeration<String> paramNames = request.getParameterNames();
-             while (paramNames.hasMoreElements())
-             {
-             System.out.print(paramNames.nextElement().toString());
-             }
-             String[] usersToDel = request.getParameterValues("arrayData[]");
-             for (String userId : usersToDel)
-             {
-             System.out.println("userId to be deleted: " + userId);
-             }
-             */
-        } else if (request.getParameter("source").equals("Logout")) {
-            closeSession(request);
-
-            /*
-             RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");                    
-             disp.forward(request, response);
-             */
-            response.sendRedirect("LogIn.jsp");
-        }
-    }
-
-    //protected void doNewUserLoginProcessing(HttpServletRequest request, HttpServletResponse response, User userObj)
-    protected void doNewUserLoginProcessing(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //HttpSession session = request.getSession();
-
-        PrintWriter out = response.getWriter();
-
-        //userObj should be turned into an object of UserDTO
-        User userObj = new User();
-        userObj.setUsername(request.getParameter("userName"));
-        userObj.setPassword(request.getParameter("password"));
-        System.out.println("request contains userName: " + userObj.getUsername() + ", and password: " + userObj.getPassword());
-        try {
-            RequestDispatcher disp;
-
-            Connection currentConnection = connectionPool.getConnectionFromPool();
-            if (currentConnection != null) {
-                userObj = userDAO.login(userObj);
-                System.out.println("trying to log in.");
-                String lastActivePage = "";
-                if (userObj.isActiveStatus()) {
-                    currentUserId++;
-
-                    //session = request.getSession(true);
-                    session.setAttribute("currentSessionUser", userObj);
-
-                    connection = currentConnection;
-                    session.setAttribute("currentConnection", currentConnection);
-                    session.setMaxInactiveInterval(4 * 60); //4 minutes 
-
-                    if (userObj.getUserType() == 1) {
-                        session.setAttribute("lastActivePage", "Admin Home Page.jsp");
-                        lastActivePage = "Admin Home Page.jsp";
-                        disp = request.getRequestDispatcher("Admin Home Page.jsp");
-                        System.out.println("logged in with admin privileges.");
-                    } else {
-                        session.setAttribute("lastActivePage", "User Home Page.jsp");
-                        lastActivePage = "User Home Page.jsp";
-                        disp = request.getRequestDispatcher("User Home Page.jsp");
-                        System.out.println("logged in with user privileges.");
-                    }
-
-                    ArrayList<User> listOfUsers;
-                    if (shouldUpdateUsersCache) {
-                        System.out.println("server is updating and re-filling the users cache");
-
-                        listOfUsers = new ArrayList();
-                        listOfFetchedClientsIds = new ArrayList<String>();
-
-                        //resolved bug: this was being called b4 the connection is aquired by the loggedin user
-                        listOfUsers = userDAO.returnAllUsers(currentConnection, userObj.getUsername());
-
-                        listOfFetchedClientsIds.add(userObj.getUserId() + "");
-                        usersCache.put(userObj.getUserId() + "", userObj.getUsername()); //key and value pairs are defined as <String, String>
-                        for (User fetchedUser : listOfUsers) {
-                            listOfFetchedClientsIds.add(fetchedUser.getUserId() + "");
-                            usersCache.put(fetchedUser.getUserId() + "", fetchedUser.getUsername()); //key and value pairs are defined as <String, String>
-                        }
-
-                        session.setAttribute("listOfUsers", listOfUsers);
-                        shouldUpdateUsersCache = false;
-                    } else {
-                        System.out.println("server is utilizing the users cache to return the set of users");
-                        listOfUsers = new ArrayList();
-
-                        for (String fetchedUserId : listOfFetchedClientsIds) {
-                            Integer intUserId = Integer.parseInt(fetchedUserId);
-                            if (intUserId != userObj.getUserId()) {
-                                String userName = usersCache.get(fetchedUserId);
-                                User fetchedUserObj = new User(intUserId, userName);
-                                listOfUsers.add(fetchedUserObj);
-                            }
-                        }
-                        session.setAttribute("listOfUsers", listOfUsers);
-                    }
-
-                    //added
-                    //disp.forward(request, response);
-                    response.sendRedirect(lastActivePage);
-                    //disp.include(request, response);
-                }
-
-                /*
-                //should be used, if "//added" is removed
-                //response.sendRedirect("User Home Page.jsp");
-                if(userObj.getIsAdmin() == 1)
-                    disp = request.getRequestDispatcher("Admin Home Page.jsp");
-                else
-                    disp = request.getRequestDispatcher("User Home Page.jsp");
-                 */
-            } //failed to aquire a connection
-            else {
-                System.out.println("failed to acquire connection.");
-
-                //response.sendRedirect("index.html");
-                disp = request.getRequestDispatcher("index.html");
-
-                //added
-                disp.forward(request, response);
-            }
-            //should be used, if "//added" is removed
-            //disp.forward(request, response);
-        } catch (Exception exc) {
-            Logger.getLogger(ChatController.class.getName()).log(Level.SEVERE, null, exc);
-            //System.out.println(exc);
-        }
+        System.out.println("nothing");
     }
 
     /**
@@ -509,21 +269,4 @@ public class ChatController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    public void closeSession(HttpServletRequest request) {
-        if (session != null) {
-
-            Connection currentConnection = (Connection) session.getAttribute("currentConnection");
-            if (currentConnection != null) {
-                connectionPool.returnConnectionToPool(currentConnection);
-            }
-            session.removeAttribute("currentSessionUser");
-            try {
-                if (session.isNew()) {
-                    session.invalidate();
-                }
-            } catch (Exception ex) {
-                System.out.println("session is already invalidated");
-            }
-        }
-    }
 }
