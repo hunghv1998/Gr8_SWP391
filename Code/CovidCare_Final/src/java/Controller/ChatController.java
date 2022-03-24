@@ -38,12 +38,10 @@ public class ChatController extends HttpServlet {
 
     Connection connection = connectionPool.getConnection();
 
-    public Boolean shouldUpdateUsersCache = true;
     public ArrayList<String> listOfFetchedClientsIds = new ArrayList<>();
-//    public CacheInMemory<String, String> usersCache = new CacheInMemory<String, String>(30);//LRUmap of size 30
 
-    private MessageDAO messageDAO = new MessageDAO();
-    private UserDAO userDAO = new UserDAO();
+    private final MessageDAO messageDAO = new MessageDAO();
+    private final UserDAO userDAO = new UserDAO();
 
     Integer currentUserId = 0;
 
@@ -90,10 +88,6 @@ public class ChatController extends HttpServlet {
         return userName;
     }
 
-    public Connection getCurrentConnection() {
-        return connection;
-    }
-
     protected Boolean processAjaxRequests(HttpServletRequest request, HttpServletResponse response, Enumeration<String> paramNames, PrintWriter out, Boolean ajaxProcessed) {
         //Boolean ajaxProcessed = false;
         String param = paramNames.nextElement();
@@ -106,37 +100,6 @@ public class ChatController extends HttpServlet {
                 System.out.println("just sent to client: fromId:" + currentUser.getUserId());
             }
 
-            ajaxProcessed = true;
-        } else if (param.equals("getLoggedInUserName")) {
-            System.out.print(param);
-
-            User currentUser = (User) session.getAttribute("currentSessionUser");
-            if (currentUser != null) {
-                out.print(currentUser.getUsername());
-                System.out.println("just sent to client: userName:" + currentUser.getUsername());
-            }
-            ajaxProcessed = true;
-        } else if (param.equals("registerUser")) {
-            System.out.print(param);
-
-            paramNames.nextElement();
-            String userName = paramNames.nextElement();
-            out.print(userName);
-            System.out.println("next param: " + userName);
-
-            ajaxProcessed = true;
-        } else if (param.equals("usersToDel[]")) {
-            System.out.print(param);
-
-            String[] usersToDel = request.getParameterValues("usersToDel[]");
-            for (String userId : usersToDel) {
-                out.print(userId + ", ");
-                System.out.println("userId to be deleted: " + userId);
-                //ajaxProcessed = true;
-            }
-            ajaxProcessed = true;
-        } else if (param.equals("mode")) {
-            System.out.println("mode: " + request.getParameter("mode"));
             ajaxProcessed = true;
         } else if (param.equals("getMessages")) {
             System.out.print(param);
@@ -201,19 +164,7 @@ public class ChatController extends HttpServlet {
             }
             ajaxProcessed = true;
         }
-        /*
-         else if(param.equals("addNewUser"))
-         {
-         System.out.print(param);
-                    
-         String unreadMsgsToUserId = request.getParameter("getSenders");
-         System.out.println("should get messages unread by userID: " + unreadMsgsToUserId);
-         if(unreadMsgsToUserId != null)
-         {}
-                    
-         ajaxProcessed = true;
-         }
-         */
+        
         return ajaxProcessed;
     }
 

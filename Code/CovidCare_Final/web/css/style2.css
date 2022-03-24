@@ -129,7 +129,7 @@ ul > li.media:hover h6.name-contact {
   height: 615px;
   overflow-y: scroll;
   padding-top: 20px;
-  width: 765px;
+  width: auto;
   padding-right: 20px;
 }
 
