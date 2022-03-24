@@ -54,10 +54,7 @@
                                                    class="border w-100 p-2 bg-white text-capitalize">
                                         </div>
                                         </tbody>
-                                </table>                                                                                                         
-                                <a href="viewDetailPostVaccinate?post_id=${news.newsId}"class="edit"><i class="fa-solid fa-eye" title="Xem chi tiết"></i></a>
-                                <a href="EditNews?newsId=${news.newsId}&&newsTitle=${news.title}&&
-                                   newsPhoto=${news.photo}&&newsContent=${news.content}" class="edit"><i class="fa-solid fa-eye" title="Xóa Post"></i></a>
+                                </table>                                                                                                                                       
                             </div>                                         
                              </c:forEach>
                     </div>
