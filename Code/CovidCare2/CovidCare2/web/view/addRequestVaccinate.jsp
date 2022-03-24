@@ -5,11 +5,10 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-      <%@include file = "../common/head.jsp" %>
+<html>
+     <%@include file = "../common/head.jsp" %>
 
     <body class="body-wrapper">
 
@@ -22,24 +21,23 @@
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                         <!-- Recently Favorited -->
                         <form action="addPostVaccinate" method="post">
-                            <div class="widget dashboard-container my-adslist">
-          
+                            <div class="widget dashboard-container my-adslist">         
                                 <h3 style="font-weight: bold;" class="widget-header">Thông Tin Vaccine</h3>
                                 <table class="table table-responsive product-dashboard-table">
                                     <tbody>
                                     <div class="col-lg-12">
-                                      <div class="dnx_content_form_item clearfix">
-                                        <div style="font-weight: bold;" class="dnx_content_form_item_lab">
-                                            Chọn loại vaccine :
-                                        </div>
-                                        <div class="dnx_content_form_item_field">
-                                            <select name="vacc_id">
-                                              <c:forEach items="${listVaccine}" var='v'>
-                                                <option value="${v.vaccId}">${v.vaccName}</option>
-                                            </c:forEach>
-                                            </select>
-                                        </div>
-                                    </div>     
+                                        <div class="dnx_content_form_item clearfix">
+                                            <div style="font-weight: bold;" class="dnx_content_form_item_lab">
+                                                Chọn loại vaccine :
+                                            </div>
+                                            <div class="dnx_content_form_item_field">
+                                                <select name="vacc_id">
+                                                    <c:forEach items="${listVaccine}" var='v'>
+                                                        <option value="${v.vaccId}">${v.vaccName}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                        </div>     
                                         <h6 class="font-weight-bold pt-4 pb-1"> Ngày bắt đầu tiêm:</h6>
                                         <input type="date" name="start_date" class="border w-100 p-2 bg-white text-capitalize">
                                         <h6 class="font-weight-bold pt-4 pb-1"> Ngày kết thúc tiêm:</h6>
@@ -53,7 +51,7 @@
                                     </div>
                                     </tbody>
                                 </table>                                                                                                         
-                                        <input style="margin-left:300px; ;" type="submit" class="btn btn-primary d-block mt-2" value="Đăng lên">                                              
+                                <input style="margin-left:300px; ;" type="submit" class="btn btn-primary d-block mt-2" value="Đăng lên">                                              
                             </div>
                         </form>
                     </div>
@@ -61,7 +59,7 @@
                 <!-- Row End -->
             </div>
             <!-- Container End -->
-          </section>
+        </section>
 
     </body>
 </html>

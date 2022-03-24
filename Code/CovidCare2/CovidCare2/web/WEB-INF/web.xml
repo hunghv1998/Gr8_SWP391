@@ -72,6 +72,22 @@
         <servlet-name>AddPostVaccinateController</servlet-name>
         <servlet-class>Controller.AddPostVaccinateController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddPostVaccinateController2</servlet-name>
+        <servlet-class>Controller.AddPostVaccinateController2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewDetailPostVaccinateController</servlet-name>
+        <servlet-class>Controller.ViewDetailPostVaccinateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewListPostVaccinateController</servlet-name>
+        <servlet-class>Controller.ViewListPostVaccinateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddRequestVaccinateController</servlet-name>
+        <servlet-class>Controller.AddRequestVaccinateController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -135,6 +151,22 @@
     <servlet-mapping>
         <servlet-name>AddPostVaccinateController</servlet-name>
         <url-pattern>/addPostVaccinate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPostVaccinateController2</servlet-name>
+        <url-pattern>/addPostVaccinate2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewDetailPostVaccinateController</servlet-name>
+        <url-pattern>/viewDetailPostVaccinate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListPostVaccinateController</servlet-name>
+        <url-pattern>/viewListPostVaccinate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddRequestVaccinateController</servlet-name>
+        <url-pattern>/addRequestVaccinate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -32,7 +32,7 @@ public class AddPostVaccinateController extends HttpServlet {
         //load list Vaccin
         VaccineDAO vD = new VaccineDAO();
         request.setAttribute("listVaccine", vD.getListVaccine());
-        request.getRequestDispatcher("view/addPostVaccinate.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/addPostVaccinate.jsp").forward(request, response);
     }
 
     @Override
@@ -63,14 +63,13 @@ public class AddPostVaccinateController extends HttpServlet {
             if (raw_amount != null) {
                 amount = Integer.parseInt(raw_amount);
             }
-            Date startDate = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(raw_startDate);
-            Date expiredDate = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(raw_expiredDate);
+          
 
             PostVaccinate pv = new PostVaccinate();
             pv.setCreatedBy(username);
-            pv.setCreatedDate(created_date);
-            pv.setStartDate(startDate);
-            pv.setExpiredDate(expiredDate);
+            pv.setCreatedDate(created_date.toString());
+            pv.setStartDate(raw_startDate);
+            pv.setExpiredDate(raw_expiredDate);
             pv.setVaccId(vaccineId);
             pv.setPlace(place);
             pv.setNote(note);
@@ -81,8 +80,25 @@ public class AddPostVaccinateController extends HttpServlet {
             pv.setWardId(aD.getWardIdByUsername(username));
 
             //insert 
-            pD.addPostVaccinate(pv);
-            response.getWriter().print("Add success");
+           int result = pD.addPostVaccinate(pv);
+           
+           if(result==-1){
+               throw new Exception("Insert Faild");
+           }
+           else{
+                  response.getWriter().print("Add success");
+            response.getWriter().print(vaccineId);
+            response.getWriter().print(raw_startDate);
+            response.getWriter().print(raw_expiredDate);
+            response.getWriter().print(created_date);
+            response.getWriter().print(place);
+            response.getWriter().print(note);
+            response.getWriter().print(amount);
+            response.getWriter().print(pv.getWardId());
+           }
+         
+            
+          
 
         } catch (Exception e) {
             response.getWriter().print("Add faild");
