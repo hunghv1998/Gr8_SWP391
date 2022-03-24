@@ -5,14 +5,15 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+<html lang="en">
+      <%@include file = "../common/head.jsp" %>
+
+    <body class="body-wrapper">
+
+        <%@include file = "../common/nav.jsp" %>
         <section class="login dashboard section">
             <!-- Container Start -->
             <div class="container">
