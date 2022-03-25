@@ -143,6 +143,24 @@ public class UserDAO extends DBContext {
         return 0;
     }
 
+    public User getUserFromId(int id) {
+        String sql = "SELECT * FROM Users where userId=" + id;
+        ResultSet rs = getData(sql);
+        try {
+            if (rs.next()) {
+                User result = new User();
+                result.setUserId(rs.getInt("userId"));
+                result.setUsername(rs.getString("username"));
+                result.setUserType(rs.getInt("userType"));
+                result.setActiveStatus(rs.getBoolean("activeStatus"));
+                return result;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public String getUserNameWithId(int id) {
         String sql = "SELECT username FROM Users WHERE userId=" + id;
         ResultSet rs = getData(sql);
@@ -172,5 +190,5 @@ public class UserDAO extends DBContext {
     public Integer deleteUser(Integer userId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

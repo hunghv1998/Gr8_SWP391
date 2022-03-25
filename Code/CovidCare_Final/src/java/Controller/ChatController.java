@@ -10,9 +10,12 @@ import DAO.MessageDAO;
 import Model.Message;
 import Model.User;
 import DAO.UserDAO;
+import Model.ChatRoom;
+import Utils.ValidatingInput;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import javax.json.JsonArray;
@@ -42,6 +45,7 @@ public class ChatController extends HttpServlet {
 
     private final MessageDAO messageDAO = new MessageDAO();
     private final UserDAO userDAO = new UserDAO();
+    private final ValidatingInput check = new ValidatingInput();
 
     Integer currentUserId = 0;
 
@@ -70,107 +74,41 @@ public class ChatController extends HttpServlet {
         } else if (user.getUserType() == 1) {
             request.setAttribute("message", "Bạn không có quyền truy cập.");
         } else {
+            currentUserId = user.getUserId();
+
+            ArrayList<ChatRoom> listOfChatRooms = new ArrayList<>();
+
+            if (user.getUserType() == 2) {
+                listOfChatRooms = messageDAO.getHospitalChatRooms(currentUserId);
+            }
+            if (user.getUserType() == 3) {
+                listOfChatRooms = messageDAO.getPatientChatRooms(currentUserId);
+            }
+            request.setAttribute("listOfChatRooms", listOfChatRooms);
+
+            String id = request.getParameter("id");
+
+            ArrayList<Message> dialog = new ArrayList<>();
+
+            if (id == null || !check.isNumber(id)) {
+                request.setAttribute("errorMsg", "Không tìm thấy người dùng");
+            } else {
+                System.out.println(id);
+                User chatTo = userDAO.getUserFromId(Integer.parseInt(id));
+
+                if (!chatTo.isActiveStatus()) {
+                    request.setAttribute("errorMsg", "Người dùng này hiện đang khóa tài khoản");
+                } else {
+                    messageDAO.markMsgsAsRead(currentUserId, chatTo.getUserId());
+                    dialog = messageDAO.getMessagesBetween(currentUserId, Integer.parseInt(id));
+                }
+                request.setAttribute("chatTo", chatTo);
+            }
+            System.out.println(dialog.size());
+            request.setAttribute("dialog", dialog);
+
             request.getRequestDispatcher("/views/chat.jsp").forward(request, response);
         }
-    }
-
-    public void insertMsgIntoDb(Message messageObj) {
-        if (connection != null) {
-            messageDAO.insertMessage(messageObj);
-        }
-    }
-
-    public String getUserNameFromDB(Integer userId) {
-        String userName = null;
-        if (connection != null) {
-            userName = userDAO.getUserNameWithId(userId);
-        }
-        return userName;
-    }
-
-    protected Boolean processAjaxRequests(HttpServletRequest request, HttpServletResponse response, Enumeration<String> paramNames, PrintWriter out, Boolean ajaxProcessed) {
-        //Boolean ajaxProcessed = false;
-        String param = paramNames.nextElement();
-        if (param.equals("getLoggedInUserId")) {
-            System.out.print(param);
-
-            User currentUser = (User) session.getAttribute("currentSessionUser");
-            if (currentUser != null) {
-                out.print(currentUser.getUserId());
-                System.out.println("just sent to client: fromId:" + currentUser.getUserId());
-            }
-
-            ajaxProcessed = true;
-        } else if (param.equals("getMessages")) {
-            System.out.print(param);
-
-            String messageToUserId = request.getParameter("getMessages");
-            System.out.println("should get all messages from user with ID: " + messageToUserId);
-            if (messageToUserId != null) {
-                User currentUser = (User) session.getAttribute("currentSessionUser");
-                Connection currentConnection = (Connection) session.getAttribute("currentConnection");
-
-                if (currentUser != null && currentConnection != null) {
-                    Integer toId = Integer.parseInt(messageToUserId);
-                    System.out.println("next will try to fetch msgs from: " + currentUser.getUserId() + ", to:" + toId);
-                    ArrayList<Message> listOfMessages = messageDAO.getMessagesBetween(toId, currentUser.getUserId());
-                    for (Message messageObj : listOfMessages) {
-                        out.println(messageObj.getMessage());
-                        /*out.println("fromId: "+messageObj.getFromId()
-                         +", toId: "+messageObj.getToId()
-                         +", message text: "+messageObj.getMessageText());*/
-                    }
-                }
-            }
-            ajaxProcessed = true;
-        } else if (param.equals("getSenders")) {
-            System.out.print(param);
-
-            String unreadMsgsToUserId = request.getParameter("getSenders");
-            System.out.println("should get messages unread by userID: " + unreadMsgsToUserId);
-            if (unreadMsgsToUserId != null) {
-                User currentUser = (User) session.getAttribute("currentSessionUser");
-                Connection currentConnection = (Connection) session.getAttribute("currentConnection");
-
-                if (currentUser != null && currentConnection != null) {
-                    Integer toId = Integer.parseInt(unreadMsgsToUserId);
-                    //System.out.println("next will try to fetch msgs from: "+currentUser.getId()+", to:"+toId);
-                    ArrayList<User> listOfSenders = messageDAO.getListOfSenders(toId);
-
-                    JsonProvider provider = JsonProvider.provider();
-                    JsonArrayBuilder jArrayBulider = provider.createArrayBuilder();
-                    JsonArray jsonSendersArray;
-
-                    for (User senderUserDTO : listOfSenders) {
-
-                        JsonObject senderJsonObject = provider.createObjectBuilder()
-                                .add("fromUserId", senderUserDTO.getUserId())
-                                .add("senderName", senderUserDTO.getUsername())
-                                .build();
-
-                        jArrayBulider = jArrayBulider.add(senderJsonObject);
-                    }
-                    jsonSendersArray = jArrayBulider.build();
-                    if (jsonSendersArray.size() > 0) {
-                        System.out.println("jsonSendersArray size: " + jsonSendersArray.size() + ", with contents: ");
-                        for (int index = 0; index < jsonSendersArray.size(); index++) {
-                            System.out.println(jsonSendersArray.getJsonObject(index).getJsonNumber("fromUserId")
-                                    + " : "
-                                    + jsonSendersArray.getJsonObject(index).getJsonString("senderName"));
-                        }
-                    }
-                    out.print(jsonSendersArray);
-                }
-            }
-            ajaxProcessed = true;
-        }
-        
-        return ajaxProcessed;
-    }
-
-    protected void processHttpPostRequest(HttpServletRequest request, HttpServletResponse response, PrintWriter out)
-            throws ServletException, IOException {
-        System.out.println("nothing");
     }
 
     /**
@@ -184,30 +122,22 @@ public class ChatController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //HttpSession session = null;
-        /*
-        if(session == null)
-        {
-            session = request.getSession(false);
-            System.out.println("doPost-getting a new session with ID: "+session.getId());
-        }
-         */
-        session = request.getSession();
-        System.out.println("doPost-getting a new session with ID: " + session.getId());
-
-        PrintWriter out = response.getWriter();
-
-        Boolean ajaxProcessed = false;
-        Enumeration<String> paramNames = request.getParameterNames();
-        if (paramNames.hasMoreElements()) {
-            while (paramNames.hasMoreElements()) {
-                ajaxProcessed = processAjaxRequests(request, response, paramNames, out, ajaxProcessed);
-            }
-        }
-
-        if (!ajaxProcessed) {
-            processHttpPostRequest(request, response, out);
-        }
+        User user = (User) request.getSession().getAttribute("user");
+        
+        String newMsg = request.getParameter("newMsg");
+        
+        String toId = request.getParameter("id");
+        
+        Message message = new Message();
+        
+        message.setFromId(user.getUserId());
+        message.setToId(Integer.parseInt(toId));
+        message.setMessage(newMsg);
+        message.setMessageDate(new Timestamp(System.currentTimeMillis()));
+        message.setReadState(0);
+        messageDAO.insertMessage(message);
+        
+        response.sendRedirect("chat?id=" + toId);
     }
 
     /**

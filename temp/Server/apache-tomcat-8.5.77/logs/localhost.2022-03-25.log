@@ -1,0 +1,1154 @@
+25-Mar-2022 00:48:02.712 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 00:48:02.749 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 00:48:03.186 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 00:48:03.698 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+25-Mar-2022 00:48:03.698 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+25-Mar-2022 00:48:03.699 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5033624f')
+25-Mar-2022 00:48:04.711 INFO [http-nio-8088-exec-7] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 00:48:04.713 INFO [http-nio-8088-exec-7] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 00:48:06.032 INFO [http-nio-8088-exec-7] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 00:48:06.066 INFO [http-nio-8088-exec-7] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 00:48:06.338 INFO [http-nio-8088-exec-7] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 08:00:39.542 INFO [http-nio-8088-exec-16] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 08:00:39.546 INFO [http-nio-8088-exec-16] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 08:00:41.001 INFO [http-nio-8088-exec-16] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 08:00:41.024 INFO [http-nio-8088-exec-16] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 08:00:41.415 INFO [http-nio-8088-exec-16] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 08:27:20.560 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 08:27:20.563 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 08:27:21.976 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 08:27:22.000 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 08:27:22.278 INFO [http-nio-8088-exec-23] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:16:50.515 INFO [http-nio-8088-exec-38] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:16:50.517 INFO [http-nio-8088-exec-38] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:16:52.144 INFO [http-nio-8088-exec-38] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:16:52.173 INFO [http-nio-8088-exec-38] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:16:52.503 INFO [http-nio-8088-exec-38] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:18:48.810 INFO [http-nio-8088-exec-35] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:18:48.813 INFO [http-nio-8088-exec-35] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:18:50.407 INFO [http-nio-8088-exec-35] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:18:50.438 INFO [http-nio-8088-exec-35] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:18:50.720 INFO [http-nio-8088-exec-35] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:19:56.681 INFO [http-nio-8088-exec-48] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:19:56.685 INFO [http-nio-8088-exec-48] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:19:58.226 INFO [http-nio-8088-exec-48] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:19:58.253 INFO [http-nio-8088-exec-48] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:19:58.559 INFO [http-nio-8088-exec-48] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:19:59.113 SEVERE [http-nio-8088-exec-49] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at Controller.ChatController.doGet(ChatController.java:75)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 09:21:23.592 SEVERE [http-nio-8088-exec-55] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at Controller.ChatController.doGet(ChatController.java:75)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 09:22:32.665 INFO [http-nio-8088-exec-56] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:22:32.668 INFO [http-nio-8088-exec-56] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:22:34.188 INFO [http-nio-8088-exec-56] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:22:34.217 INFO [http-nio-8088-exec-56] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:22:34.544 INFO [http-nio-8088-exec-56] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:24:40.561 INFO [http-nio-8088-exec-64] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:24:40.566 INFO [http-nio-8088-exec-64] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:24:42.124 INFO [http-nio-8088-exec-64] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:24:42.152 INFO [http-nio-8088-exec-64] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:24:42.551 INFO [http-nio-8088-exec-64] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:46:09.984 INFO [http-nio-8088-exec-70] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:46:09.998 INFO [http-nio-8088-exec-70] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:46:11.433 INFO [http-nio-8088-exec-70] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:46:11.461 INFO [http-nio-8088-exec-70] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:46:11.758 INFO [http-nio-8088-exec-70] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:46:11.993 INFO [http-nio-8088-exec-76] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 09:46:11.995 INFO [http-nio-8088-exec-76] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 09:46:13.378 INFO [http-nio-8088-exec-76] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 09:46:13.404 INFO [http-nio-8088-exec-76] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 09:46:13.686 INFO [http-nio-8088-exec-76] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:00:52.053 INFO [http-nio-8088-exec-80] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:00:52.055 INFO [http-nio-8088-exec-80] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:00:53.682 INFO [http-nio-8088-exec-80] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:00:53.708 INFO [http-nio-8088-exec-80] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:00:54.002 INFO [http-nio-8088-exec-80] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:08:42.488 INFO [http-nio-8088-exec-92] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:08:42.490 INFO [http-nio-8088-exec-92] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:08:43.948 INFO [http-nio-8088-exec-92] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:08:43.976 INFO [http-nio-8088-exec-92] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:08:44.259 INFO [http-nio-8088-exec-92] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:09:40.586 INFO [http-nio-8088-exec-97] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:09:40.588 INFO [http-nio-8088-exec-97] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:09:42.078 INFO [http-nio-8088-exec-97] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:09:42.109 INFO [http-nio-8088-exec-97] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:09:42.404 INFO [http-nio-8088-exec-97] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:24:55.764 INFO [http-nio-8088-exec-103] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:24:55.765 INFO [http-nio-8088-exec-103] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:24:57.389 INFO [http-nio-8088-exec-103] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:24:57.417 INFO [http-nio-8088-exec-103] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:24:57.694 INFO [http-nio-8088-exec-103] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:42:20.782 INFO [http-nio-8088-exec-114] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:42:20.783 INFO [http-nio-8088-exec-114] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:42:22.248 INFO [http-nio-8088-exec-114] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:42:22.276 INFO [http-nio-8088-exec-114] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:42:22.571 INFO [http-nio-8088-exec-114] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:42:49.208 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 10:42:49.210 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 10:42:50.693 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 10:42:50.722 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 10:42:51.002 INFO [http-nio-8088-exec-120] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 11:25:57.651 INFO [http-nio-8088-exec-125] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 11:25:57.652 INFO [http-nio-8088-exec-125] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 11:25:59.522 INFO [http-nio-8088-exec-125] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 11:25:59.550 INFO [http-nio-8088-exec-125] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 11:25:59.858 INFO [http-nio-8088-exec-125] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 11:26:00.585 INFO [http-nio-8088-exec-127] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 11:26:00.587 INFO [http-nio-8088-exec-127] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 11:26:02.004 INFO [http-nio-8088-exec-127] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 11:26:02.035 INFO [http-nio-8088-exec-127] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 11:26:02.323 INFO [http-nio-8088-exec-127] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 13:05:26.265 INFO [http-nio-8088-exec-138] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 13:05:26.268 INFO [http-nio-8088-exec-138] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 13:05:27.776 INFO [http-nio-8088-exec-138] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 13:05:27.806 INFO [http-nio-8088-exec-138] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 13:05:28.090 INFO [http-nio-8088-exec-138] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 13:05:42.276 INFO [http-nio-8088-exec-139] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 13:05:42.278 INFO [http-nio-8088-exec-139] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 13:05:43.836 INFO [http-nio-8088-exec-139] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 13:05:43.866 INFO [http-nio-8088-exec-139] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 13:05:44.171 INFO [http-nio-8088-exec-139] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:15:59.464 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:15:59.466 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:16:01.155 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:16:01.190 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:16:01.528 INFO [http-nio-8088-exec-146] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:21:44.290 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:21:44.291 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:21:45.789 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:21:45.819 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:21:46.116 INFO [http-nio-8088-exec-159] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:22:17.008 INFO [http-nio-8088-exec-170] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:22:17.012 INFO [http-nio-8088-exec-170] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:22:18.783 INFO [http-nio-8088-exec-170] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:22:18.816 INFO [http-nio-8088-exec-170] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:22:19.154 INFO [http-nio-8088-exec-170] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:24:56.567 INFO [http-nio-8088-exec-173] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:24:56.569 INFO [http-nio-8088-exec-173] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:24:58.231 INFO [http-nio-8088-exec-173] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:24:58.263 INFO [http-nio-8088-exec-173] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:24:58.574 INFO [http-nio-8088-exec-173] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:25:00.371 INFO [http-nio-8088-exec-177] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:25:00.373 INFO [http-nio-8088-exec-177] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:25:01.985 INFO [http-nio-8088-exec-177] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:25:02.017 INFO [http-nio-8088-exec-177] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:25:02.421 INFO [http-nio-8088-exec-177] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:27:56.133 INFO [http-nio-8088-exec-166] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:27:56.136 INFO [http-nio-8088-exec-166] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:27:57.830 INFO [http-nio-8088-exec-166] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:27:57.867 INFO [http-nio-8088-exec-166] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:27:58.191 INFO [http-nio-8088-exec-166] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:28:37.537 INFO [http-nio-8088-exec-180] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:28:37.539 INFO [http-nio-8088-exec-180] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:28:39.154 INFO [http-nio-8088-exec-180] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:28:39.186 INFO [http-nio-8088-exec-180] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:28:39.489 INFO [http-nio-8088-exec-180] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:44.385 INFO [http-nio-8088-exec-199] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:44.387 INFO [http-nio-8088-exec-199] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:36:45.931 INFO [http-nio-8088-exec-195] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:36:45.958 INFO [http-nio-8088-exec-195] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:36:46.256 INFO [http-nio-8088-exec-195] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:46.872 INFO [http-nio-8088-exec-192] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:46.876 INFO [http-nio-8088-exec-192] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:36:48.473 INFO [http-nio-8088-exec-192] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:36:48.504 INFO [http-nio-8088-exec-192] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:36:48.837 INFO [http-nio-8088-exec-192] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:49.067 INFO [http-nio-8088-exec-201] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:36:49.069 INFO [http-nio-8088-exec-201] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:36:50.595 INFO [http-nio-8088-exec-201] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:36:50.626 INFO [http-nio-8088-exec-201] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:36:50.937 INFO [http-nio-8088-exec-201] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:17.740 INFO [http-nio-8088-exec-196] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:17.760 INFO [http-nio-8088-exec-196] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:37:19.355 INFO [http-nio-8088-exec-203] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:37:19.387 INFO [http-nio-8088-exec-203] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:37:19.757 INFO [http-nio-8088-exec-203] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:20.010 INFO [http-nio-8088-exec-202] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:20.012 INFO [http-nio-8088-exec-202] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:37:21.495 INFO [http-nio-8088-exec-202] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:37:21.527 INFO [http-nio-8088-exec-202] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:37:21.878 INFO [http-nio-8088-exec-202] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:26.520 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:37:26.522 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:37:27.901 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:37:27.926 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:37:28.221 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:39:33.296 INFO [http-nio-8088-exec-211] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:39:33.299 INFO [http-nio-8088-exec-211] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:39:35.051 INFO [http-nio-8088-exec-211] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:39:35.086 INFO [http-nio-8088-exec-211] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:39:35.409 INFO [http-nio-8088-exec-211] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:49:36.833 INFO [http-nio-8088-exec-214] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:49:36.835 INFO [http-nio-8088-exec-214] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:49:38.439 INFO [http-nio-8088-exec-214] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:49:38.469 INFO [http-nio-8088-exec-214] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:49:38.783 INFO [http-nio-8088-exec-214] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:51:05.270 INFO [http-nio-8088-exec-225] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:51:05.273 INFO [http-nio-8088-exec-225] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:51:06.860 INFO [http-nio-8088-exec-225] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:51:06.888 INFO [http-nio-8088-exec-225] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:51:07.196 INFO [http-nio-8088-exec-225] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:51:12.667 INFO [http-nio-8088-exec-213] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:51:12.669 INFO [http-nio-8088-exec-213] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:51:14.296 INFO [http-nio-8088-exec-213] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:51:14.326 INFO [http-nio-8088-exec-213] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:51:14.619 INFO [http-nio-8088-exec-213] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:52:42.171 INFO [http-nio-8088-exec-218] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 14:52:42.173 INFO [http-nio-8088-exec-218] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 14:52:43.781 INFO [http-nio-8088-exec-218] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 14:52:43.814 INFO [http-nio-8088-exec-218] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 14:52:44.155 INFO [http-nio-8088-exec-218] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:11:38.436 INFO [http-nio-8088-exec-233] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:11:38.439 INFO [http-nio-8088-exec-233] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:11:40.065 INFO [http-nio-8088-exec-233] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:11:40.097 INFO [http-nio-8088-exec-233] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:11:40.392 INFO [http-nio-8088-exec-233] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:17:18.670 INFO [http-nio-8088-exec-245] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:17:18.673 INFO [http-nio-8088-exec-245] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:17:20.314 INFO [http-nio-8088-exec-245] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:17:20.344 INFO [http-nio-8088-exec-245] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:17:20.645 INFO [http-nio-8088-exec-245] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:18:58.310 INFO [http-nio-8088-exec-262] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:18:58.312 INFO [http-nio-8088-exec-262] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:18:59.925 INFO [http-nio-8088-exec-262] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:18:59.960 INFO [http-nio-8088-exec-262] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:19:00.268 INFO [http-nio-8088-exec-262] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:19:25.470 INFO [http-nio-8088-exec-261] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:19:25.473 INFO [http-nio-8088-exec-261] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:19:27.228 INFO [http-nio-8088-exec-261] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:19:27.255 INFO [http-nio-8088-exec-261] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:19:27.562 INFO [http-nio-8088-exec-261] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:20:23.081 INFO [http-nio-8088-exec-267] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:20:23.083 INFO [http-nio-8088-exec-267] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:20:24.660 INFO [http-nio-8088-exec-267] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:20:24.696 INFO [http-nio-8088-exec-267] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:20:25.029 INFO [http-nio-8088-exec-267] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:21:15.610 INFO [http-nio-8088-exec-253] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:21:15.612 INFO [http-nio-8088-exec-253] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:21:17.239 INFO [http-nio-8088-exec-253] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:21:17.268 INFO [http-nio-8088-exec-253] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:21:17.560 INFO [http-nio-8088-exec-253] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:21:18.073 SEVERE [http-nio-8088-exec-265] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: /views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+		at org.apache.jasper.compiler.Parser.processIncludeDirective(Parser.java:349)
+		at org.apache.jasper.compiler.Parser.parseIncludeDirective(Parser.java:384)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:485)
+		at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1802)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:141)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+		at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:127)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:198)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.HospitalInfoController.doGet(HospitalInfoController.java:102)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 15:21:18.073 SEVERE [http-nio-8088-exec-265] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [HospitalInfoController] in context with path [] threw exception [/views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found] with root cause
+	org.apache.jasper.JasperException: /views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+		at org.apache.jasper.compiler.Parser.processIncludeDirective(Parser.java:349)
+		at org.apache.jasper.compiler.Parser.parseIncludeDirective(Parser.java:384)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:485)
+		at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1802)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:141)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+		at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:127)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:198)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.HospitalInfoController.doGet(HospitalInfoController.java:102)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 15:21:33.385 INFO [http-nio-8088-exec-257] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:21:33.387 INFO [http-nio-8088-exec-257] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:21:34.993 INFO [http-nio-8088-exec-257] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:21:35.022 INFO [http-nio-8088-exec-257] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:21:35.323 INFO [http-nio-8088-exec-257] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:21:36.674 SEVERE [http-nio-8088-exec-269] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: /views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+		at org.apache.jasper.compiler.Parser.processIncludeDirective(Parser.java:349)
+		at org.apache.jasper.compiler.Parser.parseIncludeDirective(Parser.java:384)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:485)
+		at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1802)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:141)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+		at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:127)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:198)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.HospitalInfoController.doGet(HospitalInfoController.java:103)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 15:21:36.674 SEVERE [http-nio-8088-exec-269] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [HospitalInfoController] in context with path [] threw exception [/views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found] with root cause
+	org.apache.jasper.JasperException: /views/doctor/hospital_view.jsp (line: [11], column: [5]) JSP file [../common/head.jsp] not found
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:41)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:98)
+		at org.apache.jasper.compiler.Parser.processIncludeDirective(Parser.java:349)
+		at org.apache.jasper.compiler.Parser.parseIncludeDirective(Parser.java:384)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:485)
+		at org.apache.jasper.compiler.Parser.parseFileDirectives(Parser.java:1802)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:141)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244)
+		at org.apache.jasper.compiler.ParserController.parseDirectives(ParserController.java:127)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:198)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.HospitalInfoController.doGet(HospitalInfoController.java:103)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 15:37:25.739 INFO [http-nio-8088-exec-279] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:37:25.757 INFO [http-nio-8088-exec-279] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:37:27.564 INFO [http-nio-8088-exec-285] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:37:27.602 INFO [http-nio-8088-exec-285] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:37:27.951 INFO [http-nio-8088-exec-285] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:37:28.198 INFO [http-nio-8088-exec-284] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:37:28.200 INFO [http-nio-8088-exec-284] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:37:29.696 INFO [http-nio-8088-exec-284] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:37:29.728 INFO [http-nio-8088-exec-284] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:37:30.047 INFO [http-nio-8088-exec-284] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:37:31.654 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:37:31.656 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:37:33.188 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:37:33.220 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:37:33.532 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:38:59.244 INFO [http-nio-8088-exec-286] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:38:59.246 INFO [http-nio-8088-exec-286] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:39:00.824 INFO [http-nio-8088-exec-286] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:39:00.855 INFO [http-nio-8088-exec-286] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:39:01.194 INFO [http-nio-8088-exec-286] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:39:32.949 INFO [http-nio-8088-exec-278] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:39:32.951 INFO [http-nio-8088-exec-278] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:39:34.536 INFO [http-nio-8088-exec-278] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:39:34.566 INFO [http-nio-8088-exec-278] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:39:34.914 INFO [http-nio-8088-exec-278] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:40:40.173 INFO [http-nio-8088-exec-289] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 15:40:40.175 INFO [http-nio-8088-exec-289] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 15:40:41.718 INFO [http-nio-8088-exec-289] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 15:40:41.749 INFO [http-nio-8088-exec-289] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 15:40:42.048 INFO [http-nio-8088-exec-289] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:04:04.630 SEVERE [http-nio-8088-exec-301] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	javax.el.ELException: The identifier [this] is not a valid Java identifier as required by section 1.19 of the EL specification (Identifier ::= Java language identifier). This check can be disabled by setting the system property org.apache.el.parser.SKIP_IDENTIFIER_CHECK to true.
+		at org.apache.el.parser.AstIdentifier.setImage(AstIdentifier.java:176)
+		at org.apache.el.parser.ELParser.Identifier(ELParser.java:2077)
+		at org.apache.el.parser.ELParser.NonLiteral(ELParser.java:1781)
+		at org.apache.el.parser.ELParser.ValuePrefix(ELParser.java:1586)
+		at org.apache.el.parser.ELParser.Value(ELParser.java:1525)
+		at org.apache.el.parser.ELParser.Unary(ELParser.java:1506)
+		at org.apache.el.parser.ELParser.Multiplication(ELParser.java:1219)
+		at org.apache.el.parser.ELParser.Math(ELParser.java:1124)
+		at org.apache.el.parser.ELParser.Concatenation(ELParser.java:1073)
+		at org.apache.el.parser.ELParser.Compare(ELParser.java:847)
+		at org.apache.el.parser.ELParser.Equality(ELParser.java:722)
+		at org.apache.el.parser.ELParser.And(ELParser.java:657)
+		at org.apache.el.parser.ELParser.Or(ELParser.java:592)
+		at org.apache.el.parser.ELParser.Choice(ELParser.java:543)
+		at org.apache.el.parser.ELParser.Assignment(ELParser.java:271)
+		at org.apache.el.parser.ELParser.Semicolon(ELParser.java:203)
+		at org.apache.el.parser.ELParser.Expression(ELParser.java:196)
+		at org.apache.el.parser.ELParser.DynamicExpression(ELParser.java:162)
+		at org.apache.el.parser.ELParser.CompositeExpression(ELParser.java:46)
+		at org.apache.el.lang.ExpressionBuilder.createNodeInternal(ExpressionBuilder.java:118)
+		at org.apache.el.lang.ExpressionBuilder.build(ExpressionBuilder.java:179)
+		at org.apache.el.lang.ExpressionBuilder.createValueExpression(ExpressionBuilder.java:243)
+		at org.apache.el.ExpressionFactoryImpl.createValueExpression(ExpressionFactoryImpl.java:60)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1642)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:771)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:959)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2437)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2443)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:471)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1869)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:79)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 16:04:04.630 SEVERE [http-nio-8088-exec-301] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception [org.apache.jasper.JasperException: javax.el.ELException: Failed to parse the expression [${this}]] with root cause
+	javax.el.ELException: The identifier [this] is not a valid Java identifier as required by section 1.19 of the EL specification (Identifier ::= Java language identifier). This check can be disabled by setting the system property org.apache.el.parser.SKIP_IDENTIFIER_CHECK to true.
+		at org.apache.el.parser.AstIdentifier.setImage(AstIdentifier.java:176)
+		at org.apache.el.parser.ELParser.Identifier(ELParser.java:2077)
+		at org.apache.el.parser.ELParser.NonLiteral(ELParser.java:1781)
+		at org.apache.el.parser.ELParser.ValuePrefix(ELParser.java:1586)
+		at org.apache.el.parser.ELParser.Value(ELParser.java:1525)
+		at org.apache.el.parser.ELParser.Unary(ELParser.java:1506)
+		at org.apache.el.parser.ELParser.Multiplication(ELParser.java:1219)
+		at org.apache.el.parser.ELParser.Math(ELParser.java:1124)
+		at org.apache.el.parser.ELParser.Concatenation(ELParser.java:1073)
+		at org.apache.el.parser.ELParser.Compare(ELParser.java:847)
+		at org.apache.el.parser.ELParser.Equality(ELParser.java:722)
+		at org.apache.el.parser.ELParser.And(ELParser.java:657)
+		at org.apache.el.parser.ELParser.Or(ELParser.java:592)
+		at org.apache.el.parser.ELParser.Choice(ELParser.java:543)
+		at org.apache.el.parser.ELParser.Assignment(ELParser.java:271)
+		at org.apache.el.parser.ELParser.Semicolon(ELParser.java:203)
+		at org.apache.el.parser.ELParser.Expression(ELParser.java:196)
+		at org.apache.el.parser.ELParser.DynamicExpression(ELParser.java:162)
+		at org.apache.el.parser.ELParser.CompositeExpression(ELParser.java:46)
+		at org.apache.el.lang.ExpressionBuilder.createNodeInternal(ExpressionBuilder.java:118)
+		at org.apache.el.lang.ExpressionBuilder.build(ExpressionBuilder.java:179)
+		at org.apache.el.lang.ExpressionBuilder.createValueExpression(ExpressionBuilder.java:243)
+		at org.apache.el.ExpressionFactoryImpl.createValueExpression(ExpressionFactoryImpl.java:60)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1642)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:771)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:959)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2437)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2443)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:471)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1869)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:79)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 16:07:21.155 SEVERE [http-nio-8088-exec-301] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	javax.el.ELException: The identifier [this] is not a valid Java identifier as required by section 1.19 of the EL specification (Identifier ::= Java language identifier). This check can be disabled by setting the system property org.apache.el.parser.SKIP_IDENTIFIER_CHECK to true.
+		at org.apache.el.parser.AstIdentifier.setImage(AstIdentifier.java:176)
+		at org.apache.el.parser.ELParser.Identifier(ELParser.java:2077)
+		at org.apache.el.parser.ELParser.NonLiteral(ELParser.java:1781)
+		at org.apache.el.parser.ELParser.ValuePrefix(ELParser.java:1586)
+		at org.apache.el.parser.ELParser.Value(ELParser.java:1525)
+		at org.apache.el.parser.ELParser.Unary(ELParser.java:1506)
+		at org.apache.el.parser.ELParser.Multiplication(ELParser.java:1219)
+		at org.apache.el.parser.ELParser.Math(ELParser.java:1124)
+		at org.apache.el.parser.ELParser.Concatenation(ELParser.java:1073)
+		at org.apache.el.parser.ELParser.Compare(ELParser.java:847)
+		at org.apache.el.parser.ELParser.Equality(ELParser.java:722)
+		at org.apache.el.parser.ELParser.And(ELParser.java:657)
+		at org.apache.el.parser.ELParser.Or(ELParser.java:592)
+		at org.apache.el.parser.ELParser.Choice(ELParser.java:543)
+		at org.apache.el.parser.ELParser.Assignment(ELParser.java:271)
+		at org.apache.el.parser.ELParser.Semicolon(ELParser.java:203)
+		at org.apache.el.parser.ELParser.Expression(ELParser.java:196)
+		at org.apache.el.parser.ELParser.DynamicExpression(ELParser.java:162)
+		at org.apache.el.parser.ELParser.CompositeExpression(ELParser.java:46)
+		at org.apache.el.lang.ExpressionBuilder.createNodeInternal(ExpressionBuilder.java:118)
+		at org.apache.el.lang.ExpressionBuilder.build(ExpressionBuilder.java:179)
+		at org.apache.el.lang.ExpressionBuilder.createValueExpression(ExpressionBuilder.java:243)
+		at org.apache.el.ExpressionFactoryImpl.createValueExpression(ExpressionFactoryImpl.java:60)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1642)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:771)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:959)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2437)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2443)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:471)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1869)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:79)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 16:07:21.156 SEVERE [http-nio-8088-exec-301] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception [org.apache.jasper.JasperException: javax.el.ELException: Failed to parse the expression [${this}]] with root cause
+	javax.el.ELException: The identifier [this] is not a valid Java identifier as required by section 1.19 of the EL specification (Identifier ::= Java language identifier). This check can be disabled by setting the system property org.apache.el.parser.SKIP_IDENTIFIER_CHECK to true.
+		at org.apache.el.parser.AstIdentifier.setImage(AstIdentifier.java:176)
+		at org.apache.el.parser.ELParser.Identifier(ELParser.java:2077)
+		at org.apache.el.parser.ELParser.NonLiteral(ELParser.java:1781)
+		at org.apache.el.parser.ELParser.ValuePrefix(ELParser.java:1586)
+		at org.apache.el.parser.ELParser.Value(ELParser.java:1525)
+		at org.apache.el.parser.ELParser.Unary(ELParser.java:1506)
+		at org.apache.el.parser.ELParser.Multiplication(ELParser.java:1219)
+		at org.apache.el.parser.ELParser.Math(ELParser.java:1124)
+		at org.apache.el.parser.ELParser.Concatenation(ELParser.java:1073)
+		at org.apache.el.parser.ELParser.Compare(ELParser.java:847)
+		at org.apache.el.parser.ELParser.Equality(ELParser.java:722)
+		at org.apache.el.parser.ELParser.And(ELParser.java:657)
+		at org.apache.el.parser.ELParser.Or(ELParser.java:592)
+		at org.apache.el.parser.ELParser.Choice(ELParser.java:543)
+		at org.apache.el.parser.ELParser.Assignment(ELParser.java:271)
+		at org.apache.el.parser.ELParser.Semicolon(ELParser.java:203)
+		at org.apache.el.parser.ELParser.Expression(ELParser.java:196)
+		at org.apache.el.parser.ELParser.DynamicExpression(ELParser.java:162)
+		at org.apache.el.parser.ELParser.CompositeExpression(ELParser.java:46)
+		at org.apache.el.lang.ExpressionBuilder.createNodeInternal(ExpressionBuilder.java:118)
+		at org.apache.el.lang.ExpressionBuilder.build(ExpressionBuilder.java:179)
+		at org.apache.el.lang.ExpressionBuilder.createValueExpression(ExpressionBuilder.java:243)
+		at org.apache.el.ExpressionFactoryImpl.createValueExpression(ExpressionFactoryImpl.java:60)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1642)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:771)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:959)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2437)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2443)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:471)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2385)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1869)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:79)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 16:38:37.787 INFO [http-nio-8088-exec-303] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:38:37.790 INFO [http-nio-8088-exec-303] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 16:38:39.371 INFO [http-nio-8088-exec-303] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 16:38:39.401 INFO [http-nio-8088-exec-303] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 16:38:39.733 INFO [http-nio-8088-exec-303] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:38:44.087 INFO [http-nio-8088-exec-307] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:38:44.089 INFO [http-nio-8088-exec-307] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 16:38:45.672 INFO [http-nio-8088-exec-307] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 16:38:45.700 INFO [http-nio-8088-exec-307] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 16:38:45.990 INFO [http-nio-8088-exec-307] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:38:51.633 INFO [http-nio-8088-exec-302] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:38:51.634 INFO [http-nio-8088-exec-302] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 16:38:53.130 INFO [http-nio-8088-exec-302] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 16:38:53.228 INFO [http-nio-8088-exec-302] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 16:38:53.550 INFO [http-nio-8088-exec-302] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:39:52.809 INFO [http-nio-8088-exec-311] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 16:39:52.811 INFO [http-nio-8088-exec-311] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 16:39:54.316 INFO [http-nio-8088-exec-311] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 16:39:54.346 INFO [http-nio-8088-exec-311] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 16:39:54.701 INFO [http-nio-8088-exec-311] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:00:14.630 INFO [http-nio-8088-exec-324] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:00:14.632 INFO [http-nio-8088-exec-324] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:00:16.394 INFO [http-nio-8088-exec-324] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:00:16.429 INFO [http-nio-8088-exec-324] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:00:16.769 INFO [http-nio-8088-exec-324] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:04:22.628 INFO [http-nio-8088-exec-330] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:04:22.629 INFO [http-nio-8088-exec-330] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:04:24.104 INFO [http-nio-8088-exec-330] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:04:24.131 INFO [http-nio-8088-exec-330] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:04:24.423 INFO [http-nio-8088-exec-330] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:14:02.345 INFO [http-nio-8088-exec-341] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:14:02.351 INFO [http-nio-8088-exec-341] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:14:04.241 INFO [http-nio-8088-exec-341] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:14:04.272 INFO [http-nio-8088-exec-341] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:14:04.586 INFO [http-nio-8088-exec-341] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:14:04.852 INFO [http-nio-8088-exec-340] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:14:04.854 INFO [http-nio-8088-exec-340] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:14:06.488 INFO [http-nio-8088-exec-340] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:14:06.516 INFO [http-nio-8088-exec-340] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:14:06.813 INFO [http-nio-8088-exec-340] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:15:49.253 INFO [http-nio-8088-exec-339] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:15:49.255 INFO [http-nio-8088-exec-339] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:15:50.874 INFO [http-nio-8088-exec-339] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:15:50.906 INFO [http-nio-8088-exec-339] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:15:51.212 INFO [http-nio-8088-exec-339] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:32:08.633 INFO [http-nio-8088-exec-355] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:32:08.635 INFO [http-nio-8088-exec-355] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:32:10.038 INFO [http-nio-8088-exec-355] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:32:10.065 INFO [http-nio-8088-exec-355] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:32:10.344 INFO [http-nio-8088-exec-355] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:34:10.590 SEVERE [http-nio-8088-exec-361] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at DAO.UserDAO.getUserFromId(UserDAO.java:150)
+		at Controller.ChatController.doGet(ChatController.java:95)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:34:52.880 SEVERE [http-nio-8088-exec-356] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: <h3>Validation error messages from TagLibraryValidator for [c] in [/views/chat.jsp]</h3><p>214: Illegal "choose" without child "when" tag</p>
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:54)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:294)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:81)
+		at org.apache.jasper.compiler.Validator.validateXmlView(Validator.java:1928)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1875)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:106)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:34:52.880 SEVERE [http-nio-8088-exec-356] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception [<h3>Validation error messages from TagLibraryValidator for [c] in [/views/chat.jsp]</h3><p>214: Illegal "choose" without child "when" tag</p>] with root cause
+	org.apache.jasper.JasperException: <h3>Validation error messages from TagLibraryValidator for [c] in [/views/chat.jsp]</h3><p>214: Illegal "choose" without child "when" tag</p>
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:54)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:294)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:81)
+		at org.apache.jasper.compiler.Validator.validateXmlView(Validator.java:1928)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1875)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:220)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:350)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:462)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:388)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)
+		at Controller.ChatController.doGet(ChatController.java:106)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:36:26.279 SEVERE [http-nio-8088-exec-370] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at DAO.UserDAO.getUserFromId(UserDAO.java:150)
+		at Controller.ChatController.doGet(ChatController.java:95)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:38:09.577 SEVERE [http-nio-8088-exec-371] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at DAO.UserDAO.getUserFromId(UserDAO.java:150)
+		at Controller.ChatController.doGet(ChatController.java:95)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:39:11.634 INFO [http-nio-8088-exec-364] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:39:11.636 INFO [http-nio-8088-exec-364] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:39:13.103 INFO [http-nio-8088-exec-364] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:39:13.135 INFO [http-nio-8088-exec-364] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:39:13.450 INFO [http-nio-8088-exec-364] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:39:14.838 SEVERE [http-nio-8088-exec-368] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ChatController] in context with path [] threw exception
+	java.lang.NullPointerException
+		at DAO.UserDAO.getUserFromId(UserDAO.java:150)
+		at Controller.ChatController.doGet(ChatController.java:96)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:881)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1647)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+25-Mar-2022 17:40:05.643 INFO [http-nio-8088-exec-372] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:40:05.645 INFO [http-nio-8088-exec-372] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:40:06.999 INFO [http-nio-8088-exec-372] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:40:07.028 INFO [http-nio-8088-exec-372] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:40:07.296 INFO [http-nio-8088-exec-372] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:51:07.951 INFO [http-nio-8088-exec-382] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:51:07.957 INFO [http-nio-8088-exec-382] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:51:09.231 INFO [http-nio-8088-exec-382] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:51:09.255 INFO [http-nio-8088-exec-382] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:51:09.494 INFO [http-nio-8088-exec-382] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:53:23.838 INFO [http-nio-8088-exec-387] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:53:23.842 INFO [http-nio-8088-exec-387] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:53:25.135 INFO [http-nio-8088-exec-387] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:53:25.158 INFO [http-nio-8088-exec-387] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:53:25.399 INFO [http-nio-8088-exec-387] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:56:59.857 INFO [http-nio-8088-exec-396] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 17:56:59.860 INFO [http-nio-8088-exec-396] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 17:57:01.177 INFO [http-nio-8088-exec-396] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 17:57:01.201 INFO [http-nio-8088-exec-396] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 17:57:01.472 INFO [http-nio-8088-exec-396] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:22:51.036 INFO [http-nio-8088-exec-403] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:22:51.040 INFO [http-nio-8088-exec-403] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 18:22:52.333 INFO [http-nio-8088-exec-403] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 18:22:52.356 INFO [http-nio-8088-exec-403] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 18:22:52.597 INFO [http-nio-8088-exec-403] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:23:02.817 INFO [http-nio-8088-exec-404] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:23:02.820 INFO [http-nio-8088-exec-404] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 18:23:04.066 INFO [http-nio-8088-exec-404] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 18:23:04.089 INFO [http-nio-8088-exec-404] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 18:23:04.330 INFO [http-nio-8088-exec-404] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:23:36.631 INFO [http-nio-8088-exec-413] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:23:36.634 INFO [http-nio-8088-exec-413] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 18:23:37.885 INFO [http-nio-8088-exec-413] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 18:23:37.908 INFO [http-nio-8088-exec-413] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 18:23:38.150 INFO [http-nio-8088-exec-413] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:24:42.670 INFO [http-nio-8088-exec-419] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:24:42.672 INFO [http-nio-8088-exec-419] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 18:24:43.935 INFO [http-nio-8088-exec-419] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
+25-Mar-2022 18:24:43.959 INFO [http-nio-8088-exec-419] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+25-Mar-2022 18:24:44.199 INFO [http-nio-8088-exec-419] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:27:14.371 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcher'
+25-Mar-2022 18:27:14.372 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Mar-2022 18:27:14.382 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+25-Mar-2022 18:27:14.382 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()

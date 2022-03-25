@@ -40,7 +40,7 @@ import javax.servlet.http.Part;
         maxRequestSize = 1024 * 1024 * 100
 )
 
-public class InfoController extends HttpServlet {
+public class PatientInfoController extends HttpServlet {
 
     private static final String UPLOAD_DIR = "images/uploads";
 

@@ -21,7 +21,7 @@
     </servlet>
     <servlet>
         <servlet-name>InfoController</servlet-name>
-        <servlet-class>Controller.InfoController</servlet-class>
+        <servlet-class>Controller.PatientInfoController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Tutorial</servlet-name>
@@ -51,6 +51,14 @@
     <servlet>
         <servlet-name>ChatController</servlet-name>
         <servlet-class>Controller.ChatController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HospitalInfoController</servlet-name>
+        <servlet-class>Controller.HospitalInfoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChatroomServlet</servlet-name>
+        <servlet-class>Controller.ChatroomServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>ChatController</servlet-name>
         <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HospitalInfoController</servlet-name>
+        <url-pattern>/hospital</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChatroomServlet</servlet-name>
+        <url-pattern>/chatroom</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

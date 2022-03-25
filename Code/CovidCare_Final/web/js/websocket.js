@@ -40,7 +40,8 @@ function send() {
     var username = document.getElementById("username_input").value;
     var json = {
         "content": message,
-        "userName": username
+        "userName": username,
+        "toId": toId,
     };
     console.log("Sending " + message);
     websocket.send(JSON.stringify(json));

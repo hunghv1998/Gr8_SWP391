@@ -45,6 +45,12 @@
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="patient">Quản lý bệnh nhân</a>
                                             </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="chat">Hỗ Trợ Trực Tuyến</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="hospital">Thông tin bệnh viện</a>
+                                            </li>
                                         </c:when>
                                         <c:otherwise>
                                             <li class="nav-item active">

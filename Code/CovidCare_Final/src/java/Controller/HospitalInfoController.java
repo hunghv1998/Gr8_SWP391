@@ -6,34 +6,31 @@
 package Controller;
 
 import DAO.CommonDataDAO;
+import DAO.HospitalDAO;
 import DAO.PatientDAO;
 import DAO.UserDAO;
-import Model.AgeType;
 import Model.City;
-import Model.Disease;
 import Model.District;
-import Model.Patient;
+import Model.Hospital;
 import Model.User;
-import Model.Vaccine;
-import Model.VaccineStatus;
 import Model.Ward;
 import Utils.ValidatingInput;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author chinh
  */
-public class PatientController extends HttpServlet {
+public class HospitalInfoController extends HttpServlet {
 
+    private final HospitalDAO hospitalDAO = new HospitalDAO();
     private final CommonDataDAO commonDAO = new CommonDataDAO();
-    private final PatientDAO patientDAO = new PatientDAO();
     private final ValidatingInput check = new ValidatingInput();
 
     /**
@@ -53,10 +50,10 @@ public class PatientController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet PatientController</title>");
+            out.println("<title>Servlet HospitalInfoController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet PatientController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet HospitalInfoController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -74,52 +71,39 @@ public class PatientController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        User user = (User) request.getSession().getAttribute("user");
+        HttpSession session = request.getSession();
 
-        request.setAttribute("title", "Quản lý bệnh nhân");
-        if (user == null || user.getUserType() != 2) {
-            request.setAttribute("message", "Bạn không có quyền truy cập");
-            request.getRequestDispatcher("/views/error.jsp").forward(request, response);
+        User user = (User) session.getAttribute("user");
+
+        if (user == null) {
+            response.sendRedirect("login");
         } else {
             String id = request.getParameter("id");
 
             if (id == null) {
-                request.getRequestDispatcher("/views/doctor/patient_list.jsp").forward(request, response);
+                id = String.valueOf(user.getUserId());
+            }
+            request.setAttribute("title", "Thông tin bệnh viện");
+            if (!check.isNumber(id)
+                    || hospitalDAO.getHospitalById(Integer.parseInt(id)) == null) {
+                request.setAttribute("message", "Không tìm thấy thông tin bệnh viện");
+                request.getRequestDispatcher("/views/error.jsp").forward(request, response);
             } else {
-                String action = request.getParameter("action");
+                Hospital hospital = hospitalDAO.getHospitalById(Integer.parseInt(id));
+                City patientCity = commonDAO.geCityByWardId(hospital.getWardId());
+                District patientDistrict = commonDAO.getDistrictByWardId(hospital.getWardId());
+                Ward patientWard = commonDAO.getWardByWardId(hospital.getWardId());
 
-                if (action == null) {
-                    if (!check.isNumber(id) || patientDAO.getPatientInfo(Integer.parseInt(id)) == null) {
-                        request.setAttribute("message", "Không tìm thấy bệnh nhân");
-                        request.getRequestDispatcher("/views/error.jsp").forward(request, response);
-                    } else {
-                        Patient patient = patientDAO.getPatientInfo(Integer.parseInt(id));
+                request.setAttribute("city", patientCity);
+                request.setAttribute("district", patientDistrict);
+                request.setAttribute("ward", patientWard);
 
-                        ArrayList<VaccineStatus> vaccStatusList = commonDAO.getVaccineStatusList();
-                        ArrayList<Vaccine> vaccines = commonDAO.getVaccineList();
-                        ArrayList<AgeType> ages = commonDAO.getAgeTypeList();
-                        ArrayList<Disease> diseases = commonDAO.getDiseaseList();
-
-                        City patientCity = commonDAO.geCityByWardId(patient.getWardId());
-                        District patientDistrict = commonDAO.getDistrictByWardId(patient.getWardId());
-                        Ward patientWard = commonDAO.getWardByWardId(patient.getWardId());
-
-                        request.setAttribute("vaccStatusList", vaccStatusList);
-                        request.setAttribute("vaccines", vaccines);
-                        request.setAttribute("ages", ages);
-                        request.setAttribute("diseases", diseases);
-                        request.setAttribute("city", patientCity);
-                        request.setAttribute("district", patientDistrict);
-                        request.setAttribute("ward", patientWard);
-
-                        request.setAttribute("patient", patient);
-                        request.getRequestDispatcher("/views/doctor/patient_detail.jsp").forward(request, response);
-                    }
-                } else if (action.equals("update")) {
-                    request.getRequestDispatcher("/views/doctor/patient_covid.jsp").forward(request, response);
-                }
+                request.setAttribute("hospital", hospital);
+                
+                request.getRequestDispatcher("/views/doctor/hospital_view.jsp").forward(request, response);
 
             }
+
         }
     }
 
