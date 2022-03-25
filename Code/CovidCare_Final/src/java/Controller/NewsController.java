@@ -36,7 +36,7 @@ import javax.servlet.http.Part;
 
 public class NewsController extends HttpServlet {
 
-    private static final String UPLOAD_DIR = "images/uploads";
+    private static final String UPLOAD_DIR = "images/news";
 
     private final ValidatingInput check = new ValidatingInput();
 

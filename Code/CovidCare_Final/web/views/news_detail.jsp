@@ -23,7 +23,7 @@
                                 <li class="list-inline-item">at ${news.publish_date}</li>
                                 <li class="list-inline-item">- Lượt xem ${news.readCount}</li>
                             </ul>
-                            <img src="images/uploads/${news.photo}">
+                            <img src="images/news/${news.photo}">
                             <h6>${news.short_des}</h6>
                             <p> ${news.content}</p>
                         </article>
