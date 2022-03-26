@@ -151,6 +151,7 @@ public class UserDAO extends DBContext {
                 User result = new User();
                 result.setUserId(rs.getInt("userId"));
                 result.setUsername(rs.getString("username"));
+                result.setPassword(rs.getString("password"));
                 result.setUserType(rs.getInt("userType"));
                 result.setActiveStatus(rs.getBoolean("activeStatus"));
                 return result;
@@ -189,6 +190,52 @@ public class UserDAO extends DBContext {
 
     public Integer deleteUser(Integer userId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int updatePassword(int userId, String password) {
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        int result=-1;
+        try {
+            String sql = "UPDATE [dbo].[users]\n"
+                    + "   SET [password] = ?       \n"
+                    + " WHERE userId = ?";
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, password);
+            stm.setInt(2, userId);
+            result = stm.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+
+    }
+
+    public ArrayList<User> getAllUser() {
+        ArrayList<User> listUser = new ArrayList<>();
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            String sql = "select * from users";
+            stm = connection.prepareStatement(sql);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+               User u = new User();
+               u.setUserId(rs.getInt("userId"));
+               u.setUsername(rs.getString("username"));
+               u.setPassword(rs.getString("password"));
+               u.setUserType(rs.getInt("userType"));
+               u.setActiveStatus(rs.getBoolean("activeStatus"));
+               
+               //add to list
+               listUser.add(u);
+            }
+            return listUser;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 
 }

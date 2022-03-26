@@ -6,10 +6,12 @@
 package Controller;
 
 import DAO.PatientDAO;
+import DAO.QuestionDAO;
 import DAO.UserDAO;
+import Model.Question;
 import Model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,47 +23,20 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RegisterController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegisterController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegisterController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
+        QuestionDAO qD = new QuestionDAO();
+        ArrayList<Question> listQuestion = new ArrayList<>();
 
         if (user == null) {
+            listQuestion = qD.getAllQuestion();
+
+            if (listQuestion != null) {
+                request.setAttribute("listQuestion", listQuestion);
+            }
+
             request.getSession().invalidate();
             request.setAttribute("title", "Đăng ký");
             request.getRequestDispatcher("/views/register.jsp").forward(request, response);
@@ -84,27 +59,37 @@ public class RegisterController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirm");
-        
+        String raw_questionId = request.getParameter("ques_id");
+        String answer = request.getParameter("answer");
+
+        int questionId = Integer.parseInt(raw_questionId);
+
         String message = "";
-        
-        UserDAO userDAO =  new UserDAO();
-        
+
+        UserDAO userDAO = new UserDAO();
+        QuestionDAO qD = new QuestionDAO();
+
         if (userDAO.getIdFromUsername(username) > 0) {
             message += "Tài khoản đã tồn tại<br>";
         }
         if (!password.equals(confirm)) {
             message += "Mật khẩu không trùng khớp<br>";
         }
+        if (answer.equals("") && answer.length() == 0) {
+            message += "Chưa trả lời câu hỏi bí mật<br>";
+        }
+
         if (message.isEmpty()) {
+
             PatientDAO patientDAO = new PatientDAO();
-            
             userDAO.addUser(new User(username, password, 3));
             patientDAO.addPatient(userDAO.getIdFromUsername(username));
+            qD.addNewAnswer(userDAO.getIdFromUsername(username), questionId, answer);
             response.sendRedirect("login");
         } else {
             request.setAttribute("username", username);
             request.setAttribute("message", message);
-            request.getRequestDispatcher("/views/register.jsp").forward(request, response);
+            request.getRequestDispatcher("/views/patient/register.jsp").forward(request, response);
         }
     }
 
