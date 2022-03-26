@@ -27,7 +27,7 @@
                             <c:choose>
                                 <c:when test="${user.getUserType() == 1}">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="managementAccount">Quản lý</a>
+                                        <a class="nav-link" href="managementAccount">Quản lý Tài Khoản</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="statistic">Thống kê</a>
