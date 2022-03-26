@@ -191,4 +191,21 @@ public class UserDAO extends DBContext {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public void updatePassword(int userId, String password) {
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            String sql = "UPDATE [dbo].[users]\n"
+                    + "   SET [password] = ?       \n"
+                    + " WHERE userId = ?";
+            stm = connection.prepareStatement(sql);
+            stm.setString(1, password);
+            stm.setInt(2, userId);
+            stm.executeUpdate();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
 }
