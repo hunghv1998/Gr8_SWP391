@@ -31,17 +31,17 @@
                                 <ul>
                                     <li class="active">
                                         <a href="">
-                                            <i class=""></i> Create News 
+                                            <i class=""></i> Tạo bản tin
                                         </a>
                                     </li>   
                                     <li>
                                         <a href="news">
-                                            <i class=""></i> Manager News 
+                                            <i class=""></i> Quản lý bản tin
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="ManageAccount">
-                                            <i class=""></i> Manager profiles 
+                                        <a href="manageAccount">
+                                            <i class=""></i> Quản lý tài khoản
                                         </a>
                                     </li>														
                                 </ul>
@@ -49,8 +49,8 @@
                         </div>
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-                        <!-- Recently Favorited -->
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <!-- Recently Favorited -->                     
+                        <form action="createNews" method="post" enctype="multipart/form-data">
                             <div class="widget dashboard-container my-adslist">
                                 <h3 class="widget-header">Create News</h3>
                                 <p style="color: red;">
@@ -62,7 +62,7 @@
                                 <div class="col-lg-12">
                                     <div>
                                         <h6 class="font-weight-bold pt-4 pb-1">Tiêu đề :</h6>
-                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Tối đa 250 ký tự" value="${news.title}">                             
+                                        <input type="text" class="border w-100 p-2 bg-white text-capitalize" name="title" placeholder="Tối đa 250 ký tự" value=<c:if test="${not empty currNews.title}">"${currNews.title}"</c:if>>                             
                                     </div>
                                     <div class="choose-file text-center my-4 py-4 rounded">
                                         <label for="file-upload">
@@ -70,15 +70,9 @@
                                             <span class="d-block">or</span>
                                             <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                             <span class="d-block">Maximum upload file size: 500 KB</span>
-
-                                            <c:if test="${news.photo != null}">
-                                                <span class="d-block">Ảnh đang dùng</span>
-                                                <span><image src="images/uploads/${news.photo}" style="width: 150px; height: 100px;"></span>
-                                                </c:if>
-                                            <input type="file"  name="newsPhoto" class="form-control-file d-none" id="file-upload">
+                                            <input type="file" name="photo" class="form-control-file d-none" id="file-upload">
                                         </label>
                                     </div>
-
                                     <div class="dnx_content_form_item clearfix">
                                         <div class="dnx_content_form_item_lab">
                                             Thể Loại
@@ -88,9 +82,9 @@
                                                 <option class="default-selected" value="0" selected="">Chọn Thể Loại</option>
                                                 <c:forEach items="${newsCate}" var="cate">
                                                     <option value="${cate.cateId}"
-                                                            <c:if test="${cate.cateId == news.cateId}">
-                                                                selected
-                                                            </c:if>>${cate.cateName}</option>
+                                                           
+                                                                >${cate.cateName}
+                                                    </option>
                                                 </c:forEach>
                                             </select>
                                         </div>
@@ -98,32 +92,23 @@
 
                                     <div>
                                         <h6 class="font-weight-bold pt-4 pb-1">Tóm tắt:</h6>
-                                        <textarea name="description" id="" class="border p-3 w-100" rows="7" placeholder="Tối đa 250 ký tự">${news.short_des}</textarea>
+                                        <textarea name="description" class="border p-3 w-100" rows="7" placeholder="Tối đa 250 ký tự"><c:if test="${not empty currNews.short_des}">"${currNews.short_des}"</c:if></textarea>
                                     </div>
                                     <h6 class="font-weight-bold pt-4 pb-1">Nội dung:</h6>
-                                    <textarea name="content" id="" class="border p-3 w-100" rows="7" placeholder="Nội dung">${news.content}</textarea>
+                                    <textarea name="content" class="border p-3 w-100" rows="7" placeholder="Tối đa 1000 ký tự"><c:if test="${not empty currNews.content}">"${currNews.content}"</c:if></textarea>
 
                                     <h6 class="font-weight-bold pt-4 pb-1">Đăng bài?</h6>
                                     <ul>
                                         <li>
-                                            <input type="radio" id="notPublish" name="publishStatus" value="0" 
-                                                   <c:if test="${not news.status}">checked</c:if>>
-                                                   <label for="notPublish">Lưu nháp</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="publish" name="publishStatus" value="1" 
-                                                <c:if test="${news.status}">checked</c:if>>
-                                                <label for="publish">Đăng bài</label>
-                                            </li>
-                                        </ul> 
-                                    <c:choose>
-                                        <c:when test="${news.newsId > 0}">
-                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Update">
-                                        </c:when>    
-                                        <c:otherwise>
-                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Post">
-                                        </c:otherwise>
-                                    </c:choose>
+                                            <input type="radio" id="notPublish" name="publishStatus"  value="0" <c:if test="${!currNews.status}"> checked</c:if>>
+                                            <label for="notPublish">Lưu nháp</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" id="publish" name="publishStatus" <c:if test="${currNews.status}"> checked</c:if> value="1" >
+                                            <label for="publish">Đăng bài</label>
+                                        </li>
+                                    </ul>                                     
+                                    <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Đăng bài">
                                 </div>
                             </div>
                         </form>
