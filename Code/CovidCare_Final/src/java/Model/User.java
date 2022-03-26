@@ -100,4 +100,11 @@ public class User implements Serializable {
     public void setActiveStatus(boolean activeStatus) {
         this.activeStatus = activeStatus;
     }
+    
+
+    @Override
+    public String toString() {
+        return "User{" + "userId=" + userId + ", username=" + username + ", password=" + password + ", userType=" + userType + ", activeStatus=" + activeStatus + '}';
+    }
+    
 }
