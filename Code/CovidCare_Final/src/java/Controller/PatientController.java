@@ -6,12 +6,14 @@
 package Controller;
 
 import DAO.CommonDataDAO;
+import DAO.HospitalDAO;
 import DAO.PatientDAO;
 import DAO.UserDAO;
 import Model.AgeType;
 import Model.City;
 import Model.Disease;
 import Model.District;
+import Model.Hospital;
 import Model.Patient;
 import Model.User;
 import Model.Vaccine;
@@ -33,6 +35,7 @@ import javax.servlet.http.HttpServletResponse;
 public class PatientController extends HttpServlet {
 
     private final CommonDataDAO commonDAO = new CommonDataDAO();
+    private final HospitalDAO hospitalDAO = new HospitalDAO();
     private final PatientDAO patientDAO = new PatientDAO();
     private final ValidatingInput check = new ValidatingInput();
 
@@ -81,9 +84,15 @@ public class PatientController extends HttpServlet {
             request.setAttribute("message", "Bạn không có quyền truy cập");
             request.getRequestDispatcher("/views/error.jsp").forward(request, response);
         } else {
+            Hospital hospital = hospitalDAO.getHospitalById(user.getUserId());
+
+            String wardId = hospital.getWardId();
             String id = request.getParameter("id");
 
             if (id == null) {
+                ArrayList<Patient> patients = patientDAO.getHospitalPatientsList(wardId);
+
+                request.setAttribute("patients", patients);
                 request.getRequestDispatcher("/views/doctor/patient_list.jsp").forward(request, response);
             } else {
                 String action = request.getParameter("action");
