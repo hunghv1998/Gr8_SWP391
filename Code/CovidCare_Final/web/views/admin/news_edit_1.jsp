@@ -118,10 +118,10 @@
                                         </ul> 
                                     <c:choose>
                                         <c:when test="${news.newsId > 0}">
-                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Update">
+                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Cập Nhập">
                                         </c:when>    
                                         <c:otherwise>
-                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Post">
+                                            <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Đăng Bài">
                                         </c:otherwise>
                                     </c:choose>
                                 </div>

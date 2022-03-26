@@ -27,17 +27,12 @@
                                 <ul>
                                     <li>
                                         <a href="news?action=add">
-                                            <i class=""></i> Add News 
+                                            <i class=""></i> Tạo Tin Tức Mới 
                                         </a>
                                     </li>    
                                     <li class="active">
                                         <a href="">
-                                            <i class=""></i> News List 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="ManageAccount">
-                                            <i class=""></i> Manager profiles
+                                            <i class=""></i> Danh Sách Tin Tức
                                         </a>
                                     </li>																			
                                 </ul>
@@ -51,13 +46,13 @@
                             <table class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th class="text-center" >Title</th>                                   
-                                        <th class="text-center">Category</th>
-                                        <th class="text-center">Status</th>
-                                        <th class="text-center">Created date</th>
-                                        <th class="text-center">Published date</th>
-                                        <th class="text-center">Action</th>
+                                        <th>Số Thứ Tự</th>
+                                        <th class="text-center" >Tiêu Đề</th>                                   
+                                        <th class="text-center">Thể Loại</th>
+                                        <th class="text-center">Trạng Thái</th>
+                                        <th class="text-center">Ngày Tạo</th>
+                                        <th class="text-center">Ngày Đăng</th>
+                                        <th class="text-center">Chức Năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>

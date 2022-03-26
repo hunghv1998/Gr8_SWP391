@@ -127,7 +127,7 @@
                                                 </h4>
                                             </div>
                                             <div>
-                                                <img src="images/uploads/${news.photo}" style="height: 100%; width: 100%; object-fit: contain;">
+                                                <img src="images/news/${news.photo}" style="height: 100%; width: 100%; object-fit: contain;">
                                                 <span>${news.short_des}</span>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
                                             </h4>
                                         </div>
                                         <div>
-                                            <img src="images/uploads/${news.photo}" style="height: 100%; width: 100%; object-fit: contain;">
+                                            <img src="images/news/${news.photo}" style="height: 100%; width: 100%; object-fit: contain;">
                                             <span>${news.short_des}</span>
                                         </div>
                                     </div>

@@ -25,8 +25,6 @@
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
                                 <ul>
-                                    <li><a href="CreateNews"><i class=""></i>Tạo bài viết mới</a></li>    
-                                    <li><a href="viewListNewsController"><i class=""></i>Quản lý bài viết</a></li>
                                     <li class="active" >
                                         <a href="managementAccount"><i class=""></i>Quản lý tài khoản<span>12</span></a>
                                     </li>																			
