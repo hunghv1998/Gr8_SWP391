@@ -38,12 +38,7 @@
                                         <a href="news">
                                             <i class=""></i> Quản lý bản tin
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="manageAccount">
-                                            <i class=""></i> Quản lý tài khoản
-                                        </a>
-                                    </li>														
+                                    </li>                                   													
                                 </ul>
                             </div>
                         </div>

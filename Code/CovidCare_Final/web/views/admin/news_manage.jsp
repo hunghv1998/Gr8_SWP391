@@ -32,8 +32,8 @@
                                     </li>    
                                     <li class="active">
                                         <a href="">
-                                            <i class=""></i> Danh Sách Tin Tức
-                                        </a>
+                                            <i class=""></i> Quản lý bản tin
+                                        </a>                                        
                                     </li>																			
                                 </ul>
                             </div>
@@ -42,7 +42,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0" >
                         <!-- Recently Favorited -->
                         <div class="widget dashboard-container my-adslist" style="width:auto;">
-                            <h3 class="widget-header">Manage News</h3>
+                            <h3 class="widget-header">Quản lý bản tin
+                                        </h3>
                             <table class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
