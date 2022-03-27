@@ -20,10 +20,10 @@
             <div class="container">
                 <!-- Row Start -->
                 <div class="row">                   
-                    <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0">
+                    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
                         <div class="sidebar">				
                             <!-- Dashboard Links -->
-                            <div class="widget user-dashboard-menu">
+                            <div class="widget user-dashboard-menu" style="width:auto;">
                                 <ul>
                                     <li>
                                         <a href="addPost">
@@ -40,9 +40,9 @@
                             </div>
                         </div>
                      </div>
-                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
                         <!-- Recently Favorited -->
-                        <div class="widget dashboard-container my-adslist">
+                        <div class="widget dashboard-container my-adslist" style="width:auto;">
                             <c:if test="${message != null}">${message}</c:if>
                                 <h3 class="widget-header">Danh sách đợt tiêm</h3>
                                 <table  class="table table-responsive product-dashboard-table">
@@ -72,7 +72,7 @@
                                                         Đã hết hạn                                                    
                                                     </c:otherwise>
                                                 </c:choose></td>                                          
-                                            <td class="action" data-title="Action"> 
+                                            <td nowrap class="action" data-title="Action"> 
                                                 <div class="">
                                                     <ul class="list-inline justify-content-center">
                                                         <li class="list-inline-item">

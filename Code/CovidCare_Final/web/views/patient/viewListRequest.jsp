@@ -28,20 +28,20 @@
                                 <table  class="table table-responsive product-dashboard-table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Ngày tạo</th>
-                                            <th class="text-center">Số điện thoại</th>
-                                            <th class="text-center">Ghi chú</th> 
-                                            <th class="text-center">Tình trạng</th>                                                                         
+                                            <th nowrap class="text-center">Ngày tạo</th>
+                                            <th nowrap class="text-center">Số điện thoại</th>
+                                            <th nowrap class="text-center">Ghi chú</th> 
+                                            <th nowrap class="text-center">Tình trạng</th>                                                                         
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                     <c:forEach items="${listRequest}" var='rv'>
                                         <tr>                               
-                                            <td  class="text-center">${rv.created_date}</td>
-                                            <td class="text-center">${rv.phone}</td>                                          
-                                            <td class="text-center">${rv.note}</td>                                          
-                                            <td class="text-center"> <c:choose>
+                                            <td nowrap  class="text-center">${rv.created_date}</td>
+                                            <td nowrap class="text-center">${rv.phone}</td>                                          
+                                            <td nowrap class="text-center">${rv.note}</td>                                          
+                                            <td nowrap class="text-center"> <c:choose>
                                                     <c:when test="${rv.status == '2'}">
                                                         Chờ xác nhận                                                           
                                                     </c:when>
@@ -52,7 +52,7 @@
                                                         Bị từ chối                                                    
                                                     </c:otherwise>
                                                 </c:choose></td>                                          
-                                            <td class="action" data-title="Action"> 
+                                            <td nowrap class="action" data-title="Action"> 
                                                 <div class="">
                                                     <ul class="list-inline justify-content-center">                                                
                                                     </ul>
