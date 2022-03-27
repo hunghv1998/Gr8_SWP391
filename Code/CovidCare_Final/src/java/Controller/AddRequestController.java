@@ -65,16 +65,15 @@ public class AddRequestController extends HttpServlet {
             rV.setStatus("2");
             rV.setImage("");
             result = rD.addRequestVaccinate(rV);
-
+                                           
             //add success
             if (result != -1) {
+                int request_id = rD.getMaxRequestId();
+                rD.connectRequestToPost(post_id, request_id);
                 response.sendRedirect("manageRequest");
             } else {
                 response.getWriter().print("fail");
             }
-
         }
-
     }
-
 }

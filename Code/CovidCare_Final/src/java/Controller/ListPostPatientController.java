@@ -37,8 +37,8 @@ public class ListPostPatientController extends HttpServlet {
         UserDAO uD = new UserDAO();
         PostVaccineDAO pD = new PostVaccineDAO();
         //get list post of user
-//        request.setAttribute("listPost", pD.getListPostVaccinateByWardId(uD.getWardIdByUserId(user.getUserId())));
-        request.setAttribute("listPost", pD.getListPostVaccinateByWardId("00004"));
+        request.setAttribute("listPost", pD.getListPostVaccinateByWardId(uD.getWardIdByUserId(user.getUserId())));
+//        request.setAttribute("listPost", pD.getListPostVaccinateByWardId("00004"));
         request.getRequestDispatcher("views/patient/viewListPost.jsp").forward(request, response);
     }
 

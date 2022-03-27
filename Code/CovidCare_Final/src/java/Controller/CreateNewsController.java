@@ -104,7 +104,7 @@ public class CreateNewsController extends HttpServlet {
 
         //clear session Message
         //get Creator
-//        User user = (User) request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         //check empty each item 
         if (title.equals("") || title.length() == 0) {
             message += "Tiêu đề bài viết trống ! <br>";
@@ -144,11 +144,11 @@ public class CreateNewsController extends HttpServlet {
         }
 
         //for test
-        int creator = 3;
+//        int creator = 3;
         //create news 
         News n = new News();
-//        n.setCreator(user.getUserId());
-        n.setCreator(creator);
+        n.setCreator(user.getUserId());
+//        n.setCreator(creator);
         n.setCateId(cateId);
         n.setTitle(title);
         n.setContent(content);
@@ -158,6 +158,8 @@ public class CreateNewsController extends HttpServlet {
         n.setCreate_date(created_date);
         n.setPublish_date((publishStatus == 1) ? created_date : null);
         n.setReadCount(0);
+        
+        System.out.println(n.toString());
 
         int insert_news = nD.addNews(n);
 
