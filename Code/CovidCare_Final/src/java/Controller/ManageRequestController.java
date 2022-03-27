@@ -49,8 +49,8 @@ public class ManageRequestController extends HttpServlet {
             throws ServletException, IOException {
         RequestVaccineDAO rD = new RequestVaccineDAO();
         User user = (User) request.getSession().getAttribute("user");
-//        request.setAttribute("listRequest", rD.getListRequsetVaccinate(user.getUserId()));
-        request.setAttribute("listRequest", rD.getListRequsetVaccinate(4));
+        request.setAttribute("listRequest", rD.getListRequsetVaccinate(user.getUserId()));
+//        request.setAttribute("listRequest", rD.getListRequsetVaccinate(4));
         request.getRequestDispatcher("views/patient/viewListRequest.jsp").forward(request, response);
         
     }

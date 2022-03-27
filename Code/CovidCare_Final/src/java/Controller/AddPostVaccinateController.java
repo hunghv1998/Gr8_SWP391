@@ -9,6 +9,7 @@ import DAO.PostVaccineDAO;
 import DAO.UserDAO;
 import DAO.VaccineDAO;
 import Model.PostVaccinate;
+import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Calendar;
@@ -95,7 +96,9 @@ public class AddPostVaccinateController extends HttpServlet {
                 request.getRequestDispatcher("/views/doctor/addPostVaccinate.jsp").forward(request, response);
             } else {
                 PostVaccinate pv = new PostVaccinate();
-                pv.setCreatedBy(3);
+                User user = (User) request.getSession().getAttribute("user");
+//                pv.setCreatedBy(3);
+                pv.setCreatedBy(user.getUserId());
                 pv.setCreatedDate(created_date.toString());
                 pv.setStartDate(raw_startDate);
                 pv.setExpiredDate(raw_expiredDate);
