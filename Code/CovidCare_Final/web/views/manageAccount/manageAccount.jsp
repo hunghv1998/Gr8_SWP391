@@ -39,7 +39,7 @@
                             <table  class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Tài khoản</th>
+                                        <th>Tài khoản</th>
                                         <th class="text-center">Mật khẩu</th>
                                         <th class="text-center">Vai trò</th>
                                         <th class="text-center">Trạng thái</th>
@@ -50,7 +50,7 @@
                                     <c:forEach items="${listUser}" var="o">
                                         <tr>
 
-                                            <td class="text-center">
+                                            <td class="">
                                                 <a>${o.username}</a>
                                             <td  class="text-center">${o.password}</td>
                                             <td class="text-center"><c:choose>

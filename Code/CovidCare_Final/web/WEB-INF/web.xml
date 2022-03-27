@@ -84,6 +84,34 @@
         <servlet-name>CreateNewsController</servlet-name>
         <servlet-class>Controller.CreateNewsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddPostVaccinateController</servlet-name>
+        <servlet-class>Controller.AddPostVaccinateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManagePostVaccinateController</servlet-name>
+        <servlet-class>Controller.ManagePostVaccinateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManagePostVaccinateController2</servlet-name>
+        <servlet-class>Controller.ManagePostVaccinateController2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessRequestController</servlet-name>
+        <servlet-class>Controller.ProcessRequestController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManageRequestController</servlet-name>
+        <servlet-class>Controller.ManageRequestController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListPostPatientController</servlet-name>
+        <servlet-class>Controller.ListPostPatientController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddRequestController</servlet-name>
+        <servlet-class>Controller.AddRequestController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -159,6 +187,34 @@
     <servlet-mapping>
         <servlet-name>CreateNewsController</servlet-name>
         <url-pattern>/createNews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPostVaccinateController</servlet-name>
+        <url-pattern>/addPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagePostVaccinateController</servlet-name>
+        <url-pattern>/managePost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagePostVaccinateController2</servlet-name>
+        <url-pattern>/managePost2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessRequestController</servlet-name>
+        <url-pattern>/processRequest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManageRequestController</servlet-name>
+        <url-pattern>/manageRequest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListPostPatientController</servlet-name>
+        <url-pattern>/listPostPatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddRequestController</servlet-name>
+        <url-pattern>/addRequest</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

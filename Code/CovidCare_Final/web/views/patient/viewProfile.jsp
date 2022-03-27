@@ -63,7 +63,7 @@
                     Ảnh đại diện
                 </div>
                 <div class="dnx_content_form_item_lab">
-                    <img src="images/patient/${patient.getPhoto()}" style="width: 150px; height: 100px;">
+                    <img src="images/uploads/${patient.getPhoto()}" style="width: 150px; height: 100px;">
                 </div>
             </div>
             <div class="dnx_content_form_item clearfix">
