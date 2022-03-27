@@ -65,7 +65,7 @@ public class CreateNewsController extends HttpServlet {
         String rawPublishStatus = request.getParameter("publishStatus");
 
         //get file photo
-        Part part = request.getPart("photo");
+        Part part = request.getPart("img");
         String fileName = "";
         if (part != null) {
             fileName = extractFileName(part);
@@ -104,7 +104,7 @@ public class CreateNewsController extends HttpServlet {
 
         //clear session Message
         //get Creator
-        User user = (User) request.getSession().getAttribute("user");
+//        User user = (User) request.getSession().getAttribute("user");
         //check empty each item 
         if (title.equals("") || title.length() == 0) {
             message += "Tiêu đề bài viết trống ! <br>";
@@ -127,32 +127,28 @@ public class CreateNewsController extends HttpServlet {
             News currNews = new News();
             if (request.getSession().getAttribute("currNews") != null) // check if condition the session not null
             {
-
                 request.getSession().setAttribute("currNews", currNews);
             }
             currNews.setTitle(title);
             currNews.setShort_des(shortDes);
             currNews.setContent(content);
             currNews.setCateId(cateId);
-
             request.getSession().setAttribute("currNews", currNews);
-
-            if (request.getSession().getAttribute("message") != null) // check if condition the session not null
-            {
+            
+            // check if condition the session not null
+            if (request.getSession().getAttribute("message") != null) {
                 request.getSession().setAttribute("message", "");
             }
             request.getSession().setAttribute("message", message);
-
-            currNews.setTitle(title);
-
             response.sendRedirect("createNews");
         }
 
         //for test
-//        int creator=3;
+        int creator = 3;
         //create news 
         News n = new News();
-        n.setCreator(user.getUserId());
+//        n.setCreator(user.getUserId());
+        n.setCreator(creator);
         n.setCateId(cateId);
         n.setTitle(title);
         n.setContent(content);

@@ -64,11 +64,7 @@
                                                 <span class="d-block font-weight-bold text-dark">Thả Ảnh Vào Đây</span>
                                                 <span class="d-block">hoặc</span>
                                                 <span class="d-block btn bg-primary text-white my-3 select-files">Chọn Ảnh</span>
-                                            <c:if test="${currNews.photo != null}">
-                                                <span class="d-block">Ảnh đang dùng</span>
-                                                <span><image src="images/uploads/${news.photo}" style="width: 150px; height: 100px;"></span>
-                                                </c:if>
-                                            <input type="file"  name="newsPhoto" class="form-control-file d-none" id="file-upload">
+                                            <input type="file"  name="img" class="form-control-file d-none" id="file-upload">
                                         </label>
                                     </div>
                                     <div class="dnx_content_form_item clearfix">
@@ -98,17 +94,17 @@
                                         <ul>
                                         <li>
                                         <input type="radio" id="notPublish" name="publishStatus" value="0" 
-                                        <c:if test="${not news.status}">checked</c:if>>
+                                        <c:if test="${not currNews.status}">checked</c:if>>
                                         <label for="notPublish">Lưu nháp</label>
                                         </li>
                                         <li>
                                             <input type="radio" id="publish" name="publishStatus" value="1" 
-                                            <c:if test="${news.status}">checked</c:if>>
+                                            <c:if test="${currNews.status}">checked</c:if>>
                                             <label for="publish">Đăng bài</label>
                                         </li>
                                         </ul> 
                                     <c:choose>
-                                        <c:when test="${news.newsId > 0}">
+                                        <c:when test="${currNews.newsId > 0}">
                                             <input type="submit" name="submit" class="btn btn-primary d-block mt-2" value="Cập Nhập">
                                         </c:when>    
                                         <c:otherwise>
