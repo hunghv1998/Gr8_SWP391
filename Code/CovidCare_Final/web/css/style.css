@@ -1083,12 +1083,12 @@ ul.pagination .active a {
 .dashboard-container .product-dashboard-table thead th {
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: .4px;
+    letter-spacing: .10px;
 }
 
 .dashboard-container .product-dashboard-table td {
   vertical-align: middle;
-  padding: 40px 0;
+  padding: 40px 50px;
 }
 
 .dashboard-container .product-thumb {
