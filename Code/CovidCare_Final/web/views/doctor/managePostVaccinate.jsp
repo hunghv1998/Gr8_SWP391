@@ -20,7 +20,7 @@
             <div class="container">
                 <!-- Row Start -->
                 <div class="row">                   
-                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0">
                         <div class="sidebar">				
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
@@ -39,6 +39,8 @@
                                 </ul>
                             </div>
                         </div>
+                     </div>
+                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                         <!-- Recently Favorited -->
                         <div class="widget dashboard-container my-adslist">
                             <c:if test="${message != null}">${message}</c:if>
@@ -46,23 +48,23 @@
                                 <table  class="table table-responsive product-dashboard-table">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Ngày bắt đầu</th>
-                                            <th class="text-center">Loại Vaccine</th>
-                                            <th class="text-center">Địa điểm</th> 
-                                            <th class="text-center">Số mũi còn sẵn</th> 
-                                            <th class="text-center">Trạng thái</th>                                      
-                                            <th class="text-center">Action</th>
+                                            <th nowrap class="text-center">Ngày bắt đầu</th>
+                                            <th nowrap class="text-center">Loại Vaccine</th>   
+                                            <th nowrap class="text-center">Địa điểm</th> 
+                                            <th nowrap class="text-center">Số mũi còn sẵn</th> 
+                                            <th nowrap class="text-center">Trạng thái</th>                                      
+                                            <th nowrap class="text-center">Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                     <c:forEach items="${listPost}" var='pv'>
                                         <tr>                               
-                                            <td  class="text-center">${pv.startDate}</td>
-                                            <td class="text-center">${pv.vaccName}</td>                                          
-                                            <td class="text-center">${pv.place}</td>                                          
-                                            <td class="text-center">${pv.amount}</td>                                          
-                                            <td class="text-center"><c:choose>
+                                            <td nowrap  class="text-center">${pv.startDate}</td>
+                                            <td nowrap class="text-center">${pv.vaccName}</td>                                          
+                                            <td nowrap class="text-center">${pv.place}</td>                                          
+                                            <td nowrap class="text-center">${pv.amount}</td>                                          
+                                            <td  nowrap class="text-center"><c:choose>
                                                     <c:when test="${pv.status}">
                                                         Đang tiến hành                                                           
                                                     </c:when>    

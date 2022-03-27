@@ -19,7 +19,7 @@
             <div class="container">
                 <!-- Row Start -->
                 <div class="row">       
-                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <div class="col-md-10 offset-md-1 col-lg-2 offset-lg-0">
                         <div class="sidebar">				
                             <!-- Dashboard Links -->
                             <div class="widget user-dashboard-menu">
@@ -38,6 +38,8 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                         <!-- Recently Favorited -->
                         <form action="addPost" method="post">
                             <div class="widget dashboard-container my-adslist">

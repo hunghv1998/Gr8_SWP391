@@ -1081,7 +1081,7 @@ ul.pagination .active a {
 }
 
 .dashboard-container .product-dashboard-table thead th {
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
     letter-spacing: .10px;
 }
@@ -1089,6 +1089,7 @@ ul.pagination .active a {
 .dashboard-container .product-dashboard-table td {
   vertical-align: middle;
   padding: 40px 50px;
+  font-size: 14px;
 }
 
 .dashboard-container .product-thumb {
@@ -1676,12 +1677,12 @@ ul.pagination .active a {
   padding: 25px 30px 30px;
   margin-bottom: 30px;
   border-radius: 2px;
-  width: 1000px;
+  width: 1100px;
 }
 
 .widget .widget-header {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 20px;
   padding-bottom: 10px;

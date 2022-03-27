@@ -47,30 +47,30 @@
                             <table class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
-                                        <th>Số Thứ Tự</th>
-                                        <th class="text-center" >Tiêu Đề</th>                                   
-                                        <th class="text-center">Thể Loại</th>
-                                        <th class="text-center">Trạng Thái</th>
-                                        <th class="text-center">Ngày Tạo</th>
-                                        <th class="text-center">Ngày Đăng</th>
-                                        <th class="text-center">Chức Năng</th>
+                                        <th nowrap class="text-center">Số Thứ Tự</th>
+                                        <th nowrap class="text-center" >Tiêu Đề</th>                                   
+                                        <th nowrap class="text-center">Thể Loại</th>
+                                        <th nowrap class="text-center">Trạng Thái</th>
+                                        <th nowrap class="text-center">Ngày Tạo</th>
+                                        <th nowrap class="text-center">Ngày Đăng</th>
+                                        <th nowrap class="text-center">Chức Năng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${newsList}" var="n">
                                         <tr>
 
-                                            <td class="">
+                                            <td nowrap class="">
                                                 <a>${n.getNewsId()}</a>
-                                            <td  class="text-center" style="width:60%;">${n.getTitle()}</td>
-                                            <td class="text-center">
+                                            <td nowrap  class="text-center" style="width:60%;">${n.getTitle()}</td>
+                                            <td nowrap class="text-center">
                                                 <c:forEach items="${newsCate}" var="cate">
                                                     <c:if test="${cate.getCateId() == n.getCateId()}">
                                                         ${cate.getCateName()}
                                                     </c:if>
                                                 </c:forEach>
                                             </td>
-                                            <td class="text-center">
+                                            <td nowrap class="text-center">
                                                 <c:choose>
                                                     <c:when test="${n.isStatus()}">
                                                         Đang hiển thị
@@ -80,9 +80,9 @@
                                                     </c:otherwise>
                                                 </c:choose>
                                             </td>
-                                            <td class="text-center">${n.getCreate_date()}</td>
-                                            <td class="text-center">${n.getPublish_date()}</td>
-                                            <td class="action" data-title="Action"> 
+                                            <td nowrap class="text-center">${n.getCreate_date()}</td>
+                                            <td nowrap class="text-center">${n.getPublish_date()}</td>
+                                            <td nowrap class="action" data-title="Action"> 
                                                 <div class="">
                                                     <ul class="list-inline justify-content-center">
                                                         <li class="list-inline-item">
