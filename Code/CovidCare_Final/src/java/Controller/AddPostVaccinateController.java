@@ -50,7 +50,7 @@ public class AddPostVaccinateController extends HttpServlet {
         String raw_amount = request.getParameter("amount");
         java.sql.Date created_date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
-        request.getSession().setAttribute("messsage", mess);
+        request.setAttribute("messsage", mess);
 
         try {
             //check null items 
@@ -92,8 +92,9 @@ public class AddPostVaccinateController extends HttpServlet {
 
                 VaccineDAO vD = new VaccineDAO();
                 request.setAttribute("listVaccine", vD.getListVaccine());
-                request.getSession().setAttribute("message", mess);
+                request.setAttribute("message", mess);
                 request.getRequestDispatcher("/views/doctor/addPostVaccinate.jsp").forward(request, response);
+                
             } else {
                 PostVaccinate pv = new PostVaccinate();
                 User user = (User) request.getSession().getAttribute("user");
@@ -108,13 +109,13 @@ public class AddPostVaccinateController extends HttpServlet {
                 pv.setAmount(amount);
                 pv.setStatus(true);
                 //set wardId
-                pv.setWardId(uD.getWardIdByUserId(3));
+                pv.setWardId(uD.getWardIdByUserId(user.getUserId()));
 
                 //insert 
                 int result = pD.addPostVaccinate(pv);
 
                 if (result == -1) {
-                    request.getSession().setAttribute("message", "Cần hoàn thành cung cấp địa chỉ của tài khoản này \n trước khi tạo lịch tiêm <br>");
+                    request.setAttribute("message", "Cần hoàn thành cung cấp địa chỉ của tài khoản này \n trước khi tạo lịch tiêm <br>");
                     request.getRequestDispatcher("/views/doctor/addPostVaccinate.jsp").forward(request, response);
                 } else {
                     response.sendRedirect("managePost");
