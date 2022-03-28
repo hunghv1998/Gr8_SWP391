@@ -19,6 +19,7 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 /**
@@ -62,38 +63,9 @@ public class CreateNewsController extends HttpServlet {
         String shortDes = request.getParameter("description");
         String content = request.getParameter("content");
         String rawPublishStatus = request.getParameter("publishStatus");
-        publishStatus = Integer.parseInt(rawPublishStatus);
-        Timestamp created_date = new Timestamp(System.currentTimeMillis());
-        
-        NewsDAO nD = new NewsDAO();
-        //get Creator
-        User user = (User) request.getSession().getAttribute("user");
-
-        //check empty each item 
-        if (title.equals("") || title.length() == 0) {
-            message += "Tiêu đề bài viết trống ! <br>";
-        }
-        if (shortDes.equals("") || shortDes.length() == 0) {
-            message += "Tóm tắt bài viết trống ! <br>";
-        }
-        if (content.equals("") || content.length() == 0) {
-            message += "Nội dung bài viết trống ! <br>";
-        }
-        if (publishStatus == -1) {
-            message += "Tùy chọn đăng chưa được lựa chọn <br>";
-        }
-
-        //if message have content
-        if (!message.equals("") || message.length() != 0) {
-            request.setAttribute("message", message);
-            request.setAttribute("title", title);
-            request.setAttribute("shortDes", shortDes);
-            request.setAttribute("content", content);
-            request.getRequestDispatcher("views/admin/news_create.jsp");
-        }
 
         //get file photo
-        Part part = request.getPart("file");
+        Part part = request.getPart("img");
         String fileName = "";
         if (part != null) {
             fileName = extractFileName(part);
@@ -114,33 +86,89 @@ public class CreateNewsController extends HttpServlet {
 
             dbFileName = UPLOAD_DIR + File.separator + fileName;
             part.write(savePath + File.separator);
-            photo = "images/news/" + fileName;
+            photo = fileName;
         }
 
+        Timestamp created_date = new Timestamp(System.currentTimeMillis());
+
+        NewsDAO nD = new NewsDAO();
+
+        if (rawPublishStatus != null) {
+            publishStatus = Integer.parseInt(rawPublishStatus);
+        }
+        //get list category
+        ArrayList<NewsCategory> newsCate = nD.getCateList();
+        if (newsCate != null) {
+            request.setAttribute("newsCate", newsCate);
+        }
+
+        //clear session Message
+        //get Creator
+        User user = (User) request.getSession().getAttribute("user");
+        //check empty each item 
+        if (title.equals("") || title.length() == 0) {
+            message += "Tiêu đề bài viết trống ! <br>";
+        }
+        if (shortDes.equals("") || shortDes.length() == 0) {
+            message += "Tóm tắt bài viết trống ! <br>";
+        }
+        if (content.equals("") || content.length() == 0) {
+            message += "Nội dung bài viết trống ! <br>";
+        }
+        if (publishStatus == -1) {
+            message += "Tùy chọn đăng chưa được lựa chọn <br>";
+        }
+        if (photo.equals("") || photo.length() == 0) {
+            message += "Ảnh chưa được lựa chọn <br>";
+        }
+
+        //if message have content
+        if (!message.equals("") || message.length() != 0) {
+            News currNews = new News();
+            if (request.getSession().getAttribute("currNews") != null) // check if condition the session not null
+            {
+                request.getSession().setAttribute("currNews", currNews);
+            }
+            currNews.setTitle(title);
+            currNews.setShort_des(shortDes);
+            currNews.setContent(content);
+            currNews.setCateId(cateId);
+            request.getSession().setAttribute("currNews", currNews);
+            
+            // check if condition the session not null
+            if (request.getSession().getAttribute("message") != null) {
+                request.getSession().setAttribute("message", "");
+            }
+            request.getSession().setAttribute("message", message);
+            response.sendRedirect("createNews");
+        }
+
+        //for test
+//        int creator = 3;
         //create news 
         News n = new News();
         n.setCreator(user.getUserId());
+//        n.setCreator(creator);
         n.setCateId(cateId);
         n.setTitle(title);
         n.setContent(content);
         n.setShort_des(shortDes);
         n.setPhoto(photo);
-        n.setStatus((publishStatus==1)?true:false);
+        n.setStatus((publishStatus == 1) ? true : false);
         n.setCreate_date(created_date);
-        n.setPublish_date((publishStatus==1) ? created_date : null);
+        n.setPublish_date((publishStatus == 1) ? created_date : null);
         n.setReadCount(0);
         
+        System.out.println(n.toString());
+
         int insert_news = nD.addNews(n);
-        
-        if(insert_news !=0){
-            
+
+        if (insert_news != 0) {
+            message += "Thêm bài viết thành công !<br>";
+            request.setAttribute("message", message);
+            request.getRequestDispatcher("views/admin/news_create.jsp").forward(request, response);
         }
-        
-        
-        
-        
-        
-        
+
     }
 
     private String extractFileName(Part part) {//This method will print the file name.

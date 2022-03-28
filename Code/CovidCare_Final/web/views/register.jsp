@@ -25,7 +25,7 @@
                                         <b>${message}</b>
                                     </c:if>
                                     <input type="text" name="username" placeholder="Tài khoản" class="border p-3 w-100 my-2">
-                                    <select name="ques_id">
+                                    <select name="ques_id" class="border p-3 w-100 my-2" >
                                         <c:forEach items="${listQuestion}" var="q">
                                             <option value ="${q.id}">${q.content}</option>
                                         </c:forEach>

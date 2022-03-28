@@ -27,13 +27,13 @@
                             <c:choose>
                                 <c:when test="${user.getUserType() == 1}">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="managementAccount">Quản lý</a>
+                                        <a class="nav-link" href="managementAccount">Quản lý Tài Khoản</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="statistic">Thống kê</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="news">Tạo bản tin mới</a>
+                                        <a class="nav-link" href="createNews">Tạo bản tin mới</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>
@@ -41,6 +41,9 @@
                                         <c:when test="${user.getUserType() == 2}">
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="timetable">Lịch trình</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="managePost">Quản lý tiêm</a>
                                             </li>
                                             <li class="nav-item active">
                                                 <a class="nav-link" href="patient">Quản lý bệnh nhân</a>
@@ -66,6 +69,9 @@
                                                 <a class="nav-link" href="timetable">Thời gian biểu</a>
                                             </li>
                                             <c:if test="${user.getUserType() == 3}">
+                                                <li class="nav-item active">
+                                                    <a class="nav-link" href="listPostPatient">Thông báo tiêm</a>
+                                                </li>
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="info">Thông tin cá nhân</a>
                                                 </li>

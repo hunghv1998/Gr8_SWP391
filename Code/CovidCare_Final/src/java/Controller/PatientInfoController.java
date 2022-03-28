@@ -42,7 +42,7 @@ import javax.servlet.http.Part;
 
 public class PatientInfoController extends HttpServlet {
 
-    private static final String UPLOAD_DIR = "images/uploads";
+    private static final String UPLOAD_DIR = "images/patient";
 
     private final ValidatingInput check = new ValidatingInput();
     private final PatientDAO patientDAO = new PatientDAO();

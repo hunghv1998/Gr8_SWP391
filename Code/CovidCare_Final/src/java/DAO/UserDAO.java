@@ -195,7 +195,7 @@ public class UserDAO extends DBContext {
     public int updatePassword(int userId, String password) {
         PreparedStatement stm = null;
         ResultSet rs = null;
-        int result=-1;
+        int result = -1;
         try {
             String sql = "UPDATE [dbo].[users]\n"
                     + "   SET [password] = ?       \n"
@@ -220,15 +220,15 @@ public class UserDAO extends DBContext {
             stm = connection.prepareStatement(sql);
             rs = stm.executeQuery();
             while (rs.next()) {
-               User u = new User();
-               u.setUserId(rs.getInt("userId"));
-               u.setUsername(rs.getString("username"));
-               u.setPassword(rs.getString("password"));
-               u.setUserType(rs.getInt("userType"));
-               u.setActiveStatus(rs.getBoolean("activeStatus"));
-               
-               //add to list
-               listUser.add(u);
+                User u = new User();
+                u.setUserId(rs.getInt("userId"));
+                u.setUsername(rs.getString("username"));
+                u.setPassword(rs.getString("password"));
+                u.setUserType(rs.getInt("userType"));
+                u.setActiveStatus(rs.getBoolean("activeStatus"));
+
+                //add to list
+                listUser.add(u);
             }
             return listUser;
         } catch (SQLException ex) {
@@ -236,6 +236,28 @@ public class UserDAO extends DBContext {
         }
 
         return null;
+    }
+
+    public String getWardIdByUserId(int userId) {
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        String wardId ="";
+        try {
+            String sql = "select h.wardId from users u left join Hospital h \n"
+                    + "on u.userId = h.userId\n"
+                    + "where u.userId=?";
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, userId);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                wardId = rs.getString("wardId");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return wardId;
+
     }
 
 }

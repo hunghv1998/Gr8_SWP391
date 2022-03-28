@@ -23,10 +23,8 @@
                     <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
                         <div class="sidebar">				
                             <!-- Dashboard Links -->
-                            <div class="widget user-dashboard-menu">
+                            <div class="widget user-dashboard-menu" style="width: auto;">
                                 <ul>
-                                    <li><a href="CreateNews"><i class=""></i>Tạo bài viết mới</a></li>    
-                                    <li><a href="viewListNewsController"><i class=""></i>Quản lý bài viết</a></li>
                                     <li class="active" >
                                         <a href="managementAccount"><i class=""></i>Quản lý tài khoản<span>12</span></a>
                                     </li>																			
@@ -34,42 +32,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
                         <!-- Recently Favorited -->
-                        <div class="widget dashboard-container my-adslist">
+                        <div class="widget dashboard-container my-adslist" style="width: auto;">
                             <h3 class="widget-header">Quản lý tài khoản</h3>
                             <table  class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
-                                        <th>Tài khoản</th>
-                                        <th class="text-center">Mật khẩu</th>
-                                        <th class="text-center">Vai trò</th>
-                                        <th class="text-center">Trạng thái</th>
-                                        <th class="text-center">Hoạt động</th>
+                                        <th nowrap class="text-center" >Tài khoản</th>
+                                        <th nowrap class="text-center">Mật khẩu</th>
+                                        <th nowrap class="text-center">Vai trò</th>
+                                        <th nowrap class="text-center">Trạng thái</th>
+                                        <th nowrap class="text-center">Hoạt động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${listUser}" var="o">
                                         <tr>
 
-                                            <td class="">
+                                            <td nowrap class="">
                                                 <a>${o.username}</a>
-                                            <td  class="text-center">${o.password}</td>
-                                            <td class="text-center"><c:choose>
+                                            <td nowrap  class="text-center">${o.password}</td>
+                                            <td nowrap class="text-center"><c:choose>
                                                     <c:when test="${o.userType == 1}">Admin</c:when> 
                                                     <c:when test="${o.userType == 2}">Bác sĩ</c:when>    
                                                     <c:otherwise>
                                                         Bệnh nhân
                                                     </c:otherwise>
                                                 </c:choose></td>
-                                            <td class="text-center">
+                                            <td nowrap class="text-center">
                                                 <c:choose>
                                                     <c:when test="${o.activeStatus}">Hoạt động</c:when>    
                                                     <c:otherwise>
                                                         Bị cấm
                                                     </c:otherwise>
                                                 </c:choose></td>
-                                            <td class="action" data-title="Tùy chọn"> 
+                                            <td nowrap class="action" data-title="Tùy chọn"> 
                                                 <div class="">
                                                     <ul class="list-inline justify-content-center">
                                                         <li class="list-inline-item">
