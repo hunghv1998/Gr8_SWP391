@@ -33,7 +33,7 @@
                                         <a class="nav-link" href="statistic">Thống kê</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="createNews">Tạo bản tin mới</a>
+                                        <a class="nav-link" href="news">Quản lý bản tin</a>
                                     </li>
                                 </c:when>
                                 <c:otherwise>

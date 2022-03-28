@@ -167,7 +167,7 @@ public class NewsController extends HttpServlet {
                     response.sendRedirect("news");
                 } else if (action.equals("add")) {
                     request.setAttribute("title", "Thêm tin mới");
-                    request.getRequestDispatcher("/views/admin/news_create.jsp").forward(request, response);
+                    request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
                 } else if (action.equals("update")) {
                     request.setAttribute("title", "Cập nhật");
                     News news = newsDAO.getNewsById(Integer.parseInt(id));
@@ -176,7 +176,7 @@ public class NewsController extends HttpServlet {
                         sendRedirectError(request, response, "message", "Không tìm thấy bài viết");
                     } else {
                         request.setAttribute("news", news);
-                        request.getRequestDispatcher("/views/admin/news_create.jsp").forward(request, response);
+                        request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
                     }
                 } else {
                     sendRedirectError(request, response, "message", "Không tìm thấy trang yêu cầu");
@@ -308,7 +308,7 @@ public class NewsController extends HttpServlet {
                     request.setAttribute("message", "Đã có lỗi xảy ra<br>Vui lòng thử lại.");
                     request.setAttribute("error", error);
                     request.setAttribute("news", news);
-                    request.getRequestDispatcher("/views/admin/news_create.jsp").forward(request, response);
+                    request.getRequestDispatcher("/views/admin/news_edit.jsp").forward(request, response);
                 }
             } else {
                 sendRedirectError(request, response, "message", "Không tìm thấy trang yêu cầu");
