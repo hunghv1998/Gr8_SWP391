@@ -3,7 +3,7 @@
     Created on : Mar 14, 2022, 11:46:56 AM
     Author     : chinh
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,17 +25,49 @@
                             <p>Tư vấn và hướng dẫn sức khỏe cộng đồng mùa covid <br> Cập nhật diễn biến covid hàng ngày</p>
                             <div class="short-popular-category-list text-center">
                                 <h2>Danh mục phổ biến</h2>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <a href="news"><i class="fa fa-newspaper-o"></i> Tin Tức</a></li>
+                                <c:choose>
+                                    <c:when test="${user.getUserType() == 1}">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="managementAccount"><i class="fa fa-user"></i> Quản Lý Tài Khoản</a></li>
+                                            <li class="list-inline-item">
+                                                <a href="news"><i class="fa fa-newspaper-o"></i> Quản Lý Tin Tức</a>
+                                            </li>
+                                        </ul>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:choose>
+                                            <c:when test="${user.getUserType() == 2}">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="news"><i class="fa fa-newspaper-o"></i>Tin Tức</a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="chat"><i class="fa fa-wechat"></i>Hỗ Trợ Trực Tuyến</a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="timetable"><i class="fa fa-calendar-times-o"></i>Thời Gian Biểu</a>
+                                                    </li>
+                                                </ul>
 
-                                    <li class="list-inline-item">
-                                        <a href="chat"><i class="fa fa-wechat"></i> Chat</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="timetable"><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
-                                    </li>
-                                </ul>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="news"><i class="fa fa-newspaper-o"></i>Tin Tức</a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="chat"><i class="fa fa-wechat"></i>Hỗ Trợ Trực Tuyến</a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="nav-link" href="timetable"><i class="fa fa-calendar-times-o"></i>Thời Gian Biểu</a>
+                                                    </li>
+                                                </ul>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:otherwise>
+                                </c:choose>
+
                             </div>
                         </div>
                     </div>
@@ -74,16 +106,6 @@
                                 <i class="fa fa-gg"></i> Tự lập thời gian biểu hằng ngày trên trang web <br>
                                 theo lời khuyên của bác sĩ<br>
                                 Với đội ngũ bác sĩ uy tín, có kinh nghiệm và trình độ chuyên môn cao</p>
-                            <div class="short-popular-category-list text-center">
-                                <ul class="list-inline"  style="text-align: right;">
-                                    <li class="list-inline-item">
-                                        <a href="chat"><i class="fa fa-wechat"></i> Chat</a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="timetable"><i class="fa fa-calendar-times-o"></i> Thời Gian Biểu</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
