@@ -92,7 +92,7 @@ public class LoginController extends HttpServlet {
         UserDAO userDAO = new UserDAO();
 
         User user = userDAO.login(new User(username, password));
-        user.setUserId(userDAO.getIdFromUsername(username));
+       // user.setUserId(userDAO.getIdFromUsername(username));
         if (user == null || !user.isActiveStatus()) {
             if (user == null) {
                 request.setAttribute("message", "Sai thông tin đăng nhập");
