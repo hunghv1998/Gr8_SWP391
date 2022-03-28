@@ -87,13 +87,13 @@
                                     <c:if test="${news.cateId == cate.cateId}">
                                         <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
                                             <div class="category-block">
-                                                <div class="header">
+                                                <div class="header" >
                                                     <h4>
-                                                        <a href="news?id=${news.newsId}">${news.title}</a>
+                                                        <a href="news?id=${news.newsId}" style="overflow:hidden;text-overflow: ellipsis;max-width: 100px;">${news.title}</a>
                                                     </h4>
                                                 </div>
                                                 <div>
-                                                    <img src="images/news/${news.photo}" style="height: 100%; width: 100%; object-fit: contain;">
+                                                    <img src="images/news/${news.photo}" style="height: 200px; width: 200px; object-fit: contain;">
                                                     <span>${news.short_des}</span>
                                                 </div>
                                             </div>

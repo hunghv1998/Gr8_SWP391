@@ -31,17 +31,12 @@
                                 <ul>
                                     <li class="active">
                                         <a href="">
-                                            <i class=""></i> Create News 
+                                            <i class=""></i> Tạo Tin Tức Mới
                                         </a>
                                     </li>   
                                     <li>
                                         <a href="news">
-                                            <i class=""></i> Manager News 
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="ManageAccount">
-                                            <i class=""></i> Manager profiles 
+                                            <i class=""></i> Quản Lý Tin Tức
                                         </a>
                                     </li>														
                                 </ul>
@@ -52,7 +47,7 @@
                         <!-- Recently Favorited -->
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="widget dashboard-container my-adslist">
-                                <h3 class="widget-header">Create News</h3>
+                                <h3 class="widget-header">Tạo Tin Tức Mới</h3>
                                 <p style="color: red;">
                                     ${message}
                                     <br>
@@ -66,14 +61,13 @@
                                     </div>
                                     <div class="choose-file text-center my-4 py-4 rounded">
                                         <label for="file-upload">
-                                            <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
-                                            <span class="d-block">or</span>
-                                            <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
-                                            <span class="d-block">Maximum upload file size: 500 KB</span>
+                                            <span class="d-block font-weight-bold text-dark">Thả Ảnh Vào Đây</span>
+                                            <span class="d-block">hoặc</span>
+                                            <span class="d-block btn bg-primary text-white my-3 select-files">Chọn Ảnh</span>
 
                                             <c:if test="${news.photo != null}">
                                                 <span class="d-block">Ảnh đang dùng</span>
-                                                <span><image src="images/uploads/${news.photo}" style="width: 150px; height: 100px;"></span>
+                                                <span><image src="images/news/${news.photo}" style="width: 150px; height: 100px;"></span>
                                                 </c:if>
                                             <input type="file"  name="newsPhoto" class="form-control-file d-none" id="file-upload">
                                         </label>

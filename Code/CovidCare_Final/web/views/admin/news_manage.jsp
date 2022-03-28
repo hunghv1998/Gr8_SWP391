@@ -15,15 +15,15 @@
 
         <%@include file = "../../common/nav.jsp" %>
 
-        <section class="dashboard section">
+        <section>
             <!-- Container Start -->
-            <div class="container">
+            <div class="">
                 <!-- Row Start -->
                 <div class="row">
-                    <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0" >
+                    <div class="col-md-10 col-lg-2 offset-lg-0" >
                         <div class="sidebar" >				
                             <!-- Dashboard Links -->
-                            <div class="widget user-dashboard-menu" style="width:auto;">
+                            <div class="widget user-dashboard-menu" style="width:250px;">
                                 <ul>
                                     <li>
                                         <a href="news?action=add">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0" >
+                    <div class="col-md-10 col-lg-10 offset-lg-0" >
                         <!-- Recently Favorited -->
                         <div class="widget dashboard-container my-adslist" style="width:auto;">
                             <h3 class="widget-header">Quản lý bản tin
@@ -47,8 +47,8 @@
                             <table class="table table-responsive product-dashboard-table">
                                 <thead>
                                     <tr>
-                                        <th nowrap class="text-center">Số Thứ Tự</th>
-                                        <th nowrap class="text-center" >Tiêu Đề</th>                                   
+                                        <th nowrap class="text-center">STT</th>
+                                        <th nowrap class="text-center">Tiêu Đề</th>                                   
                                         <th nowrap class="text-center">Thể Loại</th>
                                         <th nowrap class="text-center">Trạng Thái</th>
                                         <th nowrap class="text-center">Ngày Tạo</th>
@@ -62,7 +62,7 @@
 
                                             <td nowrap class="">
                                                 <a>${n.getNewsId()}</a>
-                                            <td nowrap  class="text-center" style="width:60%;">${n.getTitle()}</td>
+                                            <td nowrap  class="text-center">${n.getTitle()}</td>
                                             <td nowrap class="text-center">
                                                 <c:forEach items="${newsCate}" var="cate">
                                                     <c:if test="${cate.getCateId() == n.getCateId()}">

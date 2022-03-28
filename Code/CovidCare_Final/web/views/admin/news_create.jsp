@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
                         <!-- Recently Favorited -->                     
-                        <form action="createNews" method="post" enctype="multipart/form-data">
+                        <form action="news" method="post" enctype="multipart/form-data">
                             <div class="widget dashboard-container my-adslist">
                                 <h3 class="widget-header">Tạo Tin Tức Mới</h3>
                                 <p style="color: red;">

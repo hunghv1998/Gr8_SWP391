@@ -26,7 +26,7 @@
                             <div class="widget user-dashboard-menu" style="width: auto;">
                                 <ul>
                                     <li class="active" >
-                                        <a href="managementAccount"><i class=""></i>Quản lý tài khoản<span>12</span></a>
+                                        <a href="managementAccount"><i class=""></i>Quản lý tài khoản</a>
                                     </li>																			
                                 </ul>
                             </div>
