@@ -37,18 +37,19 @@ public class ManagePostVaccinateController2 extends HttpServlet {
         int action = Integer.parseInt(request.getParameter("action"));
         int post_id = Integer.parseInt((String) request.getParameter("post_id"));
 
+        PostVaccinate currPost = new PostVaccinate();
         PostVaccineDAO pD = new PostVaccineDAO();
 
         switch (action) {
             //edit
             case 1:
-                PostVaccinate currPost = new PostVaccinate();
                 VaccineDAO vD = new VaccineDAO();
                 currPost = pD.getPostById(post_id);
                 request.setAttribute("listVaccine", vD.getListVaccine());
-                request.getSession().setAttribute("messsage", "");
-                request.getSession().setAttribute("currPost", currPost);
-                request.getRequestDispatcher("views/doctor/addPostVaccinate.jsp").forward(request, response);
+                request.setAttribute("messsage", "");
+                request.setAttribute("currPost", currPost);
+                request.getRequestDispatcher("views/doctor/editPostVaccinate.jsp").forward(request, response);
+
                 break;
             //view
             case 2:
@@ -56,10 +57,10 @@ public class ManagePostVaccinateController2 extends HttpServlet {
                 currPost = new PostVaccinate();
                 currPost = pD.getPostById(post_id);
                 //get list request
-                RequestVaccineDAO rD = new RequestVaccineDAO();                             
+                RequestVaccineDAO rD = new RequestVaccineDAO();
                 request.setAttribute("listRequestOfPost", rD.getListRequestVaccinateProcess(post_id));
-                request.getSession().setAttribute("messsage", "");
-                request.getSession().setAttribute("currPost", currPost);
+                request.setAttribute("messsage", "");
+                request.setAttribute("currPost", currPost);
                 request.getRequestDispatcher("views/doctor/viewDetailPostVaccinate.jsp").forward(request, response);
                 break;
             //delete

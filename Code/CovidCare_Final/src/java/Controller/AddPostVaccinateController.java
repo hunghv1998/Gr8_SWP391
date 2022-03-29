@@ -109,7 +109,7 @@ public class AddPostVaccinateController extends HttpServlet {
                 pv.setAmount(amount);
                 pv.setStatus(true);
                 //set wardId
-                pv.setWardId(uD.getWardIdByUserId(user.getUserId()));
+                pv.setWardId(uD.getWardIdByUserId(user.getUserId(),user.getUserType()));
 
                 //insert 
                 int result = pD.addPostVaccinate(pv);

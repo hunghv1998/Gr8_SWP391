@@ -119,6 +119,7 @@ public class RequestVaccineDAO extends DBContext {
             ps = connection.prepareStatement(sql);
             ps.setInt(1, post_id);
             ps.setInt(2, request_id);
+            ps.executeQuery();
         } catch (Exception e) {
             
         }

@@ -238,14 +238,23 @@ public class UserDAO extends DBContext {
         return null;
     }
 
-    public String getWardIdByUserId(int userId) {
+    public String getWardIdByUserId(int userId, int userType) {
         PreparedStatement stm = null;
         ResultSet rs = null;
-        String wardId ="";
+        String wardId = "";
+        String sql = "";
         try {
-            String sql = "select h.wardId from users u left join Hospital h \n"
-                    + "on u.userId = h.userId\n"
-                    + "where u.userId=?";
+
+            if (userType == 2) {
+                sql = "select h.wardId from users u left join Hospital h \n"
+                        + "on u.userId = h.userId\n"
+                        + "where u.userId=?";
+            } else if (userType == 3) {
+                sql = "select h.wardId from users u left join patient h \n"
+                        + "on u.userId = h.patientId\n"
+                        + "where u.userId=?";
+            }
+
             stm = connection.prepareStatement(sql);
             stm.setInt(1, userId);
             rs = stm.executeQuery();

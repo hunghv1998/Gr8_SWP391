@@ -183,4 +183,42 @@ public class PostVaccineDAO extends DBContext {
         }
         return listPV;
     }
+
+    public int updatePost(PostVaccinate p) {
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        int result = -1;
+        try {
+            String sql = "UPDATE [dbo].[PostVaccinate]\n"
+                    + "   SET [created_by] = ?\n"
+                    + "      ,[created_date] = ? \n"
+                    + "      ,[vaccId] = ?\n"
+                    + "      ,[expired_date] = ? \n"
+                    + "      ,[place] = ?\n"
+                    + "      ,[wardId] = ?\n"
+                    + "      ,[number_vaccin] = ? \n"
+                    + "      ,[start_date] = ?\n"
+                    + "      ,[note] = ?\n"
+                    + "      ,[status] = ? \n"
+                    + " WHERE id = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, p.getCreatedBy());
+            ps.setString(2, p.getCreatedDate());
+            ps.setInt(3, p.getVaccId());
+            ps.setString(4, p.getExpiredDate());
+            ps.setString(5, p.getPlace());
+            ps.setString(6, p.getWardId());
+            ps.setInt(7, p.getAmount());
+            ps.setString(8, p.getStartDate());
+            ps.setString(9, p.getNote());
+            ps.setBoolean(10, true);
+            ps.setInt(11,p.getId());
+            
+            result = ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
