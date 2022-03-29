@@ -20,9 +20,9 @@
             <div class="container">
                 <!-- Row Start -->
                 <div class="row">                   
-                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+                    
                         <!-- Recently Favorited -->
-                        <div class="widget dashboard-container my-adslist">
+                        <div style="margin-left: 100px;" class="widget dashboard-container my-adslist">
                             <c:if test="${message != null}">${message}</c:if>
                                 <h3 class="widget-header">Danh sách yêu cầu tiêm.</h3>
                                 <table  class="table table-responsive product-dashboard-table">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <!-- Row End -->
-            </div>
+            
             <!-- Container End -->
         </section>
     </body>
