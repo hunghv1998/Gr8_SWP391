@@ -69,6 +69,9 @@
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="listPostPatient">Thông báo tiêm</a>
                                                 </li>
+                                                  <li class="nav-item active">
+                                                    <a class="nav-link" href="viewListRequest">Đăng ký tiêm</a>
+                                                </li>
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="info">Thông tin cá nhân</a>
                                                 </li>
