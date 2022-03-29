@@ -20,9 +20,29 @@
             <div class="container">
                 <!-- Row Start -->
                 <div class="row">                   
+                     <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+                        <div class="sidebar" >				
+                            <!-- Dashboard Links -->
+                            <div class="widget user-dashboard-menu" style="width:auto;">
+                                <ul>
+                                    <li>
+                                        <a href="listPostPatient">
+                                            <i class=""></i> Thông báo tiêm 
+                                        </a>
+                                    </li>    
+                                    <li class="active">
+                                        <a href="viewListRequest">
+                                            <i class=""></i> Đăng ký tiêm
+                                        </a>                                        
+                                    </li>																			
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
                     
                         <!-- Recently Favorited -->
-                        <div style="margin-left: 100px;" class="widget dashboard-container my-adslist">
+                        <div  class="widget dashboard-container my-adslist" style="width:auto;">
                             <c:if test="${message != null}">${message}</c:if>
                                 <h3 class="widget-header">Danh sách yêu cầu tiêm.</h3>
                                 <table  class="table table-responsive product-dashboard-table">
@@ -69,7 +89,7 @@
                     </div>
                 </div>
                 <!-- Row End -->
-            
+            </div>
             <!-- Container End -->
         </section>
     </body>

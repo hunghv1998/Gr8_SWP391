@@ -10,7 +10,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-20">
                 <nav class="navbar navbar-expand-lg navbar-light navigation">
                     <a class="navbar-brand" href=".">
                         <img src="images/icon.png" alt="" width="100" height="100">
@@ -68,10 +68,7 @@
                                             <c:if test="${user.getUserType() == 3}">
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="listPostPatient">Thông báo tiêm</a>
-                                                </li>
-                                                  <li class="nav-item active">
-                                                    <a class="nav-link" href="viewListRequest">Đăng ký tiêm</a>
-                                                </li>
+                                                </li>                                                 
                                                 <li class="nav-item active">
                                                     <a class="nav-link" href="info">Thông tin cá nhân</a>
                                                 </li>
