@@ -10,7 +10,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-md-20">
+            <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light navigation">
                     <a class="navbar-brand" href=".">
                         <img src="images/icon.png" alt="" width="100" height="100">
